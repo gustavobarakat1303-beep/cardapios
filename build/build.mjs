@@ -38,23 +38,24 @@ const SANS = '"montserrat", "Segoe UI", sans-serif';
 
 // ---- Geometria A4 (px @96dpi) ---------------------------------------------
 const PAGE_W = 794, PAGE_H = 1123;
-const MARGIN_X = 57;          // 1,5 cm
-const CONTENT_TOP = 70;       // 2 cm (menos o respiro do cabeçalho)
-const FOOTER_RESERVE = 58;    // rodapé com logo + paginação
-const CONTENT_W = PAGE_W - 2 * MARGIN_X;          // 680
-const BUDGET = PAGE_H - CONTENT_TOP - FOOTER_RESERVE; // ~995
-const COL_GAP = 22;
-const COL_W = (CONTENT_W - COL_GAP) / 2;          // 329
+const MARGIN_X = 50;          // ~1,3 cm — um pouco mais de área útil
+const CONTENT_TOP = 48;       // topo
+const FOOTER_RESERVE = 40;    // rodapé enxuto (marca + paginação)
+const CONTENT_W = PAGE_W - 2 * MARGIN_X;          // 694
+const COLS = 2;               // duas colunas
+const COL_GAP = 20;
+const COL_W = (CONTENT_W - COL_GAP) / COLS;       // 337
+const BUDGET = PAGE_H - CONTENT_TOP - FOOTER_RESERVE; // ~1035
 
-// ---- Estimativa de altura (conservadora) ----------------------------------
-const NAME_LH = 15, NAME_CPL = 38;
-const DESC_LH = 12.6, DESC_CPL = 56;
-const ITEM_PAD = 13;          // respiro inferior de cada item
-const HEADER_H = 60;          // cabeçalho de seção completo
-const CONT_HEADER_H = 36;     // cabeçalho "(continuação)"
-const SECTION_GAP = 16;
+// ---- Estimativa de altura (conservadora) — modo compacto p/ 6 páginas -----
+const NAME_LH = 12.5, NAME_CPL = 40;
+const DESC_LH = 10.4, DESC_CPL = 62;
+const ITEM_PAD = 6.5;         // respiro inferior de cada item
+const HEADER_H = 38;          // cabeçalho de seção completo
+const CONT_HEADER_H = 24;     // cabeçalho "(continuação)"
+const SECTION_GAP = 9;
 const BANNER_H = 96;
-const HL_EXTRA = 22;          // cartões destacados são mais altos
+const HL_EXTRA = 16;          // cartões destacados são mais altos
 
 const lines = (txt, cpl) => Math.max(1, Math.ceil((txt || '').length / cpl));
 
@@ -185,12 +186,7 @@ function paginate() {
   const remaining = () => BUDGET - cur.used;
 
   for (const node of flow) {
-    if (node.banner) {
-      if (remaining() < BANNER_H + 60) pushPage();
-      cur.blocks.push(renderBanner(node.banner));
-      cur.used += BANNER_H + 8;
-      continue;
-    }
+    if (node.banner) continue; // faixas de grupo removidas — apenas os itens
 
     const sec = node;
     const accent = sec.kind === 'drink' ? C.marrom : C.verde;
@@ -285,49 +281,50 @@ const CSS = `
 
   /* ---- rodapé ---- */
   .page-foot {
-    position: absolute; left: ${MARGIN_X}px; right: ${MARGIN_X}px; bottom: 26px;
+    position: absolute; left: ${MARGIN_X}px; right: ${MARGIN_X}px; bottom: 16px;
     display: flex; justify-content: space-between; align-items: center;
     border-top: 1px solid ${C.amarelo};
-    padding-top: 8px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: ${C.marrom};
+    padding-top: 5px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: ${C.marrom};
   }
-  .foot-mark { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+  .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
   .foot-page { font-weight: 600; color: ${C.verde}; }
 
   /* ---- cabeçalho de seção ---- */
   .sec { margin-bottom: ${SECTION_GAP}px; break-inside: avoid; }
-  .sec-head { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+  .sec-head { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
   .sec-ic { display: inline-flex; flex: 0 0 auto; }
+  .sec-ic svg { width: 18px; height: 18px; }
   .sec-title {
-    font-family: ${SERIF}; font-weight: 700; font-size: 22px; line-height: 1;
+    font-family: ${SERIF}; font-weight: 700; font-size: 16px; line-height: 1;
     color: ${C.verde}; letter-spacing: .2px; white-space: nowrap;
   }
   .sec-en {
-    font-family: ${SANS}; font-weight: 500; font-size: 9px; letter-spacing: .18em;
-    text-transform: uppercase; color: ${C.amareloEsc}; padding-top: 4px;
+    font-family: ${SANS}; font-weight: 500; font-size: 7.5px; letter-spacing: .16em;
+    text-transform: uppercase; color: ${C.amareloEsc}; padding-top: 3px;
   }
   .sec-rule { flex: 1 1 auto; height: 1px; margin-left: 4px;
     background: linear-gradient(90deg, ${C.amarelo}, rgba(93,64,55,.25)); }
-  .sec-head.cont { margin-bottom: 7px; }
-  .sec-title-sm { font-family: ${SERIF}; font-weight: 700; font-size: 15px; color: ${C.verde}; }
-  .sec-title-sm em { font-family: ${SANS}; font-style: normal; font-weight: 500; font-size: 9px;
+  .sec-head.cont { margin-bottom: 4px; }
+  .sec-title-sm { font-family: ${SERIF}; font-weight: 700; font-size: 12px; color: ${C.verde}; }
+  .sec-title-sm em { font-family: ${SANS}; font-style: normal; font-weight: 500; font-size: 7.5px;
     letter-spacing: .14em; text-transform: uppercase; color: ${C.textoSuave}; }
 
   /* ---- itens em duas colunas ---- */
-  .items { display: grid; grid-template-columns: 1fr 1fr; column-gap: ${COL_GAP}px; align-items: start; }
-  .item { padding-bottom: ${ITEM_PAD - 2}px; }
+  .items { display: grid; grid-template-columns: repeat(${COLS}, 1fr); column-gap: ${COL_GAP}px; align-items: start; }
+  .item { padding-bottom: ${ITEM_PAD}px; }
   .row { display: flex; align-items: baseline; gap: 4px; }
-  .name { font-family: ${SANS}; font-weight: 600; font-size: 11px; color: ${C.texto}; line-height: 1.25; }
-  .name .sz { font-weight: 500; font-size: 8.5px; color: ${C.textoSuave}; letter-spacing: .04em; }
-  .leader { flex: 1 1 auto; min-width: 8px; align-self: stretch;
-    border-bottom: 1px dotted ${C.marrom}; opacity: .45; transform: translateY(-3px); }
-  .price { font-family: ${SANS}; font-weight: 700; font-size: 11px; color: ${C.verde}; white-space: nowrap; }
-  .desc { font-family: ${SANS}; font-weight: 400; font-size: 9px; line-height: 1.4;
-    color: ${C.textoSuave}; margin-top: 1px; max-width: 95%; }
+  .name { font-family: ${SANS}; font-weight: 600; font-size: 9.5px; color: ${C.texto}; line-height: 1.2; }
+  .name .sz { font-weight: 500; font-size: 7.5px; color: ${C.textoSuave}; letter-spacing: .03em; }
+  .leader { flex: 1 1 auto; min-width: 6px; align-self: stretch;
+    border-bottom: 1px dotted ${C.marrom}; opacity: .4; transform: translateY(-3px); }
+  .price { font-family: ${SANS}; font-weight: 700; font-size: 9.5px; color: ${C.verde}; white-space: nowrap; }
+  .desc { font-family: ${SANS}; font-weight: 400; font-size: 8px; line-height: 1.3;
+    color: ${C.textoSuave}; margin-top: 0.5px; max-width: 97%; }
 
   /* ---- cartões destacados (amarelo-manga) ---- */
-  .items-hl { column-gap: 16px; row-gap: 4px; }
+  .items-hl { column-gap: 14px; }
   .item.hl { background: ${C.creme}; border: 1px solid ${C.amarelo};
-    border-radius: 8px; padding: 8px 11px 9px; margin-bottom: 4px; }
+    border-radius: 6px; padding: 5px 9px 6px; margin-bottom: 4px; }
   .item.hl .name { color: ${C.marrom}; }
   .item.hl .price { color: ${C.amareloEsc}; }
   .item.hl .leader { opacity: .3; }
@@ -377,8 +374,8 @@ const CSS = `
 // ---- Montagem do documento -------------------------------------------------
 function build() {
   const pages = paginate();
-  const total = pages.length + 1; // + capa
-  const body = [renderCover(), ...pages.map((p, i) => renderPage(p, i + 2, total))].join('\n');
+  const total = pages.length; // sem capa — apenas páginas de itens
+  const body = pages.map((p, i) => renderPage(p, i + 1, total)).join('\n');
 
   const html = `<!DOCTYPE html>
 <html lang="pt-BR">
@@ -404,9 +401,9 @@ ${body}
   // relatório de ocupação para verificar que nenhuma página estourou
   const maxFill = Math.max(...pages.map((p) => p.used));
   const over = pages.filter((p) => p.used > BUDGET);
-  console.log(`Páginas geradas: ${total} (1 capa + ${pages.length} de conteúdo)`);
+  console.log(`Páginas geradas: ${total} (apenas itens, sem capa)`);
   console.log(`Orçamento por página: ${Math.round(BUDGET)}px | maior ocupação: ${Math.round(maxFill)}px`);
-  pages.forEach((p, i) => console.log(`  pág ${String(i + 2).padStart(2)} — ${Math.round(p.used)}px (${Math.round((p.used / BUDGET) * 100)}%)`));
+  pages.forEach((p, i) => console.log(`  pág ${String(i + 1).padStart(2)} — ${Math.round(p.used)}px (${Math.round((p.used / BUDGET) * 100)}%)`));
   if (over.length) console.warn(`AVISO: ${over.length} página(s) acima do orçamento — ajuste a distribuição.`);
   else console.log('OK: nenhuma página excede o orçamento de altura.');
 }

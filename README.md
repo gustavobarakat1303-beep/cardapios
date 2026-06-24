@@ -8,7 +8,7 @@ dados do cardápio e exportável para **PDF de alta resolução** e para um
 | Arquivo | Descrição |
 | --- | --- |
 | [`cardapio.html`](cardapio.html) | Cardápio final, HTML autocontido (A4, pronto para imprimir). |
-| [`cardapio.pdf`](cardapio.pdf) | PDF de alta resolução gerado a partir do HTML (11 páginas). |
+| [`cardapio.pdf`](cardapio.pdf) | PDF de alta resolução gerado a partir do HTML (6 páginas, só itens). |
 | [`build/menu-data.mjs`](build/menu-data.mjs) | Conteúdo do cardápio (nomes, descrições, preços) — fonte única da verdade. |
 | [`build/build.mjs`](build/build.mjs) | Gerador: design system + motor de paginação A4 determinístico. |
 | [`build/render.mjs`](build/render.mjs) | Renderiza HTML → PDF + screenshots (verificação visual). |
@@ -59,13 +59,11 @@ super-saturado) e mantêm contraste legível (WCAG AA) entre texto e fundo.
 
 | Papel | Fonte | Tamanho |
 | --- | --- | --- |
-| Título da capa | Playfair Display Black | 76 px |
-| Títulos de seção | Playfair Display Bold | 22 px |
-| Faixas de grupo | Playfair Display Black | 26 px |
-| Nome do item | Montserrat SemiBold | 11 px |
-| Preço | Montserrat Bold | 11 px |
-| Descrição | Montserrat Regular | 9 px |
-| Rótulos / EN / rodapé | Montserrat Medium (maiúsculas, espaçadas) | 8,5–9 px |
+| Títulos de seção | Playfair Display Bold | 16 px |
+| Nome do item | Montserrat SemiBold | 9,5 px |
+| Preço | Montserrat Bold | 9,5 px |
+| Descrição | Montserrat Regular | 8 px |
+| Rótulos / EN / rodapé | Montserrat Medium (maiúsculas, espaçadas) | 7,5–8 px |
 
 A hierarquia usa **tamanho + peso + cor** (não só tamanho): serifada elegante
 nos títulos, sem serifa limpa no corpo. As fontes são carregadas via Adobe Fonts
@@ -88,28 +86,29 @@ tipos maiores e mais páginas.
 ### 4. Layout e margens
 
 - Página **A4** (794 × 1123 px @ 96 dpi).
-- Margens: **2 cm** superior/inferior, **1,5 cm** laterais.
-- Sistema de **duas colunas** para as listas, com fartos espaços em branco.
+- Tipografia compacta para acomodar **todo o cardápio em 6 páginas**, apenas itens
+  (sem capa e sem faixas de grupo).
+- Sistema de **duas colunas** para as listas.
 - Preços alinhados à direita com **linha de condução pontilhada** (leader).
 
 ### 5. Templates
 
-- **Capa** — título “Pé de Manga / Cardápio”, ilustração de folhas e mangas,
-  slogan e moldura dourada.
 - **Páginas de seção** — cabeçalho serifado com ícone de categoria + régua; itens
   em duas colunas com preço à direita.
 - **Destaques** — coquetéis autorais e Sangrias/Clericot em **cartões
   amarelo-manga** sobre creme.
-- **Faixas de grupo** — “Pratos Principais” e “Bebidas” separam os grandes blocos.
+
+> Há também um modo com **capa ilustrada** e **faixas de grupo** (“Pratos
+> Principais” / “Bebidas”) no histórico do gerador — basta reativar a capa e as
+> faixas em `build/build.mjs` se quiser a versão estendida.
 
 ### 6. Ordem das seções
 
-Capa → Petiscos → Porções → Bruschettas → Saladas → Entradas Frias →
-*(Pratos Principais)* Carnes → Mar → Massas/Veganos → Hambúrguer → Sobremesas →
-Menu Kids → *(Bebidas)* Chopp → Cervejas → Drinks Autorais → Clássicos → Outros
-Coquetéis → Sugestões → Moquetel → Caipirinhas → Whisky → Cachaças → Doses →
-Sangria e Clericot → Vinhos (Tintos / Brancos / Rosé / Taças) → Licores →
-Diversos.
+Petiscos → Porções → Bruschettas → Saladas → Entradas Frias → Pratos
+(Carnes / Mar / Massas/Veganos) → Hambúrguer → Sobremesas → Menu Kids → Chopp →
+Cervejas → Drinks Autorais → Clássicos → Outros Coquetéis → Sugestões → Moquetel →
+Caipirinhas → Whisky → Cachaças → Doses → Sangria e Clericot →
+Vinhos (Tintos / Brancos / Rosé / Taças) → Licores → Diversos.
 
 ### 7. Exportação
 

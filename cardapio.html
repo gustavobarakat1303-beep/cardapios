@@ -18,53 +18,54 @@
     background: #FFFFFF; overflow: hidden;
     box-shadow: 0 6px 28px rgba(0,0,0,.14);
   }
-  .page-body { position: absolute; top: 70px; left: 57px; width: 680px; }
+  .page-body { position: absolute; top: 48px; left: 50px; width: 694px; }
 
   /* ---- rodapé ---- */
   .page-foot {
-    position: absolute; left: 57px; right: 57px; bottom: 26px;
+    position: absolute; left: 50px; right: 50px; bottom: 16px;
     display: flex; justify-content: space-between; align-items: center;
     border-top: 1px solid #FFB74D;
-    padding-top: 8px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #5D4037;
+    padding-top: 5px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: #5D4037;
   }
-  .foot-mark { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+  .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
   .foot-page { font-weight: 600; color: #1B5E20; }
 
   /* ---- cabeçalho de seção ---- */
-  .sec { margin-bottom: 16px; break-inside: avoid; }
-  .sec-head { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+  .sec { margin-bottom: 9px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
   .sec-ic { display: inline-flex; flex: 0 0 auto; }
+  .sec-ic svg { width: 18px; height: 18px; }
   .sec-title {
-    font-family: "playfair-display", Georgia, serif; font-weight: 700; font-size: 22px; line-height: 1;
+    font-family: "playfair-display", Georgia, serif; font-weight: 700; font-size: 16px; line-height: 1;
     color: #1B5E20; letter-spacing: .2px; white-space: nowrap;
   }
   .sec-en {
-    font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 500; font-size: 9px; letter-spacing: .18em;
-    text-transform: uppercase; color: #E69A2E; padding-top: 4px;
+    font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 500; font-size: 7.5px; letter-spacing: .16em;
+    text-transform: uppercase; color: #E69A2E; padding-top: 3px;
   }
   .sec-rule { flex: 1 1 auto; height: 1px; margin-left: 4px;
     background: linear-gradient(90deg, #FFB74D, rgba(93,64,55,.25)); }
-  .sec-head.cont { margin-bottom: 7px; }
-  .sec-title-sm { font-family: "playfair-display", Georgia, serif; font-weight: 700; font-size: 15px; color: #1B5E20; }
-  .sec-title-sm em { font-family: "montserrat", "Segoe UI", sans-serif; font-style: normal; font-weight: 500; font-size: 9px;
+  .sec-head.cont { margin-bottom: 4px; }
+  .sec-title-sm { font-family: "playfair-display", Georgia, serif; font-weight: 700; font-size: 12px; color: #1B5E20; }
+  .sec-title-sm em { font-family: "montserrat", "Segoe UI", sans-serif; font-style: normal; font-weight: 500; font-size: 7.5px;
     letter-spacing: .14em; text-transform: uppercase; color: #6B5E54; }
 
   /* ---- itens em duas colunas ---- */
-  .items { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
-  .item { padding-bottom: 11px; }
+  .items { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; align-items: start; }
+  .item { padding-bottom: 6.5px; }
   .row { display: flex; align-items: baseline; gap: 4px; }
-  .name { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 600; font-size: 11px; color: #2E2A26; line-height: 1.25; }
-  .name .sz { font-weight: 500; font-size: 8.5px; color: #6B5E54; letter-spacing: .04em; }
-  .leader { flex: 1 1 auto; min-width: 8px; align-self: stretch;
-    border-bottom: 1px dotted #5D4037; opacity: .45; transform: translateY(-3px); }
-  .price { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 700; font-size: 11px; color: #1B5E20; white-space: nowrap; }
-  .desc { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 400; font-size: 9px; line-height: 1.4;
-    color: #6B5E54; margin-top: 1px; max-width: 95%; }
+  .name { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 600; font-size: 9.5px; color: #2E2A26; line-height: 1.2; }
+  .name .sz { font-weight: 500; font-size: 7.5px; color: #6B5E54; letter-spacing: .03em; }
+  .leader { flex: 1 1 auto; min-width: 6px; align-self: stretch;
+    border-bottom: 1px dotted #5D4037; opacity: .4; transform: translateY(-3px); }
+  .price { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 700; font-size: 9.5px; color: #1B5E20; white-space: nowrap; }
+  .desc { font-family: "montserrat", "Segoe UI", sans-serif; font-weight: 400; font-size: 8px; line-height: 1.3;
+    color: #6B5E54; margin-top: 0.5px; max-width: 97%; }
 
   /* ---- cartões destacados (amarelo-manga) ---- */
-  .items-hl { column-gap: 16px; row-gap: 4px; }
+  .items-hl { column-gap: 14px; }
   .item.hl { background: #FFF8E1; border: 1px solid #FFB74D;
-    border-radius: 8px; padding: 8px 11px 9px; margin-bottom: 4px; }
+    border-radius: 6px; padding: 5px 9px 6px; margin-bottom: 4px; }
   .item.hl .name { color: #5D4037; }
   .item.hl .price { color: #E69A2E; }
   .item.hl .leader { opacity: .3; }
@@ -113,53 +114,6 @@
 </head>
 <body>
   <div class="doc">
-<div class="page cover" data-canvas-width="794" data-canvas-height="1123">
-    <div class="cover-frame"></div>
-    <svg class="cover-art tl" viewBox="0 0 220 220"><g transform="translate(40 10) rotate(15) scale(1.6)" opacity="0.9">
-      <path d="M0 0c20 6 30 22 30 40 0 6-2 12-6 18-14-4-24-18-24-36C0 14 0 6 0 0z" fill="#2E7D32"/>
-      <path d="M2 4c8 14 14 30 16 50" fill="none" stroke="#FFF8E1" stroke-width="1.4"/>
-    </g><g transform="translate(95 0) rotate(55) scale(1.1)" opacity="0.7">
-      <path d="M0 0c20 6 30 22 30 40 0 6-2 12-6 18-14-4-24-18-24-36C0 14 0 6 0 0z" fill="#2E7D32"/>
-      <path d="M2 4c8 14 14 30 16 50" fill="none" stroke="#FFF8E1" stroke-width="1.4"/>
-    </g><g transform="translate(20 120) rotate(-10) scale(1.3)" opacity="0.95">
-      <path d="M0 22c-2-12 8-22 22-22 10 0 18 6 20 14 2 10-6 20-20 22C8 38 1 32 0 22z" fill="#FFB74D"/>
-      <path d="M30 2c-2 4-2 7 0 10" fill="none" stroke="#5D4037" stroke-width="1.4"/>
-    </g></svg>
-    <svg class="cover-art br" viewBox="0 0 220 220"><g transform="translate(150 150) rotate(200) scale(1.6)" opacity="0.9">
-      <path d="M0 0c20 6 30 22 30 40 0 6-2 12-6 18-14-4-24-18-24-36C0 14 0 6 0 0z" fill="#2E7D32"/>
-      <path d="M2 4c8 14 14 30 16 50" fill="none" stroke="#FFF8E1" stroke-width="1.4"/>
-    </g><g transform="translate(60 180) rotate(250) scale(1.1)" opacity="0.7">
-      <path d="M0 0c20 6 30 22 30 40 0 6-2 12-6 18-14-4-24-18-24-36C0 14 0 6 0 0z" fill="#2E7D32"/>
-      <path d="M2 4c8 14 14 30 16 50" fill="none" stroke="#FFF8E1" stroke-width="1.4"/>
-    </g><g transform="translate(120 40) rotate(170) scale(1.3)" opacity="0.95">
-      <path d="M0 22c-2-12 8-22 22-22 10 0 18 6 20 14 2 10-6 20-20 22C8 38 1 32 0 22z" fill="#FFB74D"/>
-      <path d="M30 2c-2 4-2 7 0 10" fill="none" stroke="#5D4037" stroke-width="1.4"/>
-    </g></svg>
-    <div class="cover-center">
-      <div class="cover-logo">
-        <svg viewBox="0 0 120 120" width="92" height="92" aria-hidden="true">
-          <circle cx="60" cy="60" r="56" fill="none" stroke="#FFB74D" stroke-width="2"/>
-          <path d="M60 24c14 6 22 18 22 33 0 9-4 17-10 24-12-5-20-17-20-32 0-10 3-18 8-25z" fill="#FFB74D"/>
-          <path d="M62 30c-3 18-3 36 0 52" fill="none" stroke="#1B5E20" stroke-width="1.6"/>
-          <path d="M44 72c-8-2-14-8-16-16 9-1 16 2 20 9" fill="#2E7D32"/>
-        </svg>
-      </div>
-      <div class="cover-kicker">Restaurante</div>
-      <h1 class="cover-title">Pé de Manga</h1>
-      <div class="cover-branch"><svg viewBox="0 0 240 24" width="260" height="24" aria-hidden="true" preserveAspectRatio="none">
-    <path d="M0 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <path d="M146 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <g fill="#FFB74D">
-      <path d="M120 2c-7 3-10 7-10 10 0 3 3 6 10 8 7-2 10-5 10-8 0-3-3-7-10-10z" opacity=".95"/>
-      <path d="M120 4c0 5 0 11 0 14" stroke="#FFF8E1" stroke-width="1" fill="none"/>
-    </g>
-    <path d="M104 12c2-3 4-4 6-4-1 2-3 4-6 4zM136 12c-2-3-4-4-6-4 1 2 3 4 6 4z" fill="#FFB74D" opacity=".8"/>
-  </svg></div>
-      <div class="cover-sub">Cardápio</div>
-      <div class="cover-slogan">Cozinha tropical · ambiente que abraça</div>
-    </div>
-    <div class="cover-foot">cozinha • bar • tropical</div>
-  </div>
 <div class="page" data-canvas-width="794" data-canvas-height="1123">
     <div class="page-body"><section class="sec">
       <div class="sec-head">
@@ -331,17 +285,8 @@
         <span class="price">56,00</span>
       </div><div class="desc">Pão italiano, queijo gorgonzola, alho e geleia de amora</div>
     </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">2 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
+    </section>
+<section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#1B5E20"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 11h16a8 8 0 0 1-16 0z"/><path fill="none" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-3 1.5-5 4-6M12 11c0-2-1-3.5-3-4.5M9 11c-1-1.5-1-3 0-4.5"/></svg></span>
       <span class="sec-title">Saladas</span>
@@ -418,32 +363,17 @@
         <span class="price">60,00</span>
       </div><div class="desc">Lâminas finas de salmão fresco com sabor suave, rico em vitamina D e ômega-3, servido cru; basta adicionar tempero</div>
     </div></div>
-    </section>
-<div class="banner">
-      <svg viewBox="0 0 240 24" width="150" height="24" aria-hidden="true" preserveAspectRatio="none">
-    <path d="M0 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <path d="M146 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <g fill="#FFB74D">
-      <path d="M120 2c-7 3-10 7-10 10 0 3 3 6 10 8 7-2 10-5 10-8 0-3-3-7-10-10z" opacity=".95"/>
-      <path d="M120 4c0 5 0 11 0 14" stroke="#FFF8E1" stroke-width="1" fill="none"/>
-    </g>
-    <path d="M104 12c2-3 4-4 6-4-1 2-3 4-6 4zM136 12c-2-3-4-4-6-4 1 2 3 4 6 4z" fill="#FFB74D" opacity=".8"/>
-  </svg>
-      <div class="banner-txt">
-        <span class="banner-label">Pratos Principais</span>
-        <span class="banner-note">do fogo e do mar</span>
-      </div>
-      <svg viewBox="0 0 240 24" width="150" height="24" aria-hidden="true" preserveAspectRatio="none">
-    <path d="M0 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <path d="M146 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <g fill="#FFB74D">
-      <path d="M120 2c-7 3-10 7-10 10 0 3 3 6 10 8 7-2 10-5 10-8 0-3-3-7-10-10z" opacity=".95"/>
-      <path d="M120 4c0 5 0 11 0 14" stroke="#FFF8E1" stroke-width="1" fill="none"/>
-    </g>
-    <path d="M104 12c2-3 4-4 6-4-1 2-3 4-6 4zM136 12c-2-3-4-4-6-4 1 2 3 4 6 4z" fill="#FFB74D" opacity=".8"/>
-  </svg>
+    </section></div>
+    <div class="page-foot">
+      <span class="foot-mark">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
+        Pé de Manga
+      </span>
+      <span class="foot-page">1 / 6</span>
     </div>
-<section class="sec">
+  </div>
+<div class="page" data-canvas-width="794" data-canvas-height="1123">
+    <div class="page-body"><section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#1B5E20"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M14.5 4a5.5 5.5 0 0 1 0 11l-7 5a3 3 0 0 1-3-5l5-7a5.5 5.5 0 0 1 5-4z"/><circle fill="none" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="14" cy="9" r="2"/></svg></span>
       <span class="sec-title">Pratos · Carnes</span>
@@ -507,22 +437,7 @@
         <span class="leader"></span>
         <span class="price">115,00</span>
       </div><div class="desc">No azeite trufado com arroz negro e tomate cereja</div>
-    </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">3 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
-      <div class="sec-head cont">
-        <span class="sec-title-sm">Pratos · Mar <em>continuação</em></span>
-      </div>
-      <div class="items"><div class="item">
+    </div><div class="item">
       <div class="row">
         <span class="name">Filé de Robalo</span>
         <span class="leader"></span>
@@ -688,17 +603,8 @@
         <span class="price">9,00</span>
       </div><div class="desc">Três Corações</div>
     </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">4 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
+    </section>
+<section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#1B5E20"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4L7.5 19l.9-5L4.8 8.3l5-.7z"/></svg></span>
       <span class="sec-title">Menu Kids</span>
@@ -730,32 +636,17 @@
         <span class="price">45,00</span>
       </div><div class="desc">Nuguets de frango c/ espaghetti na manteiga</div>
     </div></div>
-    </section>
-<div class="banner">
-      <svg viewBox="0 0 240 24" width="150" height="24" aria-hidden="true" preserveAspectRatio="none">
-    <path d="M0 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <path d="M146 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <g fill="#FFB74D">
-      <path d="M120 2c-7 3-10 7-10 10 0 3 3 6 10 8 7-2 10-5 10-8 0-3-3-7-10-10z" opacity=".95"/>
-      <path d="M120 4c0 5 0 11 0 14" stroke="#FFF8E1" stroke-width="1" fill="none"/>
-    </g>
-    <path d="M104 12c2-3 4-4 6-4-1 2-3 4-6 4zM136 12c-2-3-4-4-6-4 1 2 3 4 6 4z" fill="#FFB74D" opacity=".8"/>
-  </svg>
-      <div class="banner-txt">
-        <span class="banner-label">Bebidas</span>
-        <span class="banner-note">da torneira à taça</span>
-      </div>
-      <svg viewBox="0 0 240 24" width="150" height="24" aria-hidden="true" preserveAspectRatio="none">
-    <path d="M0 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <path d="M146 12h94" fill="none" stroke="#FFB74D" stroke-width="1"/>
-    <g fill="#FFB74D">
-      <path d="M120 2c-7 3-10 7-10 10 0 3 3 6 10 8 7-2 10-5 10-8 0-3-3-7-10-10z" opacity=".95"/>
-      <path d="M120 4c0 5 0 11 0 14" stroke="#FFF8E1" stroke-width="1" fill="none"/>
-    </g>
-    <path d="M104 12c2-3 4-4 6-4-1 2-3 4-6 4zM136 12c-2-3-4-4-6-4 1 2 3 4 6 4z" fill="#FFB74D" opacity=".8"/>
-  </svg>
+    </section></div>
+    <div class="page-foot">
+      <span class="foot-mark">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
+        Pé de Manga
+      </span>
+      <span class="foot-page">2 / 6</span>
     </div>
-<section class="sec">
+  </div>
+<div class="page" data-canvas-width="794" data-canvas-height="1123">
+    <div class="page-body"><section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#5D4037"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 7h9v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M15 9h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 10v7M11.5 10v7"/></svg></span>
       <span class="sec-title">Chopp</span>
@@ -876,22 +767,7 @@
         <span class="leader"></span>
         <span class="price">52,00</span>
       </div><div class="desc">Vodka, frutas vermelhas, hibisco, limão siciliano</div>
-    </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">5 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
-      <div class="sec-head cont">
-        <span class="sec-title-sm">Carta de Drinks · Autorais <em>continuação</em></span>
-      </div>
-      <div class="items items-hl"><div class="item hl">
+    </div><div class="item hl">
       <div class="row">
         <span class="name">Espresso Manga</span>
         <span class="leader"></span>
@@ -1036,8 +912,17 @@
         <span class="price">45,00</span>
       </div><div class="desc">Fernet Branca e refrigerante cola</div>
     </div></div>
-    </section>
-<section class="sec">
+    </section></div>
+    <div class="page-foot">
+      <span class="foot-mark">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
+        Pé de Manga
+      </span>
+      <span class="foot-page">3 / 6</span>
+    </div>
+  </div>
+<div class="page" data-canvas-width="794" data-canvas-height="1123">
+    <div class="page-body"><section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#5D4037"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 6h14l-7 7z"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 13v6M9 21h6"/><circle fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="15.5" cy="7.5" r="1"/></svg></span>
       <span class="sec-title">Sugestões</span>
@@ -1068,22 +953,7 @@
         <span class="leader"></span>
         <span class="price">50,00</span>
       </div><div class="desc">Bulleit Bourbon, xarope de açúcar, suco de limão siciliano, vinho tinto</div>
-    </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">6 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
-      <div class="sec-head cont">
-        <span class="sec-title-sm">Sugestões <em>continuação</em></span>
-      </div>
-      <div class="items"><div class="item">
+    </div><div class="item">
       <div class="row">
         <span class="name">Red Mojito</span>
         <span class="leader"></span>
@@ -1243,17 +1113,8 @@
         <span class="price">37,00</span>
       </div><div class="desc">8 anos</div>
     </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">7 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
+    </section>
+<section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#5D4037"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M10 3h4M11 3v3l-1 2v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V8l-1-2V3"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M10 12h4"/></svg></span>
       <span class="sec-title">Cachaças</span>
@@ -1311,7 +1172,22 @@
         <span class="leader"></span>
         <span class="price">40,00</span>
       </div><div class="desc">Saquê de aroma delicado, paladar frutado com notas de cítricos, cogumelos e banana, acidez equilibrada e corpo leve</div>
-    </div><div class="item">
+    </div></div>
+    </section></div>
+    <div class="page-foot">
+      <span class="foot-mark">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
+        Pé de Manga
+      </span>
+      <span class="foot-page">4 / 6</span>
+    </div>
+  </div>
+<div class="page" data-canvas-width="794" data-canvas-height="1123">
+    <div class="page-body"><section class="sec">
+      <div class="sec-head cont">
+        <span class="sec-title-sm">Doses <em>continuação</em></span>
+      </div>
+      <div class="items"><div class="item">
       <div class="row">
         <span class="name">Baileys</span>
         <span class="leader"></span>
@@ -1416,22 +1292,7 @@
         <span class="leader"></span>
         <span class="price">120,00</span>
       </div><div class="desc">Refrescante mistura de vinho branco com frutas frescas e especiarias</div>
-    </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">8 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
-      <div class="sec-head cont">
-        <span class="sec-title-sm">Sangria e Clericot <em>continuação</em></span>
-      </div>
-      <div class="items items-hl"><div class="item hl">
+    </div><div class="item hl">
       <div class="row">
         <span class="name">Rosé</span>
         <span class="leader"></span>
@@ -1593,7 +1454,22 @@
         <span class="leader"></span>
         <span class="price">170,00</span>
       </div><div class="desc">Uva: Chardonnay · Região: Mendoza – Argentina</div>
-    </div><div class="item">
+    </div></div>
+    </section></div>
+    <div class="page-foot">
+      <span class="foot-mark">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
+        Pé de Manga
+      </span>
+      <span class="foot-page">5 / 6</span>
+    </div>
+  </div>
+<div class="page" data-canvas-width="794" data-canvas-height="1123">
+    <div class="page-body"><section class="sec">
+      <div class="sec-head cont">
+        <span class="sec-title-sm">Carta de Vinhos · Brancos <em>continuação</em></span>
+      </div>
+      <div class="items"><div class="item">
       <div class="row">
         <span class="name">Miluna Bianco</span>
         <span class="leader"></span>
@@ -1605,22 +1481,7 @@
         <span class="leader"></span>
         <span class="price">160,00</span>
       </div><div class="desc">Uva: Chenin Blanc · Região: Robertson Valley – África do Sul</div>
-    </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">9 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
-      <div class="sec-head cont">
-        <span class="sec-title-sm">Carta de Vinhos · Brancos <em>continuação</em></span>
-      </div>
-      <div class="items"><div class="item">
+    </div><div class="item">
       <div class="row">
         <span class="name">Lagoalva</span>
         <span class="leader"></span>
@@ -1768,17 +1629,8 @@
         <span class="price">40,00</span>
       </div><div class="desc">Licor espanhol com notas de baunilha e caramelo, inspirado na sobremesa creme brûlée</div>
     </div></div>
-    </section></div>
-    <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
-        Pé de Manga
-      </span>
-      <span class="foot-page">10 / 11</span>
-    </div>
-  </div>
-<div class="page" data-canvas-width="794" data-canvas-height="1123">
-    <div class="page-body"><section class="sec">
+    </section>
+<section class="sec">
       <div class="sec-head">
       <span class="sec-ic" style="color:#5D4037"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8 4h8l-1 16a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 9h7"/><path fill="none" stroke="#5D4037" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M11 4v3"/></svg></span>
       <span class="sec-title">Diversos</span>
@@ -1870,7 +1722,7 @@
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="#1B5E20"/></svg>
         Pé de Manga
       </span>
-      <span class="foot-page">11 / 11</span>
+      <span class="foot-page">6 / 6</span>
     </div>
   </div>
   </div>
