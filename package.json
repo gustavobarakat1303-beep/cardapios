@@ -1,0 +1,15 @@
+{
+  "name": "cardapio-pe-de-manga",
+  "version": "1.0.0",
+  "description": "Cardápio do restaurante Pé de Manga — design system tropical e gerador HTML/PDF A4.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "render": "node build/render.mjs",
+    "all": "node build/build.mjs && node build/render.mjs"
+  },
+  "devDependencies": {
+    "@puppeteer/browsers": "^3.0.5",
+    "puppeteer-core": "^25.2.1"
+  }
+}

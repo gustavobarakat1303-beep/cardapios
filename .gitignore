@@ -1,0 +1,7 @@
+# Ferramentas de renderização (baixadas localmente, não versionar)
+chrome/
+node_modules/
+package-lock.json
+
+# Pré-visualizações geradas
+build/preview/
