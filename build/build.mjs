@@ -11,12 +11,16 @@
 // ---------------------------------------------------------------------------
 
 import { flow, meta, BANNERS } from './menu-data.mjs';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
+
+// Logotipo oficial embutido como data URI (HTML autocontido p/ PDF e Express)
+const LOGO_URI = 'data:image/png;base64,' +
+  readFileSync(join(ROOT, 'assets/logo-pedemanga.png')).toString('base64');
 
 // ---- Design tokens --------------------------------------------------------
 const C = {
@@ -40,7 +44,7 @@ const SANS = '"montserrat", "Segoe UI", sans-serif';
 const PAGE_W = 794, PAGE_H = 1123;
 const MARGIN_X = 50;          // ~1,3 cm — um pouco mais de área útil
 const CONTENT_TOP = 48;       // topo
-const FOOTER_RESERVE = 46;    // rodapé + folga de segurança acima dele
+const FOOTER_RESERVE = 54;    // rodapé (com logotipo) + folga acima dele
 const CONTENT_W = PAGE_W - 2 * MARGIN_X;          // 694
 const COLS = 2;               // duas colunas
 const COL_GAP = 20;
@@ -304,10 +308,7 @@ function renderPage(page, n, total) {
   return `<div class="page" data-canvas-width="${PAGE_W}" data-canvas-height="${PAGE_H}">
     <div class="page-body" style="--ipad:${ipad}px">${body}</div>
     <div class="page-foot">
-      <span class="foot-mark">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="${C.verde}"/></svg>
-        ${esc(meta.brand)}
-      </span>
+      <span class="foot-mark"><img class="foot-logo" src="${LOGO_URI}" alt="${esc(meta.brand)}" /></span>
       <span class="foot-insta">${iglyph} @pedemanga</span>
       <span class="foot-page">${n} / ${total}</span>
     </div>
@@ -341,6 +342,7 @@ const CSS = `
     padding-top: 5px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: ${C.marrom};
   }
   .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; flex: 1 1 0; }
+  .foot-logo { height: 24px; width: auto; display: block; }
   .foot-insta { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex: 1 1 0; justify-content: center; }
   .foot-insta svg { transform: translateY(.5px); }
   .foot-page { font-weight: 600; color: ${C.verde}; flex: 1 1 0; text-align: right; }
