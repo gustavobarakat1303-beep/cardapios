@@ -24,6 +24,8 @@ const ICONS = JSON.parse(readFileSync(join(__dirname, 'icons.json'), 'utf8'));
 const DEFAULT_ICON = '<path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/>';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+let CURRENCY = ''; // prefixo de moeda por cardápio (ex.: "R$ ")
+let COLUMNS = 2;   // colunas de itens por cardápio (1 ou 2)
 
 // ---- blocos ----------------------------------------------------------------
 function renderItem(it, featured) {
@@ -31,11 +33,24 @@ function renderItem(it, featured) {
   const inner = `<div class="item-top">
         <span class="item-name">${esc(it.n)}</span>
         <span class="item-dots"></span>
-        <span class="item-price">${esc(it.p)}</span>
+        <span class="item-price">${esc(CURRENCY + it.p)}</span>
       </div>${desc}`;
   return featured
     ? `<div class="featured-item">${inner}</div>`
     : `<div class="item">${inner}</div>`;
+}
+
+// Bloco-cabeçalho opcional (título grande + horário + nota + período).
+function renderIntro(m) {
+  const x = m.meta || {};
+  if (!x.schedule && !x.note && !x.period) return '';
+  const left = [
+    `<div class="intro-title">${esc(x.subtitle || x.brand)}</div>`,
+    x.schedule ? `<div class="intro-sub">${esc(x.schedule)}</div>` : '',
+    x.note ? `<div class="intro-note">${esc(x.note)}</div>` : '',
+  ].join('');
+  const period = x.period ? `<div class="intro-period">${esc(x.period)}</div>` : '<div></div>';
+  return `<div class="intro"><div>${left}</div>${period}</div>\n      `;
 }
 
 function renderSection(sec) {
@@ -58,16 +73,17 @@ function renderSection(sec) {
 
 function renderPage(m, byId, ids, n, total) {
   const scale = m.scales[n - 1] || 1;
+  const intro = n === 1 ? renderIntro(m) : '';
   const blocks = ids.map((id) => renderSection(byId[id])).join('\n      ');
-  return `  <div class="page" data-page="${n}" data-canvas-width="794" data-canvas-height="1123" style="--s:${scale}">
+  return `  <div class="page" data-page="${n}" data-canvas-width="794" data-canvas-height="1123" style="--s:${scale}; --cols:${COLUMNS}">
     <header class="ph">
       <div class="brand" role="img" aria-label="${esc(m.meta.brand)}"></div>
-      <div class="header-range">${esc(m.meta.subtitle || 'Bar & Restaurante')}</div>
+      <div class="header-range">Bar &amp; Restaurante</div>
     </header>
     <main class="pc">
       <div class="watermark"></div>
       <div class="flow">
-      ${blocks}
+      ${intro}${blocks}
       </div>
     </main>
     <footer class="pf">
@@ -129,6 +145,16 @@ const CSS = `
     .footer-social { text-align:center; }
     .footer-page { text-align:right; color:var(--green); }
 
+    .intro { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; align-items:end;
+      gap:8mm; margin:0 0 calc(5mm * var(--s)); padding-bottom:calc(2.6mm * var(--s)); border-bottom:.55pt solid var(--line); }
+    .intro-title { font-family:"Cormorant Garamond", Georgia, serif; font-size:calc(24pt * var(--s)); line-height:.9;
+      font-weight:700; color:var(--green2); }
+    .intro-sub { margin-top:calc(1.6mm * var(--s)); font-size:calc(6.7pt * var(--s)); line-height:1; font-weight:800;
+      letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); }
+    .intro-note { margin-top:calc(1.6mm * var(--s)); font-size:calc(6.5pt * var(--s)); line-height:1.1; font-weight:800; color:#272119; }
+    .intro-period { font-size:calc(5.2pt * var(--s)); line-height:1; font-weight:800; letter-spacing:1.2px;
+      text-transform:uppercase; color:#272119; text-align:right; padding-bottom:1mm; white-space:nowrap; }
+
     .section { break-inside:avoid; min-width:0; }
     .sh { display:flex; align-items:center; gap:calc(2.3mm * var(--s)); margin-bottom:calc(2.0mm * var(--s)); min-width:0; }
     .sh-icon { width:calc(5.8mm * var(--s)); min-width:calc(5.8mm * var(--s)); height:calc(5.8mm * var(--s));
@@ -140,7 +166,7 @@ const CSS = `
       letter-spacing:1.8px; text-transform:uppercase; white-space:nowrap; padding-top:calc(1mm * var(--s)); }
     .sh-line { height:0; flex:1; min-width:10mm; border-top:.55pt solid var(--rule); }
 
-    .g2 { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:calc(8mm * var(--s)); row-gap:0; }
+    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(8mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
     .item { margin:0 0 calc(2.75mm * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(8mm,1fr) auto; align-items:baseline; column-gap:calc(1.4mm * var(--s)); min-width:0; }
@@ -164,6 +190,8 @@ const CSS = `
 // ---- montagem de um cardápio ----------------------------------------------
 function buildMenu(slug) {
   const m = loadMenu(slug);
+  CURRENCY = m.meta.currency || '';
+  COLUMNS = m.meta.columns === 1 ? 1 : 2;
   const byId = Object.fromEntries(m.sections.map((s) => [s.id, s]));
   const resolved = resolvePages(m, byId);
   const total = resolved.length;

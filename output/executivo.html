@@ -47,6 +47,16 @@
     .footer-social { text-align:center; }
     .footer-page { text-align:right; color:var(--green); }
 
+    .intro { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; align-items:end;
+      gap:8mm; margin:0 0 calc(5mm * var(--s)); padding-bottom:calc(2.6mm * var(--s)); border-bottom:.55pt solid var(--line); }
+    .intro-title { font-family:"Cormorant Garamond", Georgia, serif; font-size:calc(24pt * var(--s)); line-height:.9;
+      font-weight:700; color:var(--green2); }
+    .intro-sub { margin-top:calc(1.6mm * var(--s)); font-size:calc(6.7pt * var(--s)); line-height:1; font-weight:800;
+      letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); }
+    .intro-note { margin-top:calc(1.6mm * var(--s)); font-size:calc(6.5pt * var(--s)); line-height:1.1; font-weight:800; color:#272119; }
+    .intro-period { font-size:calc(5.2pt * var(--s)); line-height:1; font-weight:800; letter-spacing:1.2px;
+      text-transform:uppercase; color:#272119; text-align:right; padding-bottom:1mm; white-space:nowrap; }
+
     .section { break-inside:avoid; min-width:0; }
     .sh { display:flex; align-items:center; gap:calc(2.3mm * var(--s)); margin-bottom:calc(2.0mm * var(--s)); min-width:0; }
     .sh-icon { width:calc(5.8mm * var(--s)); min-width:calc(5.8mm * var(--s)); height:calc(5.8mm * var(--s));
@@ -58,7 +68,7 @@
       letter-spacing:1.8px; text-transform:uppercase; white-space:nowrap; padding-top:calc(1mm * var(--s)); }
     .sh-line { height:0; flex:1; min-width:10mm; border-top:.55pt solid var(--rule); }
 
-    .g2 { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:calc(8mm * var(--s)); row-gap:0; }
+    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(8mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
     .item { margin:0 0 calc(2.75mm * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(8mm,1fr) auto; align-items:baseline; column-gap:calc(1.4mm * var(--s)); min-width:0; }
@@ -81,92 +91,103 @@
   </style>
 </head>
 <body>
-  <div class="page" data-page="1" data-canvas-width="794" data-canvas-height="1123" style="--s:1">
+  <div class="page" data-page="1" data-canvas-width="794" data-canvas-height="1123" style="--s:1.18; --cols:1">
     <header class="ph">
       <div class="brand" role="img" aria-label="Pé de Manga"></div>
-      <div class="header-range">Menu Executivo</div>
+      <div class="header-range">Bar &amp; Restaurante</div>
     </header>
     <main class="pc">
       <div class="watermark"></div>
       <div class="flow">
+      <div class="intro"><div><div class="intro-title">Menu Executivo</div><div class="intro-sub">Segunda a sexta das 12h às 15h · exceto feriados</div><div class="intro-note">Sem sobremesa: R$ 59,90 a R$ 75,90 · Sobremesa opcional: R$ 10,00</div></div><div class="intro-period">2ª quinzena de junho 2026</div></div>
       <section class="section standard">
       <div class="sh">
-        <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/></svg></span>
-        <span class="sh-title">Entradas</span>
-        <span class="sh-tag">Starters</span>
+        <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M6 10a6 6 0 0 0 12 0"/><path d="M8 6c1-2 3-2 4 0"/><path d="M12 6c1-2 3-2 4 0"/></svg></span>
+        <span class="sh-title">Saladas</span>
+        <span class="sh-tag">Escolha 1 opção</span>
         <span class="sh-line"></span>
       </div>
       <div class="g2">
         <div class="item"><div class="item-top">
-        <span class="item-name">Salada do Dia</span>
+        <span class="item-name">Salada Caesar</span>
         <span class="item-dots"></span>
-        <span class="item-price">18,00</span>
-      </div><div class="item-desc">Mix de folhas, tomate e molho da casa</div></div>
+        <span class="item-price">R$ 0,00</span>
+      </div><div class="item-desc">Alface americana, crótons, frango, parmesão e molho caesar</div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Sopa do Dia</span>
+        <span class="item-name">Salada Caprese</span>
         <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div><div class="item-desc">Consulte o sabor da semana</div></div>
+        <span class="item-price">R$ 0,00</span>
+      </div><div class="item-desc">Rúcula, tomate, mozarela de búfala, parmesão e pesto de manjericão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carpaccio Salada</span>
+        <span class="item-dots"></span>
+        <span class="item-price">R$ 0,00</span>
+      </div><div class="item-desc">Carpaccio de carne, alface americana, parmesão, molho de alcaparras e torrada</div></div>
       </div>
     </section>
       <section class="section standard">
       <div class="sh">
         <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/></svg></span>
-        <span class="sh-title">Pratos Executivos</span>
-        <span class="sh-tag">Main Course</span>
+        <span class="sh-title">Pratos Quentes</span>
+        <span class="sh-tag">Principais</span>
         <span class="sh-line"></span>
       </div>
       <div class="g2">
         <div class="item"><div class="item-top">
-        <span class="item-name">Executivo de Carne</span>
+        <span class="item-name">Filé Mignon Grelhado</span>
         <span class="item-dots"></span>
-        <span class="item-price">39,00</span>
-      </div><div class="item-desc">Acompanha arroz, feijão, fritas e salada</div></div>
+        <span class="item-price">R$ 75,90</span>
+      </div><div class="item-desc">Com penne ao molho de queijo</div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Executivo de Frango</span>
+        <span class="item-name">Picanha Grelhada</span>
         <span class="item-dots"></span>
-        <span class="item-price">36,00</span>
-      </div><div class="item-desc">Filé grelhado, arroz, legumes e purê</div></div>
+        <span class="item-price">R$ 75,90</span>
+      </div><div class="item-desc">Com risoto de cogumelos</div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Executivo de Peixe</span>
+        <span class="item-name">Salmão Grelhado</span>
         <span class="item-dots"></span>
-        <span class="item-price">42,00</span>
-      </div><div class="item-desc">Filé do dia com arroz e legumes</div></div>
+        <span class="item-price">R$ 75,90</span>
+      </div><div class="item-desc">Ao molho tarê, brandade de siri e arroz</div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Executivo Vegetariano</span>
+        <span class="item-name">Strogonoff</span>
         <span class="item-dots"></span>
-        <span class="item-price">34,00</span>
-      </div><div class="item-desc">Opção sem carne do dia</div></div>
+        <span class="item-price">R$ 59,90</span>
+      </div><div class="item-desc">Com arroz e batata frita</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Polpetone</span>
+        <span class="item-dots"></span>
+        <span class="item-price">R$ 59,90</span>
+      </div><div class="item-desc">Com espaguete ao molho pomodoro</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Saint Peter</span>
+        <span class="item-dots"></span>
+        <span class="item-price">R$ 59,90</span>
+      </div><div class="item-desc">Ao molho pesto, arroz e legumes</div></div>
       </div>
     </section>
       <section class="section standard">
       <div class="sh">
-        <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/></svg></span>
+        <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M12 3 6 12h12z"/><path d="M8 12l2 8h4l2-8"/></svg></span>
         <span class="sh-title">Sobremesas</span>
-        <span class="sh-tag">Desserts</span>
+        <span class="sh-tag">Opcional</span>
         <span class="sh-line"></span>
       </div>
       <div class="g2">
         <div class="item"><div class="item-top">
-        <span class="item-name">Doce do Dia</span>
+        <span class="item-name">Bolo de Coco</span>
         <span class="item-dots"></span>
-        <span class="item-price">12,00</span>
-      </div><div class="item-desc">Sobremesa da casa</div></div>
-      </div>
-    </section>
-      <section class="section standard">
-      <div class="sh">
-        <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/></svg></span>
-        <span class="sh-title">Bebida Inclusa</span>
-        
-        <span class="sh-line"></span>
-      </div>
-      <div class="g2">
+        <span class="item-price">R$ 10,00</span>
+      </div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Suco ou Refrigerante</span>
+        <span class="item-name">Pudim de Chocolate</span>
         <span class="item-dots"></span>
-        <span class="item-price">0,00</span>
-      </div><div class="item-desc">Incluso no executivo (300 ml)</div></div>
+        <span class="item-price">R$ 10,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Frutas da Estação</span>
+        <span class="item-dots"></span>
+        <span class="item-price">R$ 10,00</span>
+      </div><div class="item-desc">Manga</div></div>
       </div>
     </section>
       </div>

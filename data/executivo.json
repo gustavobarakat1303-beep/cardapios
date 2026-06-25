@@ -2,7 +2,11 @@
   "meta": {
     "brand": "Pé de Manga",
     "subtitle": "Menu Executivo",
-    "slogan": "Segunda a sexta, do almoço"
+    "currency": "R$ ",
+    "schedule": "Segunda a sexta das 12h às 15h · exceto feriados",
+    "note": "Sem sobremesa: R$ 59,90 a R$ 75,90 · Sobremesa opcional: R$ 10,00",
+    "period": "2ª quinzena de junho 2026",
+    "columns": 1
   },
   "banners": {},
   "layout": {
@@ -11,85 +15,101 @@
   },
   "sections": [
     {
-      "id": "entradas-exec",
-      "title": "Entradas",
+      "id": "saladas",
+      "title": "Saladas",
       "kind": "food",
       "icon": "salad",
-      "en": "Starters",
+      "en": "Escolha 1 opção",
       "items": [
         {
-          "id": "salada-do-dia",
-          "n": "Salada do Dia",
-          "d": "Mix de folhas, tomate e molho da casa",
-          "p": "18,00"
+          "id": "salada-caesar",
+          "n": "Salada Caesar",
+          "d": "Alface americana, crótons, frango, parmesão e molho caesar",
+          "p": "0,00"
         },
         {
-          "id": "sopa-do-dia",
-          "n": "Sopa do Dia",
-          "d": "Consulte o sabor da semana",
-          "p": "20,00"
+          "id": "salada-caprese",
+          "n": "Salada Caprese",
+          "d": "Rúcula, tomate, mozarela de búfala, parmesão e pesto de manjericão",
+          "p": "0,00"
+        },
+        {
+          "id": "carpaccio-salada",
+          "n": "Carpaccio Salada",
+          "d": "Carpaccio de carne, alface americana, parmesão, molho de alcaparras e torrada",
+          "p": "0,00"
         }
       ]
     },
     {
-      "id": "pratos-exec",
-      "title": "Pratos Executivos",
+      "id": "pratos-quentes",
+      "title": "Pratos Quentes",
       "kind": "food",
       "icon": "meat",
-      "en": "Main Course",
+      "en": "Principais",
       "items": [
         {
-          "id": "exec-carne",
-          "n": "Executivo de Carne",
-          "d": "Acompanha arroz, feijão, fritas e salada",
-          "p": "39,00"
+          "id": "file-mignon-grelhado",
+          "n": "Filé Mignon Grelhado",
+          "d": "Com penne ao molho de queijo",
+          "p": "75,90"
         },
         {
-          "id": "exec-frango",
-          "n": "Executivo de Frango",
-          "d": "Filé grelhado, arroz, legumes e purê",
-          "p": "36,00"
+          "id": "picanha-grelhada",
+          "n": "Picanha Grelhada",
+          "d": "Com risoto de cogumelos",
+          "p": "75,90"
         },
         {
-          "id": "exec-peixe",
-          "n": "Executivo de Peixe",
-          "d": "Filé do dia com arroz e legumes",
-          "p": "42,00"
+          "id": "salmao-grelhado",
+          "n": "Salmão Grelhado",
+          "d": "Ao molho tarê, brandade de siri e arroz",
+          "p": "75,90"
         },
         {
-          "id": "exec-veg",
-          "n": "Executivo Vegetariano",
-          "d": "Opção sem carne do dia",
-          "p": "34,00"
+          "id": "strogonoff",
+          "n": "Strogonoff",
+          "d": "Com arroz e batata frita",
+          "p": "59,90"
+        },
+        {
+          "id": "polpetone",
+          "n": "Polpetone",
+          "d": "Com espaguete ao molho pomodoro",
+          "p": "59,90"
+        },
+        {
+          "id": "saint-peter",
+          "n": "Saint Peter",
+          "d": "Ao molho pesto, arroz e legumes",
+          "p": "59,90"
         }
       ]
     },
     {
-      "id": "sobremesas-exec",
+      "id": "sobremesas",
       "title": "Sobremesas",
       "kind": "food",
       "icon": "dessert",
-      "en": "Desserts",
+      "en": "Opcional",
       "items": [
         {
-          "id": "doce-do-dia",
-          "n": "Doce do Dia",
-          "d": "Sobremesa da casa",
-          "p": "12,00"
-        }
-      ]
-    },
-    {
-      "id": "bebidas-exec",
-      "title": "Bebida Inclusa",
-      "kind": "drink",
-      "icon": "soda",
-      "items": [
+          "id": "bolo-de-coco",
+          "n": "Bolo de Coco",
+          "d": "",
+          "p": "10,00"
+        },
         {
-          "id": "suco-ou-refri",
-          "n": "Suco ou Refrigerante",
-          "d": "Incluso no executivo (300 ml)",
-          "p": "0,00"
+          "id": "pudim-de-chocolate",
+          "n": "Pudim de Chocolate",
+          "d": "",
+          "p": "10,00"
+        },
+        {
+          "id": "frutas-da-estacao",
+          "n": "Frutas da Estação",
+          "d": "Manga",
+          "p": "10,00"
         }
       ]
     }
