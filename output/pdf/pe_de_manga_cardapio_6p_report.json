@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-06-25T04:09:11.859Z",
+  "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\pe_de_manga_cardapio_6p.pdf",
+  "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\pe_de_manga_cardapio_6p.html",
+  "scales": [
+    1.1116,
+    1.0432,
+    1.0498,
+    1.0472,
+    1.1337,
+    1.16
+  ],
+  "metrics": [
+    {
+      "page": 1,
+      "pcHeight": 1043,
+      "contentHeight": 929.61,
+      "paddingTop": 27.73,
+      "paddingBottom": 21.85,
+      "total": 979.18,
+      "fill": 0.9388,
+      "overflow": 0,
+      "flowScroll": 994
+    },
+    {
+      "page": 2,
+      "pcHeight": 1043,
+      "contentHeight": 902.56,
+      "paddingTop": 26.02,
+      "paddingBottom": 20.5,
+      "total": 949.09,
+      "fill": 0.91,
+      "overflow": 0,
+      "flowScroll": 997
+    },
+    {
+      "page": 3,
+      "pcHeight": 1043,
+      "contentHeight": 895.64,
+      "paddingTop": 26.19,
+      "paddingBottom": 20.63,
+      "total": 942.46,
+      "fill": 0.9036,
+      "overflow": 0,
+      "flowScroll": 996
+    },
+    {
+      "page": 4,
+      "pcHeight": 1043,
+      "contentHeight": 938.64,
+      "paddingTop": 26.12,
+      "paddingBottom": 20.58,
+      "total": 985.34,
+      "fill": 0.9447,
+      "overflow": 0,
+      "flowScroll": 996
+    },
+    {
+      "page": 5,
+      "pcHeight": 1043,
+      "contentHeight": 880.75,
+      "paddingTop": 28.28,
+      "paddingBottom": 22.28,
+      "total": 931.31,
+      "fill": 0.8929,
+      "overflow": 0,
+      "flowScroll": 993
+    },
+    {
+      "page": 6,
+      "pcHeight": 1043,
+      "contentHeight": 902.13,
+      "paddingTop": 28.94,
+      "paddingBottom": 22.8,
+      "total": 953.86,
+      "fill": 0.9145,
+      "overflow": 0,
+      "flowScroll": 991
+    }
+  ],
+  "pdfInfo": "Title:           Pé de Manga\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 01:09:00 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 01:09:00 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           6\r\nEncrypted:       no\r\nPage size:       594.96 x 841.92 pts (A4)\r\nPage rot:        0\r\nFile size:       663329 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+}
