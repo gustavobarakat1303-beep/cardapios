@@ -47,7 +47,16 @@ jobs:
           git add MENU_HAPPY_HOUR
           if git diff --cached --quiet; then
             echo "Nada a commitar — Happy Hour já atualizado."
-          else
-            git commit -m "chore: regenera Happy Hour a partir dos dados [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "chore: regenera Happy Hour a partir dos dados [skip ci]"
+          # Outro workflow (build-cardapio) pode empurrar no mesmo ref ao mesmo
+          # tempo; rebaseia e tenta de novo para sobreviver à corrida.
+          for i in 1 2 3 4 5; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "push ok"; exit 0
+            fi
+            echo "push rejeitado — rebase e nova tentativa ($i)"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done
+          echo "falha ao empurrar após várias tentativas"; exit 1
