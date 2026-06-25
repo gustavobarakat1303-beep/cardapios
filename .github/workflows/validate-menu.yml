@@ -1,0 +1,21 @@
+name: Validar cardápio
+
+# CI: garante que data/menu.json continua íntegro a cada alteração.
+on:
+  push:
+    paths: ['data/**', 'build/**']
+  pull_request:
+    paths: ['data/**', 'build/**']
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validar integridade do cardápio
+        run: node build/menu.mjs validar
+      - name: Conferir que o HTML gera sem overflow
+        run: node build/build.mjs

@@ -22,6 +22,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
+import { slug, normalizePrice, canonItem, validate } from './lib/menu-core.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -53,19 +54,8 @@ function parseArgs(argv) {
   return { _, flags };
 }
 
-// ---- preço ----------------------------------------------------------------
-// Aceita "48", "48.0", "48.5", "48,00", "1.234,50" e normaliza p/ "00,00".
-function normalizePrice(raw) {
-  if (raw === true || raw === undefined) die('preço ausente.');
-  let s = String(raw).trim().replace(/\s|R\$/gi, '');
-  if (s.includes(',')) s = s.replace(/\./g, '').replace(',', '.'); // pt-BR -> número
-  const num = Number(s);
-  if (!Number.isFinite(num) || num < 0) die(`preço inválido: "${raw}"`);
-  return num.toFixed(2).replace('.', ',');
-}
-
-const slug = (s) => (String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
-  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40)) || 'item';
+// ---- preço (normalização do núcleo, com erro amigável) --------------------
+const price = (raw) => { try { return normalizePrice(raw); } catch (e) { die(e.message); } };
 
 // ---- carga / gravação -----------------------------------------------------
 function load(flags) {
@@ -74,15 +64,6 @@ function load(flags) {
   try { menu = JSON.parse(readFileSync(path, 'utf8')); }
   catch (e) { die(`não consegui ler ${path}: ${e.message}`); }
   return { path, menu };
-}
-
-// reescreve cada item em ordem canônica de campos -> diffs limpos
-function canonItem(it) {
-  const o = { id: it.id, n: it.n };
-  if (it.sz) o.sz = it.sz;
-  if (it.d) o.d = it.d;
-  o.p = it.p;
-  return o;
 }
 
 function save(path, menu) {
@@ -114,33 +95,6 @@ function findItem(menu, ref) {
       + hits.map((h) => cyan(`${h.section.id}:${h.item.id}`)).join(', '));
   }
   return hits[0];
-}
-
-// ---- validação de integridade ---------------------------------------------
-function validate(menu) {
-  const errs = [];
-  const priceRe = /^\d{1,4},\d{2}$/;
-  const sids = new Set();
-  for (const s of menu.sections || []) {
-    if (sids.has(s.id)) errs.push(`seção duplicada: ${s.id}`);
-    sids.add(s.id);
-    const iids = new Set();
-    for (const it of s.items || []) {
-      if (!it.id) errs.push(`${s.id}: item sem id (${it.n})`);
-      if (iids.has(it.id)) errs.push(`${s.id}: id de item duplicado: ${it.id}`);
-      iids.add(it.id);
-      if (!it.n) errs.push(`${s.id}:${it.id}: nome vazio`);
-      if (!priceRe.test(it.p || '')) errs.push(`${s.id}:${it.id}: preço inválido "${it.p}"`);
-    }
-  }
-  // toda seção de bebida deve aparecer em alguma página de bebidas
-  const pages = (menu.layout?.drinkPages || []).flat();
-  for (const s of menu.sections || []) {
-    if (s.kind === 'drink' && !pages.includes(s.id))
-      errs.push(`seção de bebida "${s.id}" não está em layout.drinkPages (não seria impressa)`);
-  }
-  for (const id of pages) if (!sids.has(id)) errs.push(`drinkPages referencia seção inexistente: ${id}`);
-  return errs;
 }
 
 // ---- reconstrução ---------------------------------------------------------
@@ -209,6 +163,11 @@ ${bold('Itens')}
   ${cyan('remover')} <ref>                  exclui um item
   ${cyan('mover')} <ref> <secaoId> [--pos N]  move o item para outra seção
 
+${bold('Seções')}
+  ${cyan('nova-secao')} --titulo <> --tipo food|drink [--icone] [--en] [--destaque] [--pagina N]
+  ${cyan('renomear-secao')} <secaoId> [--titulo] [--en] [--icone]
+  ${cyan('remover-secao')} <secaoId>        exclui a seção e seus itens
+
 ${bold('Planilha (lote)')}
   ${cyan('exportar-csv')} [arquivo]         exporta itens p/ CSV (padrão data/itens.csv)
   ${cyan('importar-csv')} <arquivo>         aplica preços/nomes/descrições do CSV
@@ -256,7 +215,7 @@ commands.validar = (a, menu) => {
 
 commands.preco = (a, menu, path, flags) => {
   const ref = a._[1];
-  const novo = normalizePrice(a._[2]);
+  const novo = price(a._[2]);
   const { item, section } = findItem(menu, ref);
   const antigo = item.p; item.p = novo;
   save(path, menu);
@@ -269,7 +228,7 @@ commands.editar = (a, menu, path, flags) => {
   const f = a.flags;
   let changed = [];
   if (f.has('nome')) { item.n = String(f.get('nome')); changed.push('nome'); }
-  if (f.has('preco')) { item.p = normalizePrice(f.get('preco')); changed.push('preço'); }
+  if (f.has('preco')) { item.p = price(f.get('preco')); changed.push('preço'); }
   if (f.has('tam')) { const v = String(f.get('tam') === true ? '' : f.get('tam')); if (v) item.sz = v; else delete item.sz; changed.push('tamanho'); }
   if (f.has('desc')) { const v = String(f.get('desc') === true ? '' : f.get('desc')); if (v) item.d = v; else delete item.d; changed.push('descrição'); }
   if (!changed.length) die('nada para editar — use --nome/--preco/--tam/--desc.');
@@ -289,7 +248,7 @@ commands.adicionar = (a, menu, path, flags) => {
   let id = f.has('id') ? slug(f.get('id')) : slug(nome);
   const existing = new Set(sec.items.map((i) => i.id));
   if (existing.has(id)) { let k = 2; while (existing.has(`${id}-${k}`)) k++; id = `${id}-${k}`; }
-  const item = { id, n: nome, p: normalizePrice(f.get('preco')) };
+  const item = { id, n: nome, p: price(f.get('preco')) };
   if (f.has('tam') && f.get('tam') !== true) item.sz = String(f.get('tam'));
   if (f.has('desc') && f.get('desc') !== true) item.d = String(f.get('desc'));
   let pos = sec.items.length;
@@ -358,12 +317,12 @@ commands['importar-csv'] = (a, menu, path, flags) => {
       if (nome) it.n = nome;
       it.sz = tam || undefined; if (!it.sz) delete it.sz;
       it.d = desc || undefined; if (!it.d) delete it.d;
-      if (preco) it.p = normalizePrice(preco);
+      if (preco) it.p = price(preco);
       upd++;
     } else if (!itemId && nome && preco) { // linha nova -> insere
       let id = slug(nome); const ex = new Set(sec.items.map((i) => i.id));
       if (ex.has(id)) { let k = 2; while (ex.has(`${id}-${k}`)) k++; id = `${id}-${k}`; }
-      const ni = { id, n: nome, p: normalizePrice(preco) };
+      const ni = { id, n: nome, p: price(preco) };
       if (tam) ni.sz = tam; if (desc) ni.d = desc;
       sec.items.push(ni); ins++;
     }
@@ -377,6 +336,64 @@ commands.gerar = (a, menu, path, flags) => {
   flags.set('build', true); // força build
   rebuild(flags);
   ok('geração concluída.');
+};
+
+// ---- seções ---------------------------------------------------------------
+const ICONS = ['appetizer','bread','salad','meat','fish','pasta','burger','dessert',
+  'kids','beer','cocktail','mocktail','caipirinha','bottle','wine','soda'];
+
+commands['nova-secao'] = (a, menu, path, flags) => {
+  const f = a.flags;
+  if (!f.has('titulo')) die('--titulo é obrigatório.');
+  const titulo = String(f.get('titulo'));
+  const tipo = String(f.has('tipo') ? f.get('tipo') : 'food');
+  if (!['food', 'drink'].includes(tipo)) die('--tipo deve ser food ou drink.');
+  let id = f.has('id') ? slug(f.get('id')) : slug(titulo);
+  if (getSection(menu, id)) { let k = 2; while (getSection(menu, `${id}-${k}`)) k++; id = `${id}-${k}`; }
+  const icon = f.has('icone') ? String(f.get('icone')) : (tipo === 'drink' ? 'cocktail' : 'appetizer');
+  if (!ICONS.includes(icon)) die(`ícone inválido. Opções: ${ICONS.join(', ')}`);
+  const sec = { id, title: titulo, kind: tipo, icon, items: [] };
+  if (f.has('en') && f.get('en') !== true) sec.en = String(f.get('en'));
+  if (f.has('destaque')) sec.highlight = true;
+  menu.sections.push(sec);
+  if (tipo === 'drink') { // precisa estar numa página de bebidas p/ ser impressa
+    menu.layout = menu.layout || {}; menu.layout.drinkPages = menu.layout.drinkPages || [[]];
+    const pages = menu.layout.drinkPages;
+    let pg = pages.length - 1;
+    if (f.has('pagina')) pg = Math.max(0, Math.min(pages.length - 1, parseInt(f.get('pagina'), 10) - 1));
+    pages[pg].push(id);
+    console.log(dim(`  (adicionada à página de bebidas ${pg + 1})`));
+  }
+  save(path, menu);
+  ok(`seção criada: ${cyan(id)} — ${bold(titulo)} (${tipo})`);
+  rebuild(flags);
+};
+
+commands['renomear-secao'] = (a, menu, path, flags) => {
+  const sec = getSection(menu, a._[1]);
+  if (!sec) die(`seção não encontrada: ${a._[1]}`);
+  const f = a.flags; let changed = [];
+  if (f.has('titulo')) { sec.title = String(f.get('titulo')); changed.push('título'); }
+  if (f.has('en')) { const v = f.get('en') === true ? '' : String(f.get('en')); if (v) sec.en = v; else delete sec.en; changed.push('EN'); }
+  if (f.has('icone')) { const v = String(f.get('icone')); if (!ICONS.includes(v)) die(`ícone inválido. Opções: ${ICONS.join(', ')}`); sec.icon = v; changed.push('ícone'); }
+  if (!changed.length) die('nada para alterar — use --titulo/--en/--icone.');
+  save(path, menu);
+  ok(`seção ${sec.id} atualizada: ${changed.join(', ')}`);
+  rebuild(flags);
+};
+
+commands['remover-secao'] = (a, menu, path, flags) => {
+  const id = a._[1];
+  const i = menu.sections.findIndex((s) => s.id === id);
+  if (i < 0) die(`seção não encontrada: ${id}`);
+  const sec = menu.sections[i];
+  menu.sections.splice(i, 1);
+  if (menu.layout?.drinkPages)
+    menu.layout.drinkPages = menu.layout.drinkPages.map((p) => p.filter((x) => x !== id)).filter((p) => p.length);
+  if (menu.layout?.foodBreaks) menu.layout.foodBreaks = menu.layout.foodBreaks.filter((x) => x !== id);
+  save(path, menu);
+  ok(`seção removida: ${bold(sec.title)} (${sec.items.length} itens)`);
+  rebuild(flags);
 };
 
 // ---- dispatch -------------------------------------------------------------

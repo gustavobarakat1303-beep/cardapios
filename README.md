@@ -69,6 +69,44 @@ paginação **redistribui as páginas automaticamente** após qualquer alteraç�
 
 > Dica: `npm run menu -- <comando>` e `npm run validar` também funcionam.
 
+### Operações de seção
+
+```bash
+node build/menu.mjs nova-secao --titulo "Vinhos do Mês" --tipo drink --icone wine --build
+node build/menu.mjs renomear-secao sobremesas --titulo "Doces da Casa"
+node build/menu.mjs remover-secao kids --build
+```
+
+## Painel web (sem terminal) + PDF automático
+
+Para gerenciar o cardápio **pelo navegador ou celular**, há um painel em
+[`web/`](web/) servido pela **Vercel**, que grava direto no `data/menu.json` do
+GitHub. Ao salvar, uma **GitHub Action regenera o PDF sozinha**.
+
+**Arquitetura:** painel estático (`web/`) → funções serverless (`api/menu.js`,
+`api/save.js`) → commit no GitHub (Contents API) → Action
+[`build-cardapio.yml`](.github/workflows/build-cardapio.yml) reconstrói
+`cardapio.html`+`cardapio.pdf`. A Action [`validate-menu.yml`](.github/workflows/validate-menu.yml)
+valida a integridade a cada push.
+
+**Setup (uma vez, ~15 min):**
+
+1. **Token do GitHub** — crie um *fine-grained PAT* limitado a este repositório,
+   com permissão **Contents: Read and write**.
+2. **Vercel** — *New Project → Import* deste repositório. Em **Environment Variables**, defina:
+   | Variável | Valor |
+   | --- | --- |
+   | `GITHUB_TOKEN` | o PAT do passo 1 |
+   | `GITHUB_REPO` | `gustavobarakat1303-beep/cardapios` |
+   | `GITHUB_BRANCH` | a branch de trabalho (ex.: `claude/bold-dijkstra-6wj1a5` ou `main`) |
+   | `ADMIN_PASSWORD` | uma senha à sua escolha (libera o botão *Salvar*) |
+3. **Deploy.** Acesse o painel em `https://<seu-app>.vercel.app/web/`.
+4. Edite preços/itens/seções e clique **Salvar no GitHub** (pede a senha 1×).
+   Em ~1 min o `cardapio.pdf` aparece atualizado no repositório.
+
+> O token fica **só no servidor** (variável da Vercel), nunca no navegador. O
+> salvamento é protegido por senha e revalidado no servidor antes do commit.
+
 ---
 
 ## Design System — Pé de Manga

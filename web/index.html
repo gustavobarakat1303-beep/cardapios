@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pé de Manga — Painel do Cardápio</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">🌳 Pé de Manga <span>· Painel do Cardápio</span></div>
+    <div class="actions">
+      <span id="status" class="status"></span>
+      <a id="pdf" class="btn ghost" href="../cardapio.pdf" target="_blank" rel="noopener">Ver PDF</a>
+      <button id="reload" class="btn ghost" type="button">Recarregar</button>
+      <button id="save" class="btn primary" type="button" disabled>Salvar no GitHub</button>
+    </div>
+  </header>
+
+  <main id="app" class="wrap">
+    <p class="loading">Carregando cardápio…</p>
+  </main>
+
+  <footer class="foot">
+    Após salvar, o PDF é regenerado automaticamente em ~1&nbsp;min (GitHub Actions).
+    Exclusões e edições ficam registradas no histórico do repositório.
+  </footer>
+
+  <template id="tpl-section">
+    <section class="card" data-si="">
+      <div class="card-head">
+        <input class="sec-title" placeholder="Título da seção" />
+        <span class="kind"></span>
+        <span class="count"></span>
+        <span class="spacer"></span>
+        <button class="btn tiny" data-act="add-item" title="Adicionar item">+ item</button>
+        <button class="btn tiny" data-act="sec-up" title="Subir seção">↑</button>
+        <button class="btn tiny" data-act="sec-down" title="Descer seção">↓</button>
+        <button class="btn tiny danger" data-act="del-sec" title="Excluir seção">✕</button>
+      </div>
+      <div class="items"></div>
+    </section>
+  </template>
+
+  <template id="tpl-item">
+    <div class="item" data-ii="">
+      <div class="line">
+        <input class="i-nome" placeholder="Nome do item" />
+        <input class="i-tam" placeholder="tam/obs" />
+        <input class="i-preco" placeholder="00,00" inputmode="decimal" />
+        <button class="btn tiny" data-act="item-up" title="Subir">↑</button>
+        <button class="btn tiny" data-act="item-down" title="Descer">↓</button>
+        <button class="btn tiny danger" data-act="del-item" title="Excluir">✕</button>
+      </div>
+      <textarea class="i-desc" rows="1" placeholder="Descrição (opcional)"></textarea>
+    </div>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>

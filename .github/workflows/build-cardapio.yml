@@ -1,0 +1,53 @@
+name: Gerar cardápio (HTML + PDF)
+
+# Após qualquer alteração nos dados/gerador (inclusive salvas pelo painel web),
+# regenera cardapio.html e cardapio.pdf e faz commit de volta no repositório.
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'build/**'
+      - 'assets/logo-pedemanga.png'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-cardapio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+
+      - name: Instalar Chrome (para o PDF)
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Gerar HTML
+        run: node build/build.mjs
+
+      - name: Renderizar PDF
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: node build/render.mjs
+
+      - name: Commit dos resultados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cardapio.html cardapio.pdf
+          if git diff --cached --quiet; then
+            echo "Nada a commitar — cardápio já atualizado."
+          else
+            git commit -m "chore: regenera cardápio a partir dos dados [skip ci]"
+            git push
+          fi

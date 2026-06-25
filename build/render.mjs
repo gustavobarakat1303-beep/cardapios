@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const CHROME = join(ROOT, 'chrome/linux-150.0.7871.24/chrome-linux64/chrome');
+const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24/chrome-linux64/chrome');
 const OUT = join(ROOT, 'build/preview');
 mkdirSync(OUT, { recursive: true });
 
