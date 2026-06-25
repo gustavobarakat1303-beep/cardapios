@@ -1,0 +1,57 @@
+{
+  "type": "evento",
+  "meta": {
+    "brand": "Pé de Manga",
+    "title": "Cardápio do Evento",
+    "subtitle": "Almoço & Jantar"
+  },
+  "fixos": {
+    "entradas": [
+      { "n": "Pastel de Queijo" },
+      { "n": "Bruschettas Pomodoro" },
+      { "n": "Canapé de Carpaccio" }
+    ],
+    "sobremesas": [
+      { "n": "Sorvete de Creme e Chocolate", "d": "com caldas" },
+      { "n": "Brigadeiro de Colher" },
+      { "n": "Frutas da Estação" }
+    ]
+  },
+  "saladas": [
+    { "id": "caesar", "n": "Caesar Salad", "d": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
+    { "id": "caprese", "n": "Caprese", "d": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão" }
+  ],
+  "pratos": [
+    { "id": "polvo", "n": "Polvo Grelhado", "d": "Azeite trufado, arroz negro e tomate-cereja" },
+    { "id": "camarao", "n": "Camarão", "d": "Arroz vermelho, molho beurre blanc e caviar" },
+    { "id": "salmao", "n": "Salmão Grelhado", "d": "Risoto de banana-da-terra e molho agridoce" },
+    { "id": "robalo", "n": "Robalo com Crosta de Ervas", "d": "Molho de tangerina, risoto de limão siciliano e farofa crocante" },
+    { "id": "picanha", "n": "Picanha Grelhada", "d": "Farofa da casa, vinagrete, arroz e fritas" },
+    { "id": "medalhao-vinho", "n": "Medalhão de Filet", "d": "Molho de vinho tinto e funghi com purê de mandioquinha" },
+    { "id": "medalhao-gorgonzola", "n": "Medalhão de Filet", "d": "Molho gorgonzola e risoto de rúcula com tomates secos" },
+    { "id": "medalhao-mignon", "n": "Medalhão Mignon", "d": "Risoto de shitake ao molho cumberland" },
+    { "id": "file-poivre", "n": "Filé Mignon ao Poivre", "d": "Arroz e batata wave" },
+    { "id": "penne", "n": "Penne", "d": "Tomate seco, mozarela de búfala e manjericão" },
+    { "id": "nhoque", "n": "Nhoque de Mandioquinha", "d": "Molho de tomates, shimeji e shitake" },
+    { "id": "fusile", "n": "Fusile de Arroz", "d": "Azeite com legumes · vegano" }
+  ],
+  "bebidas": {
+    "naoAlcoolicas": [
+      "Água",
+      "Café",
+      "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+      "Suco natural: laranja, melancia e abacaxi"
+    ],
+    "alcoolicas": [
+      "Chopp Claro Brahma",
+      "Caipirinha: limão, abacaxi e maracujá",
+      "Caipiroska: limão, abacaxi e morango",
+      "Gin Tônica",
+      "Moscow Mule"
+    ]
+  },
+  "selecao": {
+    "salada": "caesar",
+    "pratos": ["polvo", "picanha", "salmao"]
+  }
+}

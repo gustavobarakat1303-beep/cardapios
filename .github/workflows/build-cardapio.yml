@@ -41,6 +41,11 @@ jobs:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: node build/render.mjs
 
+      - name: Gerar menu de evento (Almoço/Jantar)
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: node build/evento.mjs
+
       - name: Commit dos resultados
         run: |
           git config user.name "github-actions[bot]"
