@@ -11,6 +11,7 @@ const saveBtn = $('#save');
 
 let menu = null;     // estado em memória
 let baseSha = null;  // versão carregada (trava de concorrência)
+let currentSlug = 'completo'; // cardápio selecionado
 let dirty = false;
 
 // ---- utilidades -----------------------------------------------------------
@@ -33,10 +34,11 @@ async function load(){
   setStatus('carregando…');
   app.innerHTML='<p class="loading">Carregando cardápio…</p>';
   try{
-    const r=await fetch('/api/menu',{cache:'no-store'});
+    const r=await fetch('/api/menu?menu='+encodeURIComponent(currentSlug),{cache:'no-store'});
     if(!r.ok)throw new Error('HTTP '+r.status);
     const data=await r.json();
     menu=data.menu||data; baseSha=data.sha||null;
+    $('#pdf').href='/output/'+currentSlug+'.pdf';
     dirty=false;saveBtn.disabled=true;setStatus('carregado','ok');
     render();
   }catch(e){
@@ -172,7 +174,7 @@ async function save(){
   setStatus('salvando…');saveBtn.disabled=true;
   try{
     const r=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({password:pwd,menu:prepare(),sha:baseSha})});
+      body:JSON.stringify({password:pwd,menu:prepare(),sha:baseSha,slug:currentSlug})});
     const data=await r.json().catch(()=>({}));
     if(!r.ok){
       if(r.status===401)sessionStorage.removeItem('pdm_pwd');
@@ -193,4 +195,23 @@ saveBtn.addEventListener('click',save);
 $('#reload').addEventListener('click',()=>{if(!dirty||confirm('Descartar alterações não salvas?'))load();});
 window.addEventListener('beforeunload',(e)=>{if(dirty){e.preventDefault();e.returnValue='';}});
 
-load();
+const sel=$('#menu-select');
+sel.addEventListener('change',()=>{
+  if(dirty && !confirm('Trocar de cardápio? Alterações não salvas serão perdidas.')){sel.value=currentSlug;return;}
+  currentSlug=sel.value; load();
+});
+
+async function init(){
+  try{
+    const r=await fetch('/api/menus',{cache:'no-store'});
+    const data=await r.json();
+    const menus=(data.menus||[]).filter(m=>m&&m.slug);
+    if(menus.length){
+      sel.innerHTML=menus.map(m=>`<option value="${m.slug}">${m.name||m.slug}</option>`).join('');
+      currentSlug=menus.some(m=>m.slug===currentSlug)?currentSlug:menus[0].slug;
+      sel.value=currentSlug;
+    }
+  }catch(e){ /* segue com 'completo' */ }
+  load();
+}
+init();

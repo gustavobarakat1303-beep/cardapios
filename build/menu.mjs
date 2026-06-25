@@ -26,7 +26,7 @@ import { slug, normalizePrice, canonItem, validate } from './lib/menu-core.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const DEFAULT_JSON = join(ROOT, 'data', 'menu.json');
+const menuSlug = (flags) => String(flags.get('menu') || 'completo');
 
 // ---- utilidades de cor (saída amigável) -----------------------------------
 const tty = process.stdout.isTTY;
@@ -59,11 +59,12 @@ const price = (raw) => { try { return normalizePrice(raw); } catch (e) { die(e.m
 
 // ---- carga / gravação -----------------------------------------------------
 function load(flags) {
-  const path = flags.get('json') ? resolve(String(flags.get('json'))) : DEFAULT_JSON;
+  const slug = menuSlug(flags);
+  const path = flags.get('json') ? resolve(String(flags.get('json'))) : join(ROOT, 'data', `${slug}.json`);
   let menu;
   try { menu = JSON.parse(readFileSync(path, 'utf8')); }
-  catch (e) { die(`não consegui ler ${path}: ${e.message}`); }
-  return { path, menu };
+  catch (e) { die(`não consegui ler ${path}: ${e.message} (cardápio "${slug}"?)`); }
+  return { path, menu, slug };
 }
 
 function save(path, menu) {
@@ -102,12 +103,13 @@ function rebuild(flags) {
   const wantPdf = flags.has('pdf');
   const wantBuild = wantPdf || flags.has('build') || flags.has('gerar');
   if (!wantBuild) return;
+  const slug = menuSlug(flags);
   try {
-    console.log(dim('→ gerando cardapio.html...'));
-    execFileSync('node', [join(__dirname, 'build.mjs')], { stdio: 'inherit', cwd: ROOT });
+    console.log(dim(`→ gerando output/${slug}.html...`));
+    execFileSync('node', [join(__dirname, 'build.mjs'), slug], { stdio: 'inherit', cwd: ROOT });
     if (wantPdf) {
-      console.log(dim('→ renderizando cardapio.pdf...'));
-      execFileSync('node', [join(__dirname, 'render.mjs')], { stdio: 'inherit', cwd: ROOT });
+      console.log(dim(`→ renderizando output/${slug}.pdf...`));
+      execFileSync('node', [join(__dirname, 'render.mjs'), slug], { stdio: 'inherit', cwd: ROOT });
     }
   } catch { die('falha ao reconstruir (veja o erro acima).'); }
 }
@@ -152,6 +154,7 @@ commands.ajuda = () => {
 ${bold('Uso:')} node build/menu.mjs <comando> [args] [flags]
 
 ${bold('Consulta')}
+  ${cyan('cardapios')}                      lista os cardápios disponíveis
   ${cyan('secoes')}                         lista as seções (id, título, nº de itens)
   ${cyan('listar')} [secaoId]               lista itens com ID e preço
   ${cyan('validar')}                        checa integridade dos dados
@@ -176,11 +179,21 @@ ${bold('Geração')}
   ${cyan('gerar')} [--pdf]                  reconstrói cardapio.html (e .pdf com --pdf)
 
 ${bold('Flags globais')}
+  --menu <slug> escolhe o cardápio (padrão: completo). Ex.: --menu executivo
   --build       reconstrói o HTML após a alteração
   --pdf         reconstrói HTML e renderiza o PDF (implica --build)
-  --json <path> usa outro arquivo de dados (padrão data/menu.json)
+  --json <path> usa outro arquivo de dados diretamente
 
 ${dim('ref = "secaoId:itemId" (ex.: petiscos:bolinho-de-risoto) ou só "itemId" se único.')}`);
+};
+
+commands.cardapios = () => {
+  let reg;
+  try { reg = JSON.parse(readFileSync(join(ROOT, 'data', 'menus.json'), 'utf8')).menus; }
+  catch { die('data/menus.json não encontrado.'); }
+  console.log(bold(`${reg.length} cardápio(s):\n`));
+  for (const m of reg) console.log(`  ${cyan(m.slug.padEnd(14))} ${m.name}`);
+  console.log(dim('\n  use --menu <slug> nos comandos. Ex.: node build/menu.mjs listar --menu executivo'));
 };
 
 commands.secoes = (a, menu) => {

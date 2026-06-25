@@ -1,51 +1,50 @@
-// Renderiza cardapio.html -> PDF (A4) + PNGs de páginas para verificação visual.
+// Renderiza output/<slug>.html -> output/<slug>.pdf (A4) + checagem de overflow.
+//   node build/render.mjs            -> renderiza todos os cardápios do registro
+//   node build/render.mjs executivo  -> renderiza só esse
 import puppeteer from 'puppeteer-core';
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { listMenus } from './menu-data.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
+const OUTDIR = join(ROOT, 'output');
 const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24/chrome-linux64/chrome');
-const OUT = join(ROOT, 'build/preview');
-mkdirSync(OUT, { recursive: true });
+
+const arg = process.argv[2];
+const slugs = (arg ? [arg] : listMenus().map((x) => x.slug))
+  .filter((s) => existsSync(join(OUTDIR, `${s}.html`)));
 
 const browser = await puppeteer.launch({
   executablePath: CHROME,
   headless: 'new',
   args: ['--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'],
 });
-const page = await browser.newPage();
-await page.setViewport({ width: 900, height: 1300, deviceScaleFactor: 2 });
-const url = 'file://' + join(ROOT, 'cardapio.html');
-await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
-try { await page.evaluateHandle('document.fonts.ready'); } catch {}
-await new Promise((r) => setTimeout(r, 1500)); // Google Fonts
 
-// PDF print (A4 real, com fundo)
-await page.emulateMediaType('print');
-await page.pdf({ path: join(ROOT, 'cardapio.pdf'), format: 'A4', printBackground: true });
+let anyBad = false;
+for (const slug of slugs) {
+  const page = await browser.newPage();
+  await page.setViewport({ width: 900, height: 1300, deviceScaleFactor: 2 });
+  await page.goto('file://' + join(OUTDIR, `${slug}.html`), { waitUntil: 'networkidle0', timeout: 60000 });
+  try { await page.evaluateHandle('document.fonts.ready'); } catch {}
+  await new Promise((r) => setTimeout(r, 1500)); // Google Fonts
 
-// checagem de overflow: conteúdo (.flow) não pode exceder a área útil (.pc)
-const info = await page.$$eval('.page', (els) =>
-  els.map((el, i) => {
-    const pc = el.querySelector('.pc');
-    const flow = el.querySelector('.flow');
-    const fill = pc && flow ? flow.getBoundingClientRect().height / pc.clientHeight : 0;
-    const overflow = flow && pc ? flow.scrollHeight > pc.clientHeight + 2 : false;
-    return { i: i + 1, fill: Math.round(fill * 100), overflow };
-  })
-);
+  await page.emulateMediaType('print');
+  await page.pdf({ path: join(OUTDIR, `${slug}.pdf`), format: 'A4', printBackground: true });
 
-// screenshots por página (mídia print p/ bater com o PDF)
-const handles = await page.$$('.page');
-for (let i = 0; i < handles.length; i++) {
-  await handles[i].screenshot({ path: join(OUT, `page-${String(i + 1).padStart(2, '0')}.png`) });
+  const info = await page.$$eval('.page', (els) =>
+    els.map((el) => {
+      const pc = el.querySelector('.pc'); const flow = el.querySelector('.flow');
+      return { fill: pc && flow ? Math.round(flow.getBoundingClientRect().height / pc.clientHeight * 100) : 0,
+        overflow: flow && pc ? flow.scrollHeight > pc.clientHeight + 2 : false };
+    })
+  );
+  const bad = info.filter((p) => p.overflow).length;
+  if (bad) anyBad = true;
+  console.log(`${slug.padEnd(12)} -> output/${slug}.pdf | ${info.length} págs, preenchimento [${info.map((p) => p.fill + '%').join(', ')}]${bad ? `  <<< ${bad} OVERFLOW` : ''}`);
+  await page.close();
 }
 
-writeFileSync(join(OUT, 'report.json'), JSON.stringify(info, null, 2));
-const bad = info.filter((p) => p.overflow);
-console.log(`Páginas: ${info.length}`);
-info.forEach((p) => console.log(`  pág ${String(p.i).padStart(2)} — preenchimento ${p.fill}%${p.overflow ? '  <<< OVERFLOW' : ''}`));
-console.log(bad.length ? `AVISO: ${bad.length} página(s) com overflow.` : 'OK: sem overflow.');
 await browser.close();
+console.log(anyBad ? 'AVISO: há páginas com overflow.' : 'OK: sem overflow.');

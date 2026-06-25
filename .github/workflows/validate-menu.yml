@@ -15,7 +15,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar integridade do cardápio
-        run: node build/menu.mjs validar
-      - name: Conferir que o HTML gera sem overflow
+      - name: Validar integridade de todos os cardápios
+        run: |
+          for slug in $(node -e "console.log(require('./data/menus.json').menus.map(m=>m.slug).join(' '))"); do
+            echo "== $slug =="
+            node build/menu.mjs validar --menu "$slug"
+          done
+      - name: Conferir que todos geram
         run: node build/build.mjs

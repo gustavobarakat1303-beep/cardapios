@@ -1,29 +1,28 @@
 // ---------------------------------------------------------------------------
-// Pé de Manga — gerador do cardápio (design "papel-creme" / faixas escuras)
-// Lê data/menu.json (via menu-data.mjs) e produz um HTML A4 de 6 páginas,
-// autocontido, pronto para impressão em PDF.
+// Pé de Manga — gerador multi-cardápio (design papel-creme / faixas escuras)
 //
-//   node build/build.mjs   -> escreve cardapio.html na raiz
+//   node build/build.mjs            -> gera TODOS os cardápios do registro
+//   node build/build.mjs executivo  -> gera só esse
 //
-// Visual portado do layout aprovado pelo cliente: fundo creme, faixa preta no
-// topo (logo + categoria) e no rodapé (logo + @pedemanga + paginação),
-// tipografia Cormorant Garamond + Jost, ícones por seção e marca d'água.
-// A composição das páginas e a escala (--s) vêm de data/menu.json (layout).
+// Saída: output/<slug>.html (o render.mjs converte para output/<slug>.pdf).
+// Conteúdo vem de data/<slug>.json; composição/escala de build/layouts/<slug>.json
+// (com fallback dinâmico quando não houver layout fixo).
 // ---------------------------------------------------------------------------
 
-import { sections, meta, PAGES, SCALES } from './menu-data.mjs';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { listMenus, loadMenu } from './menu-data.mjs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
+const OUTDIR = join(ROOT, 'output');
 
 const LOGO_URI = 'data:image/png;base64,' +
   readFileSync(join(ROOT, 'assets/logo-pedemanga.png')).toString('base64');
 const ICONS = JSON.parse(readFileSync(join(__dirname, 'icons.json'), 'utf8'));
+const DEFAULT_ICON = '<path d="M7 2v20"/><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M17 2v20"/><path d="M15 2h4v10h-4z"/>';
 
-const byId = Object.fromEntries(sections.map((s) => [s.id, s]));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- blocos ----------------------------------------------------------------
@@ -41,7 +40,7 @@ function renderItem(it, featured) {
 
 function renderSection(sec) {
   const featured = !!sec.highlight;
-  const icon = ICONS[sec.id] || '';
+  const icon = ICONS[sec.id] || DEFAULT_ICON;
   const tag = sec.en ? `<span class="sh-tag">${esc(sec.en)}</span>` : '';
   const items = sec.items.map((it) => renderItem(it, featured)).join('\n        ');
   return `<section class="section ${featured ? 'featured' : 'standard'}">
@@ -57,13 +56,13 @@ function renderSection(sec) {
     </section>`;
 }
 
-function renderPage(ids, n, total) {
-  const scale = SCALES[n - 1] || 1;
+function renderPage(m, byId, ids, n, total) {
+  const scale = m.scales[n - 1] || 1;
   const blocks = ids.map((id) => renderSection(byId[id])).join('\n      ');
   return `  <div class="page" data-page="${n}" data-canvas-width="794" data-canvas-height="1123" style="--s:${scale}">
     <header class="ph">
-      <div class="brand" role="img" aria-label="${esc(meta.brand)}"></div>
-      <div class="header-range">Bar &amp; Restaurante</div>
+      <div class="brand" role="img" aria-label="${esc(m.meta.brand)}"></div>
+      <div class="header-range">${esc(m.meta.subtitle || 'Bar & Restaurante')}</div>
     </header>
     <main class="pc">
       <div class="watermark"></div>
@@ -77,6 +76,19 @@ function renderPage(ids, n, total) {
       <div class="footer-page">${n} / ${total}</div>
     </footer>
   </div>`;
+}
+
+// composição robusta: ignora ids inexistentes, acomoda seções órfãs, nunca vazio
+function resolvePages(m, byId) {
+  let pages = m.pages.map((p) => p.filter((id) => byId[id])).filter((p) => p.length);
+  const used = new Set(pages.flat());
+  const missing = m.sections.filter((s) => !used.has(s.id)).map((s) => s.id);
+  for (let i = 0; i < missing.length; i += 5) pages.push(missing.slice(i, i + 5));
+  if (!pages.length) {
+    const all = m.sections.map((s) => s.id);
+    for (let i = 0; i < all.length; i += 5) pages.push(all.slice(i, i + 5));
+  }
+  return pages;
 }
 
 // ---- CSS -------------------------------------------------------------------
@@ -149,32 +161,20 @@ const CSS = `
       .page { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); }
     }`;
 
-// Resolve a composição de páginas de forma robusta: ignora ids inexistentes,
-// acomoda seções órfãs (ex.: criadas pelo painel) e NUNCA devolve vazio.
-function resolvePages() {
-  let pages = PAGES.map((p) => p.filter((id) => byId[id])).filter((p) => p.length);
-  const used = new Set(pages.flat());
-  const missing = sections.filter((s) => !used.has(s.id)).map((s) => s.id);
-  for (let i = 0; i < missing.length; i += 5) pages.push(missing.slice(i, i + 5));
-  if (!pages.length) {
-    const all = sections.map((s) => s.id);
-    for (let i = 0; i < all.length; i += 5) pages.push(all.slice(i, i + 5));
-  }
-  return pages;
-}
-
-// ---- montagem --------------------------------------------------------------
-function build() {
-  const resolved = resolvePages();
+// ---- montagem de um cardápio ----------------------------------------------
+function buildMenu(slug) {
+  const m = loadMenu(slug);
+  const byId = Object.fromEntries(m.sections.map((s) => [s.id, s]));
+  const resolved = resolvePages(m, byId);
   const total = resolved.length;
-  const body = resolved.map((ids, i) => renderPage(ids, i + 1, total)).join('\n');
+  const body = resolved.map((ids, i) => renderPage(m, byId, ids, i + 1, total)).join('\n');
 
   const html = `<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(meta.brand)}</title>
+  <title>${esc(m.meta.brand)} — ${esc(m.meta.subtitle || '')}</title>
   <meta name="hz:slide-selector" content=".page" />
   <meta name="hz:canvas-width" content="794" />
   <meta name="hz:canvas-height" content="1123" />
@@ -189,11 +189,14 @@ ${body}
 </body>
 </html>`;
 
-  writeFileSync(join(ROOT, 'cardapio.html'), html, 'utf8');
-
-  const counts = resolved.map((p) => p.length);
-  const items = resolved.reduce((a, p) => a + p.reduce((b, id) => b + byId[id].items.length, 0), 0);
-  console.log(`Páginas: ${total} | seções/página: [${counts.join(', ')}] | itens: ${items}`);
+  mkdirSync(OUTDIR, { recursive: true });
+  writeFileSync(join(OUTDIR, `${slug}.html`), html, 'utf8');
+  const items = m.sections.reduce((a, s) => a + s.items.length, 0);
+  console.log(`  ${slug.padEnd(12)} -> output/${slug}.html | ${total} págs, ${m.sections.length} seções, ${items} itens`);
 }
 
-build();
+// ---- CLI -------------------------------------------------------------------
+const arg = process.argv[2];
+const slugs = arg ? [arg] : listMenus().map((x) => x.slug);
+console.log(`Gerando ${slugs.length} cardápio(s):`);
+for (const s of slugs) buildMenu(s);

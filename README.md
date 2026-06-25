@@ -5,30 +5,44 @@ Cardápio completo do restaurante **Pé de Manga**, com um *design system* tropi
 dados do cardápio e exportável para **PDF de alta resolução** e para um
 **documento editável no Adobe Express**.
 
+O sistema é **multi-cardápio**: cada cardápio é um arquivo `data/<slug>.json`,
+listado em [`data/menus.json`](data/menus.json). Ex.: **Menu Completo**
+(`completo`) e **Menu Executivo** (`executivo`). Cada um gera
+`output/<slug>.html` + `output/<slug>.pdf`.
+
 | Arquivo | Descrição |
 | --- | --- |
-| [`cardapio.html`](cardapio.html) | Cardápio final, HTML autocontido (A4, pronto para imprimir). |
-| [`cardapio.pdf`](cardapio.pdf) | PDF de alta resolução gerado a partir do HTML (6 páginas, só itens). |
-| [`data/menu.json`](data/menu.json) | **Fonte única da verdade** — todos os itens, preços, seções e layout. |
-| [`build/menu.mjs`](build/menu.mjs) | **CLI de automação** — preço, edição, exclusão, inserção, CSV em lote. |
-| [`build/menu-data.mjs`](build/menu-data.mjs) | Carregador: lê o `menu.json` e expõe os dados ao gerador. |
-| [`build/build.mjs`](build/build.mjs) | Gerador: design system + motor de paginação A4 determinístico. |
-| [`build/render.mjs`](build/render.mjs) | Renderiza HTML → PDF + screenshots (verificação visual). |
-| [`assets/cardapio-original.pdf`](assets/cardapio-original.pdf) | PDF original recebido (referência de conteúdo). |
+| [`data/menus.json`](data/menus.json) | **Registro** dos cardápios (`slug` + nome). |
+| `data/<slug>.json` | Conteúdo de cada cardápio (itens, preços, seções). |
+| `build/layouts/<slug>.json` | Composição/escala das páginas (lado do gerador; opcional). |
+| `output/<slug>.html` / `.pdf` | Saídas geradas de cada cardápio. |
+| [`build/menu.mjs`](build/menu.mjs) | **CLI** — preço, edição, exclusão, inserção, seções, CSV (`--menu <slug>`). |
+| [`build/build.mjs`](build/build.mjs) | Gerador (design + composição); gera um ou todos os cardápios. |
+| [`build/render.mjs`](build/render.mjs) | Renderiza os HTML → PDF (A4). |
+| [`web/`](web/) · [`api/`](api/) | Painel web (Vercel) com **seletor de cardápio**. |
 
 ## Como gerar
 
 ```bash
-npm run build      # gera cardapio.html a partir dos dados
-npm run render     # gera cardapio.pdf + build/preview/*.png (requer Chrome local)
-npm run all        # faz os dois
+npm run build              # gera TODOS os cardápios -> output/<slug>.html
+npm run render             # gera os PDFs -> output/<slug>.pdf (requer Chrome local)
+node build/build.mjs executivo    # gera só um cardápio
+node build/render.mjs executivo
 ```
 
-> Para gerar **apenas** o HTML não é preciso instalar nada (Node 18+).
-> O `render` usa `puppeteer-core` + um Chrome baixado em `chrome/` (ver `.gitignore`).
-> Para exportar um PDF rapidamente sem o Node, basta abrir `cardapio.html` no
-> navegador e usar **Imprimir → Salvar como PDF** (papel A4, margens “Nenhuma”,
-> “Gráficos de plano de fundo” ligado).
+### Gerenciar / adicionar cardápios
+
+```bash
+node build/menu.mjs cardapios                 # lista os cardápios
+node build/menu.mjs listar --menu executivo   # itens de um cardápio
+node build/menu.mjs preco entradas-exec:salada-do-dia 19,00 --menu executivo --pdf
+```
+
+Para **criar um novo cardápio** (ex.: Happy Hour): adicione `{ "slug":"happy-hour",
+"name":"Menu Evento Happy Hour" }` em `data/menus.json` e crie
+`data/happy-hour.json` com `meta` + `sections` (mesmo formato dos outros). O
+layout é opcional — sem `build/layouts/happy-hour.json`, o gerador distribui as
+páginas automaticamente.
 
 ## Editando o cardápio — automação (CLI)
 

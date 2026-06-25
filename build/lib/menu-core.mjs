@@ -56,13 +56,7 @@ export function validate(menu) {
       if (!PRICE_RE.test(it.p || '')) errs.push(`${s.id}:${it.id}: preço inválido "${it.p}"`);
     }
   }
-  const pages = (menu.layout?.drinkPages || []).flat();
-  for (const s of menu.sections) {
-    if (s.kind === 'drink' && !pages.includes(s.id))
-      errs.push(`seção de bebida "${s.id}" não está em layout.drinkPages (não seria impressa)`);
-  }
-  for (const id of pages) if (!sids.has(id)) errs.push(`drinkPages referencia seção inexistente: ${id}`);
-  for (const id of (menu.layout?.foodBreaks || []))
-    if (!sids.has(id)) errs.push(`foodBreaks referencia seção inexistente: ${id}`);
+  // Observação: a composição das páginas vive em build/layouts/<slug>.json
+  // (com fallback que inclui toda seção), então não validamos drinkPages aqui.
   return errs;
 }

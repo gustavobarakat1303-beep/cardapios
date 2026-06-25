@@ -6,7 +6,11 @@
 //   ADMIN_PASSWORD senha simples para liberar o salvamento (obrigatório)
 
 const API = 'https://api.github.com';
-const FILE = 'data/menu.json';
+const SAFE = /^[a-z0-9-]{1,40}$/;
+const fileFor = (slug) => {
+  if (!SAFE.test(String(slug))) throw new Error('cardápio inválido.');
+  return `data/${slug}.json`;
+};
 
 export function env() {
   const { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, ADMIN_PASSWORD } = process.env;
@@ -23,9 +27,9 @@ function headers(token) {
   };
 }
 
-// Lê o menu.json atual e devolve { json, sha }.
-export async function getMenu({ token, repo, branch }) {
-  const url = `${API}/repos/${repo}/contents/${FILE}?ref=${encodeURIComponent(branch)}`;
+// Lê o arquivo de um cardápio (data/<slug>.json) e devolve { json, sha }.
+export async function getMenu({ token, repo, branch }, slug = 'completo') {
+  const url = `${API}/repos/${repo}/contents/${fileFor(slug)}?ref=${encodeURIComponent(branch)}`;
   const r = await fetch(url, { headers: headers(token) });
   if (!r.ok) throw new Error(`GitHub GET ${r.status}: ${await r.text()}`);
   const data = await r.json();
@@ -33,18 +37,27 @@ export async function getMenu({ token, repo, branch }) {
   return { json: JSON.parse(content), sha: data.sha };
 }
 
-// Grava o menu.json (commit). `baseSha` = sha que o cliente carregou; se for
+// Lê o registro data/menus.json e devolve a lista de cardápios.
+export async function getRegistry({ token, repo, branch }) {
+  const url = `${API}/repos/${repo}/contents/data/menus.json?ref=${encodeURIComponent(branch)}`;
+  const r = await fetch(url, { headers: headers(token) });
+  if (!r.ok) throw new Error(`GitHub GET ${r.status}: ${await r.text()}`);
+  const data = await r.json();
+  return JSON.parse(Buffer.from(data.content, 'base64').toString('utf8')).menus || [];
+}
+
+// Grava o cardápio (commit). `baseSha` = sha que o cliente carregou; se for
 // passado e estiver desatualizado, o GitHub rejeita com 409 (trava de concorrência).
-export async function putMenu({ token, repo, branch }, menu, message, baseSha) {
+export async function putMenu({ token, repo, branch }, slug, menu, message, baseSha) {
   let sha = baseSha;
-  if (!sha) { sha = (await getMenu({ token, repo, branch }).catch(() => ({ sha: undefined }))).sha; }
+  if (!sha) { sha = (await getMenu({ token, repo, branch }, slug).catch(() => ({ sha: undefined }))).sha; }
   const body = {
-    message: message || 'painel: atualiza cardápio',
+    message: message || `painel: atualiza cardápio (${slug})`,
     content: Buffer.from(JSON.stringify(menu, null, 2) + '\n', 'utf8').toString('base64'),
     branch,
     sha,
   };
-  const url = `${API}/repos/${repo}/contents/${FILE}`;
+  const url = `${API}/repos/${repo}/contents/${fileFor(slug)}`;
   const r = await fetch(url, { method: 'PUT', headers: headers(token), body: JSON.stringify(body) });
   if (r.status === 409) { const e = new Error('stale'); e.code = 409; throw e; }
   if (!r.ok) throw new Error(`GitHub PUT ${r.status}: ${await r.text()}`);

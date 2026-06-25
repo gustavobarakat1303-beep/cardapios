@@ -11,6 +11,9 @@ body{margin:0;background:var(--bg);color:var(--texto);
   padding:10px 16px;background:var(--verde);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.15)}
 .brand{font-weight:700;font-size:16px}
 .brand span{font-weight:400;opacity:.85}
+.picker{display:flex;align-items:center;gap:6px;color:#e9e0cf;font-size:12px;font-weight:600}
+.picker select{font:inherit;font-size:13px;padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,.35);
+  background:#fff;color:var(--verde);font-weight:700;cursor:pointer}
 .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
 .status{font-size:12px;opacity:.95;min-width:60px;text-align:right}
 .status.err{color:#ffd2cd} .status.ok{color:#c8f0c8}

@@ -1,0 +1,6 @@
+{
+  "menus": [
+    { "slug": "completo", "name": "Menu Completo" },
+    { "slug": "executivo", "name": "Menu Executivo" }
+  ]
+}

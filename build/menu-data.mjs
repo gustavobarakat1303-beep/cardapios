@@ -1,13 +1,11 @@
 // ---------------------------------------------------------------------------
-// Pé de Manga — carregador dos dados do cardápio
+// Pé de Manga — carregador multi-cardápio
 //
-// A FONTE DE VERDADE é o arquivo data/menu.json (na raiz do projeto).
-// Edite o cardápio pela CLI de automação:
+// Cada cardápio é um arquivo data/<slug>.json (conteúdo) + um opcional
+// build/layouts/<slug>.json (composição/escala das páginas, lado do gerador).
+// O registro data/menus.json lista os cardápios disponíveis.
 //
-//     node build/menu.mjs ajuda
-//
-// Este módulo apenas lê o JSON e expõe as estruturas que o gerador
-// (build/build.mjs) consome. Não edite os itens aqui.
+//   import { listMenus, loadMenu } from './menu-data.mjs'
 // ---------------------------------------------------------------------------
 
 import { readFileSync } from 'node:fs';
@@ -15,21 +13,33 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-export const MENU_PATH = join(__dirname, '..', 'data', 'menu.json');
+const ROOT = join(__dirname, '..');
+const DATA = join(ROOT, 'data');
+const LAYOUTS = join(__dirname, 'layouts');
 
-const menu = JSON.parse(readFileSync(MENU_PATH, 'utf8'));
+export const dataPath = (slug) => join(DATA, `${slug}.json`);
 
-export const meta = menu.meta;
-export const BANNERS = menu.banners || {};
-export const sections = menu.sections;
-export const DRINK_PAGES = menu.layout?.drinkPages || [];
-export const FOOD_BREAKS = menu.layout?.foodBreaks || [];
-// Composição/escala das páginas vivem AQUI (lado do gerador), não no menu.json —
-// assim o painel pode reescrever o conteúdo sem nunca quebrar o layout.
-let _layout = { pages: [], scales: [] };
-try { _layout = JSON.parse(readFileSync(join(__dirname, 'layout.json'), 'utf8')); } catch {}
-export const PAGES = _layout.pages || [];
-export const SCALES = _layout.scales || [];
+export function listMenus() {
+  const reg = JSON.parse(readFileSync(join(DATA, 'menus.json'), 'utf8'));
+  return reg.menus || [];
+}
 
-// Compatibilidade: `flow` é a lista de seções na ordem do arquivo.
-export const flow = sections;
+export function menuName(slug) {
+  return (listMenus().find((m) => m.slug === slug) || {}).name || slug;
+}
+
+export function loadMenu(slug) {
+  const menu = JSON.parse(readFileSync(dataPath(slug), 'utf8'));
+  let layout = { pages: [], scales: [] };
+  try { layout = JSON.parse(readFileSync(join(LAYOUTS, `${slug}.json`), 'utf8')); } catch {}
+  return {
+    slug,
+    meta: menu.meta || { brand: 'Pé de Manga', subtitle: slug },
+    BANNERS: menu.banners || {},
+    sections: menu.sections || [],
+    drinkPages: menu.layout?.drinkPages || [],
+    foodBreaks: menu.layout?.foodBreaks || [],
+    pages: layout.pages || [],
+    scales: layout.scales || [],
+  };
+}
