@@ -11,10 +11,12 @@ try {
 }
 
 const ROOT = path.resolve(__dirname, "..");
-const DATA_PATH = path.join(ROOT, "data", "menu_executivo.json");
+const FINAL_DIR = path.join(ROOT, "MENU_EXECUTIVO");
+const DATA_PATH = path.join(FINAL_DIR, "menu_executivo.json");
 const LOGO_PATH = path.join(ROOT, "assets", "pe-de-manga-logo.png");
-const ROOT_HTML_PATH = path.join(ROOT, "executivo.html");
-const ROOT_PDF_PATH = path.join(ROOT, "executivo.pdf");
+const FINAL_HTML_PATH = path.join(FINAL_DIR, "MENU_EXECUTIVO_PE_DE_MANGA.html");
+const FINAL_PDF_PATH = path.join(FINAL_DIR, "MENU_EXECUTIVO_PE_DE_MANGA.pdf");
+const FINAL_PREVIEW_PATH = path.join(FINAL_DIR, "PREVIA_MENU_EXECUTIVO.png");
 const OUT_DIR = path.join(ROOT, "output", "pdf");
 const EXEC_DIR = path.join(OUT_DIR, "executivo");
 const RENDER_DIR = path.join(EXEC_DIR, "rendered");
@@ -47,7 +49,7 @@ const ICONS = {
 };
 
 function ensureDirs() {
-  for (const dir of [OUT_DIR, EXEC_DIR, RENDER_DIR]) {
+  for (const dir of [FINAL_DIR, OUT_DIR, EXEC_DIR, RENDER_DIR]) {
     fs.mkdirSync(dir, { recursive: true });
   }
 }
@@ -63,7 +65,7 @@ function escapeHtml(value) {
 function loadData() {
   const data = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
   if (!Array.isArray(data.secoes) || data.secoes.length === 0) {
-    throw new Error("data/menu_executivo.json precisa ter ao menos uma secao em 'secoes'.");
+    throw new Error("MENU_EXECUTIVO/menu_executivo.json precisa ter ao menos uma secao em 'secoes'.");
   }
   return data;
 }
@@ -425,7 +427,7 @@ async function main() {
   const data = loadData();
   const html = buildHtml(data);
   fs.writeFileSync(HTML_PATH, html, "utf8");
-  fs.writeFileSync(ROOT_HTML_PATH, html, "utf8");
+  fs.writeFileSync(FINAL_HTML_PATH, html, "utf8");
 
   const launchOptions = { headless: true };
   const chromePath = CHROME_CANDIDATES.find((candidate) => fs.existsSync(candidate));
@@ -454,14 +456,16 @@ async function main() {
     preferCSSPageSize: true,
     margin: { top: "0", bottom: "0", left: "0", right: "0" },
   });
-  fs.copyFileSync(PDF_PATH, ROOT_PDF_PATH);
+  fs.copyFileSync(PDF_PATH, FINAL_PDF_PATH);
 
   await page.$eval(".page", (el) => el.scrollIntoView());
   const pageHandle = await page.$(".page");
+  const previewPath = path.join(RENDER_DIR, "page-1.png");
   await pageHandle.screenshot({
-    path: path.join(RENDER_DIR, "page-1.png"),
+    path: previewPath,
     omitBackground: false,
   });
+  fs.copyFileSync(previewPath, FINAL_PREVIEW_PATH);
   await browser.close();
 
   const poppler = path.join(POPPLER_BIN, "pdfinfo.exe");
@@ -473,8 +477,9 @@ async function main() {
         generatedAt: new Date().toISOString(),
         html: HTML_PATH,
         pdf: PDF_PATH,
-        rootHtml: ROOT_HTML_PATH,
-        rootPdf: ROOT_PDF_PATH,
+        finalHtml: FINAL_HTML_PATH,
+        finalPdf: FINAL_PDF_PATH,
+        finalPreview: FINAL_PREVIEW_PATH,
         metrics,
         pdfInfo,
       },
@@ -486,8 +491,8 @@ async function main() {
 
   console.log(`HTML: ${HTML_PATH}`);
   console.log(`PDF: ${PDF_PATH}`);
-  console.log(`Root PDF: ${ROOT_PDF_PATH}`);
-  console.log(`Screenshot: ${path.join(RENDER_DIR, "page-1.png")}`);
+  console.log(`Menu Executivo: ${FINAL_PDF_PATH}`);
+  console.log(`Preview: ${FINAL_PREVIEW_PATH}`);
   console.log(`OK: sem overflow. Corpo termina em ${metrics.flowBottom}px; rodape em ${metrics.footerTop}px.`);
 }
 

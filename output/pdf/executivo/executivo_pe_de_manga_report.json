@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-06-25T04:49:47.112Z",
+  "generatedAt": "2026-06-25T04:56:13.622Z",
   "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\executivo\\executivo_pe_de_manga.html",
   "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\executivo\\executivo_pe_de_manga.pdf",
-  "rootHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\executivo.html",
-  "rootPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\executivo.pdf",
+  "finalHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_EXECUTIVO\\MENU_EXECUTIVO_PE_DE_MANGA.html",
+  "finalPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_EXECUTIVO\\MENU_EXECUTIVO_PE_DE_MANGA.pdf",
+  "finalPreview": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_EXECUTIVO\\PREVIA_MENU_EXECUTIVO.png",
   "metrics": {
     "pageHeight": 1123,
     "pageScrollHeight": 1123,
@@ -13,5 +14,5 @@
     "footerTop": 1092,
     "overflow": false
   },
-  "pdfInfo": "Title:           Pé de Manga - Menu Executivo\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 01:49:46 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 01:49:46 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           1\r\nEncrypted:       no\r\nPage size:       594.96 x 841.92 pts (A4)\r\nPage rot:        0\r\nFile size:       212163 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+  "pdfInfo": "Title:           Pé de Manga - Menu Executivo\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 01:56:12 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 01:56:12 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           1\r\nEncrypted:       no\r\nPage size:       594.96 x 841.92 pts (A4)\r\nPage rot:        0\r\nFile size:       212163 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
 }
