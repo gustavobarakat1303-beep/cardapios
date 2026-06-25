@@ -9,7 +9,9 @@ dados do cardápio e exportável para **PDF de alta resolução** e para um
 | --- | --- |
 | [`cardapio.html`](cardapio.html) | Cardápio final, HTML autocontido (A4, pronto para imprimir). |
 | [`cardapio.pdf`](cardapio.pdf) | PDF de alta resolução gerado a partir do HTML (6 páginas, só itens). |
-| [`build/menu-data.mjs`](build/menu-data.mjs) | Conteúdo do cardápio (nomes, descrições, preços) — fonte única da verdade. |
+| [`data/menu.json`](data/menu.json) | **Fonte única da verdade** — todos os itens, preços, seções e layout. |
+| [`build/menu.mjs`](build/menu.mjs) | **CLI de automação** — preço, edição, exclusão, inserção, CSV em lote. |
+| [`build/menu-data.mjs`](build/menu-data.mjs) | Carregador: lê o `menu.json` e expõe os dados ao gerador. |
 | [`build/build.mjs`](build/build.mjs) | Gerador: design system + motor de paginação A4 determinístico. |
 | [`build/render.mjs`](build/render.mjs) | Renderiza HTML → PDF + screenshots (verificação visual). |
 | [`assets/cardapio-original.pdf`](assets/cardapio-original.pdf) | PDF original recebido (referência de conteúdo). |
@@ -28,12 +30,44 @@ npm run all        # faz os dois
 > navegador e usar **Imprimir → Salvar como PDF** (papel A4, margens “Nenhuma”,
 > “Gráficos de plano de fundo” ligado).
 
-## Editando o cardápio
+## Editando o cardápio — automação (CLI)
 
-Todo o conteúdo vive em [`build/menu-data.mjs`](build/menu-data.mjs). Para
-alterar um item, basta editar `n` (nome), `d` (descrição), `p` (preço) ou `sz`
-(porção/observação) e rodar `npm run build`. O motor de paginação **redistribui
-as páginas automaticamente** — não é preciso ajustar layout à mão.
+Todo o conteúdo vive em [`data/menu.json`](data/menu.json) e é gerenciado pela
+CLI [`build/menu.mjs`](build/menu.mjs), que **valida** cada alteração e pode
+**reconstruir o HTML/PDF automaticamente**. Não é preciso editar código.
+
+```bash
+node build/menu.mjs ajuda          # lista todos os comandos
+node build/menu.mjs secoes         # ids das seções e nº de itens
+node build/menu.mjs listar saladas # itens de uma seção (com ID e preço)
+node build/menu.mjs validar        # checa integridade dos dados
+```
+
+Cada item tem um **ID estável** (`secaoId:itemId`, ex.: `petiscos:bolinho-de-risoto`).
+Use `--build` para regenerar o `cardapio.html` e `--pdf` para também gerar o PDF.
+
+| Operação | Comando |
+| --- | --- |
+| **Atualizar preço** | `node build/menu.mjs preco petiscos:bolinho-de-risoto 52,00 --build` |
+| **Editar** (nome/desc/tam/preço) | `node build/menu.mjs editar saladas:caprese --desc "Nova descrição" --pdf` |
+| **Inserir** | `node build/menu.mjs adicionar sobremesas --nome "Pudim" --preco 28,00 --build` |
+| **Excluir** | `node build/menu.mjs remover doses:fireball --build` |
+| **Mover** de seção | `node build/menu.mjs mover entradas-frias:burrata saladas --pos 1 --build` |
+
+### Atualização de preços em lote (planilha)
+
+```bash
+node build/menu.mjs exportar-csv               # gera data/itens.csv (delimitador ";")
+# edite preços/nomes/descrições no Excel/Google Sheets, salve, e:
+node build/menu.mjs importar-csv data/itens.csv --build
+```
+
+O CSV casa pelos IDs: atualiza itens existentes e **insere** linhas novas (com
+`item_id` vazio + nome + preço). Exclusões só pelo comando `remover`. O preço
+aceita `48`, `48.5` ou `48,00` e é normalizado para `00,00`. O motor de
+paginação **redistribui as páginas automaticamente** após qualquer alteração.
+
+> Dica: `npm run menu -- <comando>` e `npm run validar` também funcionam.
 
 ---
 
@@ -79,9 +113,9 @@ tipos maiores e mais páginas.
   peixe, taça, garrafa, drink, sobremesa…), em SVG inline.
 - **Divisores** — réguas finas em degradê amarelo→marrom e um **galho estilizado
   com manga/folha** nas faixas de grupo, na cor marrom/amarelo-madeira.
-- **Logotipo** — marca de manga/folha desenhada na capa (topo) e uma marca
-  reduzida no rodapé de cada página. Há área reservada para substituir pelo
-  logotipo oficial do Pé de Manga quando disponível.
+- **Logotipo oficial** ([`assets/logo-pedemanga.png`](assets/logo-pedemanga.png))
+  no rodapé de cada página, embutido como data URI; ao centro do rodapé fica o
+  Instagram **@pedemanga** e, à direita, a paginação.
 
 ### 4. Layout e margens
 

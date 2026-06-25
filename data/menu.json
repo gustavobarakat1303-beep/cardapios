@@ -1,0 +1,1596 @@
+{
+  "meta": {
+    "brand": "Pé de Manga",
+    "subtitle": "Cardápio",
+    "slogan": "Cozinha tropical · ambiente que abraça"
+  },
+  "banners": {
+    "pratos": {
+      "label": "Pratos Principais",
+      "note": "do fogo e do mar"
+    },
+    "bebidas": {
+      "label": "Bebidas",
+      "note": "da torneira à taça"
+    }
+  },
+  "layout": {
+    "foodBreaks": [
+      "pratos-carnes"
+    ],
+    "drinkPages": [
+      [
+        "chopp",
+        "cervejas",
+        "autorais",
+        "classicos",
+        "outros-coqueteis"
+      ],
+      [
+        "sugestoes",
+        "moquetel",
+        "caipirinhas",
+        "doses"
+      ],
+      [
+        "whisky",
+        "cachacas",
+        "licores",
+        "diversos",
+        "sangria"
+      ],
+      [
+        "vinhos-tintos",
+        "vinhos-brancos",
+        "vinhos-rose",
+        "vinhos-tacas"
+      ]
+    ]
+  },
+  "sections": [
+    {
+      "id": "petiscos",
+      "title": "Petiscos",
+      "kind": "food",
+      "icon": "appetizer",
+      "en": "Appetizers",
+      "items": [
+        {
+          "id": "bolinho-de-risoto",
+          "n": "Bolinho de Risoto",
+          "sz": "8 unidades",
+          "d": "Bolinho de arroz arbóreo italiano, gorgonzola e ervas",
+          "p": "48,00"
+        },
+        {
+          "id": "bolinho-de-picanha",
+          "n": "Bolinho de Picanha",
+          "sz": "8 unidades",
+          "d": "Bolinho de picanha acompanha vinagrete (08 unidades)",
+          "p": "55,00"
+        },
+        {
+          "id": "bolinho-de-costelinha",
+          "n": "Bolinho de Costelinha",
+          "sz": "8 unidades",
+          "d": "Bolinho de costelinha de porco (08 unidades)",
+          "p": "55,00"
+        },
+        {
+          "id": "bolinho-de-bacalhau",
+          "n": "Bolinho de Bacalhau",
+          "sz": "8 unidades",
+          "d": "Cod Dumpling",
+          "p": "55,00"
+        },
+        {
+          "id": "pastel-de-carne-seca",
+          "n": "Pastel de Carne Seca",
+          "sz": "10 unidades",
+          "d": "Pastel de carne seca e requeijão",
+          "p": "49,00"
+        },
+        {
+          "id": "dadinho-de-tapioca",
+          "n": "Dadinho de Tapioca",
+          "d": "Dadinho de tapioca com queijo coalho e geleia de pimenta",
+          "p": "55,00"
+        },
+        {
+          "id": "pastel-de-queijo",
+          "n": "Pastel de Queijo",
+          "sz": "10 unidades",
+          "d": "Cheese pastry",
+          "p": "48,00"
+        },
+        {
+          "id": "mini-acaraje",
+          "n": "Mini Acarajé",
+          "sz": "8 unidades",
+          "d": "Crocante por fora e macio por dentro, servido em 8 unidades; ideal para compartilhar e iniciar a experiência com identidade e sabor, transformando uma refeição simples em experiência",
+          "p": "85,00"
+        },
+        {
+          "id": "casquinha-de-siri",
+          "n": "Casquinha de Siri",
+          "sz": "2 unidades",
+          "d": "Shredded crab with gratin cheese",
+          "p": "65,00"
+        },
+        {
+          "id": "croquete-de-mandioca",
+          "n": "Croquete de Mandioca",
+          "sz": "8 unidades",
+          "d": "Croquete de mandioca c/ carne seca e requeijão",
+          "p": "55,00"
+        },
+        {
+          "id": "coxinha-de-bobo-de-camarao",
+          "n": "Coxinha de Bobó de Camarão",
+          "sz": "8 unidades",
+          "d": "Brazilian fried shrimp balls",
+          "p": "55,00"
+        },
+        {
+          "id": "coxinha-de-mix-de-cogumelos",
+          "n": "Coxinha de Mix de Cogumelos",
+          "sz": "vegana · 8 unidades",
+          "d": "Massa vegana com recheio de cogumelos",
+          "p": "52,00"
+        },
+        {
+          "id": "bolinho-de-feijoada",
+          "n": "Bolinho de Feijoada",
+          "sz": "8 unidades",
+          "d": "Bolinho de feijoada com molho de pimenta",
+          "p": "52,00"
+        }
+      ]
+    },
+    {
+      "id": "porcoes",
+      "title": "Porções",
+      "kind": "food",
+      "icon": "appetizer",
+      "en": "Portions",
+      "items": [
+        {
+          "id": "file-aperitivo-madeira",
+          "n": "Filé Aperitivo Madeira",
+          "d": "Filé aperitivo c/ molho madeira com cebola",
+          "p": "85,00"
+        },
+        {
+          "id": "file-aperitivo-queijo",
+          "n": "Filé Aperitivo Queijo",
+          "d": "Diced steak with cheese sauce",
+          "p": "85,00"
+        },
+        {
+          "id": "lulinha-flambada",
+          "n": "Lulinha Flambada",
+          "d": "Lulinha flambada ao azeite de ervas e conhaque, servido com aioli de limão siciliano",
+          "p": "89,00"
+        },
+        {
+          "id": "file-a-milanesa",
+          "n": "Filé à Milanesa",
+          "d": "Filé à milanesa com creme de gorgonzola e farofa de nozes",
+          "p": "85,00"
+        },
+        {
+          "id": "fritas",
+          "n": "Fritas",
+          "d": "Fritas c/ alho confit, alecrim e maionese da casa",
+          "p": "48,00"
+        },
+        {
+          "id": "polvo-a-provencal",
+          "n": "Polvo à Provençal",
+          "d": "Octopus to Provençal",
+          "p": "92,00"
+        },
+        {
+          "id": "carne-seca-acebolada",
+          "n": "Carne Seca Acebolada",
+          "d": "Carne seca acebolada na manteiga de garrafa, com mandioca frita",
+          "p": "85,00"
+        }
+      ]
+    },
+    {
+      "id": "bruschettas",
+      "title": "Bruschettas",
+      "kind": "food",
+      "icon": "bread",
+      "items": [
+        {
+          "id": "pomodoro",
+          "n": "Pomodoro",
+          "sz": "6 unidades",
+          "d": "Pão italiano, alho, parmesão, pedaços de tomate fresco, azeite e manjericão",
+          "p": "53,00"
+        },
+        {
+          "id": "brie-rucula-e-geleia",
+          "n": "Brie, Rúcula e Geleia",
+          "sz": "6 unidades",
+          "d": "Pão italiano, queijo brie, rúcula e geleia de damasco",
+          "p": "57,00"
+        },
+        {
+          "id": "shimeji-e-shitake",
+          "n": "Shimeji e Shitake",
+          "sz": "6 unidades",
+          "d": "Pão italiano, alho, parmesão c/ azeite, shimeji e shitake",
+          "p": "57,00"
+        },
+        {
+          "id": "gorgonzola-e-geleia",
+          "n": "Gorgonzola e Geleia",
+          "sz": "6 unidades",
+          "d": "Pão italiano, queijo gorgonzola, alho e geleia de amora",
+          "p": "56,00"
+        }
+      ]
+    },
+    {
+      "id": "saladas",
+      "title": "Saladas",
+      "kind": "food",
+      "icon": "salad",
+      "en": "Salads",
+      "items": [
+        {
+          "id": "caprese",
+          "n": "Caprese",
+          "d": "Mussarela de búfala, tomate fresco, rúcula e pesto de manjericão",
+          "p": "49,00"
+        },
+        {
+          "id": "salada-da-casa",
+          "n": "Salada da Casa",
+          "d": "Mix de folhas com tomate seco, palmito, mussarela de búfala, peito de peru e molho de manga",
+          "p": "49,00"
+        },
+        {
+          "id": "carpaccio-salada",
+          "n": "Carpaccio Salada",
+          "d": "Carpaccio de carne, alface americana, molho mostarda, alcaparras e parmesão",
+          "p": "66,00"
+        },
+        {
+          "id": "caesar-salad",
+          "n": "Caesar Salad",
+          "d": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos",
+          "p": "49,00"
+        },
+        {
+          "id": "salada-maya",
+          "n": "Salada Maya",
+          "d": "Mix de folhas, tomate cereja, mussarela de búfala, pimentão assado, guacamole, sour cream e frango",
+          "p": "49,00"
+        },
+        {
+          "id": "tartare-de-salmao-com-mix-de-folhas",
+          "n": "Tartare de Salmão com Mix de Folhas",
+          "d": "Tartar de salmão com guacamole e mix de folhas",
+          "p": "66,00"
+        },
+        {
+          "id": "carpaccio-de-polvo",
+          "n": "Carpaccio de Polvo",
+          "d": "Carpaccio de polvo com azeite de ervas, azeite trufado, brotos coloridos e flor de sal",
+          "p": "68,00"
+        }
+      ]
+    },
+    {
+      "id": "entradas-frias",
+      "title": "Entradas Frias",
+      "kind": "food",
+      "icon": "salad",
+      "en": "Cold Starters",
+      "items": [
+        {
+          "id": "burrata",
+          "n": "Burrata",
+          "d": "Fresh cream cheese with pesto and cherry tomatoes, com torradas",
+          "p": "59,00"
+        },
+        {
+          "id": "canapes-de-carpaccio",
+          "n": "Canapés de Carpaccio",
+          "d": "Mini toast com carpaccio de carne, molho de mostarda, alcaparras e parmesão",
+          "p": "72,00"
+        },
+        {
+          "id": "carpaccio-de-salmao",
+          "n": "Carpaccio de Salmão",
+          "d": "Lâminas finas de salmão fresco com sabor suave, rico em vitamina D e ômega-3, servido cru; basta adicionar tempero",
+          "p": "60,00"
+        }
+      ]
+    },
+    {
+      "id": "pratos-carnes",
+      "title": "Pratos · Carnes",
+      "kind": "food",
+      "icon": "meat",
+      "en": "Main Course · Meat",
+      "items": [
+        {
+          "id": "medalhao-de-file-mignon",
+          "n": "Medalhão de Filé Mignon",
+          "d": "Ao molho cumberland e risoto de shitake",
+          "p": "94,00"
+        },
+        {
+          "id": "file-mignon",
+          "n": "Filé Mignon",
+          "d": "Ao molho poivre com arroz e batata wave",
+          "p": "90,00"
+        },
+        {
+          "id": "picanha-grelhada",
+          "n": "Picanha Grelhada",
+          "d": "Farofa da casa, molho chimichurri, arroz e batata frita",
+          "p": "93,00"
+        },
+        {
+          "id": "file-de-cordeiro",
+          "n": "Filé de Cordeiro",
+          "d": "Com couscuz marroquino com frutas secas ao molho de hortelã",
+          "p": "98,00"
+        },
+        {
+          "id": "medalhao-de-file-mignon-2",
+          "n": "Medalhão de Filé Mignon",
+          "d": "Ao molho vinho tinto e funghi com purê de mandioquinha",
+          "p": "94,00"
+        },
+        {
+          "id": "medalhao-de-file-mignon-3",
+          "n": "Medalhão de Filé Mignon",
+          "d": "Ao molho gorgonzola e risoto de rúcula com tomate seco",
+          "p": "94,00"
+        }
+      ]
+    },
+    {
+      "id": "pratos-mar",
+      "title": "Pratos · Mar",
+      "kind": "food",
+      "icon": "fish",
+      "en": "Main Course · Seafood",
+      "items": [
+        {
+          "id": "salmao-grelhado",
+          "n": "Salmão Grelhado",
+          "d": "Com risoto de banana da terra ao molho agridoce",
+          "p": "98,00"
+        },
+        {
+          "id": "polvo-grelhado",
+          "n": "Polvo Grelhado",
+          "d": "No azeite trufado com arroz negro e tomate cereja",
+          "p": "115,00"
+        },
+        {
+          "id": "file-de-robalo",
+          "n": "Filé de Robalo",
+          "d": "Com crosta de ervas ao molho de tangerina, risoto de limão siciliano e farofa crocante",
+          "p": "98,00"
+        },
+        {
+          "id": "salmao-com-crosta-de-castanha-do-para",
+          "n": "Salmão com Crosta de Castanha do Pará",
+          "d": "Ao molho brisque de camarão, batata noizete e mini legumes",
+          "p": "96,00"
+        },
+        {
+          "id": "camarao-com-arroz-vermelho",
+          "n": "Camarão com Arroz Vermelho",
+          "d": "Camarão servido com arroz vermelho ao molho beurre blanc e caviar",
+          "p": "130,00"
+        }
+      ]
+    },
+    {
+      "id": "massas",
+      "title": "Massas, Veganos e Vegetarianos",
+      "kind": "food",
+      "icon": "pasta",
+      "items": [
+        {
+          "id": "penne",
+          "n": "Penne",
+          "d": "C/ tomate seco, mussarela de búfala e manjericão",
+          "p": "76,00"
+        },
+        {
+          "id": "nhoque-de-mandioquinha",
+          "n": "Nhoque de Mandioquinha",
+          "d": "Com ragu de costela",
+          "p": "94,00"
+        },
+        {
+          "id": "opcao-vegetariana",
+          "n": "Opção Vegetariana",
+          "d": "Nhoque de mandioquinha com cogumelos no molho vermelho",
+          "p": "72,00"
+        },
+        {
+          "id": "opcao-vegana",
+          "n": "Opção Vegana",
+          "d": "Fusilli com legumes no azeite (cenoura, abobrinha, berinjela e aspargos)",
+          "p": "72,00"
+        }
+      ]
+    },
+    {
+      "id": "hamburguer",
+      "title": "Hambúrguer",
+      "kind": "food",
+      "icon": "burger",
+      "items": [
+        {
+          "id": "hamburguer-de-picanha",
+          "n": "Hambúrguer de Picanha",
+          "d": "Alface, tomate, queijo mussarela, bacon e fritas. Picanha steak hamburger, lettuce, tomato, mozzarella cheese and bacon",
+          "p": "57,00"
+        },
+        {
+          "id": "hamburguer-de-picanha-2",
+          "n": "Hambúrguer de Picanha",
+          "d": "Queijo cheddar inglês, costelinha, maionese de repolho e fritas. Picanha steak hamburger with English cheddar cheese",
+          "p": "56,00"
+        },
+        {
+          "id": "hamburguer-de-picanha-3",
+          "n": "Hambúrguer de Picanha",
+          "d": "Queijo gruyere, cogumelo puxado nas ervas, no pão de brioche e fritas. Picanha steak hamburger with gruyere cheese, herb-pulled mushroom served on brioche bread",
+          "p": "56,00"
+        },
+        {
+          "id": "hamburguer-vegano",
+          "n": "Hambúrguer Vegano",
+          "d": "Mix de legumes, cogumelos, proteína de soja natural, tomate e salada mista, com molho de pesto vegano de manjericão. Obs: não acompanha pão e fritas",
+          "p": "55,00"
+        },
+        {
+          "id": "sanduiche-de-polvo",
+          "n": "Sanduíche de Polvo",
+          "d": "Pão ciabata, polvo, chips de cebola, acompanha onion rings e chutney de manga",
+          "p": "65,00"
+        }
+      ]
+    },
+    {
+      "id": "sobremesas",
+      "title": "Sobremesas",
+      "kind": "food",
+      "icon": "dessert",
+      "en": "Desserts",
+      "items": [
+        {
+          "id": "cheesecake-com-calda-de-nutella",
+          "n": "Cheesecake com Calda de Nutella",
+          "p": "42,00"
+        },
+        {
+          "id": "crepe-de-brigadeiro",
+          "n": "Crepe de Brigadeiro",
+          "d": "Com sorvete de creme e farofa crocante",
+          "p": "45,00"
+        },
+        {
+          "id": "churros",
+          "n": "Churros",
+          "d": "C/ doce de leite, sorvete de creme e farofa crocante",
+          "p": "49,00"
+        },
+        {
+          "id": "torta-de-maca",
+          "n": "Torta de Maçã",
+          "d": "Com sorvete de creme e calda de caramelo",
+          "p": "46,00"
+        },
+        {
+          "id": "frutas-da-estacao",
+          "n": "Frutas da Estação",
+          "d": "Seasonal fruits",
+          "p": "30,00"
+        },
+        {
+          "id": "brigadeiro-de-colher",
+          "n": "Brigadeiro de Colher",
+          "d": "Chocolate in the spoon",
+          "p": "25,00"
+        },
+        {
+          "id": "petit-gateau",
+          "n": "Petit Gateau",
+          "d": "Com sorvete de creme",
+          "p": "49,00"
+        },
+        {
+          "id": "chocolamour",
+          "n": "Chocolamour",
+          "d": "Sorvete de creme, chocolate, farofa crocante, chantilly com calda de chocolate",
+          "p": "48,00"
+        },
+        {
+          "id": "sorvete-em-taca",
+          "n": "Sorvete em Taça",
+          "d": "Ice cream in a glass",
+          "p": "40,00"
+        },
+        {
+          "id": "sandwich-cookies",
+          "n": "Sandwich Cookies",
+          "d": "Bolacha de cookies com três sabores de sorvete com calda de chocolate",
+          "p": "49,00"
+        },
+        {
+          "id": "cafe-expresso",
+          "n": "Café Expresso",
+          "d": "Três Corações",
+          "p": "9,00"
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "title": "Menu Kids",
+      "kind": "food",
+      "icon": "kids",
+      "en": "Até 9 anos",
+      "items": [
+        {
+          "id": "hamburguinho-com-arroz-e-fritas",
+          "n": "Hamburguinho com Arroz e Fritas",
+          "d": "Hamburguinho com arroz e batata frita",
+          "p": "45,00"
+        },
+        {
+          "id": "nuguets-de-frango-com-arroz-e-fritas",
+          "n": "Nuguets de Frango com Arroz e Fritas",
+          "d": "Nuguets de frango com arroz e batata frita",
+          "p": "45,00"
+        },
+        {
+          "id": "hamburguinho-c-espaghetti",
+          "n": "Hamburguinho c/ Espaghetti",
+          "d": "Hamburguinho com espaghetti na manteiga",
+          "p": "45,00"
+        },
+        {
+          "id": "nuguets-de-frango-c-espaghetti",
+          "n": "Nuguets de Frango c/ Espaghetti",
+          "d": "Nuguets de frango c/ espaghetti na manteiga",
+          "p": "45,00"
+        }
+      ]
+    },
+    {
+      "id": "chopp",
+      "title": "Chopp",
+      "kind": "drink",
+      "icon": "beer",
+      "en": "Draft Beer",
+      "items": [
+        {
+          "id": "chopp-claro-brahma",
+          "n": "Chopp Claro Brahma",
+          "sz": "300 ml",
+          "p": "15,00"
+        },
+        {
+          "id": "garotinho-brahma",
+          "n": "Garotinho Brahma",
+          "p": "12,00"
+        },
+        {
+          "id": "chopp-brahma-black",
+          "n": "Chopp Brahma Black",
+          "p": "19,00"
+        },
+        {
+          "id": "chopp-patagonia-ipa",
+          "n": "Chopp Patagônia Ipa",
+          "p": "25,00"
+        }
+      ]
+    },
+    {
+      "id": "cervejas",
+      "title": "Cervejas",
+      "kind": "drink",
+      "icon": "beer",
+      "en": "Beer",
+      "items": [
+        {
+          "id": "stella-artois",
+          "n": "Stella Artois",
+          "sz": "330 ml",
+          "d": "Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
+          "p": "20,00"
+        },
+        {
+          "id": "stella-artois-2",
+          "n": "Stella Artois",
+          "sz": "600 ml",
+          "d": "Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
+          "p": "26,00"
+        },
+        {
+          "id": "corona-extra",
+          "n": "Corona Extra",
+          "sz": "355 ml",
+          "d": "É cerveja lager suave, refrescante e com leves toques cítricos",
+          "p": "25,00"
+        },
+        {
+          "id": "corona-zero",
+          "n": "Corona Zero",
+          "d": "American lager sem álcool com vitamina D, leve e refrescante, com apenas 48 calorias",
+          "p": "22,00"
+        },
+        {
+          "id": "becks",
+          "n": "Becks",
+          "sz": "600 ml",
+          "d": "É uma legítima German Lager Puro Malte que segue à risca a Lei da Pureza da Cerveja desde 1873",
+          "p": "27,00"
+        },
+        {
+          "id": "goose-island-midway",
+          "n": "Goose Island Midway",
+          "sz": "355 ml",
+          "d": "Com 4,1% de teor alcoólico, 30 IBU e aroma de frutas tropicais; uma Session IPA leve com lúpulo americano e malte caramelizado",
+          "p": "25,00"
+        },
+        {
+          "id": "colorado-ribeirao",
+          "n": "Colorado Ribeirão",
+          "sz": "600 ml",
+          "d": "É uma lager leve e refrescante, mas com a cara de Colorado, cerveja clara com laranja, com IBU 20 e 4,5% de teor alcoólico",
+          "p": "30,00"
+        },
+        {
+          "id": "colorado-appia",
+          "n": "Colorado Appia",
+          "sz": "600 ml",
+          "d": "Cerveja de trigo, turva e adocicada, com espuma abundante e cremosa. Possui adição de mel de laranjeira",
+          "p": "30,00"
+        }
+      ]
+    },
+    {
+      "id": "autorais",
+      "title": "Carta de Drinks · Autorais",
+      "kind": "drink",
+      "icon": "cocktail",
+      "highlight": true,
+      "items": [
+        {
+          "id": "lychee-sunset",
+          "n": "Lychee Sunset",
+          "d": "Vodka, lichia, cranberry e limão tahiti",
+          "p": "52,00"
+        },
+        {
+          "id": "tropical-spritz",
+          "n": "Tropical Spritz",
+          "d": "Aperol, espumante brut, manga, maracujá, cordial de grapefruit",
+          "p": "52,00"
+        },
+        {
+          "id": "pink-velvet",
+          "n": "Pink Velvet",
+          "d": "Vodka, frutas vermelhas, hibisco, limão siciliano",
+          "p": "52,00"
+        },
+        {
+          "id": "espresso-manga",
+          "n": "Espresso Manga",
+          "d": "Vodka, café espresso, licor de café, xarope de cacau, espuma de baunilha",
+          "p": "52,00"
+        },
+        {
+          "id": "botanic-tonic",
+          "n": "Botanic Tonic",
+          "d": "Gin, cordial de grapefruit, água tônica premium, óleo cítrico",
+          "p": "55,00"
+        },
+        {
+          "id": "mango-sunset",
+          "n": "Mango Sunset",
+          "d": "Vodka, manga fresca, maracujá, limão tahiti, espuma leve de coco",
+          "p": "55,00"
+        },
+        {
+          "id": "spyce-tamarindo",
+          "n": "Spyce Tamarindo",
+          "d": "Drink com tamarindo, notas cítricas e especiarias",
+          "p": "56,00"
+        },
+        {
+          "id": "coco-cloud",
+          "n": "Coco Cloud",
+          "d": "Vodka, água de coco, xarope de cumaru, suco de limão",
+          "p": "56,00"
+        }
+      ]
+    },
+    {
+      "id": "classicos",
+      "title": "Clássicos",
+      "kind": "drink",
+      "icon": "cocktail",
+      "items": [
+        {
+          "id": "old-fashioned",
+          "n": "Old Fashioned",
+          "d": "Bulleit Bourbon, angostura e club soda",
+          "p": "45,00"
+        },
+        {
+          "id": "mojito",
+          "n": "Mojito",
+          "d": "Rum, hortelã, água gaseosa, limão e açúcar",
+          "p": "45,00"
+        },
+        {
+          "id": "cuba-libre",
+          "n": "Cuba Libre",
+          "d": "Rum, cola e limão",
+          "p": "48,00"
+        },
+        {
+          "id": "blood-mary",
+          "n": "Blood Mary",
+          "d": "Suco de tomate temperado e vodka",
+          "p": "45,00"
+        },
+        {
+          "id": "dry-martini",
+          "n": "Dry Martini",
+          "d": "Gin e vermouth dry",
+          "p": "45,00"
+        },
+        {
+          "id": "kir",
+          "n": "Kir",
+          "d": "Vinho branco e licor de cassis",
+          "p": "45,00"
+        },
+        {
+          "id": "kir-royal",
+          "n": "Kir Royal",
+          "d": "Champagne e licor de cassis",
+          "p": "45,00"
+        },
+        {
+          "id": "manhattan",
+          "n": "Manhattan",
+          "d": "Bulleit Bourbon, vermouth tinto e angostura",
+          "p": "45,00"
+        },
+        {
+          "id": "aperol-sprits",
+          "n": "Aperol Sprits",
+          "d": "Aperol, Prosecco, laranja e água com gás",
+          "p": "47,00"
+        },
+        {
+          "id": "negroni",
+          "n": "Negroni",
+          "d": "Campari, gin e vermute doce",
+          "p": "50,00"
+        }
+      ]
+    },
+    {
+      "id": "outros-coqueteis",
+      "title": "Outros Coquetéis",
+      "kind": "drink",
+      "icon": "cocktail",
+      "items": [
+        {
+          "id": "moscow-mule",
+          "n": "Moscow Mule",
+          "d": "Vodka, gingerbeer artesanal (limão Taiti, xarope de açúcar e especiarias) e espuma de limão",
+          "p": "49,00"
+        },
+        {
+          "id": "boulevardier",
+          "n": "Boulevardier",
+          "d": "Bulleit Bourbon, Campari, vermute tinto",
+          "p": "49,00"
+        },
+        {
+          "id": "basil-smash",
+          "n": "Basil Smash",
+          "d": "Tanqueray London Dry, manjericão, limão e xarope de açúcar",
+          "p": "49,00"
+        },
+        {
+          "id": "fitzgerald",
+          "n": "Fitzgerald",
+          "d": "Tanqueray Ten, limão siciliano, xarope de açúcar e bitter",
+          "p": "53,00"
+        },
+        {
+          "id": "carpano-tonic",
+          "n": "Carpano Tonic",
+          "d": "Vermute Carpano e água tônica",
+          "p": "45,00"
+        },
+        {
+          "id": "fernet-cola",
+          "n": "Fernet Cola",
+          "d": "Fernet Branca e refrigerante cola",
+          "p": "45,00"
+        }
+      ]
+    },
+    {
+      "id": "sugestoes",
+      "title": "Sugestões",
+      "kind": "drink",
+      "icon": "cocktail",
+      "items": [
+        {
+          "id": "cuervo-margarita",
+          "n": "Cuervo Margarita",
+          "d": "Tequila Jose Cuervo, contreau, suco de limão",
+          "p": "45,00"
+        },
+        {
+          "id": "carajillo-43",
+          "n": "Carajillo 43",
+          "d": "Mistura café e licor 43 criando uma bebida refrescante",
+          "p": "45,00"
+        },
+        {
+          "id": "pisco-sour-capel",
+          "n": "Pisco Sour Capel",
+          "d": "Coquetel sul-americano com pisco e limão",
+          "p": "45,00"
+        },
+        {
+          "id": "new-york-sour",
+          "n": "New York Sour",
+          "d": "Bulleit Bourbon, xarope de açúcar, suco de limão siciliano, vinho tinto",
+          "p": "50,00"
+        },
+        {
+          "id": "red-mojito",
+          "n": "Red Mojito",
+          "d": "Rum oro, geleia de frutas vermelhas da casa, hortelã, suco de limão e soda limonada",
+          "p": "49,00"
+        },
+        {
+          "id": "pink-mule",
+          "n": "Pink Mule",
+          "d": "Gin Gordon's Pink, xarope de cranberry, soda limonada, espuma frutas vermelhas",
+          "p": "49,00"
+        },
+        {
+          "id": "clover-club",
+          "n": "Clover Club",
+          "d": "Gin London Dry, framboesa, suco de limão siciliano, albumina e grenadine",
+          "p": "49,00"
+        },
+        {
+          "id": "whiskey-sour",
+          "n": "Whiskey Sour",
+          "d": "Bulleit Bourbon, suco de limão, xarope simples e albumina",
+          "p": "50,00"
+        },
+        {
+          "id": "villa-massa-amaretto-sour",
+          "n": "Villa Massa Amaretto Sour",
+          "d": "Coquetel que equilibra licor de amaretto com limão, oferecendo notas de amêndoa, marzipã e um toque cítrico com final suave",
+          "p": "47,00"
+        },
+        {
+          "id": "villa-massa-limoncello-spirits",
+          "n": "Villa Massa Limoncello Spirits",
+          "d": "Lemon Ciello Villa Massa, Prosecco e água com gás",
+          "p": "47,00"
+        },
+        {
+          "id": "mini-beer",
+          "n": "Mini Beer",
+          "d": "Shot em camadas de Licor 43 gelado coberto com creme, criando um contraste doce e cremoso",
+          "p": "40,00"
+        },
+        {
+          "id": "licor-43-com-limao",
+          "n": "Licor 43 com Limão",
+          "d": "Licor 43 Original, sumo de limão Taiti",
+          "p": "47,00"
+        }
+      ]
+    },
+    {
+      "id": "moquetel",
+      "title": "Moquetel",
+      "kind": "drink",
+      "icon": "mocktail",
+      "en": "Drinks não alcoólicos",
+      "items": [
+        {
+          "id": "red-waves",
+          "n": "Red Waves",
+          "d": "Morangos, amoras, xarope de morango e soda limonada",
+          "p": "37,00"
+        },
+        {
+          "id": "primavera-e-verao",
+          "n": "Primavera e Verão",
+          "d": "Calda de jabuticaba, água gaseificada, limão cravo",
+          "p": "35,00"
+        },
+        {
+          "id": "santo-tropical",
+          "n": "Santo Tropical",
+          "d": "Purê de manga, capim santo, soda limão",
+          "p": "35,00"
+        },
+        {
+          "id": "raio-solar",
+          "n": "Raio Solar",
+          "d": "Calda de maracujá, manjericão fresco, água de coco",
+          "p": "35,00"
+        },
+        {
+          "id": "pra-relaxar",
+          "n": "Pra Relaxar",
+          "d": "Sumo de abacaxi com maçã vermelha, hortelã fresca, ginger ale",
+          "p": "35,00"
+        }
+      ]
+    },
+    {
+      "id": "caipirinhas",
+      "title": "Caipirinhas & Caipiroskas",
+      "kind": "drink",
+      "icon": "caipirinha",
+      "items": [
+        {
+          "id": "caipiroska-da-casa",
+          "n": "Caipiroska da Casa",
+          "d": "Vodka, manga, maracujá e lichia",
+          "p": "46,00"
+        },
+        {
+          "id": "vodka-absolut",
+          "n": "Vodka Absolut",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "55,00"
+        },
+        {
+          "id": "sake",
+          "n": "Saké",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "46,00"
+        },
+        {
+          "id": "vodka-ciroc",
+          "n": "Vodka Ciroc",
+          "sz": "Importada",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "62,00"
+        },
+        {
+          "id": "smirnoff-red",
+          "n": "Smirnoff Red",
+          "sz": "Nacional",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "46,00"
+        },
+        {
+          "id": "espirito-de-minas",
+          "n": "Espírito de Minas",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "49,00"
+        },
+        {
+          "id": "seleta",
+          "n": "Seleta",
+          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "p": "47,00"
+        }
+      ]
+    },
+    {
+      "id": "whisky",
+      "title": "Whisky",
+      "kind": "drink",
+      "icon": "bottle",
+      "items": [
+        {
+          "id": "black-label",
+          "n": "Black Label",
+          "sz": "12 anos",
+          "d": "12 anos",
+          "p": "45,00"
+        },
+        {
+          "id": "red-label",
+          "n": "Red Label",
+          "sz": "8 anos",
+          "d": "8 anos",
+          "p": "37,00"
+        }
+      ]
+    },
+    {
+      "id": "cachacas",
+      "title": "Cachaças",
+      "kind": "drink",
+      "icon": "bottle",
+      "items": [
+        {
+          "id": "cachaca-salinissima",
+          "n": "Cachaça Salinissima",
+          "d": "Produzida em Salinas (MG); celebra a cultura local com simplicidade e tradição",
+          "p": "36,00"
+        },
+        {
+          "id": "epirito-de-minas",
+          "n": "Epírito de Minas",
+          "d": "Cachaça artesanal produzida em fazenda colonial em São Tiago (MG), com cor dourada, aroma doce e sabor intenso",
+          "p": "40,00"
+        },
+        {
+          "id": "seleta",
+          "n": "Seleta",
+          "d": "Cachaça tradicional de Minas Gerais envelhecida por dois anos em barris de umburana, com sabor forte e persistente",
+          "p": "35,00"
+        },
+        {
+          "id": "busca-vida",
+          "n": "Busca Vida",
+          "d": "Bebida de aguardente, mel e limão que equilibra sabores doces, amargos e cítricos, resultando em um drink suave e fácil de beber",
+          "p": "40,00"
+        },
+        {
+          "id": "cachaca-salinissima-amburana",
+          "n": "Cachaça Salinissima Amburana",
+          "d": "Envelhecida em madeira amburana com notas de baunilha, amêndoas e especiarias",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "doses",
+      "title": "Doses",
+      "kind": "drink",
+      "icon": "bottle",
+      "en": "Shots",
+      "items": [
+        {
+          "id": "tanqueray",
+          "n": "Tanqueray",
+          "d": "Gin London Dry equilibrado com quatro botânicos e destilado quatro vezes; zimbro em destaque, ideal para coquetéis",
+          "p": "49,00"
+        },
+        {
+          "id": "saque-dourado-azuma-kirin",
+          "n": "Saquê Dourado Azuma Kirin",
+          "d": "Saquê de aroma delicado, paladar frutado com notas de cítricos, cogumelos e banana, acidez equilibrada e corpo leve",
+          "p": "40,00"
+        },
+        {
+          "id": "baileys",
+          "n": "Baileys",
+          "d": "Licor irlandês que combina uísque e creme de leite com chocolate e baunilha para uma bebida indulgente, apreciada pura ou em coquetéis",
+          "p": "40,00"
+        },
+        {
+          "id": "jose-cuervo-especial-silver",
+          "n": "Jose Cuervo Especial Silver",
+          "d": "Sabor suave com notas de agave; ideal para reinventar clássicos",
+          "p": "40,00"
+        },
+        {
+          "id": "tequila-jose-cuervo-especial-gold",
+          "n": "Tequila Jose Cuervo Especial Gold",
+          "d": "Tequila mais vendida do mundo; envelhecida por 6 meses em carvalho americano",
+          "p": "40,00"
+        },
+        {
+          "id": "licor-43",
+          "n": "Licor 43",
+          "d": "Licor espanhol feito com 43 ingredientes naturais (citrus, ervas e baunilha)",
+          "p": "40,00"
+        },
+        {
+          "id": "fireball",
+          "n": "Fireball",
+          "d": "Licoor de uísque canadense com sabor natural de canela",
+          "p": "35,00"
+        },
+        {
+          "id": "carpano-punt-e-mes",
+          "n": "Carpano Punt e Mes",
+          "d": "Vermute com um ponto de doçura e meio de amargor; aromas de vinho do Porto, ervas, caramelo e cravo",
+          "p": "40,00"
+        },
+        {
+          "id": "pisco-capel-reservado",
+          "n": "Pisco Capel Reservado",
+          "d": "Pisco elaborado com uva Pedro Jimenez, duplamente destilado e de sabor suave",
+          "p": "40,00"
+        },
+        {
+          "id": "fernet-branca",
+          "n": "Fernet Branca",
+          "d": "Bebida amarga de ervas secretas, apreciada com cola ou em coquetéis como Hanky Panky",
+          "p": "35,00"
+        },
+        {
+          "id": "rum-nacional-ouro",
+          "n": "Rum Nacional Ouro",
+          "p": "40,00"
+        },
+        {
+          "id": "rum-nacional-prata",
+          "n": "Rum Nacional Prata",
+          "p": "35,00"
+        },
+        {
+          "id": "campari",
+          "n": "Campari",
+          "d": "Licor italiano de sabor amargo com notas de laranja, ervas e especiarias, essencial em coquetéis clássicos",
+          "p": "40,00"
+        },
+        {
+          "id": "cointreau",
+          "n": "Cointreau",
+          "d": "Licor de laranja feito com cascas de laranjas doces e amargas, destilado na França sem aromatizantes artificiais",
+          "p": "40,00"
+        },
+        {
+          "id": "frangelico",
+          "n": "Frangélico",
+          "d": "Licor italiano de avelã com ervas, de coloração âmbar e notas doces de nougat; apresentado em garrafa em forma de frade",
+          "p": "35,00"
+        },
+        {
+          "id": "jose-cuervo-tradicional",
+          "n": "Jose Cuervo Tradicional",
+          "sz": "100% Agave",
+          "d": "Tequila 100% agave",
+          "p": "46,00"
+        }
+      ]
+    },
+    {
+      "id": "sangria",
+      "title": "Sangria e Clericot",
+      "kind": "drink",
+      "icon": "cocktail",
+      "highlight": true,
+      "items": [
+        {
+          "id": "tinto",
+          "n": "Tinto",
+          "d": "Refrescante mistura de vinho tinto com frutas frescas e especiarias",
+          "p": "120,00"
+        },
+        {
+          "id": "branco",
+          "n": "Branco",
+          "d": "Refrescante mistura de vinho branco com frutas frescas e especiarias",
+          "p": "120,00"
+        },
+        {
+          "id": "rose",
+          "n": "Rosé",
+          "d": "Refrescante mistura de vinho rosé com frutas frescas e especiarias",
+          "p": "120,00"
+        },
+        {
+          "id": "espumante",
+          "n": "Espumante",
+          "d": "Refrescante mistura de espumante com frutas frescas e especiarias",
+          "p": "120,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-tintos",
+      "title": "Carta de Vinhos · Tintos",
+      "kind": "drink",
+      "icon": "wine",
+      "en": "Red",
+      "items": [
+        {
+          "id": "carmen-carmenere",
+          "n": "Carmen Carménère",
+          "sz": "Viña Carmen · Chile",
+          "d": "Vinho chileno com notas complexas de ameixas, cerejas e ervas, nuances de mocha e especiarias e taninos equilibrados",
+          "p": "170,00"
+        },
+        {
+          "id": "bordeaux-chevalier-lassalle",
+          "n": "Bordeaux Chevalier Lassalle",
+          "d": "Mistura de Cabernet Sauvignon e Merlot amadurecida em carvalho francês; apresenta cor rubi, aromas de frutas vermelhas e negras com toques de tabaco e taninos suaves",
+          "p": "190,00"
+        },
+        {
+          "id": "alamos-malbec",
+          "n": "Alamos Malbec",
+          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "p": "170,00"
+        },
+        {
+          "id": "uxmal-malbec",
+          "n": "Uxmal Malbec",
+          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "p": "170,00"
+        },
+        {
+          "id": "miluna-rosso",
+          "n": "Miluna Rosso",
+          "d": "Uvas: Malvasia Nera, Negroamaro e Sangiovese · Região: Puglia – Itália",
+          "p": "170,00"
+        },
+        {
+          "id": "robertson-pinotage",
+          "n": "Robertson Pinotage",
+          "d": "Uva: Pinotage · Região: Robertson Valley – África do Sul",
+          "p": "160,00"
+        },
+        {
+          "id": "los-vascos-cabernet-sauvignon",
+          "n": "Los Vascos Cabernet Sauvignon",
+          "d": "Uva: Cabernet Sauvignon · Região: Valle de Colchagua – Chile",
+          "p": "190,00"
+        },
+        {
+          "id": "chevalier-lassalle",
+          "n": "Chevalier Lassalle",
+          "d": "Uvas: Cabernet Sauvignon e Merlot · Região: Bordeaux – França",
+          "p": "190,00"
+        },
+        {
+          "id": "la-vieille-ferme-rouge",
+          "n": "La Vieille Ferme Rouge",
+          "d": "Uvas: Carignan, Cinsault, Grenache e Syrah · Região: Rhône – França",
+          "p": "230,00"
+        },
+        {
+          "id": "catena-malbec",
+          "n": "Catena Malbec",
+          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "p": "290,00"
+        },
+        {
+          "id": "alma-negra-m-blend",
+          "n": "Alma Negra M Blend",
+          "d": "Uvas: Bonarda e Malbec · Região: Mendoza – Argentina",
+          "p": "290,00"
+        },
+        {
+          "id": "animal-malbec-organico",
+          "n": "Animal Malbec Orgânico",
+          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "p": "265,00"
+        },
+        {
+          "id": "dv-catena-cabernet-malbec",
+          "n": "DV Catena Cabernet-Malbec",
+          "d": "Uvas: Malbec e Cabernet Sauvignon · Região: Mendoza – Argentina",
+          "p": "330,00"
+        },
+        {
+          "id": "el-enemigo-bonarda-el-barranco",
+          "n": "El Enemigo Bonarda El Barranco",
+          "d": "Uva: Bonarda · Região: Mendoza – Argentina",
+          "p": "340,00"
+        },
+        {
+          "id": "carmen-reserva-pinot-noir",
+          "n": "Carmen Reserva Pinot Noir",
+          "d": "Uva: Pinot Noir (100%) · Região: Valle de San Antonio – Chile",
+          "p": "220,00"
+        },
+        {
+          "id": "padrillos-pinot-noir",
+          "n": "Padrillos Pinot Noir",
+          "d": "Uva: Pinot Noir (100%) · Região: Luján de Cuyo – Argentina",
+          "p": "260,00"
+        },
+        {
+          "id": "posadas-viejas-tempranillo",
+          "n": "Posadas Viejas Tempranillo",
+          "d": "Uva: Tempranillo · Região: Castilla la Mancha – Espanha",
+          "p": "160,00"
+        },
+        {
+          "id": "trofeo-cabernet-sauvignon",
+          "n": "Trofeo Cabernet Sauvignon",
+          "d": "Vinho tinto chileno",
+          "p": "160,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-brancos",
+      "title": "Carta de Vinhos · Brancos",
+      "kind": "drink",
+      "icon": "wine",
+      "en": "White",
+      "items": [
+        {
+          "id": "freixenet-pinot-grigio",
+          "n": "Freixenet Pinot Grigio",
+          "d": "Vinho branco elegante com final leve, caráter floral e frutado delicado e notas de citrinos; ideal com frutos do mar ou massas",
+          "p": "145,00"
+        },
+        {
+          "id": "miluna-bianco-puglia",
+          "n": "Miluna Bianco Puglia",
+          "d": "Vinho branco da Puglia produzido pela Terre di Sava que combina Chardonnay e Malvasia Bianca, resultando em um vinho equilibrado e refrescante de excelente valor",
+          "p": "160,00"
+        },
+        {
+          "id": "posadas-viejas-blanco",
+          "n": "Posadas Viejas Blanco",
+          "d": "Uvas: Cosecheros y Criadores (Martinez Bujanda) · Região: Viura – Espanha",
+          "p": "160,00"
+        },
+        {
+          "id": "alamos-chardonnay",
+          "n": "Alamos Chardonnay",
+          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "p": "170,00"
+        },
+        {
+          "id": "miluna-bianco",
+          "n": "Miluna Bianco",
+          "d": "Uva: Terre di Sava · Região: Puglia – Itália",
+          "p": "160,00"
+        },
+        {
+          "id": "robertson-chenin-blanc",
+          "n": "Robertson Chenin Blanc",
+          "d": "Uva: Chenin Blanc · Região: Robertson Valley – África do Sul",
+          "p": "160,00"
+        },
+        {
+          "id": "lagoalva",
+          "n": "Lagoalva",
+          "d": "Uvas: Fernão Pires, Arinto, Sauvignon Blanc · Região: Tejo – Portugal",
+          "p": "260,00"
+        },
+        {
+          "id": "la-vieille-ferme-blanc",
+          "n": "La Vieille Ferme Blanc",
+          "d": "Uvas: Bourboulenc, Grenache Blanc, Ugni Blanc e Vermentino · Região: Rhône – França",
+          "p": "235,00"
+        },
+        {
+          "id": "catena-chardonnay",
+          "n": "Catena Chardonnay",
+          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "p": "270,00"
+        },
+        {
+          "id": "carmen-insigne-sauvignon-blanc",
+          "n": "Carmen Insigne Sauvignon Blanc",
+          "d": "Uva: Sauvignon Blanc · Região: Mendoza – Argentina",
+          "p": "220,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-rose",
+      "title": "Carta de Vinhos · Rosé",
+      "kind": "drink",
+      "icon": "wine",
+      "items": [
+        {
+          "id": "freixenet-spain-rosado",
+          "n": "Freixenet Spain Rosado",
+          "d": "Espumante rosé espanhol fresco e elegante com notas de morango, framboesa, cereja e raspas de citrinos, combinando frutas vermelhas e bolhas vivas",
+          "p": "145,00"
+        },
+        {
+          "id": "carmen-rose-aperitif",
+          "n": "Carmen Rosé Aperitif",
+          "d": "Vinho rosé chileno de cor rosa pálido com reflexos salmão; aromas de morango e framboesa com toques cítricos e paladar equilibrado entre acidez e doçura",
+          "p": "170,00"
+        },
+        {
+          "id": "posadas-viejas-tempranillo-rose",
+          "n": "Posadas Viejas Tempranillo Rosé",
+          "d": "Uva: Tempranillo · Região: Castilla la Mancha – Espanha",
+          "p": "160,00"
+        },
+        {
+          "id": "los-vascos-rose",
+          "n": "Los Vascos Rosé",
+          "d": "Uvas: Syrah, Grenache Noir e Mourvèdre · Região: Chile",
+          "p": "190,00"
+        },
+        {
+          "id": "la-vieille-ferme-rose",
+          "n": "La Vieille Ferme Rosé",
+          "d": "Uvas: Cinsault, Grenache e Syrah · Região: Rhône – França",
+          "p": "230,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-tacas",
+      "title": "Carta de Vinhos · Taças",
+      "kind": "drink",
+      "icon": "wine",
+      "en": "187 ml",
+      "items": [
+        {
+          "id": "alamos-chardonnay",
+          "n": "Alamos Chardonnay",
+          "sz": "taça 187 ml",
+          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "p": "65,00"
+        },
+        {
+          "id": "alamos-malbec",
+          "n": "Alamos Malbec",
+          "sz": "taça 187 ml",
+          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "p": "65,00"
+        }
+      ]
+    },
+    {
+      "id": "licores",
+      "title": "Licores",
+      "kind": "drink",
+      "icon": "bottle",
+      "en": "Liquors",
+      "items": [
+        {
+          "id": "baileys",
+          "n": "Baileys",
+          "d": "The original Irish Cream",
+          "p": "40,00"
+        },
+        {
+          "id": "cointreau",
+          "n": "Cointreau",
+          "d": "Licor com notas de casca de laranja e cítricos",
+          "p": "40,00"
+        },
+        {
+          "id": "licor-43",
+          "n": "Licor 43",
+          "d": "Licor espanhol de sabor único; leve notas de agave",
+          "p": "40,00"
+        },
+        {
+          "id": "fireball",
+          "n": "Fireball",
+          "d": "Uísque canadense com sabor de canela",
+          "p": "35,00"
+        },
+        {
+          "id": "villa-massa-limoncello",
+          "n": "Villa Massa Limoncello",
+          "d": "Licor de limão autêntico de Sorrento feito com limões IGP; as cascas são maceradas e combinadas com xarope de açúcar, resultando em bebida doce, cítrica e suave servida gelada",
+          "p": "35,00"
+        },
+        {
+          "id": "villa-massa-amaretto",
+          "n": "Villa Massa Amaretto",
+          "d": "Licor de amêndoas doces e amargas baseado em receita italiana, feito com amêndoas da Sicília e notas de marzipã, baunilha, cereja e cacau",
+          "p": "46,00"
+        },
+        {
+          "id": "peachtree",
+          "n": "Peachtree",
+          "d": "Licor de pêssego pioneiro com aroma e sabor de pêssegos maduros; cristalino, levemente doce e ideal para coquetéis",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43-chocolate",
+          "n": "Licor 43 · Chocolate",
+          "d": "Licor espanhol de sabor único, com notas marcantes de agave e nuances de chocolate",
+          "p": "40,00"
+        },
+        {
+          "id": "licor-43-creme-brulee",
+          "n": "Licor 43 · Creme Brûlée",
+          "d": "Licor espanhol com notas de baunilha e caramelo, inspirado na sobremesa creme brûlée",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "diversos",
+      "title": "Diversos",
+      "kind": "drink",
+      "icon": "soda",
+      "items": [
+        {
+          "id": "soda-limonada",
+          "n": "Soda Limonada",
+          "d": "Lata",
+          "p": "10,00"
+        },
+        {
+          "id": "soda-zero",
+          "n": "Soda Zero",
+          "d": "Lata",
+          "p": "10,00"
+        },
+        {
+          "id": "h2o-limao",
+          "n": "H2O Limão",
+          "sz": "500 ml",
+          "p": "12,00"
+        },
+        {
+          "id": "agua",
+          "n": "Água",
+          "p": "8,00"
+        },
+        {
+          "id": "agua-com-gas",
+          "n": "Água com Gás",
+          "p": "8,00"
+        },
+        {
+          "id": "sucos-naturais",
+          "n": "Sucos Naturais",
+          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
+          "p": "15,00"
+        },
+        {
+          "id": "suco-de-tomate-temperado",
+          "n": "Suco de Tomate Temperado",
+          "p": "18,00"
+        },
+        {
+          "id": "pepsi-twist",
+          "n": "Pepsi Twist",
+          "p": "10,00"
+        },
+        {
+          "id": "red-bull",
+          "n": "Red Bull",
+          "p": "22,00"
+        },
+        {
+          "id": "pepsi-zero",
+          "n": "Pepsi Zero",
+          "p": "10,00"
+        },
+        {
+          "id": "guarana-antarctica",
+          "n": "Guaraná Antarctica",
+          "p": "10,00"
+        },
+        {
+          "id": "guarana-zero",
+          "n": "Guaraná Zero",
+          "p": "10,00"
+        },
+        {
+          "id": "pepsi",
+          "n": "Pepsi",
+          "p": "10,00"
+        }
+      ]
+    }
+  ]
+}

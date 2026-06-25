@@ -10,7 +10,7 @@
 // de altura, criando páginas conforme necessário (sem overflow).
 // ---------------------------------------------------------------------------
 
-import { flow, meta, BANNERS } from './menu-data.mjs';
+import { sections, meta, BANNERS, DRINK_PAGES, FOOD_BREAKS } from './menu-data.mjs';
 import { writeFileSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -189,14 +189,8 @@ function renderBanner(key) {
 // Comida (págs. 1–2): paginação automática por orçamento de altura.
 // Bebidas (págs. 3–6): composição FIXA por página, definida abaixo, para
 // respeitar exatamente o agrupamento pedido (e a ordem das seções).
-const byId = Object.fromEntries(flow.filter((n) => n.id).map((n) => [n.id, n]));
-const FOOD = flow.slice(0, flow.findIndex((n) => n.banner === 'bebidas'));
-const DRINK_PAGES = [
-  ['chopp', 'cervejas', 'autorais', 'classicos', 'outros-coqueteis'],
-  ['sugestoes', 'moquetel', 'caipirinhas', 'doses'],
-  ['whisky', 'cachacas', 'licores', 'diversos', 'sangria'],
-  ['vinhos-tintos', 'vinhos-brancos', 'vinhos-rose', 'vinhos-tacas'],
-];
+const byId = Object.fromEntries(sections.filter((n) => n.id).map((n) => [n.id, n]));
+const FOOD = sections.filter((s) => s.kind === 'food');
 
 // ---- Paginação -------------------------------------------------------------
 function paginate() {
@@ -207,8 +201,7 @@ function paginate() {
 
   // ---- Comida: fluxo automático --------------------------------------------
   for (const node of FOOD) {
-    if (node.banner) continue; // faixas de grupo removidas — apenas os itens
-    if (node.id === 'pratos-carnes') pushPage(); // pratos principais começam na pág. 2
+    if (FOOD_BREAKS.includes(node.id)) pushPage(); // quebra de página configurável
 
     const sec = node;
     const accent = sec.kind === 'drink' ? C.marrom : C.verde;

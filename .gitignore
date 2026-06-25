@@ -5,3 +5,6 @@ package-lock.json
 
 # Pré-visualizações geradas
 build/preview/
+
+# CSV exportado pela CLI (planilha de trabalho)
+data/itens.csv
