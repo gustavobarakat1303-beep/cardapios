@@ -174,7 +174,7 @@
         },
         {
           "id": "coxinha-de-mix-de-cogumelos",
-          "n": "Coxinha de Mix de Cogumelos",
+          "n": "Coxinha de Mix Cogumelos",
           "d": "vegana · 8 un. · Massa vegana com recheio de cogumelos",
           "p": "52,00"
         },
@@ -425,7 +425,7 @@
         },
         {
           "id": "camarao-com-arroz-vermelho",
-          "n": "Camarão com Arroz Vermelho",
+          "n": "Camarão com Arroz Vermelho ao Molho Beurre Blanc",
           "d": "Camarão servido com arroz vermelho ao molho beurre blanc e caviar",
           "p": "130,00"
         }
@@ -439,7 +439,7 @@
       "items": [
         {
           "id": "penne",
-          "n": "Penne",
+          "n": "Penne c/ Tomate Seco",
           "d": "mussarela de búfala e manjericão",
           "p": "76,00"
         },
@@ -483,13 +483,13 @@
         },
         {
           "id": "hamburguer-de-picanha-3",
-          "n": "Hambúrguer de Picanha",
+          "n": "Hambúrguer de Picanha com Queijo Gruyere",
           "d": "cogumelo puxado nas ervas no pão de brioche e fritas. Picanha steak hamburger with gruyere cheese, herb-pulled mushroom served on brioche bread",
           "p": "56,00"
         },
         {
           "id": "hamburguer-vegano",
-          "n": "Hambúrguer Vegano",
+          "n": "Hambúrguer Vegano com Mix de Legumes",
           "d": "cogumelos, proteína de soja natural, tomate e salada mista. Com molho de pesto vegano de manjericão. Obs: não acompanha pão e fritas",
           "p": "55,00"
         },
@@ -510,7 +510,7 @@
       "items": [
         {
           "id": "cheesecake-com-calda-de-nutella",
-          "n": "Cheesecake com Calda de Nutella",
+          "n": "Cheesecake",
           "d": "com calda de Nutella",
           "p": "42,00"
         },
@@ -522,7 +522,7 @@
         },
         {
           "id": "churros",
-          "n": "Churros",
+          "n": "Churros c/ Doce de Leite",
           "d": "sorvete de creme e farofa crocante",
           "p": "49,00"
         },
@@ -591,13 +591,13 @@
         },
         {
           "id": "nuguets-de-frango-com-arroz-e-fritas",
-          "n": "Nuguets de Frango com Arroz e Fritas",
+          "n": "Nuguets de Frango com Arroz e Batata Frita",
           "d": "Nuguets de frango com arroz e batata frita",
           "p": "45,00"
         },
         {
           "id": "hamburguinho-c-espaghetti",
-          "n": "Hamburguinho c/ Espaghetti",
+          "n": "Hamburguinho c/espaghetti",
           "d": "Hamburguinho com espaghetti na manteiga",
           "p": "45,00"
         },
@@ -634,7 +634,7 @@
         },
         {
           "id": "chopp-patagonia-ipa",
-          "n": "Chopp Patagônia Ipa",
+          "n": "Chopp Patagônia IPA",
           "p": "25,00"
         }
       ]
@@ -1068,7 +1068,7 @@
         },
         {
           "id": "epirito-de-minas",
-          "n": "Epírito de Minas",
+          "n": "Espírito de Minas",
           "d": "Cachaça artesanal produzida em fazenda colonial em São Tiago (MG), com cor dourada, aroma doce e sabor intenso",
           "p": "40,00"
         },
@@ -1237,7 +1237,7 @@
       "items": [
         {
           "id": "carmen-carmenere",
-          "n": "Carmen Carménère",
+          "n": "Carmen Carménère (chile) Viña Carmen",
           "d": "Vinho chileno com notas complexas de ameixas, cerejas e ervas, nuances de mocha e especiarias e taninos equilibrados",
           "p": "170,00"
         },
@@ -1309,7 +1309,7 @@
         },
         {
           "id": "dv-catena-cabernet-malbec",
-          "n": "DV Catena Cabernet-Malbec",
+          "n": "DV Catena Cabernet-malbec",
           "d": "Uvas: Malbec e Cabernet Sauvignon | Região: Mendoza - Argentina",
           "p": "330,00"
         },
@@ -1422,7 +1422,7 @@
       "items": [
         {
           "id": "freixenet-spain-rosado",
-          "n": "Freixenet Spain Rosado",
+          "n": "Freixenet Italian Rosado",
           "d": "Espumante rosé espanhol fresco e elegante com notas de morango, framboesa, cereja e raspas de citrinos, combinando frutas vermelhas e bolhas vivas",
           "p": "145,00"
         },
@@ -1545,17 +1545,19 @@
         {
           "id": "soda-limonada",
           "n": "Soda Limonada",
-          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
+          "d": "Lata",
           "p": "10,00"
         },
         {
           "id": "soda-zero",
           "n": "Soda Zero",
+          "d": "Lata",
           "p": "10,00"
         },
         {
           "id": "h2o-limao",
           "n": "H2O Limão",
+          "d": "500 ml",
           "p": "12,00"
         },
         {
@@ -1571,6 +1573,7 @@
         {
           "id": "sucos-naturais",
           "n": "Sucos Naturais",
+          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
           "p": "15,00"
         },
         {
