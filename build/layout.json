@@ -1,0 +1,53 @@
+{
+  "pages": [
+    [
+      "petiscos",
+      "porcoes",
+      "bruschettas",
+      "saladas",
+      "entradas-frias"
+    ],
+    [
+      "pratos-carnes",
+      "pratos-mar",
+      "massas",
+      "hamburguer",
+      "sobremesas",
+      "kids"
+    ],
+    [
+      "chopp",
+      "cervejas",
+      "autorais",
+      "classicos",
+      "outros-coqueteis"
+    ],
+    [
+      "sugestoes",
+      "moquetel",
+      "caipirinhas",
+      "doses"
+    ],
+    [
+      "whisky",
+      "cachacas",
+      "licores",
+      "diversos",
+      "sangria"
+    ],
+    [
+      "vinhos-tintos",
+      "vinhos-brancos",
+      "vinhos-rose",
+      "vinhos-tacas"
+    ]
+  ],
+  "scales": [
+    1.1116,
+    1.0432,
+    1.0498,
+    1.0472,
+    1.1337,
+    1.16
+  ]
+}

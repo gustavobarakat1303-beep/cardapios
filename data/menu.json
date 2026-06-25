@@ -58,36 +58,31 @@
         {
           "id": "bolinho-de-risoto",
           "n": "Bolinho de Risoto",
-          "sz": "8 unidades",
-          "d": "Bolinho de arroz arbóreo italiano, gorgonzola e ervas",
+          "d": "8 un. · Bolinho de arroz arbóreo italiano, gorgonzola e ervas",
           "p": "48,00"
         },
         {
           "id": "bolinho-de-picanha",
           "n": "Bolinho de Picanha",
-          "sz": "8 unidades",
-          "d": "Bolinho de picanha acompanha vinagrete (08 unidades)",
+          "d": "8 un. · Bolinho de picanha acompanha vinagrete (08 unidades)",
           "p": "55,00"
         },
         {
           "id": "bolinho-de-costelinha",
           "n": "Bolinho de Costelinha",
-          "sz": "8 unidades",
-          "d": "Bolinho de costelinha de porco (08 unidades)",
+          "d": "8 un. · Bolinho de costelinha de porco (08 unidades)",
           "p": "55,00"
         },
         {
           "id": "bolinho-de-bacalhau",
           "n": "Bolinho de Bacalhau",
-          "sz": "8 unidades",
-          "d": "Cod Dumpling",
+          "d": "8 un. · Bacalhau desfiado com batata, alho, cebola e salsinha",
           "p": "55,00"
         },
         {
           "id": "pastel-de-carne-seca",
           "n": "Pastel de Carne Seca",
-          "sz": "10 unidades",
-          "d": "Pastel de carne seca e requeijão",
+          "d": "10 un. · Pastel de carne seca e requeijão",
           "p": "49,00"
         },
         {
@@ -99,50 +94,43 @@
         {
           "id": "pastel-de-queijo",
           "n": "Pastel de Queijo",
-          "sz": "10 unidades",
-          "d": "Cheese pastry",
+          "d": "10 un. · Massa crocante de pastel com recheio de queijo derretido",
           "p": "48,00"
         },
         {
           "id": "mini-acaraje",
           "n": "Mini Acarajé",
-          "sz": "8 unidades",
-          "d": "Crocante por fora e macio por dentro, servido em 8 unidades; ideal para compartilhar e iniciar a experiência com identidade e sabor, transformando uma refeição simples em experiência",
+          "d": "8 un. · Crocante por fora e macio por dentro, servido em 8 unidades; ideal para compartilhar e iniciar a experiência com identidade e sabor, transformando uma refeição simples em experiência",
           "p": "85,00"
         },
         {
           "id": "casquinha-de-siri",
           "n": "Casquinha de Siri",
-          "sz": "2 unidades",
-          "d": "Shredded crab with gratin cheese",
+          "d": "2 un. · Carne de siri temperada, cremosa e gratinada com queijo",
           "p": "65,00"
         },
         {
           "id": "croquete-de-mandioca",
           "n": "Croquete de Mandioca",
-          "sz": "8 unidades",
-          "d": "Croquete de mandioca c/ carne seca e requeijão",
+          "d": "8 un. · Croquete de mandioca c/carne seca e requeijão",
           "p": "55,00"
         },
         {
           "id": "coxinha-de-bobo-de-camarao",
           "n": "Coxinha de Bobó de Camarão",
-          "sz": "8 unidades",
-          "d": "Brazilian fried shrimp balls",
+          "d": "8 un. · Coxinha recheada com bobó de camarão, mandioca, leite de coco e toque de dendê",
           "p": "55,00"
         },
         {
           "id": "coxinha-de-mix-de-cogumelos",
-          "n": "Coxinha de Mix de Cogumelos",
-          "sz": "vegana · 8 unidades",
-          "d": "Massa vegana com recheio de cogumelos",
+          "n": "Coxinha de Mix Cogumelos",
+          "d": "vegana · 8 un. · Massa vegana com recheio de cogumelos",
           "p": "52,00"
         },
         {
           "id": "bolinho-de-feijoada",
           "n": "Bolinho de Feijoada",
-          "sz": "8 unidades",
-          "d": "Bolinho de feijoada com molho de pimenta",
+          "d": "8 un. · Bolinho de feijoada com molho de pimenta",
           "p": "52,00"
         }
       ]
@@ -157,25 +145,25 @@
         {
           "id": "file-aperitivo-madeira",
           "n": "Filé Aperitivo Madeira",
-          "d": "Filé aperitivo c/ molho madeira com cebola",
+          "d": "Filé Aperitivo c/ molho madeira com cebola",
           "p": "85,00"
         },
         {
           "id": "file-aperitivo-queijo",
           "n": "Filé Aperitivo Queijo",
-          "d": "Diced steak with cheese sauce",
+          "d": "Iscas de filé mignon ao molho cremoso de queijos",
           "p": "85,00"
         },
         {
           "id": "lulinha-flambada",
           "n": "Lulinha Flambada",
-          "d": "Lulinha flambada ao azeite de ervas e conhaque, servido com aioli de limão siciliano",
+          "d": "Lulinha flambada ao azeite de ervas e conhaque servido com aioli de limão siciliano",
           "p": "89,00"
         },
         {
           "id": "file-a-milanesa",
           "n": "Filé à Milanesa",
-          "d": "Filé à milanesa com creme de gorgonzola e farofa de nozes",
+          "d": "Filé à Milanesa com creme de gorgonzola e farofa de nozes",
           "p": "85,00"
         },
         {
@@ -187,7 +175,7 @@
         {
           "id": "polvo-a-provencal",
           "n": "Polvo à Provençal",
-          "d": "Octopus to Provençal",
+          "d": "Polvo macio grelhado no azeite com alho, salsinha e ervas",
           "p": "92,00"
         },
         {
@@ -207,29 +195,25 @@
         {
           "id": "pomodoro",
           "n": "Pomodoro",
-          "sz": "6 unidades",
-          "d": "Pão italiano, alho, parmesão, pedaços de tomate fresco, azeite e manjericão",
+          "d": "6 un. · Pão italiano, alho, parmesão, pedaços de tomate fresco, azeite e manjericão",
           "p": "53,00"
         },
         {
           "id": "brie-rucula-e-geleia",
           "n": "Brie, Rúcula e Geleia",
-          "sz": "6 unidades",
-          "d": "Pão italiano, queijo brie, rúcula e geleia de damasco",
+          "d": "6 un. · Pão italiano, queijo brie, rúcula e geleia de damasco",
           "p": "57,00"
         },
         {
           "id": "shimeji-e-shitake",
           "n": "Shimeji e Shitake",
-          "sz": "6 unidades",
-          "d": "Pão italiano, alho, parmesão c/ azeite, shimeji e shitake",
+          "d": "6 un. · Pão italiano, alho, parmesão c/ azeite, shimeji e shitake",
           "p": "57,00"
         },
         {
           "id": "gorgonzola-e-geleia",
           "n": "Gorgonzola e Geleia",
-          "sz": "6 unidades",
-          "d": "Pão italiano, queijo gorgonzola, alho e geleia de amora",
+          "d": "6 un. · Pão italiano, queijo gorgonzola, alho e geleia de amora",
           "p": "56,00"
         }
       ]
@@ -280,7 +264,7 @@
         {
           "id": "carpaccio-de-polvo",
           "n": "Carpaccio de Polvo",
-          "d": "Carpaccio de polvo com azeite de ervas, azeite trufado, brotos coloridos e flor de sal",
+          "d": "Carpaccio de polvo com azeite ervas, azeite trufado, brotos coloridos e flor de sal",
           "p": "68,00"
         }
       ]
@@ -295,13 +279,13 @@
         {
           "id": "burrata",
           "n": "Burrata",
-          "d": "Fresh cream cheese with pesto and cherry tomatoes, com torradas",
+          "d": "Burrata cremosa com pesto de manjericão, tomate cereja e torradas",
           "p": "59,00"
         },
         {
           "id": "canapes-de-carpaccio",
           "n": "Canapés de Carpaccio",
-          "d": "Mini toast com carpaccio de carne, molho de mostarda, alcaparras e parmesão",
+          "d": "Canapés de carpaccio com mostarda, alcaparras e parmesão",
           "p": "72,00"
         },
         {
@@ -322,37 +306,37 @@
         {
           "id": "medalhao-de-file-mignon",
           "n": "Medalhão de Filé Mignon",
-          "d": "Ao molho cumberland e risoto de shitake",
+          "d": "ao molho cumberland e risoto de shitake",
           "p": "94,00"
         },
         {
           "id": "file-mignon",
           "n": "Filé Mignon",
-          "d": "Ao molho poivre com arroz e batata wave",
+          "d": "ao molho poivre com arroz e batata wave",
           "p": "90,00"
         },
         {
           "id": "picanha-grelhada",
           "n": "Picanha Grelhada",
-          "d": "Farofa da casa, molho chimichurri, arroz e batata frita",
+          "d": "farofa da casa, molho chimichurri, arroz e batata frita",
           "p": "93,00"
         },
         {
           "id": "file-de-cordeiro",
           "n": "Filé de Cordeiro",
-          "d": "Com couscuz marroquino com frutas secas ao molho de hortelã",
+          "d": "com couscuz marroquino com frutas secas ao molho de hortelã",
           "p": "98,00"
         },
         {
           "id": "medalhao-de-file-mignon-2",
           "n": "Medalhão de Filé Mignon",
-          "d": "Ao molho vinho tinto e funghi com purê de mandioquinha",
+          "d": "ao molho vinho tinto e funghi com purê de mandioquinha",
           "p": "94,00"
         },
         {
           "id": "medalhao-de-file-mignon-3",
           "n": "Medalhão de Filé Mignon",
-          "d": "Ao molho gorgonzola e risoto de rúcula com tomate seco",
+          "d": "ao molho gorgonzola e risoto de rúcula com tomate seco",
           "p": "94,00"
         }
       ]
@@ -367,30 +351,30 @@
         {
           "id": "salmao-grelhado",
           "n": "Salmão Grelhado",
-          "d": "Com risoto de banana da terra ao molho agridoce",
+          "d": "com Risoto de Banana da terra ao molho agridoce",
           "p": "98,00"
         },
         {
           "id": "polvo-grelhado",
           "n": "Polvo Grelhado",
-          "d": "No azeite trufado com arroz negro e tomate cereja",
+          "d": "no azeite trufado com arroz negro e tomate cereja",
           "p": "115,00"
         },
         {
           "id": "file-de-robalo",
           "n": "Filé de Robalo",
-          "d": "Com crosta de ervas ao molho de tangerina, risoto de limão siciliano e farofa crocante",
+          "d": "com crosta de ervas ao molho de tangerina, risoto de limão siciliano e farofa crocante",
           "p": "98,00"
         },
         {
           "id": "salmao-com-crosta-de-castanha-do-para",
           "n": "Salmão com Crosta de Castanha do Pará",
-          "d": "Ao molho brisque de camarão, batata noizete e mini legumes",
+          "d": "ao molho brisque de camarão, batata noizete e mini legumes",
           "p": "96,00"
         },
         {
           "id": "camarao-com-arroz-vermelho",
-          "n": "Camarão com Arroz Vermelho",
+          "n": "Camarão com Arroz Vermelho ao Molho Beurre Blanc",
           "d": "Camarão servido com arroz vermelho ao molho beurre blanc e caviar",
           "p": "130,00"
         }
@@ -404,14 +388,14 @@
       "items": [
         {
           "id": "penne",
-          "n": "Penne",
-          "d": "C/ tomate seco, mussarela de búfala e manjericão",
+          "n": "Penne c/ Tomate Seco",
+          "d": "mussarela de búfala e manjericão",
           "p": "76,00"
         },
         {
           "id": "nhoque-de-mandioquinha",
           "n": "Nhoque de Mandioquinha",
-          "d": "Com ragu de costela",
+          "d": "com ragu de costela",
           "p": "94,00"
         },
         {
@@ -437,25 +421,25 @@
         {
           "id": "hamburguer-de-picanha",
           "n": "Hambúrguer de Picanha",
-          "d": "Alface, tomate, queijo mussarela, bacon e fritas. Picanha steak hamburger, lettuce, tomato, mozzarella cheese and bacon",
+          "d": "alface, tomate, queijo mussarela, bacon e fritas. Picanha steak hamburger, lettuce, tomato, mozzarella cheese and bacon",
           "p": "57,00"
         },
         {
           "id": "hamburguer-de-picanha-2",
           "n": "Hambúrguer de Picanha",
-          "d": "Queijo cheddar inglês, costelinha, maionese de repolho e fritas. Picanha steak hamburger with English cheddar cheese",
+          "d": "queijo cheddar inglês, costelinha, maionese de repolho e fritas. Picanha steak hamburger with English cheddar cheese",
           "p": "56,00"
         },
         {
           "id": "hamburguer-de-picanha-3",
-          "n": "Hambúrguer de Picanha",
-          "d": "Queijo gruyere, cogumelo puxado nas ervas, no pão de brioche e fritas. Picanha steak hamburger with gruyere cheese, herb-pulled mushroom served on brioche bread",
+          "n": "Hambúrguer de Picanha com Queijo Gruyere",
+          "d": "cogumelo puxado nas ervas no pão de brioche e fritas. Picanha steak hamburger with gruyere cheese, herb-pulled mushroom served on brioche bread",
           "p": "56,00"
         },
         {
           "id": "hamburguer-vegano",
-          "n": "Hambúrguer Vegano",
-          "d": "Mix de legumes, cogumelos, proteína de soja natural, tomate e salada mista, com molho de pesto vegano de manjericão. Obs: não acompanha pão e fritas",
+          "n": "Hambúrguer Vegano com Mix de Legumes",
+          "d": "cogumelos, proteína de soja natural, tomate e salada mista. Com molho de pesto vegano de manjericão. Obs: não acompanha pão e fritas",
           "p": "55,00"
         },
         {
@@ -475,25 +459,26 @@
       "items": [
         {
           "id": "cheesecake-com-calda-de-nutella",
-          "n": "Cheesecake com Calda de Nutella",
+          "n": "Cheesecake",
+          "d": "com calda de Nutella",
           "p": "42,00"
         },
         {
           "id": "crepe-de-brigadeiro",
           "n": "Crepe de Brigadeiro",
-          "d": "Com sorvete de creme e farofa crocante",
+          "d": "com sorvete de creme e farofa crocante",
           "p": "45,00"
         },
         {
           "id": "churros",
-          "n": "Churros",
-          "d": "C/ doce de leite, sorvete de creme e farofa crocante",
+          "n": "Churros c/ Doce de Leite",
+          "d": "sorvete de creme e farofa crocante",
           "p": "49,00"
         },
         {
           "id": "torta-de-maca",
           "n": "Torta de Maçã",
-          "d": "Com sorvete de creme e calda de caramelo",
+          "d": "com sorvete de creme e calda de caramelo",
           "p": "46,00"
         },
         {
@@ -511,13 +496,13 @@
         {
           "id": "petit-gateau",
           "n": "Petit Gateau",
-          "d": "Com sorvete de creme",
+          "d": "com sorvete de creme",
           "p": "49,00"
         },
         {
           "id": "chocolamour",
           "n": "Chocolamour",
-          "d": "Sorvete de creme, chocolate, farofa crocante, chantilly com calda de chocolate",
+          "d": "Sorvete de Creme, chocolate, farofa crocante, chantilly com calda de chocolate",
           "p": "48,00"
         },
         {
@@ -535,7 +520,7 @@
         {
           "id": "cafe-expresso",
           "n": "Café Expresso",
-          "d": "Três Corações",
+          "d": "Três corações",
           "p": "9,00"
         }
       ]
@@ -555,20 +540,20 @@
         },
         {
           "id": "nuguets-de-frango-com-arroz-e-fritas",
-          "n": "Nuguets de Frango com Arroz e Fritas",
+          "n": "Nuguets de Frango com Arroz e Batata Frita",
           "d": "Nuguets de frango com arroz e batata frita",
           "p": "45,00"
         },
         {
           "id": "hamburguinho-c-espaghetti",
-          "n": "Hamburguinho c/ Espaghetti",
+          "n": "Hamburguinho c/espaghetti",
           "d": "Hamburguinho com espaghetti na manteiga",
           "p": "45,00"
         },
         {
           "id": "nuguets-de-frango-c-espaghetti",
           "n": "Nuguets de Frango c/ Espaghetti",
-          "d": "Nuguets de frango c/ espaghetti na manteiga",
+          "d": "Nuguets de frango c/ Espaghetti na manteiga",
           "p": "45,00"
         }
       ]
@@ -583,7 +568,7 @@
         {
           "id": "chopp-claro-brahma",
           "n": "Chopp Claro Brahma",
-          "sz": "300 ml",
+          "d": "300 ml",
           "p": "15,00"
         },
         {
@@ -598,7 +583,7 @@
         },
         {
           "id": "chopp-patagonia-ipa",
-          "n": "Chopp Patagônia Ipa",
+          "n": "Chopp Patagônia IPA",
           "p": "25,00"
         }
       ]
@@ -613,22 +598,19 @@
         {
           "id": "stella-artois",
           "n": "Stella Artois",
-          "sz": "330 ml",
-          "d": "Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
+          "d": "330 ml · Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
           "p": "20,00"
         },
         {
           "id": "stella-artois-2",
           "n": "Stella Artois",
-          "sz": "600 ml",
-          "d": "Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
+          "d": "600 ml · Cervejas do estilo American India Pale Ale (IPAs Americanas) costumam ter cor dourada a âmbar e são caracterizadas por aromas cítricos",
           "p": "26,00"
         },
         {
           "id": "corona-extra",
           "n": "Corona Extra",
-          "sz": "355 ml",
-          "d": "É cerveja lager suave, refrescante e com leves toques cítricos",
+          "d": "355 ml · É cerveja lager suave, refrescante e com leves toques cítricos",
           "p": "25,00"
         },
         {
@@ -640,29 +622,25 @@
         {
           "id": "becks",
           "n": "Becks",
-          "sz": "600 ml",
-          "d": "É uma legítima German Lager Puro Malte que segue à risca a Lei da Pureza da Cerveja desde 1873",
+          "d": "600 ml · É uma legítima German Lager Puro Malte que segue a risca a Lei da Pureza da Cerveja desde 1873",
           "p": "27,00"
         },
         {
           "id": "goose-island-midway",
           "n": "Goose Island Midway",
-          "sz": "355 ml",
-          "d": "Com 4,1% de teor alcoólico, 30 IBU e aroma de frutas tropicais; uma Session IPA leve com lúpulo americano e malte caramelizado",
+          "d": "355 ml · Com 4,1% de teor alcoólico, 30 IBU e aroma de frutas tropicais; uma Session IPA leve com lúpulo americano e malte caramelizado",
           "p": "25,00"
         },
         {
           "id": "colorado-ribeirao",
           "n": "Colorado Ribeirão",
-          "sz": "600 ml",
-          "d": "É uma lager leve e refrescante, mas com a cara de Colorado, cerveja clara com laranja, com IBU 20 e 4,5% de teor alcoólico",
+          "d": "600 ml · é uma lager leve e refrescante, mas com a cara de Colorado, cerveja clara com laranja, com IBU 20 e 4,5% de teor alcoólico",
           "p": "30,00"
         },
         {
           "id": "colorado-appia",
           "n": "Colorado Appia",
-          "sz": "600 ml",
-          "d": "Cerveja de trigo, turva e adocicada, com espuma abundante e cremosa. Possui adição de mel de laranjeira",
+          "d": "600 ml · Cerveja de trigo, turva e adocicada, com espuma abundante e cremosa. Possui adição de mel de laranjeira",
           "p": "30,00"
         }
       ]
@@ -733,7 +711,7 @@
         {
           "id": "old-fashioned",
           "n": "Old Fashioned",
-          "d": "Bulleit Bourbon, angostura e club soda",
+          "d": "Bourbon Bulleit Bourbon, angostura e club soda",
           "p": "45,00"
         },
         {
@@ -807,7 +785,7 @@
         {
           "id": "boulevardier",
           "n": "Boulevardier",
-          "d": "Bulleit Bourbon, Campari, vermute tinto",
+          "d": "Bulleit Bourbon, Campari, Vermute tinto",
           "p": "49,00"
         },
         {
@@ -819,7 +797,7 @@
         {
           "id": "fitzgerald",
           "n": "Fitzgerald",
-          "d": "Tanqueray Ten, limão siciliano, xarope de açúcar e bitter",
+          "d": "Tanqueray ten, limão siciliano, xarope de açúcar e bitter",
           "p": "53,00"
         },
         {
@@ -875,7 +853,7 @@
         {
           "id": "pink-mule",
           "n": "Pink Mule",
-          "d": "Gin Gordon's Pink, xarope de cranberry, soda limonada, espuma frutas vermelhas",
+          "d": "Gin Gordon’s Pink, xarope de cranberry, soda limonada, espuma frutas vermelhas",
           "p": "49,00"
         },
         {
@@ -982,15 +960,13 @@
         {
           "id": "vodka-ciroc",
           "n": "Vodka Ciroc",
-          "sz": "Importada",
-          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "d": "Importada · Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
           "p": "62,00"
         },
         {
           "id": "smirnoff-red",
           "n": "Smirnoff Red",
-          "sz": "Nacional",
-          "d": "Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
+          "d": "Nacional · Sabores tradicionais (limão, abacaxi, morango, maracujá, lichia, limão siciliano, manga e frutas da estação)",
           "p": "46,00"
         },
         {
@@ -1016,14 +992,12 @@
         {
           "id": "black-label",
           "n": "Black Label",
-          "sz": "12 anos",
           "d": "12 anos",
           "p": "45,00"
         },
         {
           "id": "red-label",
           "n": "Red Label",
-          "sz": "8 anos",
           "d": "8 anos",
           "p": "37,00"
         }
@@ -1043,7 +1017,7 @@
         },
         {
           "id": "epirito-de-minas",
-          "n": "Epírito de Minas",
+          "n": "Espírito de Minas",
           "d": "Cachaça artesanal produzida em fazenda colonial em São Tiago (MG), com cor dourada, aroma doce e sabor intenso",
           "p": "40,00"
         },
@@ -1165,8 +1139,7 @@
         {
           "id": "jose-cuervo-tradicional",
           "n": "Jose Cuervo Tradicional",
-          "sz": "100% Agave",
-          "d": "Tequila 100% agave",
+          "d": "100% Agave · Tequila 100 % agave",
           "p": "46,00"
         }
       ]
@@ -1213,8 +1186,7 @@
       "items": [
         {
           "id": "carmen-carmenere",
-          "n": "Carmen Carménère",
-          "sz": "Viña Carmen · Chile",
+          "n": "Carmen Carménère (chile) Viña Carmen",
           "d": "Vinho chileno com notas complexas de ameixas, cerejas e ervas, nuances de mocha e especiarias e taninos equilibrados",
           "p": "170,00"
         },
@@ -1227,91 +1199,91 @@
         {
           "id": "alamos-malbec",
           "n": "Alamos Malbec",
-          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "d": "Uva: Malbec; região: Mendoza - Argentina",
           "p": "170,00"
         },
         {
           "id": "uxmal-malbec",
           "n": "Uxmal Malbec",
-          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "d": "Uva: Malbec | Região: Mendoza - Argentina",
           "p": "170,00"
         },
         {
           "id": "miluna-rosso",
           "n": "Miluna Rosso",
-          "d": "Uvas: Malvasia Nera, Negroamaro e Sangiovese · Região: Puglia – Itália",
+          "d": "Uvas: Malvasia Nera, Negroamaro e Sangiovese | Região: Puglia - Itália",
           "p": "170,00"
         },
         {
           "id": "robertson-pinotage",
           "n": "Robertson Pinotage",
-          "d": "Uva: Pinotage · Região: Robertson Valley – África do Sul",
+          "d": "Uva: Pinotage | Região: Robertson Valley - África do Sul",
           "p": "160,00"
         },
         {
           "id": "los-vascos-cabernet-sauvignon",
           "n": "Los Vascos Cabernet Sauvignon",
-          "d": "Uva: Cabernet Sauvignon · Região: Valle de Colchagua – Chile",
+          "d": "Uva: Cabernet Sauvignon | Região: Valle de Colchagua - Chile",
           "p": "190,00"
         },
         {
           "id": "chevalier-lassalle",
           "n": "Chevalier Lassalle",
-          "d": "Uvas: Cabernet Sauvignon e Merlot · Região: Bordeaux – França",
+          "d": "Uvas: Cabernet Sauvignon e Merlot | Região: Bordeaux - França",
           "p": "190,00"
         },
         {
           "id": "la-vieille-ferme-rouge",
           "n": "La Vieille Ferme Rouge",
-          "d": "Uvas: Carignan, Cinsault, Grenache e Syrah · Região: Rhône – França",
+          "d": "Uvas: Carignan, Cinsault, Grenache e Syrah | Região: Rhône - França",
           "p": "230,00"
         },
         {
           "id": "catena-malbec",
           "n": "Catena Malbec",
-          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "d": "Uva: Malbec | Região: Mendoza - Argentina",
           "p": "290,00"
         },
         {
           "id": "alma-negra-m-blend",
           "n": "Alma Negra M Blend",
-          "d": "Uvas: Bonarda e Malbec · Região: Mendoza – Argentina",
+          "d": "Uvas: Bonarda e Malbec | Região: Mendoza - Argentina",
           "p": "290,00"
         },
         {
           "id": "animal-malbec-organico",
           "n": "Animal Malbec Orgânico",
-          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "d": "Uva: Malbec | Região: Mendoza - Argentina",
           "p": "265,00"
         },
         {
           "id": "dv-catena-cabernet-malbec",
-          "n": "DV Catena Cabernet-Malbec",
-          "d": "Uvas: Malbec e Cabernet Sauvignon · Região: Mendoza – Argentina",
+          "n": "DV Catena Cabernet-malbec",
+          "d": "Uvas: Malbec e Cabernet Sauvignon | Região: Mendoza - Argentina",
           "p": "330,00"
         },
         {
           "id": "el-enemigo-bonarda-el-barranco",
           "n": "El Enemigo Bonarda El Barranco",
-          "d": "Uva: Bonarda · Região: Mendoza – Argentina",
+          "d": "Uva: Bonarda | Região: Mendoza - Argentina",
           "p": "340,00"
         },
         {
           "id": "carmen-reserva-pinot-noir",
           "n": "Carmen Reserva Pinot Noir",
-          "d": "Uva: Pinot Noir (100%) · Região: Valle de San Antonio – Chile",
+          "d": "Uva: Pinot Noir (100 %) | Região: Valle de San Antonio - Chile",
           "p": "220,00"
         },
         {
           "id": "padrillos-pinot-noir",
           "n": "Padrillos Pinot Noir",
-          "d": "Uva: Pinot Noir (100%) · Região: Luján de Cuyo – Argentina",
+          "d": "Uva: Pinot Noir (100 %) | Região: Luján de Cuyo - Argentina",
           "p": "260,00"
         },
         {
           "id": "posadas-viejas-tempranillo",
           "n": "Posadas Viejas Tempranillo",
-          "d": "Uva: Tempranillo · Região: Castilla la Mancha – Espanha",
+          "d": "Uva: Tempranillo | Região: Castilla la Mancha - Espanha",
           "p": "160,00"
         },
         {
@@ -1344,49 +1316,49 @@
         {
           "id": "posadas-viejas-blanco",
           "n": "Posadas Viejas Blanco",
-          "d": "Uvas: Cosecheros y Criadores (Martinez Bujanda) · Região: Viura – Espanha",
+          "d": "Uvas: Cosecheros y Criadores (Martinez Bujanda) | Região: Viura - Espanha",
           "p": "160,00"
         },
         {
           "id": "alamos-chardonnay",
           "n": "Alamos Chardonnay",
-          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "d": "Uva: Chardonnay | Região: Mendoza - Argentina",
           "p": "170,00"
         },
         {
           "id": "miluna-bianco",
           "n": "Miluna Bianco",
-          "d": "Uva: Terre di Sava · Região: Puglia – Itália",
+          "d": "Uva: Terre di Sava | Região: Puglia - Itália",
           "p": "160,00"
         },
         {
           "id": "robertson-chenin-blanc",
           "n": "Robertson Chenin Blanc",
-          "d": "Uva: Chenin Blanc · Região: Robertson Valley – África do Sul",
+          "d": "Uva: Chenin Blanc | Região: Robertson Valley - África do Sul",
           "p": "160,00"
         },
         {
           "id": "lagoalva",
           "n": "Lagoalva",
-          "d": "Uvas: Fernão Pires, Arinto, Sauvignon Blanc · Região: Tejo – Portugal",
+          "d": "Uvas: Fernão Pires, Arinto, Sauvignon Blanc | Região: Tejo - Portugal",
           "p": "260,00"
         },
         {
           "id": "la-vieille-ferme-blanc",
           "n": "La Vieille Ferme Blanc",
-          "d": "Uvas: Bourboulenc, Grenache Blanc, Ugni Blanc e Vermentino · Região: Rhône – França",
+          "d": "Uvas: Bourboulenc, Grenache Blanc, Ugni Blanc e Vermentino | Região: Rhône - França",
           "p": "235,00"
         },
         {
           "id": "catena-chardonnay",
           "n": "Catena Chardonnay",
-          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "d": "Uva: Chardonnay | Região: Mendoza - Argentina",
           "p": "270,00"
         },
         {
           "id": "carmen-insigne-sauvignon-blanc",
           "n": "Carmen Insigne Sauvignon Blanc",
-          "d": "Uva: Sauvignon Blanc · Região: Mendoza – Argentina",
+          "d": "Uva: Sauvignon Blanc | Região: Mendoza - Argentina",
           "p": "220,00"
         }
       ]
@@ -1399,7 +1371,7 @@
       "items": [
         {
           "id": "freixenet-spain-rosado",
-          "n": "Freixenet Spain Rosado",
+          "n": "Freixenet Italian Rosado",
           "d": "Espumante rosé espanhol fresco e elegante com notas de morango, framboesa, cereja e raspas de citrinos, combinando frutas vermelhas e bolhas vivas",
           "p": "145,00"
         },
@@ -1412,19 +1384,19 @@
         {
           "id": "posadas-viejas-tempranillo-rose",
           "n": "Posadas Viejas Tempranillo Rosé",
-          "d": "Uva: Tempranillo · Região: Castilla la Mancha – Espanha",
+          "d": "Uva: Tempranillo | Região: Castilla la Mancha - Espanha",
           "p": "160,00"
         },
         {
           "id": "los-vascos-rose",
           "n": "Los Vascos Rosé",
-          "d": "Uvas: Syrah, Grenache Noir e Mourvèdre · Região: Chile",
+          "d": "Uvas: Syrah, Grenache Noir e Mourvèdre | Região: Chile",
           "p": "190,00"
         },
         {
           "id": "la-vieille-ferme-rose",
           "n": "La Vieille Ferme Rosé",
-          "d": "Uvas: Cinsault, Grenache e Syrah · Região: Rhône – França",
+          "d": "Uvas: Cinsault, Grenache e Syrah | Região: Rhône - França",
           "p": "230,00"
         }
       ]
@@ -1439,15 +1411,13 @@
         {
           "id": "alamos-chardonnay",
           "n": "Alamos Chardonnay",
-          "sz": "taça 187 ml",
-          "d": "Uva: Chardonnay · Região: Mendoza – Argentina",
+          "d": "taça 187 ml · Uva: Chardonnay | Região: Mendoza - Argentina",
           "p": "65,00"
         },
         {
           "id": "alamos-malbec",
           "n": "Alamos Malbec",
-          "sz": "taça 187 ml",
-          "d": "Uva: Malbec · Região: Mendoza – Argentina",
+          "d": "taça 187 ml · Uva: Malbec | Região: Mendoza - Argentina",
           "p": "65,00"
         }
       ]
@@ -1522,17 +1492,6 @@
       "icon": "soda",
       "items": [
         {
-          "id": "sucos-naturais",
-          "n": "Sucos Naturais",
-          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
-          "p": "15,00"
-        },
-        {
-          "id": "suco-de-tomate-temperado",
-          "n": "Suco de Tomate Temperado",
-          "p": "18,00"
-        },
-        {
           "id": "soda-limonada",
           "n": "Soda Limonada",
           "d": "Lata",
@@ -1545,6 +1504,12 @@
           "p": "10,00"
         },
         {
+          "id": "h2o-limao",
+          "n": "H2O Limão",
+          "d": "500 ml",
+          "p": "12,00"
+        },
+        {
           "id": "agua",
           "n": "Água",
           "p": "8,00"
@@ -1555,14 +1520,15 @@
           "p": "8,00"
         },
         {
-          "id": "pepsi",
-          "n": "Pepsi",
-          "p": "10,00"
+          "id": "sucos-naturais",
+          "n": "Sucos Naturais",
+          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
+          "p": "15,00"
         },
         {
-          "id": "pepsi-zero",
-          "n": "Pepsi Black",
-          "p": "10,00"
+          "id": "suco-de-tomate-temperado",
+          "n": "Suco de Tomate Temperado",
+          "p": "18,00"
         },
         {
           "id": "pepsi-twist",
@@ -1570,8 +1536,13 @@
           "p": "10,00"
         },
         {
-          "id": "guarana-zero",
-          "n": "Guaraná Zero",
+          "id": "red-bull",
+          "n": "Red Bull",
+          "p": "22,00"
+        },
+        {
+          "id": "pepsi-zero",
+          "n": "Pepsi Zero",
           "p": "10,00"
         },
         {
@@ -1580,15 +1551,14 @@
           "p": "10,00"
         },
         {
-          "id": "h2o-limao",
-          "n": "H2O Limão",
-          "sz": "500 ml",
-          "p": "12,00"
+          "id": "guarana-zero",
+          "n": "Guaraná Zero",
+          "p": "10,00"
         },
         {
-          "id": "red-bull",
-          "n": "Red Bull",
-          "p": "22,00"
+          "id": "pepsi",
+          "n": "Pepsi",
+          "p": "10,00"
         }
       ]
     }

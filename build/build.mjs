@@ -149,10 +149,25 @@ const CSS = `
       .page { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); }
     }`;
 
+// Resolve a composição de páginas de forma robusta: ignora ids inexistentes,
+// acomoda seções órfãs (ex.: criadas pelo painel) e NUNCA devolve vazio.
+function resolvePages() {
+  let pages = PAGES.map((p) => p.filter((id) => byId[id])).filter((p) => p.length);
+  const used = new Set(pages.flat());
+  const missing = sections.filter((s) => !used.has(s.id)).map((s) => s.id);
+  for (let i = 0; i < missing.length; i += 5) pages.push(missing.slice(i, i + 5));
+  if (!pages.length) {
+    const all = sections.map((s) => s.id);
+    for (let i = 0; i < all.length; i += 5) pages.push(all.slice(i, i + 5));
+  }
+  return pages;
+}
+
 // ---- montagem --------------------------------------------------------------
 function build() {
-  const total = PAGES.length;
-  const body = PAGES.map((ids, i) => renderPage(ids, i + 1, total)).join('\n');
+  const resolved = resolvePages();
+  const total = resolved.length;
+  const body = resolved.map((ids, i) => renderPage(ids, i + 1, total)).join('\n');
 
   const html = `<!doctype html>
 <html lang="pt-BR">
@@ -176,10 +191,9 @@ ${body}
 
   writeFileSync(join(ROOT, 'cardapio.html'), html, 'utf8');
 
-  const counts = PAGES.map((p) => p.length);
-  const items = PAGES.reduce((a, p) => a + p.reduce((b, id) => b + byId[id].items.length, 0), 0);
+  const counts = resolved.map((p) => p.length);
+  const items = resolved.reduce((a, p) => a + p.reduce((b, id) => b + byId[id].items.length, 0), 0);
   console.log(`Páginas: ${total} | seções/página: [${counts.join(', ')}] | itens: ${items}`);
-  console.log(`Escalas: [${SCALES.join(', ')}]`);
 }
 
 build();

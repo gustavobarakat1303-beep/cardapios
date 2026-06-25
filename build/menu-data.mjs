@@ -24,8 +24,12 @@ export const BANNERS = menu.banners || {};
 export const sections = menu.sections;
 export const DRINK_PAGES = menu.layout?.drinkPages || [];
 export const FOOD_BREAKS = menu.layout?.foodBreaks || [];
-export const PAGES = menu.layout?.pages || [];
-export const SCALES = menu.layout?.scales || [];
+// Composição/escala das páginas vivem AQUI (lado do gerador), não no menu.json —
+// assim o painel pode reescrever o conteúdo sem nunca quebrar o layout.
+let _layout = { pages: [], scales: [] };
+try { _layout = JSON.parse(readFileSync(join(__dirname, 'layout.json'), 'utf8')); } catch {}
+export const PAGES = _layout.pages || [];
+export const SCALES = _layout.scales || [];
 
 // Compatibilidade: `flow` é a lista de seções na ordem do arquivo.
 export const flow = sections;
