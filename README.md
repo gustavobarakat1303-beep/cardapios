@@ -10,6 +10,12 @@ listado em [`data/menus.json`](data/menus.json). Ex.: **Menu Completo**
 (`completo`) e **Menu Executivo** (`executivo`). Cada um gera
 `output/<slug>.html` + `output/<slug>.pdf`.
 
+Há também **menus de evento** (`type: "evento"`, pacote fechado sem preços, A4
+horizontal 3-up): **Almoço/Jantar** (`almoco-jantar`, por seleção de salada +
+pratos — `node build/evento.mjs`) e **Happy Hour** (`happy-hour`, por opções de
+pacote — `node build/evento-opcoes.mjs happy-hour`). Ambos são editáveis no
+painel web e geram `output/<slug>-*.pdf`.
+
 | Arquivo | Descrição |
 | --- | --- |
 | [`data/menus.json`](data/menus.json) | **Registro** dos cardápios (`slug` + nome). |

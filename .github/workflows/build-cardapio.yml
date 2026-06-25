@@ -46,6 +46,11 @@ jobs:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: node build/evento.mjs
 
+      - name: Gerar menu de evento (Happy Hour)
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: node build/evento-opcoes.mjs happy-hour
+
       - name: Commit dos resultados
         run: |
           git config user.name "github-actions[bot]"
