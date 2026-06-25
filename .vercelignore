@@ -1,0 +1,10 @@
+# Arquivos que NÃO precisam ir para a Vercel (mantém o deploy leve).
+node_modules
+chrome
+build/preview
+.git
+.github
+assets/cardapio-original.pdf
+logos_pedemanga_nomade_svg_png.zip
+PROMPT_Cardapio_Pe_de_Manga (1).md
+data/itens.csv
