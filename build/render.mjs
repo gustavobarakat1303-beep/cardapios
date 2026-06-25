@@ -1,6 +1,6 @@
 // Renderiza cardapio.html -> PDF (A4) + PNGs de páginas para verificação visual.
 import puppeteer from 'puppeteer-core';
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -16,33 +16,28 @@ const browser = await puppeteer.launch({
   args: ['--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'],
 });
 const page = await browser.newPage();
-await page.setViewport({ width: 820, height: 1160, deviceScaleFactor: 2 });
+await page.setViewport({ width: 900, height: 1300, deviceScaleFactor: 2 });
 const url = 'file://' + join(ROOT, 'cardapio.html');
 await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
-await new Promise((r) => setTimeout(r, 1200)); // fontes typekit
+try { await page.evaluateHandle('document.fonts.ready'); } catch {}
+await new Promise((r) => setTimeout(r, 1500)); // Google Fonts
 
-// PDF print
-await page.pdf({
-  path: join(ROOT, 'cardapio.pdf'),
-  width: '794px', height: '1123px', printBackground: true, pageRanges: '',
-});
+// PDF print (A4 real, com fundo)
+await page.emulateMediaType('print');
+await page.pdf({ path: join(ROOT, 'cardapio.pdf'), format: 'A4', printBackground: true });
 
-// screenshots por página + checagem de overflow real
+// checagem de overflow: conteúdo (.flow) não pode exceder a área útil (.pc)
 const info = await page.$$eval('.page', (els) =>
   els.map((el, i) => {
-    const foot = el.querySelector('.page-foot');
-    const secs = el.querySelectorAll('.page-body .sec');
-    const top = el.getBoundingClientRect().top;
-    // fundo real do conteúdo = base da última seção (o corpo é sempre full-height)
-    const lastSec = secs[secs.length - 1];
-    const bodyBottom = lastSec ? lastSec.getBoundingClientRect().bottom - top : 0;
-    const footTop = foot ? foot.getBoundingClientRect().top - top : 1123;
-    return { i: i + 1, scrollH: el.scrollHeight, clientH: el.clientHeight,
-      bodyBottom: Math.round(bodyBottom), footTop: Math.round(footTop),
-      overflow: el.scrollHeight > el.clientHeight + 1 || bodyBottom > footTop - 4 };
+    const pc = el.querySelector('.pc');
+    const flow = el.querySelector('.flow');
+    const fill = pc && flow ? flow.getBoundingClientRect().height / pc.clientHeight : 0;
+    const overflow = flow && pc ? flow.scrollHeight > pc.clientHeight + 2 : false;
+    return { i: i + 1, fill: Math.round(fill * 100), overflow };
   })
 );
 
+// screenshots por página (mídia print p/ bater com o PDF)
 const handles = await page.$$('.page');
 for (let i = 0; i < handles.length; i++) {
   await handles[i].screenshot({ path: join(OUT, `page-${String(i + 1).padStart(2, '0')}.png`) });
@@ -51,6 +46,6 @@ for (let i = 0; i < handles.length; i++) {
 writeFileSync(join(OUT, 'report.json'), JSON.stringify(info, null, 2));
 const bad = info.filter((p) => p.overflow);
 console.log(`Páginas: ${info.length}`);
-info.forEach((p) => console.log(`  pág ${String(p.i).padStart(2)} — corpo termina em ${p.bodyBottom}px (rodapé em ${p.footTop}px)${p.overflow ? '  <<< OVERFLOW' : ''}`));
-console.log(bad.length ? `AVISO: ${bad.length} página(s) com overflow real.` : 'OK: sem overflow real.');
+info.forEach((p) => console.log(`  pág ${String(p.i).padStart(2)} — preenchimento ${p.fill}%${p.overflow ? '  <<< OVERFLOW' : ''}`));
+console.log(bad.length ? `AVISO: ${bad.length} página(s) com overflow.` : 'OK: sem overflow.');
 await browser.close();

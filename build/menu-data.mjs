@@ -24,6 +24,8 @@ export const BANNERS = menu.banners || {};
 export const sections = menu.sections;
 export const DRINK_PAGES = menu.layout?.drinkPages || [];
 export const FOOD_BREAKS = menu.layout?.foodBreaks || [];
+export const PAGES = menu.layout?.pages || [];
+export const SCALES = menu.layout?.scales || [];
 
 // Compatibilidade: `flow` é a lista de seções na ordem do arquivo.
 export const flow = sections;
