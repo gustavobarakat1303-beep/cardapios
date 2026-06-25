@@ -33,20 +33,23 @@ export async function getMenu({ token, repo, branch }) {
   return { json: JSON.parse(content), sha: data.sha };
 }
 
-// Grava o menu.json (commit). `menu` é objeto; serializa com 2 espaços.
-export async function putMenu({ token, repo, branch }, menu, message) {
-  const cur = await getMenu({ token, repo, branch }).catch(() => ({ sha: undefined }));
+// Grava o menu.json (commit). `baseSha` = sha que o cliente carregou; se for
+// passado e estiver desatualizado, o GitHub rejeita com 409 (trava de concorrência).
+export async function putMenu({ token, repo, branch }, menu, message, baseSha) {
+  let sha = baseSha;
+  if (!sha) { sha = (await getMenu({ token, repo, branch }).catch(() => ({ sha: undefined }))).sha; }
   const body = {
     message: message || 'painel: atualiza cardápio',
     content: Buffer.from(JSON.stringify(menu, null, 2) + '\n', 'utf8').toString('base64'),
     branch,
-    sha: cur.sha,
+    sha,
   };
   const url = `${API}/repos/${repo}/contents/${FILE}`;
   const r = await fetch(url, { method: 'PUT', headers: headers(token), body: JSON.stringify(body) });
+  if (r.status === 409) { const e = new Error('stale'); e.code = 409; throw e; }
   if (!r.ok) throw new Error(`GitHub PUT ${r.status}: ${await r.text()}`);
   const data = await r.json();
-  return { commit: data.commit?.html_url || null };
+  return { commit: data.commit?.html_url || null, sha: data.content?.sha || null };
 }
 
 export async function readJsonBody(req) {

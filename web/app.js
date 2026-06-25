@@ -10,6 +10,7 @@ const statusEl = $('#status');
 const saveBtn = $('#save');
 
 let menu = null;     // estado em memória
+let baseSha = null;  // versão carregada (trava de concorrência)
 let dirty = false;
 
 // ---- utilidades -----------------------------------------------------------
@@ -34,7 +35,8 @@ async function load(){
   try{
     const r=await fetch('/api/menu',{cache:'no-store'});
     if(!r.ok)throw new Error('HTTP '+r.status);
-    menu=await r.json();
+    const data=await r.json();
+    menu=data.menu||data; baseSha=data.sha||null;
     dirty=false;saveBtn.disabled=true;setStatus('carregado','ok');
     render();
   }catch(e){
@@ -170,12 +172,16 @@ async function save(){
   setStatus('salvando…');saveBtn.disabled=true;
   try{
     const r=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({password:pwd,menu:prepare()})});
-    const data=await r.json();
+      body:JSON.stringify({password:pwd,menu:prepare(),sha:baseSha})});
+    const data=await r.json().catch(()=>({}));
     if(!r.ok){
       if(r.status===401)sessionStorage.removeItem('pdm_pwd');
+      if(r.status===409){ setStatus('desatualizado','err'); saveBtn.disabled=false;
+        if(confirm((data.error||'O cardápio mudou no servidor.')+'\n\nRecarregar agora? (suas edições não salvas serão perdidas)')) load();
+        return; }
       throw new Error((data.error||'erro')+(data.detalhes?': '+data.detalhes.join('; '):''));
     }
+    baseSha=data.sha||baseSha; // avança para a versão recém-gravada
     dirty=false;setStatus('salvo ✓ (PDF regenerando…)','ok');
     menu=prepare(); // reflete IDs/preços normalizados
     render();
