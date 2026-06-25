@@ -51,7 +51,9 @@ const CONTENT_H = BUDGET;     // altura útil do corpo (distribuição elástica
 // ---- Estimativa de altura (conservadora) — modo compacto p/ 6 páginas -----
 const NAME_LH = 12.5, NAME_CPL = 40;
 const DESC_LH = 10.4, DESC_CPL = 62;
-const ITEM_PAD = 8;           // respiro inferior de cada item (linha entre produtos)
+const ITEM_PAD = 5;           // base mínimo; o espaçamento real entre produtos é
+                              // elástico e calculado por página (ver renderPage)
+const EXTRA_PAD_CAP = 8;      // acréscimo máximo de respiro por produto
 const HEADER_H = 38;          // cabeçalho de seção completo
 const CONT_HEADER_H = 24;     // cabeçalho "(continuação)"
 const SECTION_GAP = 9;
@@ -179,15 +181,30 @@ function renderBanner(key) {
     </div>`;
 }
 
+// ---- Composição das páginas ------------------------------------------------
+// Comida (págs. 1–2): paginação automática por orçamento de altura.
+// Bebidas (págs. 3–6): composição FIXA por página, definida abaixo, para
+// respeitar exatamente o agrupamento pedido (e a ordem das seções).
+const byId = Object.fromEntries(flow.filter((n) => n.id).map((n) => [n.id, n]));
+const FOOD = flow.slice(0, flow.findIndex((n) => n.banner === 'bebidas'));
+const DRINK_PAGES = [
+  ['chopp', 'cervejas', 'autorais', 'classicos', 'outros-coqueteis'],
+  ['sugestoes', 'moquetel', 'caipirinhas', 'doses'],
+  ['whisky', 'cachacas', 'licores', 'diversos', 'sangria'],
+  ['vinhos-tintos', 'vinhos-brancos', 'vinhos-rose', 'vinhos-tacas'],
+];
+
 // ---- Paginação -------------------------------------------------------------
 function paginate() {
-  const pages = [];      // cada página = { blocks: [html...] }
-  let cur = { blocks: [], used: 0 };
-  const pushPage = () => { if (cur.blocks.length) pages.push(cur); cur = { blocks: [], used: 0 }; };
+  const pages = [];      // cada página = { blocks: [html...], used, rows }
+  let cur = { blocks: [], used: 0, rows: 0 };
+  const pushPage = () => { if (cur.blocks.length) pages.push(cur); cur = { blocks: [], used: 0, rows: 0 }; };
   const remaining = () => BUDGET - cur.used;
 
-  for (const node of flow) {
+  // ---- Comida: fluxo automático --------------------------------------------
+  for (const node of FOOD) {
     if (node.banner) continue; // faixas de grupo removidas — apenas os itens
+    if (node.id === 'pratos-carnes') pushPage(); // pratos principais começam na pág. 2
 
     const sec = node;
     const accent = sec.kind === 'drink' ? C.marrom : C.verde;
@@ -196,26 +213,40 @@ function paginate() {
 
     while (idx < sec.items.length) {
       const headH = first ? HEADER_H : CONT_HEADER_H;
-      // espaço mínimo para valer a pena abrir a seção nesta página: cabeçalho + 1 linha
       const minRow = itemsHeight(sec.items.slice(idx, idx + 2), sec.highlight);
       if (remaining() < headH + minRow) { pushPage(); }
 
       const avail = remaining() - headH - SECTION_GAP;
       let take = itemsThatFit(sec.items.slice(idx), sec.highlight, avail);
-      if (take === 0) { // não coube nem uma linha: nova página
+      if (take === 0) {
         pushPage();
         const avail2 = remaining() - headH - SECTION_GAP;
         take = itemsThatFit(sec.items.slice(idx), sec.highlight, avail2);
-        if (take === 0) take = 2; // salvaguarda
+        if (take === 0) take = 2;
       }
       const slice = sec.items.slice(idx, idx + take);
       cur.blocks.push(renderSectionBlock(sec, slice, accent, !first));
       cur.used += headH + itemsHeight(slice, sec.highlight) + SECTION_GAP;
+      cur.rows += Math.ceil(slice.length / 2);
       idx += take;
       first = false;
     }
   }
-  pushPage();
+  pushPage(); // fecha a última página de comida
+
+  // ---- Bebidas: páginas fixas ----------------------------------------------
+  for (const ids of DRINK_PAGES) {
+    const page = { blocks: [], used: 0, rows: 0 };
+    for (const id of ids) {
+      const sec = byId[id];
+      if (!sec) throw new Error(`Seção desconhecida em DRINK_PAGES: ${id}`);
+      const accent = sec.kind === 'drink' ? C.marrom : C.verde;
+      page.blocks.push(renderSectionBlock(sec, sec.items, accent, false));
+      page.used += HEADER_H + itemsHeight(sec.items, sec.highlight) + SECTION_GAP;
+      page.rows += Math.ceil(sec.items.length / 2);
+    }
+    pages.push(page);
+  }
   return pages;
 }
 
@@ -261,13 +292,23 @@ function renderPage(page, n, total) {
   const SP = '<div class="vspacer"></div>';
   const END = '<div class="vspacer end"></div>';
   const body = END + page.blocks.join(SP) + END;
+
+  // Espaçamento elástico ENTRE produtos: metade da sobra da página vira respiro
+  // por linha (limitado), a outra metade fica para os espaçadores entre seções.
+  const leftover = Math.max(0, CONTENT_H - page.used);
+  const extra = page.rows ? Math.min(EXTRA_PAD_CAP, (leftover * 0.5) / page.rows) : 0;
+  const ipad = (ITEM_PAD + extra).toFixed(1);
+
+  const iglyph = `<svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="${C.marrom}" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="${C.marrom}" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="${C.marrom}"/></svg>`;
+
   return `<div class="page" data-canvas-width="${PAGE_W}" data-canvas-height="${PAGE_H}">
-    <div class="page-body">${body}</div>
+    <div class="page-body" style="--ipad:${ipad}px">${body}</div>
     <div class="page-foot">
       <span class="foot-mark">
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="${C.verde}"/></svg>
         ${esc(meta.brand)}
       </span>
+      <span class="foot-insta">${iglyph} @pedemanga</span>
       <span class="foot-page">${n} / ${total}</span>
     </div>
   </div>`;
@@ -299,8 +340,10 @@ const CSS = `
     border-top: 1px solid ${C.amarelo};
     padding-top: 5px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: ${C.marrom};
   }
-  .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
-  .foot-page { font-weight: 600; color: ${C.verde}; }
+  .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; flex: 1 1 0; }
+  .foot-insta { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex: 1 1 0; justify-content: center; }
+  .foot-insta svg { transform: translateY(.5px); }
+  .foot-page { font-weight: 600; color: ${C.verde}; flex: 1 1 0; text-align: right; }
 
   /* ---- cabeçalho de seção ---- */
   .sec { break-inside: avoid; flex: 0 0 auto; }
@@ -324,7 +367,7 @@ const CSS = `
 
   /* ---- itens em duas colunas ---- */
   .items { display: grid; grid-template-columns: repeat(${COLS}, 1fr); column-gap: ${COL_GAP}px; align-items: start; }
-  .item { padding-bottom: ${ITEM_PAD}px; }
+  .item { padding-bottom: var(--ipad, ${ITEM_PAD}px); }
   .row { display: flex; align-items: baseline; gap: 4px; }
   .name { font-family: ${SANS}; font-weight: 600; font-size: 9.5px; color: ${C.texto}; line-height: 1.2; }
   .name .sz { font-weight: 500; font-size: 7.5px; color: ${C.textoSuave}; letter-spacing: .03em; }
@@ -337,7 +380,7 @@ const CSS = `
   /* ---- cartões destacados (amarelo-manga) ---- */
   .items-hl { column-gap: 14px; }
   .item.hl { background: ${C.creme}; border: 1px solid ${C.amarelo};
-    border-radius: 6px; padding: 5px 9px 6px; margin-bottom: 4px; }
+    border-radius: 6px; padding: 5px 9px 6px; margin-bottom: var(--ipad, ${ITEM_PAD}px); }
   .item.hl .name { color: ${C.marrom}; }
   .item.hl .price { color: ${C.amareloEsc}; }
   .item.hl .leader { opacity: .3; }

@@ -30,10 +30,13 @@ await page.pdf({
 // screenshots por página + checagem de overflow real
 const info = await page.$$eval('.page', (els) =>
   els.map((el, i) => {
-    const body = el.querySelector('.page-body');
     const foot = el.querySelector('.page-foot');
-    const bodyBottom = body ? body.getBoundingClientRect().bottom - el.getBoundingClientRect().top : 0;
-    const footTop = foot ? foot.getBoundingClientRect().top - el.getBoundingClientRect().top : 1123;
+    const secs = el.querySelectorAll('.page-body .sec');
+    const top = el.getBoundingClientRect().top;
+    // fundo real do conteúdo = base da última seção (o corpo é sempre full-height)
+    const lastSec = secs[secs.length - 1];
+    const bodyBottom = lastSec ? lastSec.getBoundingClientRect().bottom - top : 0;
+    const footTop = foot ? foot.getBoundingClientRect().top - top : 1123;
     return { i: i + 1, scrollH: el.scrollHeight, clientH: el.clientHeight,
       bodyBottom: Math.round(bodyBottom), footTop: Math.round(footTop),
       overflow: el.scrollHeight > el.clientHeight + 1 || bodyBottom > footTop - 4 };
