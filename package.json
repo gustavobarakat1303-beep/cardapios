@@ -9,6 +9,7 @@
     "all": "node build/build.mjs && node build/render.mjs",
     "executivo": "node scripts/build_pe_de_manga_executivo.cjs",
     "sazonal:eventos": "node scripts/build_pe_de_manga_sazonal_eventos.cjs",
+    "happy-hour": "node scripts/build_pe_de_manga_happy_hour.cjs",
     "menu": "node build/menu.mjs",
     "validar": "node build/menu.mjs validar"
   },

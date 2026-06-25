@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-06-25T12:38:38.606Z",
+  "combinedHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCOES_A4_3_PARTES.html",
+  "combinedPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCOES_A4_3_PARTES.pdf",
+  "options": [
+    {
+      "option": "1",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_01_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_01_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "option": "2",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_02_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_02_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "option": "3",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_03_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_03_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "option": "4",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_04_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_HAPPY_HOUR\\HAPPY_HOUR_OPCAO_04_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 691,
+              "bodyScrollHeight": 691,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "combinedMetrics": [
+    {
+      "page": 1,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "page": 2,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "page": 3,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "page": 4,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 691,
+          "bodyScrollHeight": 691,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "pdfInfo": "Title:           Pé de Manga - Happy Hour A4 3 partes\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 09:38:29 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 09:38:29 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           4\r\nEncrypted:       no\r\nPage size:       841.92 x 594.96 pts (A4)\r\nPage rot:        0\r\nFile size:       409770 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+}

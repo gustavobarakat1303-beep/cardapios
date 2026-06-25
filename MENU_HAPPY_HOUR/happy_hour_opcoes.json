@@ -1,0 +1,156 @@
+{
+  "_como_editar": "Atualize as opcoes, bebidas e cozinha. Depois rode: npm run happy-hour. O impresso nao usa precos porque o evento e fechado por pacote.",
+  "titulo": "Happy Hour",
+  "subtitulo": "Eventos Pé de Manga",
+  "periodo": "2026",
+  "rodape": "@PEDEMANGA",
+  "formato": "A4 horizontal dividido em 3 partes",
+  "opcoes": [
+    {
+      "id": "1",
+      "titulo": "Opção 1",
+      "chamada": "Bar clássico e cozinha de entrada",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Água sem gás e com gás",
+            "Refrigerante: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+            "Suco natural: laranja, melancia e abacaxi",
+            "Chopp Claro Brahma",
+            "Caipiroska: limão, abacaxi e morango",
+            "Caipirinha: limão, abacaxi e morango"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Pastel de queijo",
+            "Bruschettas pomodoro",
+            "Bolinho de risotto com dois queijos",
+            "Bolinho de mandioca com carne seca",
+            "Canapé de carpaccio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "titulo": "Opção 2",
+      "chamada": "Bar ampliado e seleção de petiscos",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Água sem gás e com gás",
+            "Refrigerante: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+            "Suco natural: laranja, melancia e abacaxi",
+            "Chopp Claro Brahma",
+            "Caipiroska: limão, abacaxi e morango",
+            "Caipirinha: limão, abacaxi e morango",
+            "Caipisake: morango, abacaxi e limão",
+            "Mojito",
+            "Gin tônica",
+            "Moscow Mule",
+            "Sangria e clérico"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Canapés de carpaccio",
+            "Bruschettas pomodoro",
+            "Pastel de queijo",
+            "Pastel de carne seca com requeijão",
+            "Bolinho de risotto com dois queijos",
+            "Bolinho de mandioca com carne seca",
+            "Bolinho de picanha",
+            "Frios variados e pães"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "titulo": "Opção 3",
+      "chamada": "Bar completo e cozinha reforçada",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Água sem gás e com gás",
+            "Refrigerante: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+            "Suco natural: laranja, melancia e abacaxi",
+            "Chopp Claro Brahma",
+            "Chopp Black",
+            "Caipiroska: limão, abacaxi e morango",
+            "Caipirinha: limão, abacaxi e morango",
+            "Caipisake: morango, abacaxi e limão",
+            "Mojito",
+            "Gin tônica",
+            "Moscow Mule",
+            "Sangria e clérico"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Canapés de carpaccio",
+            "Bruschettas pomodoro",
+            "Bruschettas shimeji e shitake",
+            "Pastel de queijo",
+            "Pastel de carne seca com requeijão",
+            "Bolinho de risotto com dois queijos",
+            "Bolinho de mandioca com carne seca",
+            "Bolinho de picanha",
+            "Frios variados e pães",
+            "Brigadeiro de colher"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "titulo": "Opção 4",
+      "chamada": "Bar premium e cozinha completa",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Água sem gás e com gás",
+            "Refrigerante: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+            "Chopp Claro Brahma",
+            "Chopp Brahma Black",
+            "Suco: laranja, limão e abacaxi",
+            "Caipiroska: limão, abacaxi e morango",
+            "Caipirinha: limão, abacaxi e morango",
+            "Caipisake: morango, abacaxi e limão",
+            "Mojito",
+            "Gin tônica",
+            "Moscow Mule",
+            "Sangria e clérico",
+            "Whisky 8 anos - Red Label"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Mini acarajé",
+            "Dadinho de tapioca e queijo coalho com geleia de pimenta",
+            "Bruschettas pomodoro",
+            "Bruschettas shimeji e shitake",
+            "Canapés de carpaccio",
+            "Pastel de queijo",
+            "Pastel de carne seca com requeijão",
+            "Bolinho de risotto com dois queijos",
+            "Bolinho de mandioca com carne seca",
+            "Bolinho de picanha",
+            "Frios variados e pães",
+            "Sorvete de creme ou chocolate com calda",
+            "Brigadeiro de colher"
+          ]
+        }
+      ]
+    }
+  ]
+}
