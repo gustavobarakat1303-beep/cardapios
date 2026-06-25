@@ -1492,22 +1492,15 @@
       "icon": "soda",
       "items": [
         {
-          "id": "soda-limonada",
-          "n": "Soda Limonada",
-          "d": "Lata",
-          "p": "10,00"
+          "id": "sucos-naturais",
+          "n": "Sucos Naturais",
+          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
+          "p": "15,00"
         },
         {
-          "id": "soda-zero",
-          "n": "Soda Zero",
-          "d": "Lata",
-          "p": "10,00"
-        },
-        {
-          "id": "h2o-limao",
-          "n": "H2O Limão",
-          "d": "500 ml",
-          "p": "12,00"
+          "id": "suco-de-tomate-temperado",
+          "n": "Suco de Tomate Temperado",
+          "p": "18,00"
         },
         {
           "id": "agua",
@@ -1520,29 +1513,18 @@
           "p": "8,00"
         },
         {
-          "id": "sucos-naturais",
-          "n": "Sucos Naturais",
-          "d": "Abacaxi, melancia, abacaxi com hortelã, laranja e limão-taiti",
-          "p": "15,00"
-        },
-        {
-          "id": "suco-de-tomate-temperado",
-          "n": "Suco de Tomate Temperado",
-          "p": "18,00"
-        },
-        {
-          "id": "pepsi-twist",
-          "n": "Pepsi Twist",
+          "id": "pepsi",
+          "n": "Pepsi",
           "p": "10,00"
-        },
-        {
-          "id": "red-bull",
-          "n": "Red Bull",
-          "p": "22,00"
         },
         {
           "id": "pepsi-zero",
           "n": "Pepsi Zero",
+          "p": "10,00"
+        },
+        {
+          "id": "pepsi-twist",
+          "n": "Pepsi Twist",
           "p": "10,00"
         },
         {
@@ -1556,9 +1538,24 @@
           "p": "10,00"
         },
         {
-          "id": "pepsi",
-          "n": "Pepsi",
+          "id": "soda-limonada",
+          "n": "Soda Limonada",
           "p": "10,00"
+        },
+        {
+          "id": "soda-zero",
+          "n": "Soda Zero",
+          "p": "10,00"
+        },
+        {
+          "id": "h2o-limao",
+          "n": "H2O Limão",
+          "p": "12,00"
+        },
+        {
+          "id": "red-bull",
+          "n": "Red Bull",
+          "p": "22,00"
         }
       ]
     }
