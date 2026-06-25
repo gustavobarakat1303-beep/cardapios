@@ -1,0 +1,90 @@
+{
+  "_como_editar": "Atualize periodo e itens a cada quinzena. Depois rode: npm run executivo. Deixe preco vazio quando o menu nao tiver preco por item.",
+  "titulo": "Menu Executivo",
+  "periodo": "2ª quinzena de junho 2026",
+  "subtitulo": "Almoço executivo",
+  "rodape": "@PEDEMANGA",
+  "secoes": [
+    {
+      "titulo": "Saladas",
+      "tag": "Entradas",
+      "icone": "bowl",
+      "itens": [
+        {
+          "nome": "Salada Caesar",
+          "descricao": "Alface americana, crótons, frango, parmesão e molho caesar",
+          "preco": ""
+        },
+        {
+          "nome": "Salada Caprese",
+          "descricao": "Rúcula, tomate, mozarela de búfala, parmesão e pesto de manjericão",
+          "preco": ""
+        },
+        {
+          "nome": "Carpaccio Salada",
+          "descricao": "Carpaccio de carne, alface americana, parmesão, molho de alcaparras e torrada",
+          "preco": ""
+        }
+      ]
+    },
+    {
+      "titulo": "Pratos Quentes",
+      "tag": "Principais",
+      "icone": "food",
+      "itens": [
+        {
+          "nome": "Filé Mignon Grelhado",
+          "descricao": "Com penne ao molho de queijo",
+          "preco": ""
+        },
+        {
+          "nome": "Picanha Grelhada",
+          "descricao": "Com risoto de cogumelos",
+          "preco": ""
+        },
+        {
+          "nome": "Salmão Grelhado",
+          "descricao": "Ao molho tarê, brandade de siri e arroz",
+          "preco": ""
+        },
+        {
+          "nome": "Strogonoff",
+          "descricao": "Com arroz e batata frita",
+          "preco": ""
+        },
+        {
+          "nome": "Polpetone",
+          "descricao": "Com espaguete ao molho pomodoro",
+          "preco": ""
+        },
+        {
+          "nome": "Saint Peter",
+          "descricao": "Ao molho pesto, arroz e legumes",
+          "preco": ""
+        }
+      ]
+    },
+    {
+      "titulo": "Sobremesas",
+      "tag": "Doces",
+      "icone": "dessert",
+      "itens": [
+        {
+          "nome": "Bolo de Coco",
+          "descricao": "",
+          "preco": ""
+        },
+        {
+          "nome": "Pudim de Chocolate",
+          "descricao": "",
+          "preco": ""
+        },
+        {
+          "nome": "Frutas da Estação",
+          "descricao": "Manga",
+          "preco": ""
+        }
+      ]
+    }
+  ]
+}

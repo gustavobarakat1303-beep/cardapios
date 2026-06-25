@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-06-25T04:41:49.022Z",
+  "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\executivo\\executivo_pe_de_manga.html",
+  "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\executivo\\executivo_pe_de_manga.pdf",
+  "rootHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\executivo.html",
+  "rootPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\executivo.pdf",
+  "metrics": {
+    "pageHeight": 1123,
+    "pageScrollHeight": 1123,
+    "pcHeight": 1043,
+    "pcScrollHeight": 1043,
+    "flowBottom": 1066,
+    "footerTop": 1092,
+    "overflow": false
+  },
+  "pdfInfo": "Title:           Pé de Manga - Menu Executivo\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 01:41:48 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 01:41:48 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           1\r\nEncrypted:       no\r\nPage size:       594.96 x 841.92 pts (A4)\r\nPage rot:        0\r\nFile size:       166785 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+}
