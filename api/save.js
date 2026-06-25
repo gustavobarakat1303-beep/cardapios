@@ -7,13 +7,24 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') { res.status(405).json({ error: 'use POST' }); return; }
   try {
     const cfg = env();
-    const { password, menu, sha, slug } = await readJsonBody(req);
+    const { password, menu, sha, slug, type } = await readJsonBody(req);
     const menuSlug = slug || 'completo';
 
     if (!cfg.password) { res.status(500).json({ error: 'ADMIN_PASSWORD não configurada no servidor.' }); return; }
     if (password !== cfg.password) { res.status(401).json({ error: 'senha incorreta.' }); return; }
-    if (!menu || !Array.isArray(menu.sections)) { res.status(400).json({ error: 'menu inválido.' }); return; }
+    if (!menu || typeof menu !== 'object') { res.status(400).json({ error: 'dados inválidos.' }); return; }
 
+    if (type === 'evento') {
+      if (!menu.saladaSelecionada || !menu.saladaSelecionada.nome)
+        { res.status(422).json({ error: 'selecione exatamente 1 salada.' }); return; }
+      if (!Array.isArray(menu.principaisSelecionados) || menu.principaisSelecionados.length !== 3)
+        { res.status(422).json({ error: 'selecione exatamente 3 pratos principais.' }); return; }
+      const out = await putMenu(cfg, menuSlug, menu, `painel: atualiza evento (${menuSlug})`, sha);
+      res.status(200).json({ ok: true, commit: out.commit, sha: out.sha });
+      return;
+    }
+
+    if (!Array.isArray(menu.sections)) { res.status(400).json({ error: 'menu inválido.' }); return; }
     const errs = validate(menu);
     if (errs.length) { res.status(422).json({ error: 'integridade falhou', detalhes: errs }); return; }
 

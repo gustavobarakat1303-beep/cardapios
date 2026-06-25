@@ -13,6 +13,8 @@ let menu = null;     // estado em memória
 let baseSha = null;  // versão carregada (trava de concorrência)
 let currentSlug = 'completo'; // cardápio selecionado
 let dirty = false;
+const menuTypes = {}; // slug -> type ('evento' | undefined)
+let isEvento = false; // true quando o cardápio atual é de evento
 
 // ---- utilidades -----------------------------------------------------------
 function slug(s){return (String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
@@ -38,9 +40,10 @@ async function load(){
     if(!r.ok)throw new Error('HTTP '+r.status);
     const data=await r.json();
     menu=data.menu||data; baseSha=data.sha||null;
-    $('#pdf').href='/output/'+currentSlug+'.pdf';
+    isEvento=menuTypes[currentSlug]==='evento';
+    $('#pdf').href=isEvento?'/output/'+currentSlug+'-geral.pdf':'/output/'+currentSlug+'.pdf';
     dirty=false;saveBtn.disabled=true;setStatus('carregado','ok');
-    render();
+    if(isEvento)renderEvento(); else render();
   }catch(e){
     app.innerHTML='<div class="banner err">Não consegui carregar o cardápio de <code>/api/menu</code>.'
       +' Verifique se o painel está publicado na Vercel com as variáveis de ambiente configuradas.<br>'
@@ -122,6 +125,105 @@ function renderAddSection(){
   return box;
 }
 
+// ---- configurador de evento ----------------------------------------------
+const itemKey=(it)=>String(it&&it.nome||'')+'|'+String(it&&it.descricao||'');
+function itemLine(it){
+  const nome=document.createElement('strong');nome.textContent=it.nome||'';
+  const frag=document.createDocumentFragment();frag.appendChild(nome);
+  if(it.descricao){const d=document.createElement('span');d.textContent=it.descricao;frag.appendChild(d);}
+  return frag;
+}
+function evtFixedList(title,tag,items){
+  const box=document.createElement('div');box.className='evt-block';
+  const h=document.createElement('div');h.className='evt-block-head';
+  h.innerHTML=`<span>${title}</span><em>${tag}</em>`;box.appendChild(h);
+  const ul=document.createElement('ul');ul.className='evt-fixed';
+  (items||[]).forEach((it)=>{
+    const li=document.createElement('li');
+    if(typeof it==='string')li.textContent=it; else li.appendChild(itemLine(it));
+    ul.appendChild(li);
+  });
+  box.appendChild(ul);
+  return box;
+}
+function renderEvento(){
+  app.innerHTML='';
+  const wrap=document.createElement('div');wrap.className='evt';
+
+  const head=document.createElement('div');head.className='evt-head';
+  head.innerHTML=`<h2>${menu.titulo||'Menu de evento'}</h2>`
+    +`<p class="evt-sub">${menu.subtitulo||''} · ${menu.periodo||''}</p>`
+    +`<p class="evt-hint">Monte o cardápio do evento: escolha <strong>1 salada</strong> e `
+    +`<strong>3 pratos principais</strong>. Entradas, sobremesas e bebidas são fixas. `
+    +`Sem preços (pacote fechado).</p>`;
+  wrap.appendChild(head);
+
+  // Entradas (fixas)
+  wrap.appendChild(evtFixedList('Entradas','Completo',menu.entradas));
+
+  // Salada (1 opção) ------------------------------------------------------
+  const salBox=document.createElement('div');salBox.className='evt-block';
+  salBox.innerHTML='<div class="evt-block-head"><span>Salada</span><em>escolha 1</em></div>';
+  const selKey=itemKey(menu.saladaSelecionada);
+  (menu.saladasDisponiveis||[]).forEach((s)=>{
+    const id='sal-'+slug(s.nome+'-'+(s.descricao||''));
+    const row=document.createElement('label');row.className='evt-opt';row.setAttribute('for',id);
+    const rb=document.createElement('input');rb.type='radio';rb.name='evt-salada';rb.id=id;
+    rb.checked=itemKey(s)===selKey;
+    rb.addEventListener('change',()=>{menu.saladaSelecionada={nome:s.nome,descricao:s.descricao||''};markDirty();validateUI();});
+    const txt=document.createElement('div');txt.className='evt-opt-txt';txt.appendChild(itemLine(s));
+    row.appendChild(rb);row.appendChild(txt);
+    salBox.appendChild(row);
+  });
+  wrap.appendChild(salBox);
+
+  // Principais (3 opções) -------------------------------------------------
+  const prBox=document.createElement('div');prBox.className='evt-block';
+  prBox.innerHTML='<div class="evt-block-head"><span>Pratos principais</span>'
+    +'<em class="evt-count">0/3</em></div>';
+  const countEl=prBox.querySelector('.evt-count');
+  const selSet=new Set((menu.principaisSelecionados||[]).map(itemKey));
+  const boxes=[];
+  function syncPratos(){
+    const sel=boxes.filter((b)=>b.checked);
+    countEl.textContent=sel.length+'/3';
+    countEl.classList.toggle('ok',sel.length===3);
+    boxes.forEach((b)=>{ b.disabled=(!b.checked && sel.length>=3); });
+  }
+  (menu.principaisDisponiveis||[]).forEach((p)=>{
+    const id='pr-'+slug(p.nome+'-'+(p.descricao||''));
+    const row=document.createElement('label');row.className='evt-opt';row.setAttribute('for',id);
+    const cb=document.createElement('input');cb.type='checkbox';cb.id=id;
+    cb.checked=selSet.has(itemKey(p));cb._item=p;boxes.push(cb);
+    cb.addEventListener('change',()=>{
+      const chosen=boxes.filter((b)=>b.checked);
+      if(chosen.length>3){cb.checked=false;return;}
+      menu.principaisSelecionados=boxes.filter((b)=>b.checked).map((b)=>({nome:b._item.nome,descricao:b._item.descricao||''}));
+      markDirty();syncPratos();validateUI();
+    });
+    const txt=document.createElement('div');txt.className='evt-opt-txt';txt.appendChild(itemLine(p));
+    row.appendChild(cb);row.appendChild(txt);
+    prBox.appendChild(row);
+  });
+  wrap.appendChild(prBox);
+  syncPratos();
+
+  // Sobremesas (fixas)
+  wrap.appendChild(evtFixedList('Sobremesa','Completo',menu.sobremesas));
+
+  // Bebidas / versões (fixas) + PDFs --------------------------------------
+  (menu.versoes||[]).forEach((v)=>{
+    const box=evtFixedList('Bebidas — '+(v.titulo||v.id),'fixo',v.bebidas);
+    const a=document.createElement('a');a.className='btn tiny evt-pdf';
+    a.href='/output/'+currentSlug+'-'+v.id+'.pdf';a.target='_blank';a.textContent='Ver PDF desta versão';
+    box.appendChild(a);
+    wrap.appendChild(box);
+  });
+
+  app.appendChild(wrap);
+  validateUI();
+}
+
 // ---- operações de estrutura ----------------------------------------------
 function swap(arr,a,b){[arr[a],arr[b]]=[arr[b],arr[a]];}
 function removeSection(si){
@@ -141,6 +243,14 @@ function updateCounts(){document.querySelectorAll('.card').forEach((c)=>{
 // ---- validação visual -----------------------------------------------------
 function flagPrice(input,val){input.classList.toggle('invalid',!PRICE_RE.test(normPrice(val)||''));}
 function validateUI(){
+  if(isEvento){
+    const okSalada=!!(menu.saladaSelecionada&&menu.saladaSelecionada.nome);
+    const okPratos=Array.isArray(menu.principaisSelecionados)&&menu.principaisSelecionados.length===3;
+    if(!okSalada){setStatus('selecione 1 salada','err');saveBtn.disabled=true;return false;}
+    if(!okPratos){setStatus('selecione exatamente 3 pratos principais','err');saveBtn.disabled=true;return false;}
+    if(dirty){setStatus('pronto para salvar','');saveBtn.disabled=false;}
+    return true;
+  }
   let problems=0;
   menu.sections.forEach(sec=>sec.items.forEach(it=>{if(!PRICE_RE.test(normPrice(it.p)||'')||!String(it.n||'').trim())problems++;}));
   if(problems){setStatus(problems+' campo(s) a corrigir','err');saveBtn.disabled=true;}
@@ -173,8 +283,11 @@ async function save(){
   if(!pwd){pwd=prompt('Senha do painel:');if(!pwd)return;sessionStorage.setItem('pdm_pwd',pwd);}
   setStatus('salvando…');saveBtn.disabled=true;
   try{
+    const body=isEvento
+      ? {password:pwd,menu,sha:baseSha,slug:currentSlug,type:'evento'}
+      : {password:pwd,menu:prepare(),sha:baseSha,slug:currentSlug};
     const r=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({password:pwd,menu:prepare(),sha:baseSha,slug:currentSlug})});
+      body:JSON.stringify(body)});
     const data=await r.json().catch(()=>({}));
     if(!r.ok){
       if(r.status===401)sessionStorage.removeItem('pdm_pwd');
@@ -185,8 +298,8 @@ async function save(){
     }
     baseSha=data.sha||baseSha; // avança para a versão recém-gravada
     dirty=false;setStatus('salvo ✓ (PDF regenerando…)','ok');
-    menu=prepare(); // reflete IDs/preços normalizados
-    render();
+    if(isEvento){saveBtn.disabled=true;}
+    else{menu=prepare();render();} // reflete IDs/preços normalizados
   }catch(e){setStatus('falha ao salvar','err');alert('Não foi possível salvar:\n'+e.message);saveBtn.disabled=false;}
 }
 
@@ -206,6 +319,7 @@ async function init(){
     const r=await fetch('/api/menus',{cache:'no-store'});
     const data=await r.json();
     const menus=(data.menus||[]).filter(m=>m&&m.slug);
+    menus.forEach(m=>{menuTypes[m.slug]=m.type;});
     if(menus.length){
       sel.innerHTML=menus.map(m=>`<option value="${m.slug}">${m.name||m.slug}</option>`).join('');
       currentSlug=menus.some(m=>m.slug===currentSlug)?currentSlug:menus[0].slug;

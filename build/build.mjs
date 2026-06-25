@@ -225,6 +225,11 @@ ${body}
 
 // ---- CLI -------------------------------------------------------------------
 const arg = process.argv[2];
-const slugs = arg ? [arg] : listMenus().map((x) => x.slug);
+const registry = listMenus();
+const eventoSlugs = new Set(registry.filter((x) => x.type === 'evento').map((x) => x.slug));
+const slugs = (arg ? [arg] : registry.map((x) => x.slug)).filter((s) => {
+  if (eventoSlugs.has(s)) { console.log(`  (pulando "${s}" — cardápio de evento, use: node build/evento.mjs)`); return false; }
+  return true;
+});
 console.log(`Gerando ${slugs.length} cardápio(s):`);
 for (const s of slugs) buildMenu(s);

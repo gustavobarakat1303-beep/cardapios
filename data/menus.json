@@ -1,6 +1,7 @@
 {
   "menus": [
     { "slug": "completo", "name": "Menu Completo" },
-    { "slug": "executivo", "name": "Menu Executivo" }
+    { "slug": "executivo", "name": "Menu Executivo" },
+    { "slug": "almoco-jantar", "name": "Evento — Almoço/Jantar", "type": "evento" }
   ]
 }
