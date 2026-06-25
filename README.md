@@ -83,6 +83,13 @@ Para gerenciar o cardápio **pelo navegador ou celular**, há um painel em
 [`web/`](web/) servido pela **Vercel**, que grava direto no `data/menu.json` do
 GitHub. Ao salvar, uma **GitHub Action regenera o PDF sozinha**.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgustavobarakat1303-beep%2Fcardapios&env=GITHUB_TOKEN,GITHUB_REPO,GITHUB_BRANCH,ADMIN_PASSWORD&envDescription=Token%20do%20GitHub%20(Contents%3A%20write)%2C%20owner%2Frepo%2C%20branch%20e%20senha%20do%20painel&envLink=https%3A%2F%2Fgithub.com%2Fgustavobarakat1303-beep%2Fcardapios%2Fblob%2Fclaude%2Fbold-dijkstra-6wj1a5%2FREADME.md&project-name=cardapio-pe-de-manga&repository-name=cardapio-pe-de-manga)
+
+> O botão acima abre a Vercel já pedindo as 4 variáveis. Ele **clona** o repositório
+> para uma nova cópia na sua conta — use-o se quiser um repositório dedicado ao
+> painel. Para usar **este mesmo** repositório (mantendo o histórico), prefira o
+> fluxo *Import* descrito abaixo.
+
 **Arquitetura:** painel estático (`web/`) → funções serverless (`api/menu.js`,
 `api/save.js`) → commit no GitHub (Contents API) → Action
 [`build-cardapio.yml`](.github/workflows/build-cardapio.yml) reconstrói
