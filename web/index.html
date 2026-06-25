@@ -59,6 +59,47 @@
     </div>
   </template>
 
+  <!-- Editor de evento por opções (Happy Hour): opção → seções → itens -->
+  <template id="tpl-opcao">
+    <section class="card opcao" data-oi="">
+      <div class="card-head">
+        <input class="op-id" placeholder="id" title="Identificador da opção (ex.: 1)" />
+        <input class="op-titulo" placeholder="Título da opção (ex.: Opção 1)" />
+        <span class="spacer"></span>
+        <button class="btn tiny" data-act="add-osec" title="Adicionar seção">+ seção</button>
+        <button class="btn tiny" data-act="op-up" title="Subir opção">↑</button>
+        <button class="btn tiny" data-act="op-down" title="Descer opção">↓</button>
+        <button class="btn tiny danger" data-act="del-op" title="Excluir opção">✕</button>
+      </div>
+      <input class="op-chamada" placeholder="Chamada (ex.: Bar clássico e cozinha de entrada)" />
+      <div class="op-secoes"></div>
+    </section>
+  </template>
+
+  <template id="tpl-op-sec">
+    <div class="op-sec" data-si="">
+      <div class="op-sec-head">
+        <input class="osec-titulo" placeholder="Título da seção (ex.: Bebidas)" />
+        <span class="osec-count"></span>
+        <span class="spacer"></span>
+        <button class="btn tiny" data-act="add-oitem" title="Adicionar item">+ item</button>
+        <button class="btn tiny" data-act="osec-up" title="Subir seção">↑</button>
+        <button class="btn tiny" data-act="osec-down" title="Descer seção">↓</button>
+        <button class="btn tiny danger" data-act="del-osec" title="Excluir seção">✕</button>
+      </div>
+      <div class="osec-itens"></div>
+    </div>
+  </template>
+
+  <template id="tpl-op-item">
+    <div class="op-item" data-ii="">
+      <input class="oitem-text" placeholder="Item (ex.: Chopp Claro Brahma)" />
+      <button class="btn tiny" data-act="oitem-up" title="Subir">↑</button>
+      <button class="btn tiny" data-act="oitem-down" title="Descer">↓</button>
+      <button class="btn tiny danger" data-act="del-oitem" title="Excluir">✕</button>
+    </div>
+  </template>
+
   <script src="./app.js"></script>
 </body>
 </html>

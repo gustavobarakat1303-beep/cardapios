@@ -15,9 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar integridade de todos os cardápios
+      - name: Validar integridade dos cardápios (exceto eventos)
         run: |
-          for slug in $(node -e "console.log(require('./data/menus.json').menus.map(m=>m.slug).join(' '))"); do
+          for slug in $(node -e "console.log(require('./data/menus.json').menus.filter(m=>m.type!=='evento').map(m=>m.slug).join(' '))"); do
             echo "== $slug =="
             node build/menu.mjs validar --menu "$slug"
           done

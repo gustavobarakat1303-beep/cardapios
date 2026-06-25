@@ -8,6 +8,7 @@
     "render": "node build/render.mjs",
     "all": "node build/build.mjs && node build/render.mjs",
     "evento": "node build/evento.mjs",
+    "evento:happy-hour": "node build/evento-opcoes.mjs happy-hour",
     "menu": "node build/menu.mjs",
     "validar": "node build/menu.mjs validar"
   },

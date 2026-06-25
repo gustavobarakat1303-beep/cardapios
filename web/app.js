@@ -147,6 +147,7 @@ function evtFixedList(title,tag,items){
   return box;
 }
 function renderEvento(){
+  if(Array.isArray(menu.opcoes)){renderEventoOpcoes();return;}
   app.innerHTML='';
   const wrap=document.createElement('div');wrap.className='evt';
 
@@ -224,6 +225,136 @@ function renderEvento(){
   validateUI();
 }
 
+// ---- configurador de evento por OPÇÕES (Happy Hour) -----------------------
+// Estrutura: { titulo, subtitulo, periodo, rodape, opcoes:[{ id, titulo,
+// chamada, secoes:[{ titulo, itens:[texto] }] }] }. Pacote fechado, sem preço.
+function renderEventoOpcoes(){
+  app.innerHTML='';
+  menu.opcoes=menu.opcoes||[];
+  app.appendChild(renderOpMeta());
+  menu.opcoes.forEach((op,oi)=>app.appendChild(renderOpcao(op,oi)));
+  app.appendChild(renderAddOpcao());
+  validateUI();
+}
+
+function renderOpMeta(){
+  const box=document.createElement('div');box.className='card meta-card';
+  const head=document.createElement('div');head.className='card-head';
+  const strong=document.createElement('strong');strong.textContent='Cabeçalho do menu';
+  head.appendChild(strong);box.appendChild(head);
+  const grid=document.createElement('div');grid.className='meta-grid';
+  for(const [k,label] of [['titulo','Título'],['subtitulo','Subtítulo'],['periodo','Período'],['rodape','Rodapé']]){
+    const field=document.createElement('label');field.className='meta-field';
+    field.appendChild(document.createTextNode(label));
+    const inp=document.createElement('input');inp.value=menu[k]||'';
+    inp.addEventListener('input',()=>{menu[k]=inp.value;markDirty();validateUI();});
+    field.appendChild(inp);grid.appendChild(field);
+  }
+  box.appendChild(grid);return box;
+}
+
+function renderOpcao(op,oi){
+  const node=$('#tpl-opcao').content.firstElementChild.cloneNode(true);
+  node.dataset.oi=oi;
+  const id=$('.op-id',node),tit=$('.op-titulo',node),cha=$('.op-chamada',node);
+  id.value=op.id||'';tit.value=op.titulo||'';cha.value=op.chamada||'';
+  id.addEventListener('input',()=>{op.id=id.value;markDirty();});
+  tit.addEventListener('input',()=>{op.titulo=tit.value;markDirty();validateUI();});
+  cha.addEventListener('input',()=>{op.chamada=cha.value;markDirty();});
+  const secBox=$('.op-secoes',node);
+  op.secoes=op.secoes||[];
+  op.secoes.forEach((se,si)=>secBox.appendChild(renderOpSec(op,se,si)));
+  node.addEventListener('click',(e)=>{
+    const act=e.target.dataset.act;if(!act)return;
+    if(act==='add-osec'){op.secoes.push({titulo:'',itens:['']});markDirty();renderEventoOpcoes();}
+    if(act==='del-op'){if(confirm('Excluir a opção "'+(op.titulo||op.id||'')+'"?')){menu.opcoes.splice(oi,1);markDirty();renderEventoOpcoes();}}
+    if(act==='op-up'&&oi>0){swap(menu.opcoes,oi,oi-1);markDirty();renderEventoOpcoes();}
+    if(act==='op-down'&&oi<menu.opcoes.length-1){swap(menu.opcoes,oi,oi+1);markDirty();renderEventoOpcoes();}
+  });
+  return node;
+}
+
+function renderOpSec(op,se,si){
+  const node=$('#tpl-op-sec').content.firstElementChild.cloneNode(true);
+  node.dataset.si=si;
+  const tit=$('.osec-titulo',node);
+  tit.value=se.titulo||'';
+  tit.addEventListener('input',()=>{se.titulo=tit.value;markDirty();validateUI();});
+  const itBox=$('.osec-itens',node);
+  se.itens=se.itens||[];
+  se.itens.forEach((_,ii)=>itBox.appendChild(renderOpItem(se,ii)));
+  $('.osec-count',node).textContent=se.itens.length+' itens';
+  node.addEventListener('click',(e)=>{
+    const act=e.target.dataset.act;if(!act)return;
+    if(act==='add-oitem'){se.itens.push('');markDirty();renderEventoOpcoes();}
+    if(act==='del-osec'){if(confirm('Excluir a seção "'+(se.titulo||'')+'"?')){op.secoes.splice(si,1);markDirty();renderEventoOpcoes();}}
+    if(act==='osec-up'&&si>0){swap(op.secoes,si,si-1);markDirty();renderEventoOpcoes();}
+    if(act==='osec-down'&&si<op.secoes.length-1){swap(op.secoes,si,si+1);markDirty();renderEventoOpcoes();}
+  });
+  return node;
+}
+
+function renderOpItem(se,ii){
+  const node=$('#tpl-op-item').content.firstElementChild.cloneNode(true);
+  node.dataset.ii=ii;
+  const inp=$('.oitem-text',node);
+  inp.value=se.itens[ii]||'';
+  inp.addEventListener('input',()=>{se.itens[ii]=inp.value;markDirty();});
+  inp.addEventListener('blur',validateUI);
+  node.addEventListener('click',(e)=>{
+    const act=e.target.dataset.act;if(!act)return;
+    if(act==='del-oitem'){se.itens.splice(ii,1);markDirty();renderEventoOpcoes();}
+    if(act==='oitem-up'&&ii>0){swap(se.itens,ii,ii-1);markDirty();renderEventoOpcoes();}
+    if(act==='oitem-down'&&ii<se.itens.length-1){swap(se.itens,ii,ii+1);markDirty();renderEventoOpcoes();}
+  });
+  return node;
+}
+
+function renderAddOpcao(){
+  const box=document.createElement('div');box.className='add-sec';
+  const strong=document.createElement('strong');strong.textContent='Nova opção: ';
+  const btn=document.createElement('button');btn.className='btn tiny';btn.textContent='+ adicionar opção';
+  btn.addEventListener('click',()=>{
+    menu.opcoes=menu.opcoes||[];
+    const n=menu.opcoes.length+1;
+    menu.opcoes.push({id:String(n),titulo:'Opção '+n,chamada:'',
+      secoes:[{titulo:'Bebidas',itens:['']},{titulo:'Cozinha',itens:['']}]});
+    markDirty();renderEventoOpcoes();
+  });
+  box.appendChild(strong);box.appendChild(btn);
+  return box;
+}
+
+function validateOpcoesUI(){
+  if(!String(menu.titulo||'').trim()){setStatus('título do menu vazio','err');saveBtn.disabled=true;return false;}
+  if(!(menu.opcoes||[]).length){setStatus('adicione ao menos 1 opção','err');saveBtn.disabled=true;return false;}
+  for(const op of menu.opcoes){
+    if(!String(op.id||'').trim()||!String(op.titulo||'').trim()){setStatus('opção sem id/título','err');saveBtn.disabled=true;return false;}
+    if(!/^[a-z0-9-]+$/i.test(String(op.id))){setStatus('id de opção inválido (só letras, números e hífen)','err');saveBtn.disabled=true;return false;}
+    if(!(op.secoes||[]).length){setStatus('opção sem seções','err');saveBtn.disabled=true;return false;}
+    for(const se of op.secoes){
+      if(!String(se.titulo||'').trim()){setStatus('seção sem título','err');saveBtn.disabled=true;return false;}
+      if(!(se.itens||[]).some(t=>String(t||'').trim())){setStatus('seção sem itens','err');saveBtn.disabled=true;return false;}
+    }
+  }
+  if(dirty){setStatus('pronto para salvar','');saveBtn.disabled=false;}
+  return true;
+}
+
+function prepareOpcoes(){
+  const out=JSON.parse(JSON.stringify(menu));
+  out.opcoes=(out.opcoes||[]).map((op)=>{
+    const o={id:String(op.id||'').trim(),titulo:String(op.titulo||'').trim()};
+    if(op.chamada!==undefined)o.chamada=String(op.chamada||'').trim();
+    o.secoes=(op.secoes||[]).map((se)=>({
+      titulo:String(se.titulo||'').trim(),
+      itens:(se.itens||[]).map((t)=>String(t).trim()).filter(Boolean),
+    }));
+    return o;
+  });
+  return out;
+}
+
 // ---- operações de estrutura ----------------------------------------------
 function swap(arr,a,b){[arr[a],arr[b]]=[arr[b],arr[a]];}
 function removeSection(si){
@@ -244,6 +375,7 @@ function updateCounts(){document.querySelectorAll('.card').forEach((c)=>{
 function flagPrice(input,val){input.classList.toggle('invalid',!PRICE_RE.test(normPrice(val)||''));}
 function validateUI(){
   if(isEvento){
+    if(Array.isArray(menu.opcoes))return validateOpcoesUI();
     const okSalada=!!(menu.saladaSelecionada&&menu.saladaSelecionada.nome);
     const okPratos=Array.isArray(menu.principaisSelecionados)&&menu.principaisSelecionados.length===3;
     if(!okSalada){setStatus('selecione 1 salada','err');saveBtn.disabled=true;return false;}
@@ -284,7 +416,7 @@ async function save(){
   setStatus('salvando…');saveBtn.disabled=true;
   try{
     const body=isEvento
-      ? {password:pwd,menu,sha:baseSha,slug:currentSlug,type:'evento'}
+      ? {password:pwd,menu:Array.isArray(menu.opcoes)?prepareOpcoes():menu,sha:baseSha,slug:currentSlug,type:'evento'}
       : {password:pwd,menu:prepare(),sha:baseSha,slug:currentSlug};
     const r=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify(body)});
