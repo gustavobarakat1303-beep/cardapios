@@ -178,10 +178,11 @@ function buildHtml(data, versions) {
       width: 99mm;
       height: 210mm;
       overflow: hidden;
-      padding: 5.1mm 5mm 4.6mm;
+      padding: 6mm 6.2mm 5.2mm;
       display: flex;
       flex-direction: column;
       border-left: 0.35pt dashed #b6b6b6;
+      text-align: center;
     }
     .panel:first-child { border-left: none; }
     .panel::after {
@@ -197,71 +198,72 @@ function buildHtml(data, versions) {
       pointer-events: none;
     }
     .panel-head {
-      height: 10.4mm;
-      flex: 0 0 10.4mm;
-      display: grid;
-      grid-template-columns: 22mm 1fr;
+      height: 16mm;
+      flex: 0 0 16mm;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 3mm;
-      border-bottom: 0.55mm solid var(--ink);
-      padding-bottom: 1.9mm;
+      justify-content: center;
+      gap: 1.15mm;
+      border-bottom: 0.45pt solid var(--line);
+      padding-bottom: 2.4mm;
     }
     .panel-head img {
       display: block;
       width: auto;
-      height: 8.3mm;
+      height: 9.2mm;
       filter: grayscale(1) contrast(1.25);
     }
     .panel-head div {
-      font-size: 4.2pt;
+      font-size: 4.6pt;
       line-height: 1;
       font-weight: 800;
-      letter-spacing: 1.1px;
-      text-align: right;
+      letter-spacing: 1.4px;
+      text-align: center;
       text-transform: uppercase;
       white-space: nowrap;
     }
     .panel-body {
       flex: 1 1 auto;
       min-height: 0;
-      padding-top: 3.35mm;
+      padding-top: 4mm;
       position: relative;
       z-index: 1;
     }
     .kicker {
-      font-size: 5.1pt;
+      font-size: 5pt;
       line-height: 1;
       font-weight: 800;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.3px;
       color: var(--muted);
       text-transform: uppercase;
     }
     h1 {
-      margin: 1.1mm 0 1.55mm;
+      margin: 1.45mm 0 1.8mm;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 22.8pt;
-      line-height: 0.88;
+      font-size: 24pt;
+      line-height: 0.9;
       font-weight: 700;
       letter-spacing: 0;
       color: var(--ink);
     }
     .option-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 2mm;
-      padding: 0 0 1.45mm;
-      border-bottom: 0.45pt solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1mm;
+      padding: 0 0 2mm;
+      border-bottom: 0;
     }
     .option-row strong {
-      font-size: 8.4pt;
+      font-size: 8.2pt;
       line-height: 1;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
     }
     .option-row span {
-      font-size: 5pt;
+      font-size: 4.6pt;
       line-height: 1;
       font-weight: 800;
       color: var(--muted);
@@ -269,45 +271,57 @@ function buildHtml(data, versions) {
       white-space: nowrap;
     }
     .lead {
-      margin: 1.35mm 0 1.9mm;
-      font-size: 6pt;
-      line-height: 1.14;
+      margin: 0 0 2.5mm;
+      padding: 1.7mm 3mm 0;
+      border-top: 0.45pt solid var(--line);
+      font-size: 5.5pt;
+      line-height: 1.18;
       font-weight: 600;
       color: var(--muted);
     }
     .sections {
       display: flex;
       flex-direction: column;
-      gap: 1.55mm;
+      gap: 2.05mm;
+    }
+    .section {
+      padding-top: 0.4mm;
+      break-inside: avoid;
+    }
+    .section + .section {
+      border-top: 0.35pt solid #d2d2d2;
+      padding-top: 1.8mm;
     }
     .section-title {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1.2mm;
-      margin-bottom: 0.55mm;
+      justify-content: center;
+      gap: 0.65mm;
+      margin-bottom: 1mm;
     }
     .section-title span {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 11.9pt;
-      line-height: 0.9;
+      font-size: 12.9pt;
+      line-height: 0.92;
       font-weight: 700;
       color: var(--ink);
       white-space: nowrap;
     }
     .section-title em {
       font-style: normal;
-      font-size: 4.1pt;
+      font-size: 3.9pt;
       line-height: 1;
       font-weight: 800;
       color: var(--soft);
-      letter-spacing: 0.9px;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
       white-space: nowrap;
-      padding-top: 0.4mm;
     }
     .section-title i {
+      display: block;
+      width: 12mm;
       height: 0;
-      flex: 1;
       border-top: 0.45pt solid var(--line);
     }
     ul {
@@ -315,44 +329,45 @@ function buildHtml(data, versions) {
       margin: 0;
       padding: 0;
       display: grid;
-      row-gap: 0.35mm;
+      row-gap: 0.55mm;
     }
     li {
       margin: 0;
-      padding: 0.34mm 0 0.46mm;
-      border-bottom: 0.35pt dotted #b4b4b4;
-      font-size: 6.3pt;
-      line-height: 1.06;
-      font-weight: 700;
+      padding: 0;
+      border-bottom: 0;
+      font-size: 6.05pt;
+      line-height: 1.1;
+      font-weight: 600;
       overflow-wrap: anywhere;
     }
     li strong {
       display: block;
-      font-size: 6.5pt;
-      line-height: 1.04;
+      font-size: 6.35pt;
+      line-height: 1.08;
       font-weight: 800;
     }
     li span {
       display: block;
-      margin-top: 0.28mm;
+      margin-top: 0.2mm;
       color: var(--muted);
-      font-size: 5.35pt;
-      line-height: 1.08;
+      font-size: 5.1pt;
+      line-height: 1.1;
       font-weight: 500;
     }
     .panel-foot {
-      height: 6.1mm;
-      flex: 0 0 6.1mm;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 3mm;
+      height: 6.4mm;
+      flex: 0 0 6.4mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1mm;
       border-top: 0.45pt solid var(--line);
       color: var(--muted);
-      font-size: 4.8pt;
+      font-size: 4.6pt;
       line-height: 1;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 1.15px;
       text-transform: uppercase;
       position: relative;
       z-index: 1;

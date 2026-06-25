@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T13:19:45.160Z",
+  "generatedAt": "2026-06-25T13:31:03.579Z",
   "combinedHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_ALMOCO_JANTAR\\ALMOCO_JANTAR_OPCOES_A4_3_PARTES.html",
   "combinedPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_ALMOCO_JANTAR\\ALMOCO_JANTAR_OPCOES_A4_3_PARTES.pdf",
   "versions": [
@@ -17,24 +17,24 @@
               "panel": 1,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             },
             {
               "panel": 2,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             },
             {
               "panel": 3,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             }
           ],
@@ -56,24 +56,24 @@
               "panel": 1,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             },
             {
               "panel": 2,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             },
             {
               "panel": 3,
               "height": 794,
               "scrollHeight": 794,
-              "bodyHeight": 695,
-              "bodyScrollHeight": 695,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
               "overflow": false
             }
           ],
@@ -92,24 +92,24 @@
           "panel": 1,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         },
         {
           "panel": 2,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         },
         {
           "panel": 3,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         }
       ],
@@ -124,29 +124,29 @@
           "panel": 1,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         },
         {
           "panel": 2,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         },
         {
           "panel": 3,
           "height": 794,
           "scrollHeight": 794,
-          "bodyHeight": 695,
-          "bodyScrollHeight": 695,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
           "overflow": false
         }
       ],
       "overflow": false
     }
   ],
-  "pdfInfo": "Title:           Pé de Manga - Almoço ou Jantar A4 3 partes\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 10:19:39 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 10:19:39 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           2\r\nEncrypted:       no\r\nPage size:       841.92 x 594.96 pts (A4)\r\nPage rot:        0\r\nFile size:       280429 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+  "pdfInfo": "Title:           Pé de Manga - Almoço ou Jantar A4 3 partes\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 10:30:58 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 10:30:58 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           2\r\nEncrypted:       no\r\nPage size:       841.92 x 594.96 pts (A4)\r\nPage rot:        0\r\nFile size:       245203 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
 }
