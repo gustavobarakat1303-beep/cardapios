@@ -80,8 +80,21 @@ node build/menu.mjs remover-secao kids --build
 ## Painel web (sem terminal) + PDF automático
 
 Para gerenciar o cardápio **pelo navegador ou celular**, há um painel em
-[`web/`](web/) servido pela **Vercel**, que grava direto no `data/menu.json` do
-GitHub. Ao salvar, uma **GitHub Action regenera o PDF sozinha**.
+[`web/`](web/) servido pela **Vercel**, que grava direto no GitHub. Ao salvar,
+uma **GitHub Action regenera o PDF sozinha**.
+
+O seletor no topo do painel alterna entre os cardápios editáveis
+([`build/lib/menus.mjs`](build/lib/menus.mjs)):
+
+| Cardápio | Arquivo | Formato no painel |
+| --- | --- | --- |
+| **Cardápio Principal** | `data/menu.json` | seções + itens **com preço** |
+| **Happy Hour (evento)** | `MENU_HAPPY_HOUR/happy_hour_opcoes.json` | opções → seções → itens **sem preço** |
+
+O Happy Hour é um menu de evento fechado por pacote: cada opção tem seções
+(ex.: *Bebidas*, *Cozinha*) com itens em texto, sem preço. Ao salvar, a Action
+[`build-happy-hour.yml`](.github/workflows/build-happy-hour.yml) regenera os
+PDFs/prévias da pasta `MENU_HAPPY_HOUR`.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgustavobarakat1303-beep%2Fcardapios&env=GITHUB_TOKEN,GITHUB_REPO,GITHUB_BRANCH,ADMIN_PASSWORD&envDescription=Token%20do%20GitHub%20(Contents%3A%20write)%2C%20owner%2Frepo%2C%20branch%20e%20senha%20do%20painel&envLink=https%3A%2F%2Fgithub.com%2Fgustavobarakat1303-beep%2Fcardapios%2Fblob%2Fclaude%2Fbold-dijkstra-6wj1a5%2FREADME.md&project-name=cardapio-pe-de-manga&repository-name=cardapio-pe-de-manga)
 

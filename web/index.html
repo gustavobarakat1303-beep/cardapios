@@ -10,6 +10,7 @@
   <header class="bar">
     <div class="brand">🌳 Pé de Manga <span>· Painel do Cardápio</span></div>
     <div class="actions">
+      <select id="menu-pick" class="picker" title="Escolha o cardápio"></select>
       <span id="status" class="status"></span>
       <a id="pdf" class="btn ghost" href="../cardapio.pdf" target="_blank" rel="noopener">Ver PDF</a>
       <button id="reload" class="btn ghost" type="button">Recarregar</button>
@@ -53,6 +54,47 @@
         <button class="btn tiny danger" data-act="del-item" title="Excluir">✕</button>
       </div>
       <textarea class="i-desc" rows="1" placeholder="Descrição (opcional)"></textarea>
+    </div>
+  </template>
+
+  <!-- Editor de pacote (Happy Hour / Almoço-Jantar): opção → seções → itens -->
+  <template id="tpl-opcao">
+    <section class="card opcao" data-oi="">
+      <div class="card-head">
+        <input class="op-id" placeholder="id" title="Identificador da opção (ex.: 1)" />
+        <input class="op-titulo" placeholder="Título da opção (ex.: Opção 1)" />
+        <span class="spacer"></span>
+        <button class="btn tiny" data-act="add-sec" title="Adicionar seção">+ seção</button>
+        <button class="btn tiny" data-act="op-up" title="Subir opção">↑</button>
+        <button class="btn tiny" data-act="op-down" title="Descer opção">↓</button>
+        <button class="btn tiny danger" data-act="del-op" title="Excluir opção">✕</button>
+      </div>
+      <input class="op-chamada" placeholder="Chamada (ex.: Bar clássico e cozinha de entrada)" />
+      <div class="secoes"></div>
+    </section>
+  </template>
+
+  <template id="tpl-pac-sec">
+    <div class="pac-sec" data-si="">
+      <div class="pac-sec-head">
+        <input class="ps-titulo" placeholder="Título da seção (ex.: Bebidas)" />
+        <span class="ps-count"></span>
+        <span class="spacer"></span>
+        <button class="btn tiny" data-act="add-pitem" title="Adicionar item">+ item</button>
+        <button class="btn tiny" data-act="psec-up" title="Subir seção">↑</button>
+        <button class="btn tiny" data-act="psec-down" title="Descer seção">↓</button>
+        <button class="btn tiny danger" data-act="del-psec" title="Excluir seção">✕</button>
+      </div>
+      <div class="pac-itens"></div>
+    </div>
+  </template>
+
+  <template id="tpl-pac-item">
+    <div class="pac-item" data-ii="">
+      <input class="pi-text" placeholder="Item (ex.: Chopp Claro Brahma)" />
+      <button class="btn tiny" data-act="pi-up" title="Subir">↑</button>
+      <button class="btn tiny" data-act="pi-down" title="Descer">↓</button>
+      <button class="btn tiny danger" data-act="del-pitem" title="Excluir">✕</button>
     </div>
   </template>
 

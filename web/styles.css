@@ -55,6 +55,40 @@ body{margin:0;background:var(--bg);color:var(--texto);
 .add-sec{display:flex;gap:8px;align-items:center;justify-content:center;margin:18px 0;flex-wrap:wrap}
 .add-sec input,.add-sec select{border:1px solid var(--linha);border-radius:8px;padding:8px 10px;font-size:13px}
 
+/* seletor de cardápio no cabeçalho */
+.picker{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);color:#fff;
+  border-radius:8px;padding:6px 10px;font-size:13px;font-weight:600;cursor:pointer}
+.picker option{color:var(--texto)}
+
+/* editor de pacote (Happy Hour / Almoço-Jantar) */
+.meta-card .card-head{font-family:Georgia,serif;color:var(--verde)}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:12px}
+.meta-field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--suave);font-weight:600}
+.meta-field input{border:1px solid var(--linha);border-radius:7px;padding:7px 9px;font-size:13px;font-family:inherit;background:#fff}
+.meta-field input:focus{outline:none;border-color:var(--amarelo);box-shadow:0 0 0 2px rgba(255,183,77,.25)}
+
+.opcao .op-id{flex:0 0 56px;font-weight:700;color:var(--marrom);text-align:center}
+.opcao .op-titulo{font-family:Georgia,serif;font-weight:700;font-size:16px;color:var(--verde);flex:0 1 auto;min-width:150px}
+.opcao .card-head input{border:1px solid transparent;border-radius:6px;padding:4px 6px;background:transparent}
+.opcao .card-head input:focus{outline:none;border-color:var(--amarelo);background:#fff}
+.op-chamada{display:block;width:calc(100% - 24px);margin:8px 12px 0;border:1px solid var(--linha);
+  border-radius:7px;padding:6px 9px;font-size:13px;color:var(--suave);font-style:italic;background:#fff}
+.op-chamada:focus{outline:none;border-color:var(--amarelo);box-shadow:0 0 0 2px rgba(255,183,77,.25)}
+
+.secoes{padding:10px 12px 14px}
+.pac-sec{border:1px solid var(--linha);border-radius:10px;margin-top:10px;overflow:hidden;background:#fffdfa}
+.pac-sec:first-child{margin-top:4px}
+.pac-sec-head{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f6ecd9}
+.ps-titulo{font-weight:700;color:var(--amareloE);border:1px solid transparent;border-radius:6px;
+  padding:3px 6px;background:transparent;min-width:120px;flex:0 1 auto}
+.ps-titulo:focus{outline:none;border-color:var(--amarelo);background:#fff}
+.ps-count{font-size:12px;color:var(--suave)}
+.pac-itens{padding:8px 10px 10px}
+.pac-item{display:flex;gap:6px;align-items:center;padding:4px 0}
+.pi-text{flex:1 1 auto;border:1px solid var(--linha);border-radius:7px;padding:7px 9px;font-size:13px;
+  font-family:inherit;background:#fff}
+.pi-text:focus{outline:none;border-color:var(--amarelo);box-shadow:0 0 0 2px rgba(255,183,77,.25)}
+
 .foot{max-width:920px;margin:0 auto 40px;padding:0 16px;color:var(--suave);font-size:12px;text-align:center}
 .banner{max-width:920px;margin:12px auto 0;padding:10px 14px;border-radius:10px;font-size:13px}
 .banner.err{background:#fdeceb;color:#9b2620;border:1px solid #f3c2bd}

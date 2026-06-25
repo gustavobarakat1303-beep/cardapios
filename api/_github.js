@@ -6,7 +6,6 @@
 //   ADMIN_PASSWORD senha simples para liberar o salvamento (obrigatório)
 
 const API = 'https://api.github.com';
-const FILE = 'data/menu.json';
 
 export function env() {
   const { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, ADMIN_PASSWORD } = process.env;
@@ -23,9 +22,9 @@ function headers(token) {
   };
 }
 
-// Lê o menu.json atual e devolve { json, sha }.
-export async function getMenu({ token, repo, branch }) {
-  const url = `${API}/repos/${repo}/contents/${FILE}?ref=${encodeURIComponent(branch)}`;
+// Lê um arquivo JSON versionado e devolve { json, sha }.
+export async function getJson({ token, repo, branch }, file) {
+  const url = `${API}/repos/${repo}/contents/${encodeURI(file)}?ref=${encodeURIComponent(branch)}`;
   const r = await fetch(url, { headers: headers(token) });
   if (!r.ok) throw new Error(`GitHub GET ${r.status}: ${await r.text()}`);
   const data = await r.json();
@@ -33,20 +32,32 @@ export async function getMenu({ token, repo, branch }) {
   return { json: JSON.parse(content), sha: data.sha };
 }
 
-// Grava o menu.json (commit). `menu` é objeto; serializa com 2 espaços.
-export async function putMenu({ token, repo, branch }, menu, message) {
-  const cur = await getMenu({ token, repo, branch }).catch(() => ({ sha: undefined }));
+// Grava um arquivo JSON (commit). `obj` é objeto; serializa com 2 espaços.
+export async function putJson({ token, repo, branch }, file, obj, message) {
+  const cur = await getJson({ token, repo, branch }, file).catch(() => ({ sha: undefined }));
   const body = {
-    message: message || 'painel: atualiza cardápio',
-    content: Buffer.from(JSON.stringify(menu, null, 2) + '\n', 'utf8').toString('base64'),
+    message: message || `painel: atualiza ${file}`,
+    content: Buffer.from(JSON.stringify(obj, null, 2) + '\n', 'utf8').toString('base64'),
     branch,
     sha: cur.sha,
   };
-  const url = `${API}/repos/${repo}/contents/${FILE}`;
+  const url = `${API}/repos/${repo}/contents/${encodeURI(file)}`;
   const r = await fetch(url, { method: 'PUT', headers: headers(token), body: JSON.stringify(body) });
   if (!r.ok) throw new Error(`GitHub PUT ${r.status}: ${await r.text()}`);
   const data = await r.json();
   return { commit: data.commit?.html_url || null };
+}
+
+// Lê o parâmetro ?menu= de uma requisição serverless, com fallback robusto.
+export function menuKey(req, fallback) {
+  const fromQuery = req.query && req.query.menu;
+  if (fromQuery) return String(fromQuery);
+  try {
+    const u = new URL(req.url, 'http://localhost');
+    return u.searchParams.get('menu') || fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 export async function readJsonBody(req) {

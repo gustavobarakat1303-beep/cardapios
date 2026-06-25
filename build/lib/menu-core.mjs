@@ -66,3 +66,49 @@ export function validate(menu) {
     if (!sids.has(id)) errs.push(`foodBreaks referencia seção inexistente: ${id}`);
   return errs;
 }
+
+// ---------------------------------------------------------------------------
+// Menus de evento "pacote" (Happy Hour, Almoço/Jantar): opções → seções →
+// itens (texto, sem preço). Estrutura: { titulo, opcoes: [ { id, titulo,
+// chamada?, secoes: [ { titulo, itens: [string] } ] } ] }.
+// ---------------------------------------------------------------------------
+
+// Retorna um array de mensagens de erro (vazio = íntegro).
+export function validatePacote(menu) {
+  const errs = [];
+  if (!menu || typeof menu !== 'object') return ['arquivo inválido (não é um objeto).'];
+  if (!String(menu.titulo || '').trim()) errs.push('título do menu ausente.');
+  if (!Array.isArray(menu.opcoes) || !menu.opcoes.length) return [...errs, 'nenhuma opção definida.'];
+  const oids = new Set();
+  menu.opcoes.forEach((op, oi) => {
+    const tag = op.titulo || op.id || `opção ${oi + 1}`;
+    if (!String(op.id || '').trim()) errs.push(`${tag}: id ausente`);
+    else if (oids.has(op.id)) errs.push(`id de opção duplicado: ${op.id}`);
+    else oids.add(op.id);
+    if (!String(op.titulo || '').trim()) errs.push(`${tag}: título ausente`);
+    if (!Array.isArray(op.secoes) || !op.secoes.length) { errs.push(`${tag}: nenhuma seção`); return; }
+    op.secoes.forEach((se, si) => {
+      const setag = se.titulo || `seção ${si + 1}`;
+      if (!String(se.titulo || '').trim()) errs.push(`${tag}: ${setag} sem título`);
+      const itens = (se.itens || []).filter((t) => String(t || '').trim());
+      if (!itens.length) errs.push(`${tag} / ${setag}: sem itens`);
+    });
+  });
+  return errs;
+}
+
+// Normaliza um menu de pacote: apara textos, descarta itens vazios e mantém
+// os metadados de topo (titulo, subtitulo, periodo, rodape, _como_editar…).
+export function canonPacote(menu) {
+  const out = { ...menu };
+  out.opcoes = (menu.opcoes || []).map((op) => {
+    const o = { id: String(op.id || '').trim(), titulo: String(op.titulo || '').trim() };
+    if (op.chamada !== undefined) o.chamada = String(op.chamada || '').trim();
+    o.secoes = (op.secoes || []).map((se) => ({
+      titulo: String(se.titulo || '').trim(),
+      itens: (se.itens || []).map((t) => String(t).trim()).filter(Boolean),
+    }));
+    return o;
+  });
+  return out;
+}

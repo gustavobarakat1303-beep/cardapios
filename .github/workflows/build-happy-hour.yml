@@ -1,0 +1,53 @@
+name: Gerar Happy Hour (PDFs + prévias)
+
+# Quando o JSON do Happy Hour (editável pelo painel web) ou o gerador mudam,
+# regenera os PDFs/HTML/prévias da pasta MENU_HAPPY_HOUR e faz commit de volta.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'MENU_HAPPY_HOUR/happy_hour_opcoes.json'
+      - 'scripts/build_pe_de_manga_happy_hour.cjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-happy-hour-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+
+      - name: Instalar poppler (prévias PNG)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Instalar Chrome (para o PDF)
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Gerar Happy Hour
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: npm run happy-hour
+
+      - name: Commit dos resultados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MENU_HAPPY_HOUR
+          if git diff --cached --quiet; then
+            echo "Nada a commitar — Happy Hour já atualizado."
+          else
+            git commit -m "chore: regenera Happy Hour a partir dos dados [skip ci]"
+            git push
+          fi

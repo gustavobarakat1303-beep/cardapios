@@ -40,11 +40,18 @@ function ensureDirs() {
 }
 
 function cleanGenerated() {
-  for (const file of fs.readdirSync(FINAL_DIR)) {
-    if (/^PREVIA_OPCAO_\d+\.png$/i.test(file)) fs.unlinkSync(path.join(FINAL_DIR, file));
-  }
+  // Só limpa o diretório de render temporário. As prévias PREVIA_OPCAO_*.png
+  // são sobrescritas quando o poppler está disponível; quando não está, são
+  // preservadas (evita apagá-las em ambientes sem poppler, como a Action).
   fs.rmSync(RENDER_DIR, { recursive: true, force: true });
   fs.mkdirSync(RENDER_DIR, { recursive: true });
+}
+
+// Resolve um binário do poppler: caminho explícito no Windows, PATH no resto.
+function popplerBin(name) {
+  const win = path.join(POPPLER_BIN, `${name}.exe`);
+  if (fs.existsSync(win)) return win;
+  return name; // poppler-utils no PATH (Linux/mac)
 }
 
 function escapeHtml(value) {
@@ -348,7 +355,8 @@ async function writePdf(browser, html, pdfPath) {
   } else {
     await page.setViewportSize({ width: 1123, height: 794 });
   }
-  await page.setContent(html, { waitUntil: "networkidle" });
+  // puppeteer usa "networkidle0"; playwright usa "networkidle".
+  await page.setContent(html, { waitUntil: puppeteer ? "networkidle0" : "networkidle" });
   await page.evaluate(() => document.fonts && document.fonts.ready);
   const metrics = await page.$$eval(".sheet", (sheets) =>
     sheets.map((sheet, sheetIndex) => ({
@@ -406,17 +414,20 @@ async function main() {
   }
   await browser.close();
 
-  const pdfinfo = path.join(POPPLER_BIN, "pdfinfo.exe");
-  const pdftoppm = path.join(POPPLER_BIN, "pdftoppm.exe");
-  const pdfInfo = fs.existsSync(pdfinfo) ? execFileSync(pdfinfo, [COMBINED_PDF_PATH], { encoding: "utf8" }) : "";
-  if (fs.existsSync(pdftoppm)) {
-    execFileSync(pdftoppm, ["-png", "-r", "120", COMBINED_PDF_PATH, path.join(RENDER_DIR, "opcao")]);
+  let pdfInfo = "";
+  try {
+    pdfInfo = execFileSync(popplerBin("pdfinfo"), [COMBINED_PDF_PATH], { encoding: "utf8" });
+  } catch { /* pdfinfo opcional */ }
+  try {
+    execFileSync(popplerBin("pdftoppm"), ["-png", "-r", "120", COMBINED_PDF_PATH, path.join(RENDER_DIR, "opcao")]);
     for (const option of data.opcoes) {
       const rendered = path.join(RENDER_DIR, `opcao-${Number(option.id)}.png`);
       if (fs.existsSync(rendered)) {
         fs.copyFileSync(rendered, path.join(FINAL_DIR, `PREVIA_OPCAO_${slugOption(option.id)}.png`));
       }
     }
+  } catch (e) {
+    console.warn(`Aviso: poppler (pdftoppm) indisponível — prévias PNG não regeneradas: ${e.message}`);
   }
 
   fs.writeFileSync(
