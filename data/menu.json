@@ -110,7 +110,7 @@
           "id": "bolinho-de-risoto",
           "n": "Bolinho de Risoto",
           "d": "8 un. · Bolinho de arroz arbóreo italiano, gorgonzola e ervas",
-          "p": "558,00"
+          "p": "48,00"
         },
         {
           "id": "bolinho-de-picanha",
@@ -511,8 +511,8 @@
         {
           "id": "cheesecake-com-calda-de-nutella",
           "n": "Cheesecake com Calda de Nutella",
-          "p": "42,00",
-          "d": "com calda de Nutella"
+          "d": "com calda de Nutella",
+          "p": "42,00"
         },
         {
           "id": "crepe-de-brigadeiro",
@@ -619,26 +619,23 @@
         {
           "id": "chopp-claro-brahma",
           "n": "Chopp Claro Brahma",
-          "p": "15,00",
-          "d": "300 ml"
+          "d": "300 ml",
+          "p": "15,00"
         },
         {
           "id": "garotinho-brahma",
           "n": "Garotinho Brahma",
-          "p": "12,00",
-          "d": ""
+          "p": "12,00"
         },
         {
           "id": "chopp-brahma-black",
           "n": "Chopp Brahma Black",
-          "p": "19,00",
-          "d": ""
+          "p": "19,00"
         },
         {
           "id": "chopp-patagonia-ipa",
           "n": "Chopp Patagônia Ipa",
-          "p": "25,00",
-          "d": ""
+          "p": "25,00"
         }
       ]
     },
@@ -1165,14 +1162,12 @@
         {
           "id": "rum-nacional-ouro",
           "n": "Rum Nacional Ouro",
-          "p": "40,00",
-          "d": ""
+          "p": "40,00"
         },
         {
           "id": "rum-nacional-prata",
           "n": "Rum Nacional Prata",
-          "p": "35,00",
-          "d": ""
+          "p": "35,00"
         },
         {
           "id": "campari",
@@ -1556,74 +1551,62 @@
         {
           "id": "soda-zero",
           "n": "Soda Zero",
-          "d": "",
           "p": "10,00"
         },
         {
           "id": "h2o-limao",
           "n": "H2O Limão",
-          "p": "12,00",
-          "d": ""
+          "p": "12,00"
         },
         {
           "id": "agua",
           "n": "Água",
-          "p": "8,00",
-          "d": ""
+          "p": "8,00"
         },
         {
           "id": "agua-com-gas",
           "n": "Água com Gás",
-          "p": "8,00",
-          "d": ""
+          "p": "8,00"
         },
         {
           "id": "sucos-naturais",
           "n": "Sucos Naturais",
-          "d": "",
           "p": "15,00"
         },
         {
           "id": "suco-de-tomate-temperado",
           "n": "Suco de Tomate Temperado",
-          "p": "18,00",
-          "d": ""
+          "p": "18,00"
         },
         {
           "id": "pepsi-twist",
           "n": "Pepsi Twist",
-          "p": "10,00",
-          "d": ""
+          "p": "10,00"
         },
         {
           "id": "red-bull",
           "n": "Red Bull",
-          "p": "22,00",
-          "d": ""
+          "p": "22,00"
         },
         {
           "id": "pepsi-zero",
           "n": "Pepsi Zero",
-          "p": "10,00",
-          "d": ""
+          "p": "10,00"
         },
         {
           "id": "guarana-antarctica",
           "n": "Guaraná Antarctica",
-          "p": "10,00",
-          "d": ""
+          "p": "10,00"
         },
         {
           "id": "guarana-zero",
           "n": "Guaraná Zero",
-          "p": "10,00",
-          "d": ""
+          "p": "10,00"
         },
         {
           "id": "pepsi",
           "n": "Pepsi",
-          "p": "10,00",
-          "d": ""
+          "p": "10,00"
         }
       ]
     }
