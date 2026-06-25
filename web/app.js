@@ -330,6 +330,7 @@ function validateOpcoesUI(){
   if(!(menu.opcoes||[]).length){setStatus('adicione ao menos 1 opção','err');saveBtn.disabled=true;return false;}
   for(const op of menu.opcoes){
     if(!String(op.id||'').trim()||!String(op.titulo||'').trim()){setStatus('opção sem id/título','err');saveBtn.disabled=true;return false;}
+    if(!/^[a-z0-9-]+$/i.test(String(op.id))){setStatus('id de opção inválido (só letras, números e hífen)','err');saveBtn.disabled=true;return false;}
     if(!(op.secoes||[]).length){setStatus('opção sem seções','err');saveBtn.disabled=true;return false;}
     for(const se of op.secoes){
       if(!String(se.titulo||'').trim()){setStatus('seção sem título','err');saveBtn.disabled=true;return false;}

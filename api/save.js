@@ -12,6 +12,7 @@ function validateOpcoes(menu) {
   menu.opcoes.forEach((op, oi) => {
     const tag = op.titulo || op.id || `opção ${oi + 1}`;
     if (!String(op.id || '').trim()) errs.push(`${tag}: id ausente`);
+    else if (!/^[a-z0-9-]+$/i.test(String(op.id))) errs.push(`${tag}: id "${op.id}" inválido (use apenas letras, números e hífen)`);
     else if (ids.has(op.id)) errs.push(`id de opção duplicado: ${op.id}`); else ids.add(op.id);
     if (!String(op.titulo || '').trim()) errs.push(`${tag}: título ausente`);
     if (!Array.isArray(op.secoes) || !op.secoes.length) { errs.push(`${tag}: nenhuma seção`); return; }

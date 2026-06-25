@@ -108,7 +108,9 @@ const doc = (sheets) => `<!doctype html><html lang="pt-BR"><head><meta charset="
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>${CSS}</style></head><body>${sheets}</body></html>`;
 
-const versions = data.opcoes.map((op) => ({ slug: `${SLUG}-${op.id}`, html: doc(sheet(op)) }));
+// id seguro para nome de arquivo (evita separadores de caminho no output).
+const safeId = (id, i) => (String(id == null ? '' : id).replace(/[^a-z0-9-]+/gi, '-').replace(/^-+|-+$/g, '') || `op${i + 1}`);
+const versions = data.opcoes.map((op, i) => ({ slug: `${SLUG}-${safeId(op.id, i)}`, html: doc(sheet(op)) }));
 versions.push({ slug: `${SLUG}-geral`, html: doc(data.opcoes.map(sheet).join('')) });
 
 // ---- render ---------------------------------------------------------------
