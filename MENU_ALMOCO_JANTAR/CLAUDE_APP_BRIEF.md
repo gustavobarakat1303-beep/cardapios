@@ -6,6 +6,25 @@ Criar no app uma tela para gerar o menu impresso de eventos do Pé de Manga quan
 
 O menu final não deve mostrar preços, taxas, valores por pessoa nem condições comerciais. O cliente já contratou um pacote fechado.
 
+## Identificação Para Claude/App
+
+Este projeto corresponde ao menu de eventos `MENU_ALMOCO_JANTAR`.
+
+Arquivos que o app deve usar:
+- Dados editáveis: `MENU_ALMOCO_JANTAR/almoco_jantar_menus.json`
+- Gerador local: `scripts/build_pe_de_manga_almoco_jantar.cjs`
+- Comando de geração: `npm run almoco-jantar`
+- PDF geral: `MENU_ALMOCO_JANTAR/ALMOCO_JANTAR_OPCOES_A4_3_PARTES.pdf`
+- PDF sem álcool: `MENU_ALMOCO_JANTAR/ALMOCO_JANTAR_BEBIDAS_NAO_ALCOOLICAS_A4_3_PARTES.pdf`
+- PDF com álcool: `MENU_ALMOCO_JANTAR/ALMOCO_JANTAR_BEBIDAS_ALCOOLICAS_A4_3_PARTES.pdf`
+
+Direção visual:
+- Menu de mesa para evento, não orçamento.
+- Conteúdo centralizado.
+- Sem linhas pontilhadas após os itens.
+- Divisórias finas apenas entre seções.
+- A4 horizontal dividido em 3 partes iguais.
+
 ## Fluxo De Uso
 
 1. Usuário escolhe a versão de bebidas:
