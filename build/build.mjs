@@ -308,7 +308,7 @@ function renderPage(page, n, total) {
   return `<div class="page" data-canvas-width="${PAGE_W}" data-canvas-height="${PAGE_H}">
     <div class="page-body" style="--ipad:${ipad}px">${body}</div>
     <div class="page-foot">
-      <span class="foot-mark"><img class="foot-logo" src="${LOGO_URI}" alt="${esc(meta.brand)}" /></span>
+      <span class="foot-mark"><span class="foot-logo" role="img" aria-label="${esc(meta.brand)}"></span></span>
       <span class="foot-insta">${iglyph} @pedemanga</span>
       <span class="foot-page">${n} / ${total}</span>
     </div>
@@ -342,7 +342,8 @@ const CSS = `
     padding-top: 5px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: ${C.marrom};
   }
   .foot-mark { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; flex: 1 1 0; }
-  .foot-logo { height: 24px; width: auto; display: block; }
+  .foot-logo { width: 31px; height: 24px; display: block;
+    background: url('${LOGO_URI}') center / contain no-repeat; }
   .foot-insta { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex: 1 1 0; justify-content: center; }
   .foot-insta svg { transform: translateY(.5px); }
   .foot-page { font-weight: 600; color: ${C.verde}; flex: 1 1 0; text-align: right; }
