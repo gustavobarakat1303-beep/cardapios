@@ -43,7 +43,7 @@
     },
     {
       "id": "pratos-quentes",
-      "title": "Pratos Quentes",
+      "title": "Pratos - Principais",
       "kind": "food",
       "icon": "meat",
       "en": "Principais",
@@ -96,13 +96,11 @@
         {
           "id": "bolo-de-coco",
           "n": "Bolo de Coco",
-          "d": "",
           "p": "10,00"
         },
         {
           "id": "pudim-de-chocolate",
           "n": "Pudim de Chocolate",
-          "d": "",
           "p": "10,00"
         },
         {
