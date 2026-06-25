@@ -4,6 +4,9 @@
   "buildCommand": "echo 'sem etapa de build — site estático + funções /api'",
   "outputDirectory": ".",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/", "destination": "/web/", "permanent": false }
+  ],
   "functions": {
     "api/*.js": { "memory": 256, "maxDuration": 15 }
   }
