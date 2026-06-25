@@ -191,7 +191,6 @@ export const flow = [
   {
     id: 'autorais', title: 'Carta de Drinks · Autorais', kind: 'drink', icon: 'cocktail', highlight: true,
     items: [
-      { n: 'Forest', d: 'Whisky Johnnie Walker Black Label, limão siciliano, hortelã fresca, lichia in natura, xarope simples, gelo', p: '55,00' },
       { n: 'Lychee Sunset', d: 'Vodka, lichia, cranberry e limão tahiti', p: '52,00' },
       { n: 'Tropical Spritz', d: 'Aperol, espumante brut, manga, maracujá, cordial de grapefruit', p: '52,00' },
       { n: 'Pink Velvet', d: 'Vodka, frutas vermelhas, hibisco, limão siciliano', p: '52,00' },
