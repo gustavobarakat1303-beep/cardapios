@@ -1,0 +1,409 @@
+{
+  "_como_editar": "Atualize titulo, periodo, paginas, secoes e itens. Depois rode: npm run sazonal:eventos. O PDF final fica em MENU_SAZONAL_EVENTOS/MENU_SAZONAL_EVENTOS_10X15.pdf.",
+  "titulo": "Menu Sazonal",
+  "subtitulo": "Eventos Pé de Manga",
+  "periodo": "2026",
+  "formato": "10x15 cm",
+  "rodape": "@PEDEMANGA",
+  "contato": "Rua Arapiraca, 152 - Vila Madalena - São Paulo - SP | 3032-6068",
+  "fontes": [
+    "Orçamento Almoço e Jantar_2026.pdf",
+    "Orçamento Happy Hour_2026.pdf"
+  ],
+  "paginas": [
+    {
+      "tipo": "capa",
+      "titulo": "Menu Sazonal",
+      "subtitulo": "Eventos 2026",
+      "descricao": "Almoço, jantar e happy hour em formato compacto para eventos.",
+      "destaques": [
+        {
+          "titulo": "Almoço e Jantar",
+          "texto": "Entradas, saladas, pratos principais, sobremesas e bebidas."
+        },
+        {
+          "titulo": "Happy Hour",
+          "texto": "Pacotes com bar, cozinha e opções sazonais para coquetel."
+        },
+        {
+          "titulo": "Formato",
+          "texto": "Arquivo final preparado em 10x15 cm para impressão."
+        }
+      ]
+    },
+    {
+      "titulo": "Almoço ou Jantar",
+      "tag": "Entradas, saladas e doces",
+      "secoes": [
+        {
+          "titulo": "Entradas",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Pastel de queijo"
+            },
+            {
+              "nome": "Bruschettas pomodoro"
+            },
+            {
+              "nome": "Canapé de carpaccio"
+            }
+          ]
+        },
+        {
+          "titulo": "Saladas",
+          "tag": "Escolha 1 opção",
+          "icone": "leaf",
+          "itens": [
+            {
+              "nome": "Caesar Salad",
+              "descricao": "Alface americana, frango desfiado, crótons, parmesão e molho de queijos"
+            },
+            {
+              "nome": "Caprese",
+              "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão"
+            }
+          ]
+        },
+        {
+          "titulo": "Sobremesas",
+          "icone": "dessert",
+          "itens": [
+            {
+              "nome": "Sorvete de creme e chocolate com caldas"
+            },
+            {
+              "nome": "Brigadeiro de colher"
+            },
+            {
+              "nome": "Frutas da estação"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Pratos Principais",
+      "tag": "Escolha 3 opções",
+      "secoes": [
+        {
+          "titulo": "Peixes e frutos do mar",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Polvo grelhado",
+              "descricao": "Azeite trufado, arroz negro e tomate-cereja"
+            },
+            {
+              "nome": "Camarão",
+              "descricao": "Arroz vermelho, molho beurre blanc e caviar"
+            },
+            {
+              "nome": "Salmão grelhado",
+              "descricao": "Risoto de banana-da-terra e molho agridoce"
+            },
+            {
+              "nome": "Robalo com crosta de ervas",
+              "descricao": "Molho de tangerina, risoto de limão siciliano e farofa crocante"
+            }
+          ]
+        },
+        {
+          "titulo": "Carnes",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Picanha grelhada",
+              "descricao": "Farofa da casa, vinagrete, arroz e fritas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Pratos Principais",
+      "tag": "Carnes e vegetarianos",
+      "secoes": [
+        {
+          "titulo": "Carnes",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Medalhão de filet",
+              "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha"
+            },
+            {
+              "nome": "Medalhão de filet",
+              "descricao": "Molho gorgonzola e risoto de rúcula com tomates secos"
+            },
+            {
+              "nome": "Medalhão mignon",
+              "descricao": "Risoto de shitake ao molho cumberland"
+            },
+            {
+              "nome": "Filé mignon ao poivre",
+              "descricao": "Arroz e batata wave"
+            }
+          ]
+        },
+        {
+          "titulo": "Vegetarianos",
+          "icone": "leaf",
+          "itens": [
+            {
+              "nome": "Penne",
+              "descricao": "Tomate seco, mozarela de búfala e manjericão"
+            },
+            {
+              "nome": "Nhoque de mandioquinha",
+              "descricao": "Molho de tomates, shimeji e shitake"
+            },
+            {
+              "nome": "Fusile de arroz",
+              "descricao": "Azeite com legumes - vegano"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Bebidas",
+      "tag": "Almoço e jantar",
+      "secoes": [
+        {
+          "titulo": "Inclusas nos pacotes",
+          "icone": "drink",
+          "itens": [
+            {
+              "nome": "Água"
+            },
+            {
+              "nome": "Café"
+            },
+            {
+              "nome": "Refrigerantes",
+              "descricao": "Pepsi, Pepsi Light, Guaraná e Diet Guaraná"
+            },
+            {
+              "nome": "Sucos naturais",
+              "descricao": "Laranja, melancia e abacaxi"
+            },
+            {
+              "nome": "Chopp Claro Brahma"
+            },
+            {
+              "nome": "Caipirinha",
+              "descricao": "Limão, abacaxi e maracujá"
+            },
+            {
+              "nome": "Caipiroska",
+              "descricao": "Limão, abacaxi e morango"
+            },
+            {
+              "nome": "Gin tônica"
+            },
+            {
+              "nome": "Moscow Mule"
+            }
+          ]
+        },
+        {
+          "titulo": "Valores",
+          "icone": "coin",
+          "itens": [
+            {
+              "nome": "Opção 1 - sem álcool",
+              "preco": "R$ 250,00"
+            },
+            {
+              "nome": "Opção 2 - polvo ou camarão, sem álcool",
+              "preco": "R$ 300,00"
+            },
+            {
+              "nome": "Opção 3 - com bebidas alcoólicas",
+              "preco": "R$ 300,00"
+            },
+            {
+              "nome": "Opção 4 - polvo ou camarão e bebidas alcoólicas",
+              "preco": "R$ 360,00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Happy Hour",
+      "tag": "Bar por pacote",
+      "secoes": [
+        {
+          "titulo": "Opção 1",
+          "icone": "drink",
+          "itens": [
+            {
+              "nome": "Água, refrigerante, suco natural, chopp claro, caipirinha e caipiroska",
+              "preco": "R$ 280,00"
+            }
+          ]
+        },
+        {
+          "titulo": "Opção 2",
+          "icone": "drink",
+          "itens": [
+            {
+              "nome": "Opção 1 + caipisake, mojito, gin tônica, Moscow Mule, sangria e clérico",
+              "preco": "R$ 300,00"
+            }
+          ]
+        },
+        {
+          "titulo": "Opção 3",
+          "icone": "drink",
+          "itens": [
+            {
+              "nome": "Opção 2 + Chopp Black",
+              "preco": "R$ 325,00"
+            }
+          ]
+        },
+        {
+          "titulo": "Opção 4",
+          "icone": "drink",
+          "itens": [
+            {
+              "nome": "Opção 3 + Whisky 8 anos - Red Label",
+              "preco": "R$ 370,00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Happy Hour",
+      "tag": "Cozinha por pacote",
+      "secoes": [
+        {
+          "titulo": "Base",
+          "tag": "Opção 1",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Pastel de queijo"
+            },
+            {
+              "nome": "Bruschettas pomodoro"
+            },
+            {
+              "nome": "Bolinho de risotto com dois queijos"
+            },
+            {
+              "nome": "Bolinho de mandioca com carne seca"
+            },
+            {
+              "nome": "Canapé de carpaccio"
+            }
+          ]
+        },
+        {
+          "titulo": "Adicionais",
+          "tag": "Opções 2, 3 e 4",
+          "icone": "food",
+          "itens": [
+            {
+              "nome": "Pastel de carne seca com requeijão"
+            },
+            {
+              "nome": "Bolinho de picanha"
+            },
+            {
+              "nome": "Frios variados e pães"
+            },
+            {
+              "nome": "Bruschettas shimeji e shitake"
+            },
+            {
+              "nome": "Brigadeiro de colher"
+            },
+            {
+              "nome": "Mini acarajé"
+            },
+            {
+              "nome": "Dadinho de tapioca e queijo coalho com geleia de pimenta"
+            },
+            {
+              "nome": "Sorvete de creme ou chocolate com calda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Eventos",
+      "tag": "Informações gerais",
+      "secoes": [
+        {
+          "titulo": "Espaços",
+          "icone": "info",
+          "itens": [
+            {
+              "nome": "Capacidade total",
+              "descricao": "Até 350 pessoas"
+            },
+            {
+              "nome": "Salão interno",
+              "descricao": "90 pessoas em coquetel ou 60 sentadas"
+            },
+            {
+              "nome": "Mezanino",
+              "descricao": "50 pessoas em coquetel ou 40 sentadas"
+            },
+            {
+              "nome": "Jardim",
+              "descricao": "12 pessoas"
+            }
+          ]
+        },
+        {
+          "titulo": "Condições",
+          "icone": "info",
+          "itens": [
+            {
+              "nome": "Consumo livre por 4 horas"
+            },
+            {
+              "nome": "Valores sujeitos à alteração"
+            },
+            {
+              "nome": "Mínimo de contratação",
+              "descricao": "12 pessoas para almoço/jantar e 15 pessoas para happy hour"
+            },
+            {
+              "nome": "Não é permitido música ao vivo"
+            },
+            {
+              "nome": "Estacionamento terceirizado ao lado",
+              "descricao": "R$ 35,00 por veículo - sujeito a alteração"
+            }
+          ]
+        },
+        {
+          "titulo": "Contato",
+          "icone": "info",
+          "itens": [
+            {
+              "nome": "Rua Arapiraca, 152",
+              "descricao": "Vila Madalena - São Paulo - SP"
+            },
+            {
+              "nome": "Telefone",
+              "descricao": "3032-6068 / 38156461"
+            },
+            {
+              "nome": "Site",
+              "descricao": "www.pedemanga.com.br"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

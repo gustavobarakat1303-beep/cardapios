@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-06-25T05:27:21.167Z",
+  "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\sazonal_eventos\\menu_sazonal_eventos_10x15.html",
+  "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\output\\pdf\\sazonal_eventos\\menu_sazonal_eventos_10x15.pdf",
+  "finalHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_SAZONAL_EVENTOS\\MENU_SAZONAL_EVENTOS_10X15.html",
+  "finalPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\MENU_SAZONAL_EVENTOS\\MENU_SAZONAL_EVENTOS_10X15.pdf",
+  "pages": 8,
+  "metrics": [
+    {
+      "page": 1,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 2,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 3,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 4,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 5,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 6,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 7,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    },
+    {
+      "page": 8,
+      "pageHeight": 567,
+      "pageScrollHeight": 567,
+      "overflow": false
+    }
+  ],
+  "pdfInfo": "Title:           Pé de Manga - Menu Sazonal Eventos 10x15\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Thu Jun 25 02:27:18 2026 Hora oficial do Brasil\r\nModDate:         Thu Jun 25 02:27:18 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           8\r\nEncrypted:       no\r\nPage size:       282.96 x 425.04 pts\r\nPage rot:        0\r\nFile size:       671646 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+}
