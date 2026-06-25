@@ -40,17 +40,18 @@ const SANS = '"montserrat", "Segoe UI", sans-serif';
 const PAGE_W = 794, PAGE_H = 1123;
 const MARGIN_X = 50;          // ~1,3 cm — um pouco mais de área útil
 const CONTENT_TOP = 48;       // topo
-const FOOTER_RESERVE = 40;    // rodapé enxuto (marca + paginação)
+const FOOTER_RESERVE = 46;    // rodapé + folga de segurança acima dele
 const CONTENT_W = PAGE_W - 2 * MARGIN_X;          // 694
 const COLS = 2;               // duas colunas
 const COL_GAP = 20;
 const COL_W = (CONTENT_W - COL_GAP) / COLS;       // 337
 const BUDGET = PAGE_H - CONTENT_TOP - FOOTER_RESERVE; // ~1035
+const CONTENT_H = BUDGET;     // altura útil do corpo (distribuição elástica)
 
 // ---- Estimativa de altura (conservadora) — modo compacto p/ 6 páginas -----
 const NAME_LH = 12.5, NAME_CPL = 40;
 const DESC_LH = 10.4, DESC_CPL = 62;
-const ITEM_PAD = 6.5;         // respiro inferior de cada item
+const ITEM_PAD = 8;           // respiro inferior de cada item (linha entre produtos)
 const HEADER_H = 38;          // cabeçalho de seção completo
 const CONT_HEADER_H = 24;     // cabeçalho "(continuação)"
 const SECTION_GAP = 9;
@@ -253,9 +254,15 @@ function renderCover() {
 }
 
 // ---- Página de conteúdo ----------------------------------------------------
+// Distribui as seções pela altura real da página com espaçadores elásticos:
+// o conteúdo renderizado costuma ser menor que a estimativa conservadora, então
+// o flex absorve a sobra distribuindo-a entre as seções (sem dobra no rodapé).
 function renderPage(page, n, total) {
+  const SP = '<div class="vspacer"></div>';
+  const END = '<div class="vspacer end"></div>';
+  const body = END + page.blocks.join(SP) + END;
   return `<div class="page" data-canvas-width="${PAGE_W}" data-canvas-height="${PAGE_H}">
-    <div class="page-body">${page.blocks.join('\n')}</div>
+    <div class="page-body">${body}</div>
     <div class="page-foot">
       <span class="foot-mark">
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3c5 2 8 7 8 12 0 3-1 5-3 7-4-2-7-7-7-12 0-3 1-5 2-7z" fill="${C.verde}"/></svg>
@@ -277,7 +284,13 @@ const CSS = `
     background: ${C.branco}; overflow: hidden;
     box-shadow: 0 6px 28px rgba(0,0,0,.14);
   }
-  .page-body { position: absolute; top: ${CONTENT_TOP}px; left: ${MARGIN_X}px; width: ${CONTENT_W}px; }
+  .page-body { position: absolute; top: ${CONTENT_TOP}px; left: ${MARGIN_X}px; width: ${CONTENT_W}px;
+    height: ${CONTENT_H}px; display: flex; flex-direction: column; }
+
+  /* espaçadores elásticos: preenchem a sobra real da página distribuindo-a
+     entre as seções, evitando a "dobra" vazia no rodapé */
+  .vspacer { flex: 1 1 0; min-height: ${SECTION_GAP}px; max-height: 130px; }
+  .vspacer.end { flex: 0.35 1 0; min-height: 0; max-height: 46px; }
 
   /* ---- rodapé ---- */
   .page-foot {
@@ -290,7 +303,7 @@ const CSS = `
   .foot-page { font-weight: 600; color: ${C.verde}; }
 
   /* ---- cabeçalho de seção ---- */
-  .sec { margin-bottom: ${SECTION_GAP}px; break-inside: avoid; }
+  .sec { break-inside: avoid; flex: 0 0 auto; }
   .sec-head { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
   .sec-ic { display: inline-flex; flex: 0 0 auto; }
   .sec-ic svg { width: 18px; height: 18px; }
