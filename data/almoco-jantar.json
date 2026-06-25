@@ -11,28 +11,82 @@
     "Canapé de carpaccio"
   ],
   "saladasDisponiveis": [
-    { "nome": "Caesar Salad", "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
-    { "nome": "Caprese", "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão" }
+    {
+      "nome": "Caesar Salad",
+      "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos"
+    },
+    {
+      "nome": "Caprese",
+      "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão"
+    }
   ],
   "principaisDisponiveis": [
-    { "nome": "Polvo grelhado", "descricao": "Azeite trufado, arroz negro e tomate-cereja" },
-    { "nome": "Camarão", "descricao": "Arroz vermelho, molho beurre blanc e caviar" },
-    { "nome": "Salmão grelhado", "descricao": "Risoto de banana-da-terra e molho agridoce" },
-    { "nome": "Robalo com crosta de ervas", "descricao": "Molho de tangerina, risoto de limão siciliano e farofa crocante" },
-    { "nome": "Picanha grelhada", "descricao": "Farofa da casa, vinagrete, arroz e fritas" },
-    { "nome": "Medalhão de filet", "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha" },
-    { "nome": "Medalhão de filet", "descricao": "Molho gorgonzola e risoto de rúcula com tomates secos" },
-    { "nome": "Medalhão mignon", "descricao": "Risoto de shitake ao molho cumberland" },
-    { "nome": "Filé mignon ao poivre", "descricao": "Arroz e batata wave" },
-    { "nome": "Penne", "descricao": "Tomate seco, mozarela de búfala e manjericão" },
-    { "nome": "Nhoque de mandioquinha", "descricao": "Molho de tomates, shimeji e shitake" },
-    { "nome": "Fusile de arroz", "descricao": "Azeite com legumes - vegano" }
+    {
+      "nome": "Polvo grelhado",
+      "descricao": "Azeite trufado, arroz negro e tomate-cereja"
+    },
+    {
+      "nome": "Camarão",
+      "descricao": "Arroz vermelho, molho beurre blanc e caviar"
+    },
+    {
+      "nome": "Salmão grelhado",
+      "descricao": "Risoto de banana-da-terra e molho agridoce"
+    },
+    {
+      "nome": "Robalo com crosta de ervas",
+      "descricao": "Molho de tangerina, risoto de limão siciliano e farofa crocante"
+    },
+    {
+      "nome": "Picanha grelhada",
+      "descricao": "Farofa da casa, vinagrete, arroz e fritas"
+    },
+    {
+      "nome": "Medalhão de filet",
+      "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha"
+    },
+    {
+      "nome": "Medalhão de filet",
+      "descricao": "Molho gorgonzola e risoto de rúcula com tomates secos"
+    },
+    {
+      "nome": "Medalhão mignon",
+      "descricao": "Risoto de shitake ao molho cumberland"
+    },
+    {
+      "nome": "Filé mignon ao poivre",
+      "descricao": "Arroz e batata wave"
+    },
+    {
+      "nome": "Penne",
+      "descricao": "Tomate seco, mozarela de búfala e manjericão"
+    },
+    {
+      "nome": "Nhoque de mandioquinha",
+      "descricao": "Molho de tomates, shimeji e shitake"
+    },
+    {
+      "nome": "Fusile de arroz",
+      "descricao": "Azeite com legumes - vegano"
+    }
   ],
-  "saladaSelecionada": { "nome": "Caesar Salad", "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
+  "saladaSelecionada": {
+    "nome": "Caprese",
+    "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão"
+  },
   "principaisSelecionados": [
-    { "nome": "Picanha grelhada", "descricao": "Farofa da casa, vinagrete, arroz e fritas" },
-    { "nome": "Medalhão de filet", "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha" },
-    { "nome": "Penne", "descricao": "Tomate seco, mozarela de búfala e manjericão" }
+    {
+      "nome": "Polvo grelhado",
+      "descricao": "Azeite trufado, arroz negro e tomate-cereja"
+    },
+    {
+      "nome": "Medalhão de filet",
+      "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha"
+    },
+    {
+      "nome": "Penne",
+      "descricao": "Tomate seco, mozarela de búfala e manjericão"
+    }
   ],
   "sobremesas": [
     "Sorvete de creme e chocolate com caldas",
