@@ -92,7 +92,7 @@ function sectionHtml(section) {
         ${tag}
         <span class="sh-line"></span>
       </div>
-      <div class="g2">${section.itens.map(itemHtml).join("")}</div>
+      <div class="item-list">${section.itens.map(itemHtml).join("")}</div>
     </section>`;
 }
 
@@ -175,7 +175,7 @@ function buildHtml(data) {
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      padding: 9mm 11mm 7mm;
+      padding: 7mm 11mm 6mm;
     }
     .watermark {
       position: absolute;
@@ -193,13 +193,13 @@ function buildHtml(data) {
       grid-template-columns: 1fr auto;
       align-items: end;
       gap: 8mm;
-      margin: 0 0 11mm;
-      padding-bottom: 4mm;
+      margin: 0 0 7mm;
+      padding-bottom: 3mm;
       border-bottom: 0.55pt solid var(--line);
     }
     .intro-title {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 33pt;
+      font-size: 36pt;
       line-height: 0.9;
       font-weight: 700;
       letter-spacing: 0;
@@ -207,12 +207,19 @@ function buildHtml(data) {
     }
     .intro-sub {
       margin-top: 2mm;
-      font-size: 8.4pt;
+      font-size: 10.2pt;
       line-height: 1;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--muted);
+    }
+    .intro-note {
+      margin-top: 2.2mm;
+      font-size: 10pt;
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--dark);
     }
     .intro-period {
       font-size: 8pt;
@@ -232,14 +239,14 @@ function buildHtml(data) {
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      gap: 8mm;
+      gap: 4.8mm;
     }
     .section { break-inside: avoid; }
     .sh {
       display: flex;
       align-items: center;
       gap: 2.3mm;
-      margin-bottom: 4mm;
+      margin-bottom: 2.6mm;
       min-width: 0;
     }
     .sh-icon {
@@ -262,7 +269,7 @@ function buildHtml(data) {
     }
     .sh-title {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 22pt;
+      font-size: 24pt;
       line-height: 0.95;
       font-weight: 700;
       color: var(--dark);
@@ -270,7 +277,7 @@ function buildHtml(data) {
       letter-spacing: 0;
     }
     .sh-tag {
-      font-size: 6.2pt;
+      font-size: 7.2pt;
       line-height: 1;
       font-weight: 800;
       color: var(--soft);
@@ -285,18 +292,19 @@ function buildHtml(data) {
       min-width: 10mm;
       border-top: 0.55pt solid var(--line);
     }
-    .g2 {
+    .item-list {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: 8mm;
-      row-gap: 0;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1.1mm;
     }
-    .g2 > * {
+    .item-list > * {
       min-width: 0;
       overflow: hidden;
     }
     .item {
-      margin: 0 0 4mm;
+      margin: 0;
+      padding: 1.6mm 0 1.9mm;
+      border-bottom: 0.45pt dotted #b0b0b0;
       break-inside: avoid;
     }
     .item-top {
@@ -307,7 +315,7 @@ function buildHtml(data) {
       min-width: 0;
     }
     .item-name {
-      font-size: 10.4pt;
+      font-size: 13.4pt;
       line-height: 1.02;
       font-weight: 800;
       color: var(--ink);
@@ -320,16 +328,16 @@ function buildHtml(data) {
       min-width: 4mm;
     }
     .item-price {
-      font-size: 9.6pt;
+      font-size: 12.3pt;
       line-height: 1;
       font-weight: 800;
       color: var(--ink);
       white-space: nowrap;
     }
     .item-desc {
-      margin-top: 0.7mm;
+      margin-top: 0.8mm;
       padding-right: 2mm;
-      font-size: 8.1pt;
+      font-size: 10.3pt;
       line-height: 1.22;
       font-weight: 400;
       color: var(--muted);
@@ -377,6 +385,7 @@ function buildHtml(data) {
         <div>
           <div class="intro-title">${escapeHtml(data.titulo)}</div>
           <div class="intro-sub">${escapeHtml(data.subtitulo)}</div>
+          ${data.resumo ? `<div class="intro-note">${escapeHtml(data.resumo)}</div>` : ""}
         </div>
         <div class="intro-period">${escapeHtml(data.periodo)}</div>
       </div>

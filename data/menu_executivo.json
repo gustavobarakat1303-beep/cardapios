@@ -1,29 +1,30 @@
 {
-  "_como_editar": "Atualize periodo e itens a cada quinzena. Depois rode: npm run executivo. Deixe preco vazio quando o menu nao tiver preco por item.",
+  "_como_editar": "Atualize periodo, resumo e itens a cada quinzena. Depois rode: npm run executivo. Precos devem ser escritos como R$ 59,90.",
   "titulo": "Menu Executivo",
   "periodo": "2ª quinzena de junho 2026",
-  "subtitulo": "Almoço executivo",
+  "subtitulo": "Segunda a sexta das 12h às 15h - exceto feriados",
+  "resumo": "Sem sobremesa: R$ 59,90 a R$ 75,90 · Sobremesa opcional: R$ 10,00",
   "rodape": "@PEDEMANGA",
   "secoes": [
     {
       "titulo": "Saladas",
-      "tag": "Entradas",
+      "tag": "Escolha 1 opção",
       "icone": "bowl",
       "itens": [
         {
           "nome": "Salada Caesar",
           "descricao": "Alface americana, crótons, frango, parmesão e molho caesar",
-          "preco": ""
+          "preco": "R$ 0,00"
         },
         {
           "nome": "Salada Caprese",
           "descricao": "Rúcula, tomate, mozarela de búfala, parmesão e pesto de manjericão",
-          "preco": ""
+          "preco": "R$ 0,00"
         },
         {
           "nome": "Carpaccio Salada",
           "descricao": "Carpaccio de carne, alface americana, parmesão, molho de alcaparras e torrada",
-          "preco": ""
+          "preco": "R$ 0,00"
         }
       ]
     },
@@ -35,54 +36,54 @@
         {
           "nome": "Filé Mignon Grelhado",
           "descricao": "Com penne ao molho de queijo",
-          "preco": ""
+          "preco": "R$ 75,90"
         },
         {
           "nome": "Picanha Grelhada",
           "descricao": "Com risoto de cogumelos",
-          "preco": ""
+          "preco": "R$ 75,90"
         },
         {
           "nome": "Salmão Grelhado",
           "descricao": "Ao molho tarê, brandade de siri e arroz",
-          "preco": ""
+          "preco": "R$ 75,90"
         },
         {
           "nome": "Strogonoff",
           "descricao": "Com arroz e batata frita",
-          "preco": ""
+          "preco": "R$ 59,90"
         },
         {
           "nome": "Polpetone",
           "descricao": "Com espaguete ao molho pomodoro",
-          "preco": ""
+          "preco": "R$ 59,90"
         },
         {
           "nome": "Saint Peter",
           "descricao": "Ao molho pesto, arroz e legumes",
-          "preco": ""
+          "preco": "R$ 59,90"
         }
       ]
     },
     {
       "titulo": "Sobremesas",
-      "tag": "Doces",
+      "tag": "Opcional",
       "icone": "dessert",
       "itens": [
         {
           "nome": "Bolo de Coco",
           "descricao": "",
-          "preco": ""
+          "preco": "R$ 10,00"
         },
         {
           "nome": "Pudim de Chocolate",
           "descricao": "",
-          "preco": ""
+          "preco": "R$ 10,00"
         },
         {
           "nome": "Frutas da Estação",
           "descricao": "Manga",
-          "preco": ""
+          "preco": "R$ 10,00"
         }
       ]
     }

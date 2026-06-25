@@ -75,7 +75,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      padding: 9mm 11mm 7mm;
+      padding: 7mm 11mm 6mm;
     }
     .watermark {
       position: absolute;
@@ -93,13 +93,13 @@
       grid-template-columns: 1fr auto;
       align-items: end;
       gap: 8mm;
-      margin: 0 0 11mm;
-      padding-bottom: 4mm;
+      margin: 0 0 7mm;
+      padding-bottom: 3mm;
       border-bottom: 0.55pt solid var(--line);
     }
     .intro-title {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 33pt;
+      font-size: 36pt;
       line-height: 0.9;
       font-weight: 700;
       letter-spacing: 0;
@@ -107,12 +107,19 @@
     }
     .intro-sub {
       margin-top: 2mm;
-      font-size: 8.4pt;
+      font-size: 10.2pt;
       line-height: 1;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--muted);
+    }
+    .intro-note {
+      margin-top: 2.2mm;
+      font-size: 10pt;
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--dark);
     }
     .intro-period {
       font-size: 8pt;
@@ -132,14 +139,14 @@
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      gap: 8mm;
+      gap: 4.8mm;
     }
     .section { break-inside: avoid; }
     .sh {
       display: flex;
       align-items: center;
       gap: 2.3mm;
-      margin-bottom: 4mm;
+      margin-bottom: 2.6mm;
       min-width: 0;
     }
     .sh-icon {
@@ -162,7 +169,7 @@
     }
     .sh-title {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 22pt;
+      font-size: 24pt;
       line-height: 0.95;
       font-weight: 700;
       color: var(--dark);
@@ -170,7 +177,7 @@
       letter-spacing: 0;
     }
     .sh-tag {
-      font-size: 6.2pt;
+      font-size: 7.2pt;
       line-height: 1;
       font-weight: 800;
       color: var(--soft);
@@ -185,18 +192,19 @@
       min-width: 10mm;
       border-top: 0.55pt solid var(--line);
     }
-    .g2 {
+    .item-list {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: 8mm;
-      row-gap: 0;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1.1mm;
     }
-    .g2 > * {
+    .item-list > * {
       min-width: 0;
       overflow: hidden;
     }
     .item {
-      margin: 0 0 4mm;
+      margin: 0;
+      padding: 1.6mm 0 1.9mm;
+      border-bottom: 0.45pt dotted #b0b0b0;
       break-inside: avoid;
     }
     .item-top {
@@ -207,7 +215,7 @@
       min-width: 0;
     }
     .item-name {
-      font-size: 10.4pt;
+      font-size: 13.4pt;
       line-height: 1.02;
       font-weight: 800;
       color: var(--ink);
@@ -220,16 +228,16 @@
       min-width: 4mm;
     }
     .item-price {
-      font-size: 9.6pt;
+      font-size: 12.3pt;
       line-height: 1;
       font-weight: 800;
       color: var(--ink);
       white-space: nowrap;
     }
     .item-desc {
-      margin-top: 0.7mm;
+      margin-top: 0.8mm;
       padding-right: 2mm;
-      font-size: 8.1pt;
+      font-size: 10.3pt;
       line-height: 1.22;
       font-weight: 400;
       color: var(--muted);
@@ -276,7 +284,8 @@
       <div class="intro">
         <div>
           <div class="intro-title">Menu Executivo</div>
-          <div class="intro-sub">Almoço executivo</div>
+          <div class="intro-sub">Segunda a sexta das 12h às 15h - exceto feriados</div>
+          <div class="intro-note">Sem sobremesa: R$ 59,90 a R$ 75,90 · Sobremesa opcional: R$ 10,00</div>
         </div>
         <div class="intro-period">2ª quinzena de junho 2026</div>
       </div>
@@ -286,15 +295,15 @@
       <div class="sh">
         <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M6 10a6 6 0 0 0 12 0"/><path d="M8 6c1-2 3-2 4 0"/><path d="M12 6c1-2 3-2 4 0"/></svg></span>
         <span class="sh-title">Saladas</span>
-        <span class="sh-tag">Entradas</span>
+        <span class="sh-tag">Escolha 1 opção</span>
         <span class="sh-line"></span>
       </div>
-      <div class="g2">
+      <div class="item-list">
     <div class="item">
       <div class="item-top">
         <span class="item-name">Salada Caesar</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 0,00</span>
       </div>
       <div class="item-desc">Alface americana, crótons, frango, parmesão e molho caesar</div>
     </div>
@@ -302,7 +311,7 @@
       <div class="item-top">
         <span class="item-name">Salada Caprese</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 0,00</span>
       </div>
       <div class="item-desc">Rúcula, tomate, mozarela de búfala, parmesão e pesto de manjericão</div>
     </div>
@@ -310,7 +319,7 @@
       <div class="item-top">
         <span class="item-name">Carpaccio Salada</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 0,00</span>
       </div>
       <div class="item-desc">Carpaccio de carne, alface americana, parmesão, molho de alcaparras e torrada</div>
     </div></div>
@@ -322,12 +331,12 @@
         <span class="sh-tag">Principais</span>
         <span class="sh-line"></span>
       </div>
-      <div class="g2">
+      <div class="item-list">
     <div class="item">
       <div class="item-top">
         <span class="item-name">Filé Mignon Grelhado</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 75,90</span>
       </div>
       <div class="item-desc">Com penne ao molho de queijo</div>
     </div>
@@ -335,7 +344,7 @@
       <div class="item-top">
         <span class="item-name">Picanha Grelhada</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 75,90</span>
       </div>
       <div class="item-desc">Com risoto de cogumelos</div>
     </div>
@@ -343,7 +352,7 @@
       <div class="item-top">
         <span class="item-name">Salmão Grelhado</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 75,90</span>
       </div>
       <div class="item-desc">Ao molho tarê, brandade de siri e arroz</div>
     </div>
@@ -351,7 +360,7 @@
       <div class="item-top">
         <span class="item-name">Strogonoff</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 59,90</span>
       </div>
       <div class="item-desc">Com arroz e batata frita</div>
     </div>
@@ -359,7 +368,7 @@
       <div class="item-top">
         <span class="item-name">Polpetone</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 59,90</span>
       </div>
       <div class="item-desc">Com espaguete ao molho pomodoro</div>
     </div>
@@ -367,7 +376,7 @@
       <div class="item-top">
         <span class="item-name">Saint Peter</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 59,90</span>
       </div>
       <div class="item-desc">Ao molho pesto, arroz e legumes</div>
     </div></div>
@@ -376,15 +385,15 @@
       <div class="sh">
         <span class="sh-icon"><svg viewBox="0 0 24 24"><path d="M12 3 6 12h12z"/><path d="M8 12l2 8h4l2-8"/></svg></span>
         <span class="sh-title">Sobremesas</span>
-        <span class="sh-tag">Doces</span>
+        <span class="sh-tag">Opcional</span>
         <span class="sh-line"></span>
       </div>
-      <div class="g2">
+      <div class="item-list">
     <div class="item">
       <div class="item-top">
         <span class="item-name">Bolo de Coco</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 10,00</span>
       </div>
       
     </div>
@@ -392,7 +401,7 @@
       <div class="item-top">
         <span class="item-name">Pudim de Chocolate</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 10,00</span>
       </div>
       
     </div>
@@ -400,7 +409,7 @@
       <div class="item-top">
         <span class="item-name">Frutas da Estação</span>
         <span class="item-dots"></span>
-        
+        <span class="item-price">R$ 10,00</span>
       </div>
       <div class="item-desc">Manga</div>
     </div></div>
