@@ -3,6 +3,7 @@ name: Gerar cardápio (HTML + PDF)
 # Após qualquer alteração nos dados/gerador (inclusive salvas pelo painel web),
 # regenera cardapio.html e cardapio.pdf e faz commit de volta no repositório.
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'data/**'
@@ -23,8 +24,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - run: npm ci
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
 
       - name: Instalar Chrome (para o PDF)
         id: chrome
