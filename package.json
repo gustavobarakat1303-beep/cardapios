@@ -10,6 +10,7 @@
     "executivo": "node scripts/build_pe_de_manga_executivo.cjs",
     "sazonal:eventos": "node scripts/build_pe_de_manga_sazonal_eventos.cjs",
     "happy-hour": "node scripts/build_pe_de_manga_happy_hour.cjs",
+    "almoco-jantar": "node scripts/build_pe_de_manga_almoco_jantar.cjs",
     "menu": "node build/menu.mjs",
     "validar": "node build/menu.mjs validar"
   },
