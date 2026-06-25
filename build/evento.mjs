@@ -1,18 +1,14 @@
 // ---------------------------------------------------------------------------
-// Pé de Manga — gerador do MENU DE EVENTO (Almoço / Jantar)
+// Pé de Manga — gerador do MENU DE EVENTO (Almoço / Jantar)  [design monocromático]
 //
 // Menu de mesa para evento (pacote fechado): SEM preços. Montado por seleção
-// (exatamente 1 salada + exatamente 3 pratos principais; entradas e sobremesas
-// entram completas). Impresso em A4 HORIZONTAL dividido em 3 partes iguais,
-// com 3 cópias do mesmo menu por folha. Conteúdo centralizado, sem linhas
-// pontilhadas, divisórias finas entre seções.
+// (exatamente 1 salada + 3 pratos principais; entradas/sobremesas completas).
+// A4 HORIZONTAL dividido em 3 partes iguais (3 cópias). Visual portado do
+// material aprovado do cliente.
 //
-//   node build/evento.mjs
-//   node build/evento.mjs --salada caprese --pratos polvo,camarao,salmao
+//   node build/evento.mjs          (lê data/almoco-jantar.json)
 //
-// Saídas (output/):
-//   almoco-jantar-nao-alcoolicas.pdf   almoco-jantar-alcoolicas.pdf
-//   almoco-jantar-geral.pdf  (as duas versões)
+// Saídas (output/): almoco-jantar-nao_alcoolicas.pdf · -alcoolicas.pdf · -geral.pdf
 // ---------------------------------------------------------------------------
 
 import puppeteer from 'puppeteer-core';
@@ -27,110 +23,99 @@ const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24
 
 const data = JSON.parse(readFileSync(join(ROOT, 'data', 'almoco-jantar.json'), 'utf8'));
 const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets/logo-pedemanga.png')).toString('base64');
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-// ---- seleção (com overrides por flag) -------------------------------------
-function parseArgs(argv) { const f = {}; for (let i = 0; i < argv.length; i++) { if (argv[i].startsWith('--')) { f[argv[i].slice(2)] = argv[i + 1]; i++; } } return f; }
-const args = parseArgs(process.argv.slice(2));
-const sel = {
-  salada: args.salada || data.selecao.salada,
-  pratos: args.pratos ? args.pratos.split(',').map((s) => s.trim()) : data.selecao.pratos,
-};
+const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- validação ------------------------------------------------------------
 function die(msg) { console.error('✗ ' + msg); process.exit(1); }
-const saladaById = Object.fromEntries(data.saladas.map((s) => [s.id, s]));
-const pratoById = Object.fromEntries(data.pratos.map((p) => [p.id, p]));
-
-if (!sel.salada || !saladaById[sel.salada]) die(`escolha exatamente 1 salada válida (--salada). Opções: ${data.saladas.map((s) => s.id).join(', ')}`);
-const pratos = [...new Set(sel.pratos || [])];
-if (pratos.length !== 3) die(`escolha exatamente 3 pratos principais (--pratos a,b,c). Você passou ${pratos.length}.`);
-for (const id of pratos) if (!pratoById[id]) die(`prato inválido: "${id}". Opções: ${data.pratos.map((p) => p.id).join(', ')}`);
-
-const chosen = {
-  entradas: data.fixos.entradas,
-  salada: [saladaById[sel.salada]],
-  pratos: pratos.map((id) => pratoById[id]),
-  sobremesas: data.fixos.sobremesas,
-};
+if (!data.saladaSelecionada || !data.saladaSelecionada.nome) die('selecione exatamente 1 salada (saladaSelecionada).');
+if (!Array.isArray(data.principaisSelecionados) || data.principaisSelecionados.length !== 3)
+  die(`selecione exatamente 3 pratos principais (principaisSelecionados). Há ${(data.principaisSelecionados || []).length}.`);
 
 // ---- render ---------------------------------------------------------------
-function sectionHTML(title, items) {
-  const rows = items.map((it) => {
-    if (typeof it === 'string') return `<div class="it"><div class="it-n">${esc(it)}</div></div>`;
-    return `<div class="it"><div class="it-n">${esc(it.n)}</div>${it.d ? `<div class="it-d">${esc(it.d)}</div>` : ''}</div>`;
-  }).join('');
-  return `<div class="sec"><div class="sec-t">${esc(title)}</div>${rows}</div>`;
+function sec(title, tag, items) {
+  const lis = items.map((it) => (typeof it === 'string'
+    ? `<li><strong>${esc(it)}</strong></li>`
+    : `<li><strong>${esc(it.nome)}</strong>${it.descricao ? `<span>${esc(it.descricao)}</span>` : ''}</li>`)).join('');
+  return `<div class="section"><div class="section-title"><span>${esc(title)}</span><em>${esc(tag)}</em><i></i></div><ul>${lis}</ul></div>`;
 }
 
-function columnHTML(bebidas) {
-  return `<div class="menu">
-    <div class="head">
-      <div class="logo"></div>
-      <div class="kicker">${esc(data.meta.subtitle || '')}</div>
+function panel(v) {
+  return `<div class="panel">
+    <div class="panel-head"><div class="logo"></div><div>Bar &amp; Restaurante</div></div>
+    <div class="panel-body">
+      <div class="kicker">${esc(data.subtitulo)}</div>
+      <h1>${esc(data.titulo)}</h1>
+      <div class="option-row"><strong>${esc(v.titulo)}</strong><span>${esc(data.periodo)}</span></div>
+      <div class="lead">${esc(v.chamada)}</div>
+      <div class="sections">
+        ${sec('Entradas', 'Completo', data.entradas)}
+        ${sec('Salada', '1 opção', [data.saladaSelecionada])}
+        ${sec('Principais', '3 opções', data.principaisSelecionados)}
+        ${sec('Sobremesa', 'Completo', data.sobremesas)}
+        ${sec('Bebidas', v.titulo, v.bebidas)}
+      </div>
     </div>
-    <div class="body">
-      ${sectionHTML('Entradas', chosen.entradas)}
-      ${sectionHTML('Salada', chosen.salada)}
-      ${sectionHTML('Pratos Principais', chosen.pratos)}
-      ${sectionHTML('Sobremesas', chosen.sobremesas)}
-      ${sectionHTML('Bebidas', bebidas)}
-    </div>
-    <div class="foot">@pedemanga</div>
+    <div class="panel-foot"><span>${esc(data.rodape)}</span><span>${esc(v.titulo)}</span></div>
   </div>`;
 }
 
-function sheetHTML(bebidas) {
-  const col = columnHTML(bebidas);
-  return `<div class="sheet">${col}${col}${col}</div>`;
-}
-
-const bevNaoAlc = data.bebidas.naoAlcoolicas;
-const bevAlc = [...data.bebidas.naoAlcoolicas, ...data.bebidas.alcoolicas];
+const sheet = (v) => `<div class="sheet">${panel(v)}${panel(v)}${panel(v)}</div>`;
 
 const CSS = `
-  :root{ --paper:#f7f3eb; --ink:#2b241d; --muted:#6f6055; --green:#0f4e22; --green2:#17672c; --ochre:#c58a31; --line:rgba(95,79,64,.42); }
-  @page{ size:A4 landscape; margin:0; }
-  *{ box-sizing:border-box; }
-  html,body{ margin:0; padding:0; background:#ece7dd; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; font-family:"Jost",Arial,sans-serif; }
-  .sheet{ width:297mm; height:210mm; display:grid; grid-template-columns:1fr 1fr 1fr; background:var(--paper);
-    page-break-after:always; break-after:page; }
-  .sheet:last-child{ page-break-after:auto; break-after:auto; }
-  .menu{ position:relative; height:210mm; padding:10mm 8mm 7mm; display:flex; flex-direction:column; text-align:center;
-    border-right:.4pt dashed rgba(95,79,64,.5); }
-  .menu:last-child{ border-right:0; }
-
-  .head{ display:flex; flex-direction:column; align-items:center; gap:1.5mm; }
-  .logo{ width:24mm; height:19mm; background:url('${LOGO}') center/contain no-repeat; }
-  .kicker{ font-size:7.6pt; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color:var(--ochre); }
-
-  .body{ flex:1; display:flex; flex-direction:column; justify-content:space-between; padding:3mm 2mm 0; }
-  .sec{ padding:2.0mm 0; }
-  .sec + .sec{ border-top:.5pt solid var(--line); }
-  .sec-t{ font-family:"Cormorant Garamond",Georgia,serif; font-size:12.5pt; font-weight:700; color:var(--green); margin-bottom:1.0mm; letter-spacing:.3px; }
-  .it{ margin:.8mm 0; }
-  .it-n{ font-size:8.2pt; font-weight:700; color:var(--ink); line-height:1.12; }
-  .it-d{ font-size:6.4pt; font-weight:400; color:var(--muted); line-height:1.18; margin-top:.3mm; }
-
-  .foot{ margin-top:2.5mm; font-size:6.4pt; font-weight:800; letter-spacing:1.4px; text-transform:uppercase; color:var(--green2); }
+    :root{ --paper:#ffffff; --ink:#181818; --muted:#565656; --line:#8f8f8f; --soft:#777777; --logo:url('${LOGO}'); }
+    @page { size: A4 landscape; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:#eeeeee; color:var(--ink); font-family:"Jost",Arial,sans-serif;
+      -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .sheet { width:297mm; height:210mm; overflow:hidden; display:grid; grid-template-columns:repeat(3,1fr);
+      background:var(--paper); break-after:page; page-break-after:always; }
+    .sheet:last-child{ break-after:auto; page-break-after:auto; }
+    .panel { position:relative; width:99mm; height:210mm; overflow:hidden; padding:6mm 6.2mm 5.2mm;
+      display:flex; flex-direction:column; border-left:.35pt dashed #b6b6b6; text-align:center; }
+    .panel:first-child{ border-left:none; }
+    .panel::after { content:""; position:absolute; right:4.5mm; bottom:14mm; width:30mm; height:30mm;
+      background:var(--logo) center/contain no-repeat; opacity:.035; filter:grayscale(1); pointer-events:none; }
+    .panel-head { height:16mm; flex:0 0 16mm; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:1.15mm; border-bottom:.45pt solid var(--line); padding-bottom:2.4mm; }
+    .panel-head .logo { width:12mm; height:9.2mm; background:var(--logo) center/contain no-repeat; filter:grayscale(1) contrast(1.25); }
+    .panel-head div { font-size:4.6pt; line-height:1; font-weight:800; letter-spacing:1.4px; text-align:center; text-transform:uppercase; white-space:nowrap; }
+    .panel-body { flex:1 1 auto; min-height:0; padding-top:4mm; position:relative; z-index:1; }
+    .kicker { font-size:5pt; line-height:1; font-weight:800; letter-spacing:1.3px; color:var(--muted); text-transform:uppercase; }
+    h1 { margin:1.45mm 0 1.8mm; font-family:"Cormorant Garamond",Georgia,serif; font-size:24pt; line-height:.9; font-weight:700; color:var(--ink); }
+    .option-row { display:flex; flex-direction:column; align-items:center; gap:1mm; padding:0 0 2mm; }
+    .option-row strong { font-size:8.2pt; line-height:1; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; }
+    .option-row span { font-size:4.6pt; line-height:1; font-weight:800; color:var(--muted); letter-spacing:1px; white-space:nowrap; }
+    .lead { margin:0 0 2.5mm; padding:1.7mm 3mm 0; border-top:.45pt solid var(--line); font-size:5.5pt; line-height:1.18; font-weight:600; color:var(--muted); }
+    .sections { display:flex; flex-direction:column; gap:2.05mm; }
+    .section { padding-top:.4mm; break-inside:avoid; }
+    .section + .section { border-top:.35pt solid #d2d2d2; padding-top:1.8mm; }
+    .section-title { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.65mm; margin-bottom:1mm; }
+    .section-title span { font-family:"Cormorant Garamond",Georgia,serif; font-size:12.9pt; line-height:.92; font-weight:700; color:var(--ink); white-space:nowrap; }
+    .section-title em { font-style:normal; font-size:3.9pt; line-height:1; font-weight:800; color:var(--soft); letter-spacing:1.1px; text-transform:uppercase; white-space:nowrap; }
+    .section-title i { display:block; width:12mm; height:0; border-top:.45pt solid var(--line); }
+    ul { list-style:none; margin:0; padding:0; display:grid; row-gap:.55mm; }
+    li { margin:0; padding:0; font-size:6.05pt; line-height:1.1; font-weight:600; overflow-wrap:anywhere; }
+    li strong { display:block; font-size:6.35pt; line-height:1.08; font-weight:800; }
+    li span { display:block; margin-top:.2mm; color:var(--muted); font-size:5.1pt; line-height:1.1; font-weight:500; }
+    .panel-foot { height:6.4mm; flex:0 0 6.4mm; display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+      gap:1mm; border-top:.45pt solid var(--line); color:var(--muted); font-size:4.6pt; line-height:1; font-weight:800;
+      letter-spacing:1.15px; text-transform:uppercase; position:relative; z-index:1; }
+    .panel-foot span:last-child { color:var(--ink); }
+    @media screen { body { padding:16px; } .sheet { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); } }
 `;
 
-function docHTML(sheets) {
-  return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8" />
+const doc = (sheets) => `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>${CSS}</style></head><body>${sheets}</body></html>`;
-}
 
-const versions = [
-  { slug: 'almoco-jantar-nao-alcoolicas', html: docHTML(sheetHTML(bevNaoAlc)) },
-  { slug: 'almoco-jantar-alcoolicas', html: docHTML(sheetHTML(bevAlc)) },
-  { slug: 'almoco-jantar-geral', html: docHTML(sheetHTML(bevNaoAlc) + sheetHTML(bevAlc)) },
-];
+const versions = data.versoes.map((v) => ({ slug: `almoco-jantar-${v.id}`, html: doc(sheet(v)) }));
+versions.push({ slug: 'almoco-jantar-geral', html: doc(data.versoes.map(sheet).join('')) });
 
+// ---- render ---------------------------------------------------------------
 mkdirSync(OUTDIR, { recursive: true });
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'] });
-console.log(`Menu de evento — salada: ${sel.salada} | pratos: ${pratos.join(', ')}`);
+console.log(`Menu de evento — salada: ${data.saladaSelecionada.nome} | pratos: ${data.principaisSelecionados.map((p) => p.nome).join(', ')}`);
 for (const v of versions) {
   writeFileSync(join(OUTDIR, `${v.slug}.html`), v.html, 'utf8');
   const page = await browser.newPage();
@@ -140,9 +125,9 @@ for (const v of versions) {
   await new Promise((r) => setTimeout(r, 1200));
   await page.emulateMediaType('print');
   await page.pdf({ path: join(OUTDIR, `${v.slug}.pdf`), format: 'A4', landscape: true, printBackground: true });
-  const over = await page.$$eval('.menu', (els) => els.some((el) => el.scrollHeight > el.clientHeight + 2));
+  const over = await page.$$eval('.panel-body', (els) => els.some((el) => el.scrollHeight > el.clientHeight + 2));
   console.log(`  ${v.slug}.pdf${over ? '  <<< OVERFLOW' : '  ok'}`);
   await page.close();
 }
 await browser.close();
-console.log('OK — 3 PDFs (não alcoólicas, alcoólicas, geral) em output/.');
+console.log('OK — PDFs do menu de evento em output/.');

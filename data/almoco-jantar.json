@@ -1,57 +1,71 @@
 {
-  "type": "evento",
-  "meta": {
-    "brand": "Pé de Manga",
-    "title": "Cardápio do Evento",
-    "subtitle": "Almoço & Jantar"
-  },
-  "fixos": {
-    "entradas": [
-      { "n": "Pastel de Queijo" },
-      { "n": "Bruschettas Pomodoro" },
-      { "n": "Canapé de Carpaccio" }
-    ],
-    "sobremesas": [
-      { "n": "Sorvete de Creme e Chocolate", "d": "com caldas" },
-      { "n": "Brigadeiro de Colher" },
-      { "n": "Frutas da Estação" }
-    ]
-  },
-  "saladas": [
-    { "id": "caesar", "n": "Caesar Salad", "d": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
-    { "id": "caprese", "n": "Caprese", "d": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão" }
+  "_como_editar": "Atualize saladaSelecionada e principaisSelecionados antes de imprimir. Deve haver exatamente 1 salada e 3 pratos principais. Depois rode: npm run evento. O impresso não usa preços porque o evento é fechado por pacote.",
+  "titulo": "Almoço ou Jantar",
+  "subtitulo": "Eventos Pé de Manga",
+  "periodo": "2026",
+  "rodape": "@PEDEMANGA",
+  "formato": "A4 horizontal dividido em 3 partes",
+  "entradas": [
+    "Pastel de queijo",
+    "Bruschettas pomodoro",
+    "Canapé de carpaccio"
   ],
-  "pratos": [
-    { "id": "polvo", "n": "Polvo Grelhado", "d": "Azeite trufado, arroz negro e tomate-cereja" },
-    { "id": "camarao", "n": "Camarão", "d": "Arroz vermelho, molho beurre blanc e caviar" },
-    { "id": "salmao", "n": "Salmão Grelhado", "d": "Risoto de banana-da-terra e molho agridoce" },
-    { "id": "robalo", "n": "Robalo com Crosta de Ervas", "d": "Molho de tangerina, risoto de limão siciliano e farofa crocante" },
-    { "id": "picanha", "n": "Picanha Grelhada", "d": "Farofa da casa, vinagrete, arroz e fritas" },
-    { "id": "medalhao-vinho", "n": "Medalhão de Filet", "d": "Molho de vinho tinto e funghi com purê de mandioquinha" },
-    { "id": "medalhao-gorgonzola", "n": "Medalhão de Filet", "d": "Molho gorgonzola e risoto de rúcula com tomates secos" },
-    { "id": "medalhao-mignon", "n": "Medalhão Mignon", "d": "Risoto de shitake ao molho cumberland" },
-    { "id": "file-poivre", "n": "Filé Mignon ao Poivre", "d": "Arroz e batata wave" },
-    { "id": "penne", "n": "Penne", "d": "Tomate seco, mozarela de búfala e manjericão" },
-    { "id": "nhoque", "n": "Nhoque de Mandioquinha", "d": "Molho de tomates, shimeji e shitake" },
-    { "id": "fusile", "n": "Fusile de Arroz", "d": "Azeite com legumes · vegano" }
+  "saladasDisponiveis": [
+    { "nome": "Caesar Salad", "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
+    { "nome": "Caprese", "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão" }
   ],
-  "bebidas": {
-    "naoAlcoolicas": [
-      "Água",
-      "Café",
-      "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
-      "Suco natural: laranja, melancia e abacaxi"
-    ],
-    "alcoolicas": [
-      "Chopp Claro Brahma",
-      "Caipirinha: limão, abacaxi e maracujá",
-      "Caipiroska: limão, abacaxi e morango",
-      "Gin Tônica",
-      "Moscow Mule"
-    ]
-  },
-  "selecao": {
-    "salada": "caesar",
-    "pratos": ["polvo", "picanha", "salmao"]
-  }
+  "principaisDisponiveis": [
+    { "nome": "Polvo grelhado", "descricao": "Azeite trufado, arroz negro e tomate-cereja" },
+    { "nome": "Camarão", "descricao": "Arroz vermelho, molho beurre blanc e caviar" },
+    { "nome": "Salmão grelhado", "descricao": "Risoto de banana-da-terra e molho agridoce" },
+    { "nome": "Robalo com crosta de ervas", "descricao": "Molho de tangerina, risoto de limão siciliano e farofa crocante" },
+    { "nome": "Picanha grelhada", "descricao": "Farofa da casa, vinagrete, arroz e fritas" },
+    { "nome": "Medalhão de filet", "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha" },
+    { "nome": "Medalhão de filet", "descricao": "Molho gorgonzola e risoto de rúcula com tomates secos" },
+    { "nome": "Medalhão mignon", "descricao": "Risoto de shitake ao molho cumberland" },
+    { "nome": "Filé mignon ao poivre", "descricao": "Arroz e batata wave" },
+    { "nome": "Penne", "descricao": "Tomate seco, mozarela de búfala e manjericão" },
+    { "nome": "Nhoque de mandioquinha", "descricao": "Molho de tomates, shimeji e shitake" },
+    { "nome": "Fusile de arroz", "descricao": "Azeite com legumes - vegano" }
+  ],
+  "saladaSelecionada": { "nome": "Caesar Salad", "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos" },
+  "principaisSelecionados": [
+    { "nome": "Picanha grelhada", "descricao": "Farofa da casa, vinagrete, arroz e fritas" },
+    { "nome": "Medalhão de filet", "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha" },
+    { "nome": "Penne", "descricao": "Tomate seco, mozarela de búfala e manjericão" }
+  ],
+  "sobremesas": [
+    "Sorvete de creme e chocolate com caldas",
+    "Brigadeiro de colher",
+    "Frutas da estação"
+  ],
+  "versoes": [
+    {
+      "id": "nao_alcoolicas",
+      "titulo": "Bebidas Não Alcoólicas",
+      "chamada": "Entradas, 1 salada, 3 pratos principais, sobremesa completa e bebidas não alcoólicas.",
+      "bebidas": [
+        "Água",
+        "Café",
+        "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+        "Suco natural: laranja, melancia e abacaxi"
+      ]
+    },
+    {
+      "id": "alcoolicas",
+      "titulo": "Bebidas Alcoólicas",
+      "chamada": "Entradas, 1 salada, 3 pratos principais, sobremesa completa e bar alcoólico.",
+      "bebidas": [
+        "Água",
+        "Café",
+        "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+        "Suco natural: laranja, melancia e abacaxi",
+        "Chopp Claro Brahma",
+        "Caipirinha: limão, abacaxi e maracujá",
+        "Caipiroska: limão, abacaxi e morango",
+        "Gin tônica",
+        "Moscow Mule"
+      ]
+    }
+  ]
 }
