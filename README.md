@@ -16,6 +16,12 @@ pratos — `node build/evento.mjs`) e **Happy Hour** (`happy-hour`, por opções
 pacote — `node build/evento-opcoes.mjs happy-hour`). Ambos são editáveis no
 painel web e geram `output/<slug>-*.pdf`.
 
+E o cardápio do **Nômade** (`nomade`) — marca irmã, mesmo formato de dados
+(`sections` com preços, **editável no painel**), mas **identidade própria**
+(header preto + wordmark, corpo creme, preços em dourado, tags em inglês). Tem
+**gerador próprio com auto-escala** (`gen: "nomade"` no registro →
+`node build/nomade.mjs`), por isso o `build.mjs`/`render.mjs` o ignoram.
+
 | Arquivo | Descrição |
 | --- | --- |
 | [`data/menus.json`](data/menus.json) | **Registro** dos cardápios (`slug` + nome). |

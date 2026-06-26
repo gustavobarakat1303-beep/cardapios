@@ -2,6 +2,7 @@
   "menus": [
     { "slug": "completo", "name": "Menu Completo" },
     { "slug": "executivo", "name": "Menu Executivo" },
+    { "slug": "nomade", "name": "Nômade — Cardápio", "gen": "nomade" },
     { "slug": "almoco-jantar", "name": "Evento — Almoço/Jantar", "type": "evento" },
     { "slug": "happy-hour", "name": "Evento — Happy Hour", "type": "evento" }
   ]

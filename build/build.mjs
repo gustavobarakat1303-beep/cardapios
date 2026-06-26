@@ -227,8 +227,10 @@ ${body}
 const arg = process.argv[2];
 const registry = listMenus();
 const eventoSlugs = new Set(registry.filter((x) => x.type === 'evento').map((x) => x.slug));
+const genSlugs = new Set(registry.filter((x) => x.gen).map((x) => x.slug));
 const slugs = (arg ? [arg] : registry.map((x) => x.slug)).filter((s) => {
   if (eventoSlugs.has(s)) { console.log(`  (pulando "${s}" — cardápio de evento, use: node build/evento.mjs)`); return false; }
+  if (genSlugs.has(s)) { console.log(`  (pulando "${s}" — gerador próprio, use: node build/${[...registry].find((x) => x.slug === s).gen}.mjs)`); return false; }
   return true;
 });
 console.log(`Gerando ${slugs.length} cardápio(s):`);
