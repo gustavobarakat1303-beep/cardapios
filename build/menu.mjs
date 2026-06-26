@@ -99,12 +99,25 @@ function findItem(menu, ref) {
 }
 
 // ---- reconstrução ---------------------------------------------------------
+// Cardápios com gerador próprio (campo "gen" no registro) -> build/<gen>.mjs,
+// que já produz HTML + PDF de uma vez.
+function generatorFor(slug) {
+  try { return (JSON.parse(readFileSync(join(ROOT, 'data', 'menus.json'), 'utf8')).menus || [])
+    .find((m) => m.slug === slug)?.gen || null; } catch { return null; }
+}
+
 function rebuild(flags) {
   const wantPdf = flags.has('pdf');
   const wantBuild = wantPdf || flags.has('build') || flags.has('gerar');
   if (!wantBuild) return;
   const slug = menuSlug(flags);
+  const gen = generatorFor(slug);
   try {
+    if (gen) {
+      console.log(dim(`→ gerando output/${slug}.html + .pdf (build/${gen}.mjs)...`));
+      execFileSync('node', [join(__dirname, `${gen}.mjs`)], { stdio: 'inherit', cwd: ROOT });
+      return;
+    }
     console.log(dim(`→ gerando output/${slug}.html...`));
     execFileSync('node', [join(__dirname, 'build.mjs'), slug], { stdio: 'inherit', cwd: ROOT });
     if (wantPdf) {
