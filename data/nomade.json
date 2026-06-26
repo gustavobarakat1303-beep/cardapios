@@ -7,16 +7,55 @@
     "footer": "NÔMADE BAR & RESTAURANTE · @NO.MADEBAR"
   },
   "layout": {
-    "foodBreaks": [
-      "entradas-frias",
-      "autorais"
+    "foodBreaks": [],
+    "pages": [
+      [
+        "petiscos",
+        "bruschettas",
+        "porcoes"
+      ],
+      [
+        "entradas-frias",
+        "saladas",
+        "pratos-principais",
+        "sobremesas"
+      ],
+      [
+        "autorais",
+        "classicos",
+        "sugestoes",
+        "moquetel"
+      ],
+      [
+        "gin-tonicas",
+        "caipirinhas",
+        "whisky",
+        "vodkas",
+        "cachacas",
+        "tequilas",
+        "doses",
+        "garrafas",
+        "licores"
+      ],
+      [
+        "chopp",
+        "cervejas",
+        "diversos",
+        "sangria"
+      ],
+      [
+        "vinhos-tintos",
+        "vinhos-brancos",
+        "vinhos-rose",
+        "vinhos-tacas"
+      ]
     ],
     "drinkPages": [
       [
         "autorais",
-        "moquetel",
         "classicos",
         "sugestoes",
+        "moquetel",
         "gin-tonicas"
       ],
       [
@@ -29,13 +68,19 @@
       [
         "doses",
         "garrafas",
+        "licores",
         "chopp",
-        "cervejas",
-        "licores"
+        "cervejas"
       ],
       [
+        "diversos",
         "sangria",
-        "bebidas"
+        "vinhos-tintos",
+        "vinhos-brancos",
+        "vinhos-rose"
+      ],
+      [
+        "vinhos-tacas"
       ]
     ]
   },
@@ -224,10 +269,10 @@
       ]
     },
     {
-      "id": "pratos-carnes",
-      "title": "Pratos Principais · Carnes",
+      "id": "pratos-principais",
+      "title": "Pratos Principais",
       "kind": "food",
-      "en": "Main Courses · Meat",
+      "en": "Main Courses",
       "items": [
         {
           "id": "mignon-glace",
@@ -252,15 +297,7 @@
           "n": "Flat Iron Caramelizado",
           "d": "Com risoto de cebola caramelizada e demi-glace",
           "p": "92,00"
-        }
-      ]
-    },
-    {
-      "id": "pratos-mar",
-      "title": "Pratos Principais · Do Mar",
-      "kind": "food",
-      "en": "From the Sea",
-      "items": [
+        },
         {
           "id": "salmao-siciliano",
           "n": "Salmão Siciliano",
@@ -284,15 +321,7 @@
           "n": "Tagliatelle de Frutos do Mar",
           "d": "Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados",
           "p": "105,00"
-        }
-      ]
-    },
-    {
-      "id": "diversos-pratos",
-      "title": "Diversos",
-      "kind": "food",
-      "en": "Others",
-      "items": [
+        },
         {
           "id": "risoto-de-cogumelos",
           "n": "Risoto de Cogumelos",
@@ -403,49 +432,6 @@
           "n": "Espresso Nômade",
           "d": "Vodka Cîroc, licor 43, café espresso e creme de baunilha",
           "p": "52,00"
-        }
-      ]
-    },
-    {
-      "id": "moquetel",
-      "title": "Moquetel",
-      "kind": "drink",
-      "en": "Zero Alcohol Drinks",
-      "items": [
-        {
-          "id": "solar",
-          "n": "Solar",
-          "p": "35,00"
-        },
-        {
-          "id": "tonica-de-maracuja-e-mel",
-          "n": "Tônica de Maracujá e Mel",
-          "p": "35,00"
-        },
-        {
-          "id": "tres-marias",
-          "n": "Três Marias",
-          "p": "35,00"
-        },
-        {
-          "id": "refresco-verde-detox",
-          "n": "Refresco Verde Detox",
-          "p": "35,00"
-        },
-        {
-          "id": "orion",
-          "n": "Orion",
-          "p": "35,00"
-        },
-        {
-          "id": "pink-lemonade-nomade",
-          "n": "Pink Lemonade Nômade",
-          "p": "35,00"
-        },
-        {
-          "id": "hibisco-e-limao",
-          "n": "Hibisco e Limão",
-          "p": "35,00"
         }
       ]
     },
@@ -602,6 +588,49 @@
           "id": "carpano-tonic",
           "n": "Carpano Tonic",
           "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "moquetel",
+      "title": "Moquetel",
+      "kind": "drink",
+      "en": "Zero Alcohol Drinks",
+      "items": [
+        {
+          "id": "solar",
+          "n": "Solar",
+          "p": "35,00"
+        },
+        {
+          "id": "tonica-de-maracuja-e-mel",
+          "n": "Tônica de Maracujá e Mel",
+          "p": "35,00"
+        },
+        {
+          "id": "tres-marias",
+          "n": "Três Marias",
+          "p": "35,00"
+        },
+        {
+          "id": "refresco-verde-detox",
+          "n": "Refresco Verde Detox",
+          "p": "35,00"
+        },
+        {
+          "id": "orion",
+          "n": "Orion",
+          "p": "35,00"
+        },
+        {
+          "id": "pink-lemonade-nomade",
+          "n": "Pink Lemonade Nômade",
+          "p": "35,00"
+        },
+        {
+          "id": "hibisco-e-limao",
+          "n": "Hibisco e Limão",
+          "p": "35,00"
         }
       ]
     },
@@ -920,6 +949,73 @@
       ]
     },
     {
+      "id": "licores",
+      "title": "Licores & Sakês",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "baileys",
+          "n": "Baileys",
+          "p": "37,00"
+        },
+        {
+          "id": "cointreau",
+          "n": "Cointreau",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43",
+          "n": "Licor 43",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43-creme-brulee",
+          "n": "Licor 43 Crème Brûlée",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43-chocolate",
+          "n": "Licor 43 Chocolate",
+          "p": "35,00"
+        },
+        {
+          "id": "fireball",
+          "n": "Fireball",
+          "p": "35,00"
+        },
+        {
+          "id": "villa-massa-limoncello",
+          "n": "Villa Massa Limoncello",
+          "p": "30,00"
+        },
+        {
+          "id": "villa-massa-amaretto",
+          "n": "Villa Massa Amaretto",
+          "p": "30,00"
+        },
+        {
+          "id": "peachtree",
+          "n": "Peachtree",
+          "p": "45,00"
+        },
+        {
+          "id": "drambuie",
+          "n": "Drambuie",
+          "p": "30,00"
+        },
+        {
+          "id": "sake-azuma-kirin",
+          "n": "Sake Azuma Kirin",
+          "p": "38,00"
+        },
+        {
+          "id": "sake-gekkeikan",
+          "n": "Sake Gekkeikan",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
       "id": "chopp",
       "title": "Chopp",
       "kind": "drink",
@@ -990,92 +1086,8 @@
       ]
     },
     {
-      "id": "licores",
-      "title": "Licores & Sakês",
-      "kind": "drink",
-      "items": [
-        {
-          "id": "baileys",
-          "n": "Baileys",
-          "p": "37,00"
-        },
-        {
-          "id": "cointreau",
-          "n": "Cointreau",
-          "p": "35,00"
-        },
-        {
-          "id": "licor-43",
-          "n": "Licor 43",
-          "p": "35,00"
-        },
-        {
-          "id": "licor-43-creme-brulee",
-          "n": "Licor 43 Crème Brûlée",
-          "p": "35,00"
-        },
-        {
-          "id": "licor-43-chocolate",
-          "n": "Licor 43 Chocolate",
-          "p": "35,00"
-        },
-        {
-          "id": "fireball",
-          "n": "Fireball",
-          "p": "35,00"
-        },
-        {
-          "id": "villa-massa-limoncello",
-          "n": "Villa Massa Limoncello",
-          "p": "30,00"
-        },
-        {
-          "id": "villa-massa-amaretto",
-          "n": "Villa Massa Amaretto",
-          "p": "30,00"
-        },
-        {
-          "id": "peachtree",
-          "n": "Peachtree",
-          "p": "45,00"
-        },
-        {
-          "id": "drambuie",
-          "n": "Drambuie",
-          "p": "30,00"
-        },
-        {
-          "id": "sake-azuma-kirin",
-          "n": "Sake Azuma Kirin",
-          "p": "38,00"
-        },
-        {
-          "id": "sake-gekkeikan",
-          "n": "Sake Gekkeikan",
-          "p": "40,00"
-        }
-      ]
-    },
-    {
-      "id": "sangria",
-      "title": "Sangria & Clericot",
-      "kind": "drink",
-      "items": [
-        {
-          "id": "tinto",
-          "n": "Tinto",
-          "p": "110,00"
-        },
-        {
-          "id": "branco",
-          "n": "Branco",
-          "p": "110,00"
-        }
-      ]
-    },
-    {
-      "id": "bebidas",
-      "title": "Bebidas",
+      "id": "diversos",
+      "title": "Diversos",
       "kind": "drink",
       "en": "Non-Alcoholic",
       "items": [
@@ -1153,6 +1165,271 @@
           "id": "rolha",
           "n": "Rolha",
           "p": "90,00"
+        }
+      ]
+    },
+    {
+      "id": "sangria",
+      "title": "Sangria & Clericot",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "tinto",
+          "n": "Tinto",
+          "p": "110,00"
+        },
+        {
+          "id": "branco",
+          "n": "Branco",
+          "p": "110,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-tintos",
+      "title": "Vinhos Tintos",
+      "kind": "drink",
+      "en": "Red Wines",
+      "items": [
+        {
+          "id": "alamos-pinot-noir",
+          "n": "Alamos Pinot Noir",
+          "d": "Pinot Noir · Mendoza, Argentina",
+          "p": "165,00"
+        },
+        {
+          "id": "catena-malbec",
+          "n": "Catena Malbec",
+          "d": "Malbec · Mendoza, Argentina",
+          "p": "279,00"
+        },
+        {
+          "id": "alma-negra-m-blend",
+          "n": "Alma Negra M Blend",
+          "d": "Bonarda e Malbec · Mendoza, Argentina",
+          "p": "282,00"
+        },
+        {
+          "id": "carmen-carmenere",
+          "n": "Carmen Carménère",
+          "d": "Carménère · Viña Carmen, Chile",
+          "p": "160,00"
+        },
+        {
+          "id": "dv-catena-cabernet-malbec",
+          "n": "DV Catena Cabernet-Malbec",
+          "d": "Cabernet Sauvignon e Malbec · Mendoza, Argentina",
+          "p": "326,00"
+        },
+        {
+          "id": "el-enemigo-bonarda-el-barranco",
+          "n": "El Enemigo Bonarda El Barranco",
+          "d": "Bonarda · Mendoza, Argentina",
+          "p": "338,00"
+        },
+        {
+          "id": "montepulciano-d-abruzzo",
+          "n": "Montepulciano d'Abruzzo",
+          "d": "Montepulciano · Abruzzo, Itália",
+          "p": "160,00"
+        },
+        {
+          "id": "trofeo-cabernet-sauvignon",
+          "n": "Trofeo Cabernet Sauvignon",
+          "d": "Cabernet Sauvignon · Valle Central, Chile",
+          "p": "122,00"
+        },
+        {
+          "id": "posadas-viejas-tempranillo",
+          "n": "Posadas Viejas Tempranillo",
+          "d": "Tempranillo · Castilla la Mancha, Espanha",
+          "p": "120,00"
+        },
+        {
+          "id": "miluna-rosso",
+          "n": "Miluna Rosso",
+          "d": "Malvasia Nera, Negroamaro e Sangiovese · Puglia, Itália",
+          "p": "145,00"
+        },
+        {
+          "id": "lagoalva-tinto",
+          "n": "Lagoalva Tinto",
+          "d": "Castelão e Touriga Nacional · Tejo, Portugal",
+          "p": "256,00"
+        },
+        {
+          "id": "robertson-pinotage",
+          "n": "Robertson Pinotage",
+          "d": "Pinotage · Robertson Valley, África do Sul",
+          "p": "160,00"
+        },
+        {
+          "id": "los-vascos-cabernet-sauvignon",
+          "n": "Los Vascos Cabernet Sauvignon",
+          "d": "Cabernet Sauvignon · Colchagua, Chile",
+          "p": "188,00"
+        },
+        {
+          "id": "chevalier-lassalle",
+          "n": "Chevalier Lassalle",
+          "d": "Cabernet Sauvignon e Merlot · Bordeaux, França",
+          "p": "188,00"
+        },
+        {
+          "id": "la-vieille-ferme-rouge",
+          "n": "La Vieille Ferme Rouge",
+          "d": "Carignan, Cinsault, Grenache e Syrah · Rhône, França",
+          "p": "244,00"
+        },
+        {
+          "id": "carmen-premier-1850-pinot-noir",
+          "n": "Carmen Premier 1850 Pinot Noir",
+          "d": "Pinot Noir · San Antonio, Chile",
+          "p": "220,00"
+        },
+        {
+          "id": "padrillos-pinot-noir",
+          "n": "Padrillos Pinot Noir",
+          "d": "Pinot Noir · Mendoza, Argentina",
+          "p": "250,00"
+        },
+        {
+          "id": "animal-malbec",
+          "n": "Animal Malbec",
+          "d": "Malbec · Mendoza, Argentina",
+          "p": "280,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-brancos",
+      "title": "Vinhos Brancos",
+      "kind": "drink",
+      "en": "White Wines",
+      "items": [
+        {
+          "id": "freixenet-pinot-grigio",
+          "n": "Freixenet Pinot Grigio",
+          "d": "Pinot Grigio · Itália",
+          "p": "140,00"
+        },
+        {
+          "id": "catena-chardonnay",
+          "n": "Catena Chardonnay",
+          "d": "Chardonnay · Mendoza, Argentina",
+          "p": "266,00"
+        },
+        {
+          "id": "carmen-insigne-sauvignon-blanc",
+          "n": "Carmen Insigne Sauvignon Blanc",
+          "d": "Sauvignon Blanc · Viña Carmen, Chile",
+          "p": "210,00"
+        },
+        {
+          "id": "posadas-viejas-blanco",
+          "n": "Posadas Viejas Blanco",
+          "d": "Viura · Castilla la Mancha, Espanha",
+          "p": "120,00"
+        },
+        {
+          "id": "robertson-chenin-blanc",
+          "n": "Robertson Chenin Blanc",
+          "d": "Chenin Blanc · Robertson Valley, África do Sul",
+          "p": "145,00"
+        },
+        {
+          "id": "miluna-bianco",
+          "n": "Miluna Bianco",
+          "d": "Blend branco · Puglia, Itália",
+          "p": "145,00"
+        },
+        {
+          "id": "lagoalva-branco",
+          "n": "Lagoalva Branco",
+          "d": "Fernão Pires, Arinto e Sauvignon Blanc · Tejo, Portugal",
+          "p": "256,00"
+        },
+        {
+          "id": "la-vieille-ferme-blanc",
+          "n": "La Vieille Ferme Blanc",
+          "d": "Bourboulenc, Grenache Blanc, Ugni Blanc e Vermentino · Rhône, França",
+          "p": "224,00"
+        },
+        {
+          "id": "alamos-chardonnay",
+          "n": "Alamos Chardonnay",
+          "d": "Chardonnay · Mendoza, Argentina",
+          "p": "156,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-rose",
+      "title": "Vinhos Rosés",
+      "kind": "drink",
+      "en": "Rosé",
+      "items": [
+        {
+          "id": "posadas-viejas-tempranillo-rose",
+          "n": "Posadas Viejas Tempranillo Rosé",
+          "d": "Tempranillo · Castilla la Mancha, Espanha",
+          "p": "140,00"
+        },
+        {
+          "id": "carmen-insigne-aperitif-rose",
+          "n": "Carmen Insigne Aperitif Rosé",
+          "d": "Cabernet Sauvignon e Syrah · Valle Central, Chile",
+          "p": "160,00"
+        },
+        {
+          "id": "freixenet-italian-rose",
+          "n": "Freixenet Italian Rosé",
+          "d": "Rosé · Itália",
+          "p": "135,00"
+        },
+        {
+          "id": "los-vascos-rose",
+          "n": "Los Vascos Rosé",
+          "d": "Syrah, Grenache e Mourvèdre · Chile",
+          "p": "188,00"
+        },
+        {
+          "id": "la-vieille-ferme-rose",
+          "n": "La Vieille Ferme Rosé",
+          "d": "Cinsault, Grenache e Syrah · Rhône, França",
+          "p": "224,00"
+        }
+      ]
+    },
+    {
+      "id": "vinhos-tacas",
+      "title": "Taças & Espumantes",
+      "kind": "drink",
+      "en": "By the Glass & Sparkling",
+      "items": [
+        {
+          "id": "alamos-chardonnay",
+          "n": "Alamos Chardonnay",
+          "d": "187 ml · Chardonnay · Mendoza, Argentina",
+          "p": "65,00"
+        },
+        {
+          "id": "alamos-malbec",
+          "n": "Alamos Malbec",
+          "d": "187 ml · Malbec · Mendoza, Argentina",
+          "p": "65,00"
+        },
+        {
+          "id": "freixenet-cava-cordon-negro-brut",
+          "n": "Freixenet Cava Cordon Negro Brut",
+          "d": "Cava Brut · Espanha",
+          "p": "140,00"
+        },
+        {
+          "id": "freixenet-cordon-rosado-brut",
+          "n": "Freixenet Cordon Rosado Brut",
+          "d": "Espumante Rosé Brut · Espanha",
+          "p": "140,00"
         }
       ]
     }

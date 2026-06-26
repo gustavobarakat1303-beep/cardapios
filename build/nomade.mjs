@@ -110,8 +110,12 @@ const CSS = `
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(5mm * var(--s)); }
-    .flow { display:flex; flex-direction:column; row-gap:calc(5.6mm * var(--s)); }
+    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(6mm * var(--s));
+      display:flex; flex-direction:column; }
+    /* min-height:100% + space-between => categorias se distribuem e preenchem a
+       página (sem sobra embaixo); a auto-escala evita overflow. */
+    .flow { min-height:100%; display:flex; flex-direction:column; justify-content:space-between;
+      row-gap:calc(5mm * var(--s)); }
 
     .pf { height:9mm; flex:0 0 9mm; margin:0 13mm; border-top:.5pt solid var(--rule);
       display:grid; grid-template-columns:24mm 1fr 24mm; align-items:center;
@@ -150,8 +154,17 @@ const doc = (body) => `<!doctype html>
 ${body}
 </body></html>`;
 
+// ---- páginas: layout fixo (data/nomade.json) ou paginação automática ------
+function resolvePages() {
+  const byId = Object.fromEntries(m.sections.map((s) => [s.id, s]));
+  const fixed = (m.layout?.pages || []).map((ids) => ids.map((id) => byId[id]).filter(Boolean)).filter((p) => p.length);
+  const used = new Set(fixed.flat().map((s) => s.id));
+  const rest = m.sections.filter((s) => !used.has(s.id));
+  return fixed.length ? [...fixed, ...(rest.length ? paginate(rest) : [])] : paginate(m.sections);
+}
+
 // ---- render com auto-escala -----------------------------------------------
-const pages = paginate(m.sections);
+const pages = resolvePages();
 const total = pages.length;
 let scales = pages.map(() => 1);
 
