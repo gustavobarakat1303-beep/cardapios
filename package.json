@@ -10,6 +10,7 @@
     "evento": "node build/evento.mjs",
     "evento:happy-hour": "node build/evento-opcoes.mjs happy-hour",
     "nomade": "node build/nomade.mjs",
+    "nomade:executivo": "node build/nomade.mjs nomade-executivo",
     "nomade:happy-hour": "node build/evento-opcoes.mjs nomade-happy-hour",
     "nomade:almoco-jantar": "node build/evento.mjs nomade-almoco-jantar",
     "menu": "node build/menu.mjs",

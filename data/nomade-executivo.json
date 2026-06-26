@@ -1,0 +1,109 @@
+{
+  "_como_editar": "Menu executivo do Nômade (quinzenal). Itens e precos sao genericos/variaveis: troque a cada quinzena. Estrutura: Saladas (escolha 1), Pratos Principais, Sobremesas. Depois rode: npm run nomade:executivo.",
+  "meta": {
+    "brand": "Nômade",
+    "subtitle": "Menu Executivo",
+    "currency": "R$ ",
+    "schedule": "Segunda a sexta · 12h às 15h · exceto feriados",
+    "note": "Acompanha entrada do dia. Sobremesa opcional. Valores e itens variam quinzenalmente.",
+    "period": "Quinzenal",
+    "footer": "NÔMADE BAR & RESTAURANTE",
+    "columns": 1
+  },
+  "layout": {
+    "pages": [
+      [
+        "saladas",
+        "principais",
+        "sobremesas"
+      ]
+    ],
+    "cols": [
+      1
+    ]
+  },
+  "sections": [
+    {
+      "id": "saladas",
+      "title": "Saladas",
+      "kind": "food",
+      "en": "Choose one",
+      "items": [
+        {
+          "id": "salada-1",
+          "n": "Salada Verde",
+          "d": "Mix de folhas, tomate, pepino e vinagrete cítrico",
+          "p": "0,00"
+        },
+        {
+          "id": "salada-2",
+          "n": "Salada Caprese",
+          "d": "Tomate, muçarela de búfala, pesto de manjericão e focaccia",
+          "p": "0,00"
+        },
+        {
+          "id": "salada-3",
+          "n": "Salada Caesar",
+          "d": "Alface, frango grelhado, parmesão, crótons e molho caesar",
+          "p": "0,00"
+        }
+      ]
+    },
+    {
+      "id": "principais",
+      "title": "Pratos Principais",
+      "kind": "food",
+      "en": "Mains",
+      "items": [
+        {
+          "id": "principal-1",
+          "n": "Carne do Dia",
+          "d": "Corte grelhado, guarnição da casa e arroz",
+          "p": "59,90"
+        },
+        {
+          "id": "principal-2",
+          "n": "Peixe do Dia",
+          "d": "Filé grelhado, legumes salteados e purê",
+          "p": "59,90"
+        },
+        {
+          "id": "principal-3",
+          "n": "Massa do Dia",
+          "d": "Massa fresca ao molho da casa",
+          "p": "54,90"
+        },
+        {
+          "id": "principal-4",
+          "n": "Opção Vegetariana",
+          "d": "Prato vegetariano da estação",
+          "p": "49,90"
+        },
+        {
+          "id": "principal-5",
+          "n": "Risoto do Dia",
+          "d": "Risoto cremoso com ingredientes da estação",
+          "p": "54,90"
+        }
+      ]
+    },
+    {
+      "id": "sobremesas",
+      "title": "Sobremesas",
+      "kind": "food",
+      "en": "Optional",
+      "items": [
+        {
+          "id": "sobremesa-1",
+          "n": "Doce do Dia",
+          "p": "12,00"
+        },
+        {
+          "id": "sobremesa-2",
+          "n": "Frutas da Estação",
+          "p": "12,00"
+        }
+      ]
+    }
+  ]
+}

@@ -20,7 +20,10 @@ const ROOT = join(__dirname, '..');
 const OUTDIR = join(ROOT, 'output');
 const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24/chrome-linux64/chrome');
 
-const m = JSON.parse(readFileSync(join(ROOT, 'data', 'nomade.json'), 'utf8'));
+// Aceita um slug (default 'nomade') para gerar variações com a mesma identidade
+// — ex.: o Menu Executivo (data/nomade-executivo.json), quinzenal.
+const SLUG = (process.argv[2] || 'nomade').replace(/[^a-z0-9-]/gi, '');
+const m = JSON.parse(readFileSync(join(ROOT, 'data', `${SLUG}.json`), 'utf8'));
 const META = m.meta || {};
 const CURRENCY = META.currency || '';
 const FOOTER = META.footer || 'NÔMADE BAR & RESTAURANTE';
@@ -57,10 +60,16 @@ function paginate(sections) {
 // ---- blocos ---------------------------------------------------------------
 function renderItem(it) {
   const desc = it.d ? `<div class="item-desc">${esc(it.d)}</div>` : '';
-  return `<div class="item"><div class="item-top">
+  // Sem preço (ex.: saladas incluídas no executivo) => não mostra pontilhado/valor.
+  // Preço vazio OU zerado (0 / 0,00) conta como "incluído" e fica oculto.
+  const praw = String(it.p == null ? '' : it.p).trim();
+  const hasPrice = praw !== '' && !/^0+([.,]0+)?$/.test(praw);
+  const price = hasPrice
+    ? `<span class="item-dots"></span><span class="item-price">${esc(CURRENCY + it.p)}</span>`
+    : '';
+  return `<div class="item"><div class="item-top${hasPrice ? '' : ' no-price'}">
         <span class="item-name">${esc(it.n)}</span>
-        <span class="item-dots"></span>
-        <span class="item-price">${esc(CURRENCY + it.p)}</span>
+        ${price}
       </div>${desc}</div>`;
 }
 function renderSection(sec) {
@@ -75,16 +84,23 @@ function renderSection(sec) {
     </section>`;
 }
 function renderPage(secs, n, total, scale) {
-  const label = n === 1 ? esc(META.subtitle || '') : `${n} / ${total}`;
-  const cols = (m.layout?.cols || [])[n - 1] || 2;
+  const headerBits = [META.subtitle, META.period].filter(Boolean).map(esc).join(' · ');
+  const label = n === 1 ? headerBits : `${n} / ${total}`;
+  const cols = (m.layout?.cols || [])[n - 1] || META.columns || 2;
+  // Faixa de horário (estilo "menu executivo") só na 1ª página; nota de preços
+  // (ex.: sobremesa opcional) só na última. Ambas opcionais (vêm do meta).
+  const intro = (n === 1 && META.schedule)
+    ? `<div class="intro">${esc(META.schedule)}</div>` : '';
+  const note = (n === total && META.note)
+    ? `<div class="exec-note">${esc(META.note)}</div>` : '';
   return `  <div class="page" style="--s:${scale}; --cols:${cols}">
     <header class="ph">
       <div class="brand" role="img" aria-label="Nômade Bar & Restaurante"></div>
       <div class="header-range">${label || 'Bar &amp; Restaurante'}</div>
     </header>
-    <main class="pc"><div class="flow">
+    <main class="pc">${intro}<div class="flow">
       ${secs.map(renderSection).join('\n      ')}
-    </div></main>
+    </div>${note}</main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">${esc(FOOTER)}</span><span class="foot-page">${n} / ${total}</span></footer>
   </div>`;
 }
@@ -113,9 +129,15 @@ const CSS = `
 
     .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(6mm * var(--s));
       display:flex; flex-direction:column; }
-    /* min-height:100% + space-between => categorias se distribuem e preenchem a
-       página (sem sobra embaixo); a auto-escala evita overflow. */
-    .flow { min-height:100%; display:flex; flex-direction:column; justify-content:space-between;
+    .intro { flex:0 0 auto; margin-bottom:calc(5mm * var(--s)); padding-bottom:calc(3.5mm * var(--s));
+      border-bottom:.5pt solid var(--rule); text-align:center; color:var(--gold); font-size:calc(7pt * var(--s));
+      font-weight:600; letter-spacing:2.4px; text-transform:uppercase; }
+    .exec-note { flex:0 0 auto; margin-top:calc(5mm * var(--s)); padding-top:calc(3.5mm * var(--s));
+      border-top:.5pt solid var(--rule); text-align:center; color:var(--soft); font-size:calc(6pt * var(--s));
+      font-style:italic; }
+    /* flex:1 + space-between => as categorias se distribuem e preenchem o espaço
+       restante (após intro/nota, se houver); a auto-escala evita overflow. */
+    .flow { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; justify-content:space-between;
       row-gap:calc(5mm * var(--s)); }
 
     .pf { height:9mm; flex:0 0 9mm; margin:0 13mm; border-top:.5pt solid var(--rule);
@@ -138,6 +160,7 @@ const CSS = `
     .g2 > * { min-width:0; overflow:hidden; }
     .item { margin:0 0 calc(3.0mm * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
+    .item-top.no-price { grid-template-columns:1fr; }
     .item-name { font-size:calc(7.7pt * var(--s)); line-height:1.05; font-weight:600; color:var(--ink); min-width:0; overflow-wrap:anywhere; }
     .item-dots { border-bottom:.6pt dotted var(--line); transform:translateY(-1.2pt); min-width:3mm; }
     .item-price { font-size:calc(7.5pt * var(--s)); line-height:1; font-weight:600; color:var(--gold); white-space:nowrap; }
@@ -177,15 +200,17 @@ await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
 async function renderAndMeasure() {
   const body = pages.map((secs, i) => renderPage(secs, i + 1, total, scales[i])).join('\n');
   const html = doc(body);
-  writeFileSync(join(OUTDIR, 'nomade.html'), html, 'utf8');
-  await page.goto('file://' + join(OUTDIR, 'nomade.html'), { waitUntil: 'networkidle0', timeout: 60000 });
+  writeFileSync(join(OUTDIR, `${SLUG}.html`), html, 'utf8');
+  await page.goto('file://' + join(OUTDIR, `${SLUG}.html`), { waitUntil: 'networkidle0', timeout: 60000 });
   // aguarda DE FATO as web fonts (Cormorant/Jost/Poiret One) carregarem antes
   // de medir e gerar o PDF — senão o PDF sai com fontes de fallback.
   try { await page.evaluate(() => document.fonts.ready); } catch {}
   await new Promise((r) => setTimeout(r, 1200));
   return page.$$eval('.page', (els) => els.map((el) => {
-    const pc = el.querySelector('.pc'); const flow = el.querySelector('.flow');
-    return flow.scrollHeight / pc.clientHeight; // >1 => estoura
+    const flow = el.querySelector('.flow');
+    // flow é flex:1 => clientHeight é o espaço disponível (já descontados intro
+    // e nota); scrollHeight é o conteúdo real. >1 => estoura.
+    return flow.scrollHeight / flow.clientHeight;
   }));
 }
 
@@ -198,12 +223,12 @@ for (let i = 0; i < ratios.length; i++) if (ratios[i] > 1) scales[i] = Math.max(
 ratios = await renderAndMeasure();
 
 await page.emulateMediaType('print');
-await page.pdf({ path: join(OUTDIR, 'nomade.pdf'), format: 'A4', printBackground: true, preferCSSPageSize: true });
+await page.pdf({ path: join(OUTDIR, `${SLUG}.pdf`), format: 'A4', printBackground: true, preferCSSPageSize: true });
 await browser.close();
 
 const over = ratios.map((r, i) => (r > 1.005 ? i + 1 : null)).filter((x) => x);
 const nItems = m.sections.reduce((a, s) => a + s.items.length, 0);
-console.log(`nomade -> output/nomade.html + .pdf | ${total} págs, ${m.sections.length} seções, ${nItems} itens`);
+console.log(`${SLUG} -> output/${SLUG}.html + .pdf | ${total} págs, ${m.sections.length} seções, ${nItems} itens`);
 console.log(`escalas: ${scales.map((s) => s.toFixed(2)).join(', ')}`);
 if (over.length) { console.error(`<<< OVERFLOW nas páginas: ${over.join(', ')}`); process.exit(1); }
 console.log('OK: sem overflow.');
