@@ -14,9 +14,9 @@ const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24
 
 const arg = process.argv[2];
 const registry = listMenus();
-const eventoSlugs = new Set(registry.filter((x) => x.type === 'evento').map((x) => x.slug));
+const skip = new Set(registry.filter((x) => x.type === 'evento' || x.gen).map((x) => x.slug));
 const slugs = (arg ? [arg] : registry.map((x) => x.slug))
-  .filter((s) => !eventoSlugs.has(s))
+  .filter((s) => !skip.has(s))
   .filter((s) => existsSync(join(OUTDIR, `${s}.html`)));
 
 const browser = await puppeteer.launch({

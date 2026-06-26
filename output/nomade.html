@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8" />
+<title>Nômade — Bar &amp; Restaurante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root{
+      --black:#12100d; --paper:#f6f1e7; --ink:#22201b; --muted:#8b8073;
+      --gold:#b0894c; --gold2:#caa15c; --soft:#9a8f80;
+      --rule:rgba(176,137,76,.55); --line:rgba(120,108,92,.4);
+    }
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; width:210mm; background:#e9e4d9; color:var(--ink);
+      -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body { font-family:"Jost", Arial, sans-serif; }
+
+    .page { width:210mm; height:297mm; overflow:hidden; display:flex; flex-direction:column;
+      background:var(--paper); page-break-after:always; break-after:page; }
+    .page:last-child { page-break-after:auto; break-after:auto; }
+
+    .ph { height:15mm; flex:0 0 15mm; padding:0 13mm; background:var(--black); color:#f4ead4;
+      display:grid; grid-template-columns:auto 1fr; align-items:center; gap:6mm; border-bottom:.5mm solid var(--gold); }
+    .brand { display:flex; flex-direction:column; justify-content:center; line-height:1; }
+    .wm { font-size:15.5pt; font-weight:500; letter-spacing:3.2px; color:#fbf4e4; }
+    .wm-sub { margin-top:1mm; font-size:4.4pt; font-weight:600; letter-spacing:3.4px; text-transform:uppercase; color:var(--gold2); }
+    .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
+      text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(5mm * var(--s)); }
+    .flow { display:flex; flex-direction:column; row-gap:calc(5.6mm * var(--s)); }
+
+    .pf { height:9mm; flex:0 0 9mm; margin:0 13mm; border-top:.5pt solid var(--rule);
+      display:grid; grid-template-columns:24mm 1fr 24mm; align-items:center;
+      color:var(--soft); font-size:6pt; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; }
+    .foot-mark { width:14mm; height:0; border-top:.7pt solid var(--gold); align-self:center; }
+    .foot-text { text-align:center; color:#7d7163; }
+    .foot-page { text-align:right; color:var(--gold); letter-spacing:1.5px; }
+
+    .section { break-inside:avoid; min-width:0; }
+    .sh { display:flex; align-items:baseline; gap:calc(3mm * var(--s)); margin-bottom:calc(2.6mm * var(--s)); min-width:0; }
+    .sh-title { font-family:"Cormorant Garamond", Georgia, serif; font-size:calc(19pt * var(--s)); line-height:.9;
+      font-weight:600; color:var(--ink); white-space:nowrap; }
+    .sh-tag { font-size:calc(5.6pt * var(--s)); line-height:1; font-weight:600; color:var(--gold);
+      letter-spacing:2.4px; text-transform:uppercase; white-space:nowrap; }
+    .sh-line { height:0; flex:1; min-width:8mm; border-top:.5pt solid var(--rule); align-self:center; }
+    .sec-note { margin-top:calc(1.4mm * var(--s)); font-size:calc(5.2pt * var(--s)); font-style:italic; color:var(--soft); }
+
+    .g2 { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
+    .g2 > * { min-width:0; overflow:hidden; }
+    .item { margin:0 0 calc(3.0mm * var(--s)); break-inside:avoid; }
+    .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
+    .item-name { font-size:calc(7.7pt * var(--s)); line-height:1.05; font-weight:600; color:var(--ink); min-width:0; overflow-wrap:anywhere; }
+    .item-dots { border-bottom:.6pt dotted var(--line); transform:translateY(-1.2pt); min-width:3mm; }
+    .item-price { font-size:calc(7.5pt * var(--s)); line-height:1; font-weight:600; color:var(--gold); white-space:nowrap; }
+    .item-desc { margin-top:calc(.5mm * var(--s)); padding-right:calc(3mm * var(--s)); font-size:calc(5.7pt * var(--s));
+      line-height:1.24; font-weight:400; font-style:italic; color:var(--muted); overflow-wrap:anywhere; }
+
+    @media screen { body { padding:16px; width:auto; } .page { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); } }</style></head><body>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">Bar &amp; Restaurante</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Petiscos</span><span class="sh-tag">Snacks &amp; Pastries</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bolinho de Bacalhau</span>
+        <span class="item-dots"></span>
+        <span class="item-price">54,00</span>
+      </div><div class="item-desc">8 un. · Massa de mandioca, acompanha aioli cítrico</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Croquete de Carne</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">8 un. · Acompanhado de pimenta da casa</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Dadinho de Tapioca</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Acompanha geleia de pimenta</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bolinho de Feijoada</span>
+        <span class="item-dots"></span>
+        <span class="item-price">50,00</span>
+      </div><div class="item-desc">Acompanha pimenta da casa</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Croquete de Mandioca c/ Carne Seca</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">8 un. · Recheado com carne seca e requeijão, vinagrete de cheiro-verde</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bolinho de Mandioca c/ Provolone</span>
+        <span class="item-dots"></span>
+        <span class="item-price">48,00</span>
+      </div><div class="item-desc">Bolinho de mandioca recheado com provolone</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Coxinha de Bobó de Camarão</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese sriracha</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Croqueta de Polvo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Finalizado com aioli de limão-siciliano</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Pastel de Três Queijos</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">8 un. · Recheado com mussarela, provolone e requeijão</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Bruschettas</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bruschetta de Cogumelos</span>
+        <span class="item-dots"></span>
+        <span class="item-price">50,00</span>
+      </div><div class="item-desc">Focaccia com cogumelos salteados, azeite trufado, ervas frescas e parmesão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bruschetta Pomodoro</span>
+        <span class="item-dots"></span>
+        <span class="item-price">50,00</span>
+      </div><div class="item-desc">Focaccia com tomates assados, parmesão, ervas e azeite</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Porções para Compartilhar</span><span class="sh-tag">To Share</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Flat Iron na Brasa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">98,00</span>
+      </div><div class="item-desc">300g · Na brasa com cebola caramelizada, alho confitado e gremolata; acompanha focaccia artesanal</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Batatas Trufadas</span>
+        <span class="item-dots"></span>
+        <span class="item-price">48,00</span>
+      </div><div class="item-desc">Fritas crocantes com azeite trufado, parmesão ralado e ervas frescas</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Picanha na Brasa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">98,00</span>
+      </div><div class="item-desc">400g · Servida com cebola caramelizada, alho confitado e gremolata; acompanha focaccia</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Lula Grelhada</span>
+        <span class="item-dots"></span>
+        <span class="item-price">85,00</span>
+      </div><div class="item-desc">Salteada no alho, flambada em saquê, com aioli de alho e molho de tinta de lula</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Ancho na Brasa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">92,00</span>
+      </div><div class="item-desc">400g · Grelhado com cebola caramelizada, alho confitado e gremolata; acompanha focaccia</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Camarões al Ajillo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">95,00</span>
+      </div><div class="item-desc">Com batata, cebola roxa e pesto; acompanha focaccia</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Queijo Coalho na Brasa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">69,00</span>
+      </div><div class="item-desc">Grelhado com melaço de cana e raspas de limão-siciliano</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Entradas Frias</span><span class="sh-tag">Cold Starters</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Burrata</span>
+        <span class="item-dots"></span>
+        <span class="item-price">57,00</span>
+      </div><div class="item-desc">Em cesta crocante com tomates confit, mix de folhas, pesto de manjericão e redução de balsâmico</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Ceviche</span>
+        <span class="item-dots"></span>
+        <span class="item-price">55,00</span>
+      </div><div class="item-desc">Peixe branco em leite de tigre com pimenta dedo-de-moça, cebola roxa e coentro; chips de batata-doce</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tartare de Filé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">65,00</span>
+      </div><div class="item-desc">Filé mignon servido em torradas de pão sírio</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tartare de Salmão</span>
+        <span class="item-dots"></span>
+        <span class="item-price">66,00</span>
+      </div><div class="item-desc">Com cebola roxa, limão, cebolinha e tabasco; torradas sírias e mix de folhas</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Saladas</span><span class="sh-tag">Salads</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salada Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">Mix de folhas, croutons de parmesão, sementes tostadas, manga verde em conserva e shiitake; molho cítrico de mostarda e mel</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salada da Casa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">Mix de folhas, tomate, mussarela de búfala, grão-de-bico e parmesão</div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">1 / 5</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">2 / 5</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Pratos Principais · Carnes</span><span class="sh-tag">Main Courses · Meat</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Mignon Glacé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">92,00</span>
+      </div><div class="item-desc">Medalhões ao molho demi-glace com risoto cremoso de shimeji e shiitake</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Mignon à Mostarda</span>
+        <span class="item-dots"></span>
+        <span class="item-price">92,00</span>
+      </div><div class="item-desc">Medalhões ao molho de mostarda da casa, acompanhados de batatas fritas</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Ancho al Limone</span>
+        <span class="item-dots"></span>
+        <span class="item-price">89,00</span>
+      </div><div class="item-desc">Bife ancho ao molho de manteiga de limão com tagliarini, anchovas, tomate-cereja e manjericão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Flat Iron Caramelizado</span>
+        <span class="item-dots"></span>
+        <span class="item-price">92,00</span>
+      </div><div class="item-desc">Com risoto de cebola caramelizada e demi-glace</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Pratos Principais · Do Mar</span><span class="sh-tag">From the Sea</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salmão Siciliano</span>
+        <span class="item-dots"></span>
+        <span class="item-price">89,00</span>
+      </div><div class="item-desc">Grelhado com risoto cremoso de limão-siciliano e crisp de alho-poró</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Robalo ao Missô Branco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">92,00</span>
+      </div><div class="item-desc">Com glaze de miso branco, terrine de alho-poró e nori, minicebola roxa assada e mousseline de batata</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Polvo Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">115,00</span>
+      </div><div class="item-desc">Grelhado com risoto cremoso de açafrão e tomates assados</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tagliatelle de Frutos do Mar</span>
+        <span class="item-dots"></span>
+        <span class="item-price">105,00</span>
+      </div><div class="item-desc">Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Diversos</span><span class="sh-tag">Others</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Risoto de Cogumelos</span>
+        <span class="item-dots"></span>
+        <span class="item-price">75,00</span>
+      </div><div class="item-desc">Risoto cremoso de cogumelos; versões vegetariana e vegana</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Hambúrguer da Casa</span>
+        <span class="item-dots"></span>
+        <span class="item-price">56,00</span>
+      </div><div class="item-desc">Blend de picanha com alface, cheddar, maionese de bacon e cebola caramelizada</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Sobremesas</span><span class="sh-tag">Desserts</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cheesecake c/ Frutas Vermelhas</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div><div class="item-desc">Cheesecake cremoso com calda artesanal de frutas vermelhas</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Choux com Sorvete de Creme</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Mini Churros c/ Doce de Leite</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div><div class="item-desc">Servidos com doce de leite e brigadeiro</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Gateau de Chocolate</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div><div class="item-desc">Bolo de chocolate sem glúten; gluten free</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Drinks Autorais</span><span class="sh-tag">Signature Cocktails</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">55,00</span>
+      </div><div class="item-desc">Gin, Fernet Branca, suco de melancia, limão-siciliano e calda de hibisco</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Pink Velvet</span>
+        <span class="item-dots"></span>
+        <span class="item-price">54,00</span>
+      </div><div class="item-desc">Vodka Cîroc Red Berry, Aperol, cordial de lichia, limão e soda de hibisco</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Vênus</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">Vodka Smirnoff, licor 43, tangerina, purê de abacaxi e limão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Coco Cloud</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">Cachaça Salinissima, rum Malibu, coco, xarope de amêndoas, baunilha e limão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Nomade Garden</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Vodka Smirnoff, aperitivo Lillet, xarope de jasmim, uva Thompson e limão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Botanic Tonic</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Gin Tanqueray 10, sabugueiro, hortelã, laranja Bahia, grapefruit, limão e tônica</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Lychee Sunset</span>
+        <span class="item-dots"></span>
+        <span class="item-price">59,00</span>
+      </div><div class="item-desc">Gin Roku, cordial de lichia com gengibre, licor St-Germain, espumante brut e gelo translúcido</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Spyce Tamarindo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div><div class="item-desc">Rum Havana Club 3 anos, tamarindo, espumante brut, agave e limão</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tropical Spritz</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Gin, cointreau, aperitivo Lillet Rouge, soda e frutas</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Espresso Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div><div class="item-desc">Vodka Cîroc, licor 43, café espresso e creme de baunilha</div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">2 / 5</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">3 / 5</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Moquetel</span><span class="sh-tag">Zero Alcohol Drinks</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Solar</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tônica de Maracujá e Mel</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Três Marias</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Refresco Verde Detox</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Orion</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Pink Lemonade Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Hibisco e Limão</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Clássicos</span><span class="sh-tag">Classic Cocktails</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Aperol Spritz</span>
+        <span class="item-dots"></span>
+        <span class="item-price">46,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Gin Tonic</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Negroni</span>
+        <span class="item-dots"></span>
+        <span class="item-price">47,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Mojito</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Boulevardier</span>
+        <span class="item-dots"></span>
+        <span class="item-price">47,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cuba Libre</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Old Fashioned</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Americano</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Manhattan</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Bloody Mary</span>
+        <span class="item-dots"></span>
+        <span class="item-price">41,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Dry Martini</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carajillo 43</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Dirty Martini</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cuervo Margarita</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fitzgerald</span>
+        <span class="item-dots"></span>
+        <span class="item-price">52,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cuervo Paloma</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Basil Smash</span>
+        <span class="item-dots"></span>
+        <span class="item-price">47,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Daiquiri</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tom Collins</span>
+        <span class="item-dots"></span>
+        <span class="item-price">44,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Sugestões da Casa</span><span class="sh-tag">House Suggestions</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Peachtree &amp; Tonic</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fernet Branca &amp; Cola</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Villa Massa Limoncello Spritz</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Licor 43 com Limão</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Villa Massa Amaretto Sour</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Tequila Paloma</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Villa Massa Limoncello</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Martin Miller's Dry Martini</span>
+        <span class="item-dots"></span>
+        <span class="item-price">48,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carpano Tonic</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Gin Tônicas</span><span class="sh-tag">Gin &amp; Tonic</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">No. TEN Classic Gin &amp; Tonic</span>
+        <span class="item-dots"></span>
+        <span class="item-price">60,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Gin Tanqueray Tônica</span>
+        <span class="item-dots"></span>
+        <span class="item-price">48,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Gin Tônica Beefeater London Dry</span>
+        <span class="item-dots"></span>
+        <span class="item-price">43,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Gin Hendrick's Tônica</span>
+        <span class="item-dots"></span>
+        <span class="item-price">68,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Caipirinhas</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipiroska Cîroc</span>
+        <span class="item-dots"></span>
+        <span class="item-price">59,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipiroska Absolut</span>
+        <span class="item-dots"></span>
+        <span class="item-price">49,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipiroska Nacional (Smirnoff)</span>
+        <span class="item-dots"></span>
+        <span class="item-price">44,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipisaquê Nacional</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipirinha Espírito de Minas</span>
+        <span class="item-dots"></span>
+        <span class="item-price">48,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Caipirinha Salinissima</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Whisky &amp; Bourbon</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Black Label</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Red Label</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Eagle Rare</span>
+        <span class="item-dots"></span>
+        <span class="item-price">90,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1792 Small Batch</span>
+        <span class="item-dots"></span>
+        <span class="item-price">90,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Buffalo Trace</span>
+        <span class="item-dots"></span>
+        <span class="item-price">56,00</span>
+      </div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">3 / 5</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">4 / 5</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Vodkas</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cîroc</span>
+        <span class="item-dots"></span>
+        <span class="item-price">56,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Vodka Absolut</span>
+        <span class="item-dots"></span>
+        <span class="item-price">47,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Smirnoff Red</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Cachaças</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soledade Prata</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soledade Pura</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soledade Jequitibá</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soledade Original Carvalho</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Espírito de Minas</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salinissima Prata</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salinissima Bálsamo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Salinissima Amburana</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Tequilas</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Jose Cuervo Gold</span>
+        <span class="item-dots"></span>
+        <span class="item-price">39,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Jose Cuervo Silver</span>
+        <span class="item-dots"></span>
+        <span class="item-price">39,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Jose Cuervo Tradicional</span>
+        <span class="item-dots"></span>
+        <span class="item-price">44,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Silver</span>
+        <span class="item-dots"></span>
+        <span class="item-price">55,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Reposado</span>
+        <span class="item-dots"></span>
+        <span class="item-price">55,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Añejo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">62,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Cristalino</span>
+        <span class="item-dots"></span>
+        <span class="item-price">69,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">1800 Milênio</span>
+        <span class="item-dots"></span>
+        <span class="item-price">149,00</span>
+      </div></div>
+      </div><div class="sec-note">Todas 100% Agave, exceto Especial.</div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Doses &amp; Shots</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carpano Rosso</span>
+        <span class="item-dots"></span>
+        <span class="item-price">36,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carpano Bianco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">36,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Campari</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tanqueray</span>
+        <span class="item-dots"></span>
+        <span class="item-price">47,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Pisco Capel</span>
+        <span class="item-dots"></span>
+        <span class="item-price">36,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fernet Branca</span>
+        <span class="item-dots"></span>
+        <span class="item-price">33,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fernet Branca Menta</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Rum Havana Club 3 anos</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Rum Havana Club 7 anos</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Amaro Lucano</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Aperitivo Averna</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Aperitivo Cynar 70</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Punt &amp; Mes</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Garrafas</span><span class="sh-tag">Bottle Service</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Johnnie Walker Black Label</span>
+        <span class="item-dots"></span>
+        <span class="item-price">370,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cîroc Vodka</span>
+        <span class="item-dots"></span>
+        <span class="item-price">390,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Johnnie Walker Red Label</span>
+        <span class="item-dots"></span>
+        <span class="item-price">295,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Absolut Vodka</span>
+        <span class="item-dots"></span>
+        <span class="item-price">320,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Chopp</span><span class="sh-tag">Draft Beer</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Chopp Claro Brahma 300ml</span>
+        <span class="item-dots"></span>
+        <span class="item-price">14,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Chopp Brahma Black</span>
+        <span class="item-dots"></span>
+        <span class="item-price">18,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Garotinho Brahma</span>
+        <span class="item-dots"></span>
+        <span class="item-price">12,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Chopp Patagônia IPA</span>
+        <span class="item-dots"></span>
+        <span class="item-price">25,00</span>
+      </div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">4 / 5</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">5 / 5</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Cervejas Long Neck</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Heineken Lager</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Heineken Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Corona Extra 355ml</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Corona Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Stella Artois Gold</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Blue Moon</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Goose Island</span>
+        <span class="item-dots"></span>
+        <span class="item-price">22,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Licores &amp; Sakês</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Baileys</span>
+        <span class="item-dots"></span>
+        <span class="item-price">37,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Cointreau</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Licor 43</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Licor 43 Crème Brûlée</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Licor 43 Chocolate</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fireball</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Villa Massa Limoncello</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Villa Massa Amaretto</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Peachtree</span>
+        <span class="item-dots"></span>
+        <span class="item-price">45,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Drambuie</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Sake Azuma Kirin</span>
+        <span class="item-dots"></span>
+        <span class="item-price">38,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Sake Gekkeikan</span>
+        <span class="item-dots"></span>
+        <span class="item-price">40,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Sangria &amp; Clericot</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tinto</span>
+        <span class="item-dots"></span>
+        <span class="item-price">110,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Branco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">110,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Bebidas</span><span class="sh-tag">Non-Alcoholic</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Coca-Cola</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Coca-Cola Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Guaraná Antartica</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Guaraná Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fanta Laranja</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Fanta Laranja Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soda Limonada</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Soda Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Schweppes Tônica</span>
+        <span class="item-dots"></span>
+        <span class="item-price">9,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Sucos Naturais</span>
+        <span class="item-dots"></span>
+        <span class="item-price">12,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Suco de Tomate Temperado</span>
+        <span class="item-dots"></span>
+        <span class="item-price">17,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Red Bull</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Água</span>
+        <span class="item-dots"></span>
+        <span class="item-price">7,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Água com Gás</span>
+        <span class="item-dots"></span>
+        <span class="item-price">7,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Rolha</span>
+        <span class="item-dots"></span>
+        <span class="item-price">90,00</span>
+      </div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">5 / 5</span></footer>
+  </div>
+</body></html>

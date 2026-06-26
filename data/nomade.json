@@ -1,0 +1,1160 @@
+{
+  "meta": {
+    "brand": "Nômade",
+    "subtitle": "Bar & Restaurante",
+    "slogan": "@no.madebar",
+    "currency": "",
+    "footer": "NÔMADE BAR & RESTAURANTE · @NO.MADEBAR"
+  },
+  "layout": {
+    "foodBreaks": [
+      "entradas-frias",
+      "autorais"
+    ],
+    "drinkPages": [
+      [
+        "autorais",
+        "moquetel",
+        "classicos",
+        "sugestoes",
+        "gin-tonicas"
+      ],
+      [
+        "caipirinhas",
+        "whisky",
+        "vodkas",
+        "cachacas",
+        "tequilas"
+      ],
+      [
+        "doses",
+        "garrafas",
+        "chopp",
+        "cervejas",
+        "licores"
+      ],
+      [
+        "sangria",
+        "bebidas"
+      ]
+    ]
+  },
+  "sections": [
+    {
+      "id": "petiscos",
+      "title": "Petiscos",
+      "kind": "food",
+      "en": "Snacks & Pastries",
+      "items": [
+        {
+          "id": "bolinho-de-bacalhau",
+          "n": "Bolinho de Bacalhau",
+          "d": "8 un. · Massa de mandioca, acompanha aioli cítrico",
+          "p": "54,00"
+        },
+        {
+          "id": "croquete-de-carne",
+          "n": "Croquete de Carne",
+          "d": "8 un. · Acompanhado de pimenta da casa",
+          "p": "49,00"
+        },
+        {
+          "id": "dadinho-de-tapioca",
+          "n": "Dadinho de Tapioca",
+          "d": "Acompanha geleia de pimenta",
+          "p": "52,00"
+        },
+        {
+          "id": "bolinho-de-feijoada",
+          "n": "Bolinho de Feijoada",
+          "d": "Acompanha pimenta da casa",
+          "p": "50,00"
+        },
+        {
+          "id": "croquete-de-mandioca-c-carne-seca",
+          "n": "Croquete de Mandioca c/ Carne Seca",
+          "d": "8 un. · Recheado com carne seca e requeijão, vinagrete de cheiro-verde",
+          "p": "49,00"
+        },
+        {
+          "id": "bolinho-de-mandioca-c-provolone",
+          "n": "Bolinho de Mandioca c/ Provolone",
+          "d": "Bolinho de mandioca recheado com provolone",
+          "p": "48,00"
+        },
+        {
+          "id": "coxinha-de-bobo-de-camarao",
+          "n": "Coxinha de Bobó de Camarão",
+          "d": "8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese sriracha",
+          "p": "52,00"
+        },
+        {
+          "id": "croqueta-de-polvo",
+          "n": "Croqueta de Polvo",
+          "d": "Finalizado com aioli de limão-siciliano",
+          "p": "52,00"
+        },
+        {
+          "id": "pastel-de-tres-queijos",
+          "n": "Pastel de Três Queijos",
+          "d": "8 un. · Recheado com mussarela, provolone e requeijão",
+          "p": "49,00"
+        }
+      ]
+    },
+    {
+      "id": "bruschettas",
+      "title": "Bruschettas",
+      "kind": "food",
+      "items": [
+        {
+          "id": "bruschetta-de-cogumelos",
+          "n": "Bruschetta de Cogumelos",
+          "d": "Focaccia com cogumelos salteados, azeite trufado, ervas frescas e parmesão",
+          "p": "50,00"
+        },
+        {
+          "id": "bruschetta-pomodoro",
+          "n": "Bruschetta Pomodoro",
+          "d": "Focaccia com tomates assados, parmesão, ervas e azeite",
+          "p": "50,00"
+        }
+      ]
+    },
+    {
+      "id": "porcoes",
+      "title": "Porções para Compartilhar",
+      "kind": "food",
+      "en": "To Share",
+      "items": [
+        {
+          "id": "flat-iron-na-brasa",
+          "n": "Flat Iron na Brasa",
+          "d": "300g · Na brasa com cebola caramelizada, alho confitado e gremolata; acompanha focaccia artesanal",
+          "p": "98,00"
+        },
+        {
+          "id": "batatas-trufadas",
+          "n": "Batatas Trufadas",
+          "d": "Fritas crocantes com azeite trufado, parmesão ralado e ervas frescas",
+          "p": "48,00"
+        },
+        {
+          "id": "picanha-na-brasa",
+          "n": "Picanha na Brasa",
+          "d": "400g · Servida com cebola caramelizada, alho confitado e gremolata; acompanha focaccia",
+          "p": "98,00"
+        },
+        {
+          "id": "lula-grelhada",
+          "n": "Lula Grelhada",
+          "d": "Salteada no alho, flambada em saquê, com aioli de alho e molho de tinta de lula",
+          "p": "85,00"
+        },
+        {
+          "id": "ancho-na-brasa",
+          "n": "Ancho na Brasa",
+          "d": "400g · Grelhado com cebola caramelizada, alho confitado e gremolata; acompanha focaccia",
+          "p": "92,00"
+        },
+        {
+          "id": "camaroes-al-ajillo",
+          "n": "Camarões al Ajillo",
+          "d": "Com batata, cebola roxa e pesto; acompanha focaccia",
+          "p": "95,00"
+        },
+        {
+          "id": "queijo-coalho-na-brasa",
+          "n": "Queijo Coalho na Brasa",
+          "d": "Grelhado com melaço de cana e raspas de limão-siciliano",
+          "p": "69,00"
+        }
+      ]
+    },
+    {
+      "id": "entradas-frias",
+      "title": "Entradas Frias",
+      "kind": "food",
+      "en": "Cold Starters",
+      "items": [
+        {
+          "id": "burrata",
+          "n": "Burrata",
+          "d": "Em cesta crocante com tomates confit, mix de folhas, pesto de manjericão e redução de balsâmico",
+          "p": "57,00"
+        },
+        {
+          "id": "ceviche",
+          "n": "Ceviche",
+          "d": "Peixe branco em leite de tigre com pimenta dedo-de-moça, cebola roxa e coentro; chips de batata-doce",
+          "p": "55,00"
+        },
+        {
+          "id": "tartare-de-file",
+          "n": "Tartare de Filé",
+          "d": "Filé mignon servido em torradas de pão sírio",
+          "p": "65,00"
+        },
+        {
+          "id": "tartare-de-salmao",
+          "n": "Tartare de Salmão",
+          "d": "Com cebola roxa, limão, cebolinha e tabasco; torradas sírias e mix de folhas",
+          "p": "66,00"
+        }
+      ]
+    },
+    {
+      "id": "saladas",
+      "title": "Saladas",
+      "kind": "food",
+      "en": "Salads",
+      "items": [
+        {
+          "id": "salada-nomade",
+          "n": "Salada Nômade",
+          "d": "Mix de folhas, croutons de parmesão, sementes tostadas, manga verde em conserva e shiitake; molho cítrico de mostarda e mel",
+          "p": "49,00"
+        },
+        {
+          "id": "salada-da-casa",
+          "n": "Salada da Casa",
+          "d": "Mix de folhas, tomate, mussarela de búfala, grão-de-bico e parmesão",
+          "p": "49,00"
+        }
+      ]
+    },
+    {
+      "id": "pratos-carnes",
+      "title": "Pratos Principais · Carnes",
+      "kind": "food",
+      "en": "Main Courses · Meat",
+      "items": [
+        {
+          "id": "mignon-glace",
+          "n": "Mignon Glacé",
+          "d": "Medalhões ao molho demi-glace com risoto cremoso de shimeji e shiitake",
+          "p": "92,00"
+        },
+        {
+          "id": "mignon-a-mostarda",
+          "n": "Mignon à Mostarda",
+          "d": "Medalhões ao molho de mostarda da casa, acompanhados de batatas fritas",
+          "p": "92,00"
+        },
+        {
+          "id": "ancho-al-limone",
+          "n": "Ancho al Limone",
+          "d": "Bife ancho ao molho de manteiga de limão com tagliarini, anchovas, tomate-cereja e manjericão",
+          "p": "89,00"
+        },
+        {
+          "id": "flat-iron-caramelizado",
+          "n": "Flat Iron Caramelizado",
+          "d": "Com risoto de cebola caramelizada e demi-glace",
+          "p": "92,00"
+        }
+      ]
+    },
+    {
+      "id": "pratos-mar",
+      "title": "Pratos Principais · Do Mar",
+      "kind": "food",
+      "en": "From the Sea",
+      "items": [
+        {
+          "id": "salmao-siciliano",
+          "n": "Salmão Siciliano",
+          "d": "Grelhado com risoto cremoso de limão-siciliano e crisp de alho-poró",
+          "p": "89,00"
+        },
+        {
+          "id": "robalo-ao-misso-branco",
+          "n": "Robalo ao Missô Branco",
+          "d": "Com glaze de miso branco, terrine de alho-poró e nori, minicebola roxa assada e mousseline de batata",
+          "p": "92,00"
+        },
+        {
+          "id": "polvo-nomade",
+          "n": "Polvo Nômade",
+          "d": "Grelhado com risoto cremoso de açafrão e tomates assados",
+          "p": "115,00"
+        },
+        {
+          "id": "tagliatelle-de-frutos-do-mar",
+          "n": "Tagliatelle de Frutos do Mar",
+          "d": "Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados",
+          "p": "105,00"
+        }
+      ]
+    },
+    {
+      "id": "diversos-pratos",
+      "title": "Diversos",
+      "kind": "food",
+      "en": "Others",
+      "items": [
+        {
+          "id": "risoto-de-cogumelos",
+          "n": "Risoto de Cogumelos",
+          "d": "Risoto cremoso de cogumelos; versões vegetariana e vegana",
+          "p": "75,00"
+        },
+        {
+          "id": "hamburguer-da-casa",
+          "n": "Hambúrguer da Casa",
+          "d": "Blend de picanha com alface, cheddar, maionese de bacon e cebola caramelizada",
+          "p": "56,00"
+        }
+      ]
+    },
+    {
+      "id": "sobremesas",
+      "title": "Sobremesas",
+      "kind": "food",
+      "en": "Desserts",
+      "items": [
+        {
+          "id": "cheesecake-c-frutas-vermelhas",
+          "n": "Cheesecake c/ Frutas Vermelhas",
+          "d": "Cheesecake cremoso com calda artesanal de frutas vermelhas",
+          "p": "40,00"
+        },
+        {
+          "id": "choux-com-sorvete-de-creme",
+          "n": "Choux com Sorvete de Creme",
+          "p": "45,00"
+        },
+        {
+          "id": "mini-churros-c-doce-de-leite",
+          "n": "Mini Churros c/ Doce de Leite",
+          "d": "Servidos com doce de leite e brigadeiro",
+          "p": "40,00"
+        },
+        {
+          "id": "gateau-de-chocolate",
+          "n": "Gateau de Chocolate",
+          "d": "Bolo de chocolate sem glúten; gluten free",
+          "p": "45,00"
+        }
+      ]
+    },
+    {
+      "id": "autorais",
+      "title": "Drinks Autorais",
+      "kind": "drink",
+      "en": "Signature Cocktails",
+      "items": [
+        {
+          "id": "nomade",
+          "n": "Nômade",
+          "d": "Gin, Fernet Branca, suco de melancia, limão-siciliano e calda de hibisco",
+          "p": "55,00"
+        },
+        {
+          "id": "pink-velvet",
+          "n": "Pink Velvet",
+          "d": "Vodka Cîroc Red Berry, Aperol, cordial de lichia, limão e soda de hibisco",
+          "p": "54,00"
+        },
+        {
+          "id": "venus",
+          "n": "Vênus",
+          "d": "Vodka Smirnoff, licor 43, tangerina, purê de abacaxi e limão",
+          "p": "49,00"
+        },
+        {
+          "id": "coco-cloud",
+          "n": "Coco Cloud",
+          "d": "Cachaça Salinissima, rum Malibu, coco, xarope de amêndoas, baunilha e limão",
+          "p": "49,00"
+        },
+        {
+          "id": "nomade-garden",
+          "n": "Nomade Garden",
+          "d": "Vodka Smirnoff, aperitivo Lillet, xarope de jasmim, uva Thompson e limão",
+          "p": "52,00"
+        },
+        {
+          "id": "botanic-tonic",
+          "n": "Botanic Tonic",
+          "d": "Gin Tanqueray 10, sabugueiro, hortelã, laranja Bahia, grapefruit, limão e tônica",
+          "p": "52,00"
+        },
+        {
+          "id": "lychee-sunset",
+          "n": "Lychee Sunset",
+          "d": "Gin Roku, cordial de lichia com gengibre, licor St-Germain, espumante brut e gelo translúcido",
+          "p": "59,00"
+        },
+        {
+          "id": "spyce-tamarindo",
+          "n": "Spyce Tamarindo",
+          "d": "Rum Havana Club 3 anos, tamarindo, espumante brut, agave e limão",
+          "p": "49,00"
+        },
+        {
+          "id": "tropical-spritz",
+          "n": "Tropical Spritz",
+          "d": "Gin, cointreau, aperitivo Lillet Rouge, soda e frutas",
+          "p": "52,00"
+        },
+        {
+          "id": "espresso-nomade",
+          "n": "Espresso Nômade",
+          "d": "Vodka Cîroc, licor 43, café espresso e creme de baunilha",
+          "p": "52,00"
+        }
+      ]
+    },
+    {
+      "id": "moquetel",
+      "title": "Moquetel",
+      "kind": "drink",
+      "en": "Zero Alcohol Drinks",
+      "items": [
+        {
+          "id": "solar",
+          "n": "Solar",
+          "p": "35,00"
+        },
+        {
+          "id": "tonica-de-maracuja-e-mel",
+          "n": "Tônica de Maracujá e Mel",
+          "p": "35,00"
+        },
+        {
+          "id": "tres-marias",
+          "n": "Três Marias",
+          "p": "35,00"
+        },
+        {
+          "id": "refresco-verde-detox",
+          "n": "Refresco Verde Detox",
+          "p": "35,00"
+        },
+        {
+          "id": "orion",
+          "n": "Orion",
+          "p": "35,00"
+        },
+        {
+          "id": "pink-lemonade-nomade",
+          "n": "Pink Lemonade Nômade",
+          "p": "35,00"
+        },
+        {
+          "id": "hibisco-e-limao",
+          "n": "Hibisco e Limão",
+          "p": "35,00"
+        }
+      ]
+    },
+    {
+      "id": "classicos",
+      "title": "Clássicos",
+      "kind": "drink",
+      "en": "Classic Cocktails",
+      "items": [
+        {
+          "id": "aperol-spritz",
+          "n": "Aperol Spritz",
+          "p": "46,00"
+        },
+        {
+          "id": "gin-tonic",
+          "n": "Gin Tonic",
+          "p": "49,00"
+        },
+        {
+          "id": "negroni",
+          "n": "Negroni",
+          "p": "47,00"
+        },
+        {
+          "id": "mojito",
+          "n": "Mojito",
+          "p": "43,00"
+        },
+        {
+          "id": "boulevardier",
+          "n": "Boulevardier",
+          "p": "47,00"
+        },
+        {
+          "id": "cuba-libre",
+          "n": "Cuba Libre",
+          "p": "43,00"
+        },
+        {
+          "id": "old-fashioned",
+          "n": "Old Fashioned",
+          "p": "43,00"
+        },
+        {
+          "id": "americano",
+          "n": "Americano",
+          "p": "43,00"
+        },
+        {
+          "id": "manhattan",
+          "n": "Manhattan",
+          "p": "43,00"
+        },
+        {
+          "id": "bloody-mary",
+          "n": "Bloody Mary",
+          "p": "41,00"
+        },
+        {
+          "id": "dry-martini",
+          "n": "Dry Martini",
+          "p": "43,00"
+        },
+        {
+          "id": "carajillo-43",
+          "n": "Carajillo 43",
+          "p": "40,00"
+        },
+        {
+          "id": "dirty-martini",
+          "n": "Dirty Martini",
+          "p": "43,00"
+        },
+        {
+          "id": "cuervo-margarita",
+          "n": "Cuervo Margarita",
+          "p": "43,00"
+        },
+        {
+          "id": "fitzgerald",
+          "n": "Fitzgerald",
+          "p": "52,00"
+        },
+        {
+          "id": "cuervo-paloma",
+          "n": "Cuervo Paloma",
+          "p": "43,00"
+        },
+        {
+          "id": "basil-smash",
+          "n": "Basil Smash",
+          "p": "47,00"
+        },
+        {
+          "id": "daiquiri",
+          "n": "Daiquiri",
+          "p": "45,00"
+        },
+        {
+          "id": "tom-collins",
+          "n": "Tom Collins",
+          "p": "44,00"
+        }
+      ]
+    },
+    {
+      "id": "sugestoes",
+      "title": "Sugestões da Casa",
+      "kind": "drink",
+      "en": "House Suggestions",
+      "items": [
+        {
+          "id": "peachtree-tonic",
+          "n": "Peachtree & Tonic",
+          "p": "45,00"
+        },
+        {
+          "id": "fernet-branca-cola",
+          "n": "Fernet Branca & Cola",
+          "p": "40,00"
+        },
+        {
+          "id": "villa-massa-limoncello-spritz",
+          "n": "Villa Massa Limoncello Spritz",
+          "p": "45,00"
+        },
+        {
+          "id": "licor-43-com-limao",
+          "n": "Licor 43 com Limão",
+          "p": "43,00"
+        },
+        {
+          "id": "villa-massa-amaretto-sour",
+          "n": "Villa Massa Amaretto Sour",
+          "p": "45,00"
+        },
+        {
+          "id": "1800-tequila-paloma",
+          "n": "1800 Tequila Paloma",
+          "p": "49,00"
+        },
+        {
+          "id": "villa-massa-limoncello",
+          "n": "Villa Massa Limoncello",
+          "p": "45,00"
+        },
+        {
+          "id": "martin-miller-s-dry-martini",
+          "n": "Martin Miller's Dry Martini",
+          "p": "48,00"
+        },
+        {
+          "id": "carpano-tonic",
+          "n": "Carpano Tonic",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "gin-tonicas",
+      "title": "Gin Tônicas",
+      "kind": "drink",
+      "en": "Gin & Tonic",
+      "items": [
+        {
+          "id": "no-ten-classic-gin-tonic",
+          "n": "No. TEN Classic Gin & Tonic",
+          "p": "60,00"
+        },
+        {
+          "id": "gin-tanqueray-tonica",
+          "n": "Gin Tanqueray Tônica",
+          "p": "48,00"
+        },
+        {
+          "id": "gin-tonica-beefeater-london-dry",
+          "n": "Gin Tônica Beefeater London Dry",
+          "p": "43,00"
+        },
+        {
+          "id": "gin-hendrick-s-tonica",
+          "n": "Gin Hendrick's Tônica",
+          "p": "68,00"
+        }
+      ]
+    },
+    {
+      "id": "caipirinhas",
+      "title": "Caipirinhas",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "caipiroska-ciroc",
+          "n": "Caipiroska Cîroc",
+          "p": "59,00"
+        },
+        {
+          "id": "caipiroska-absolut",
+          "n": "Caipiroska Absolut",
+          "p": "49,00"
+        },
+        {
+          "id": "caipiroska-nacional-smirnoff",
+          "n": "Caipiroska Nacional (Smirnoff)",
+          "p": "44,00"
+        },
+        {
+          "id": "caipisaque-nacional",
+          "n": "Caipisaquê Nacional",
+          "p": "45,00"
+        },
+        {
+          "id": "caipirinha-espirito-de-minas",
+          "n": "Caipirinha Espírito de Minas",
+          "p": "48,00"
+        },
+        {
+          "id": "caipirinha-salinissima",
+          "n": "Caipirinha Salinissima",
+          "p": "45,00"
+        }
+      ]
+    },
+    {
+      "id": "whisky",
+      "title": "Whisky & Bourbon",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "black-label",
+          "n": "Black Label",
+          "p": "40,00"
+        },
+        {
+          "id": "red-label",
+          "n": "Red Label",
+          "p": "35,00"
+        },
+        {
+          "id": "eagle-rare",
+          "n": "Eagle Rare",
+          "p": "90,00"
+        },
+        {
+          "id": "1792-small-batch",
+          "n": "1792 Small Batch",
+          "p": "90,00"
+        },
+        {
+          "id": "buffalo-trace",
+          "n": "Buffalo Trace",
+          "p": "56,00"
+        }
+      ]
+    },
+    {
+      "id": "vodkas",
+      "title": "Vodkas",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "ciroc",
+          "n": "Cîroc",
+          "p": "56,00"
+        },
+        {
+          "id": "vodka-absolut",
+          "n": "Vodka Absolut",
+          "p": "47,00"
+        },
+        {
+          "id": "smirnoff-red",
+          "n": "Smirnoff Red",
+          "p": "45,00"
+        }
+      ]
+    },
+    {
+      "id": "cachacas",
+      "title": "Cachaças",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "soledade-prata",
+          "n": "Soledade Prata",
+          "p": "38,00"
+        },
+        {
+          "id": "soledade-pura",
+          "n": "Soledade Pura",
+          "p": "38,00"
+        },
+        {
+          "id": "soledade-jequitiba",
+          "n": "Soledade Jequitibá",
+          "p": "38,00"
+        },
+        {
+          "id": "soledade-original-carvalho",
+          "n": "Soledade Original Carvalho",
+          "p": "38,00"
+        },
+        {
+          "id": "espirito-de-minas",
+          "n": "Espírito de Minas",
+          "p": "38,00"
+        },
+        {
+          "id": "salinissima-prata",
+          "n": "Salinissima Prata",
+          "p": "38,00"
+        },
+        {
+          "id": "salinissima-balsamo",
+          "n": "Salinissima Bálsamo",
+          "p": "38,00"
+        },
+        {
+          "id": "salinissima-amburana",
+          "n": "Salinissima Amburana",
+          "p": "38,00"
+        }
+      ]
+    },
+    {
+      "id": "tequilas",
+      "title": "Tequilas",
+      "kind": "drink",
+      "note": "Todas 100% Agave, exceto Especial.",
+      "items": [
+        {
+          "id": "jose-cuervo-gold",
+          "n": "Jose Cuervo Gold",
+          "p": "39,00"
+        },
+        {
+          "id": "jose-cuervo-silver",
+          "n": "Jose Cuervo Silver",
+          "p": "39,00"
+        },
+        {
+          "id": "jose-cuervo-tradicional",
+          "n": "Jose Cuervo Tradicional",
+          "p": "44,00"
+        },
+        {
+          "id": "1800-silver",
+          "n": "1800 Silver",
+          "p": "55,00"
+        },
+        {
+          "id": "1800-reposado",
+          "n": "1800 Reposado",
+          "p": "55,00"
+        },
+        {
+          "id": "1800-anejo",
+          "n": "1800 Añejo",
+          "p": "62,00"
+        },
+        {
+          "id": "1800-cristalino",
+          "n": "1800 Cristalino",
+          "p": "69,00"
+        },
+        {
+          "id": "1800-milenio",
+          "n": "1800 Milênio",
+          "p": "149,00"
+        }
+      ]
+    },
+    {
+      "id": "doses",
+      "title": "Doses & Shots",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "carpano-rosso",
+          "n": "Carpano Rosso",
+          "p": "36,00"
+        },
+        {
+          "id": "carpano-bianco",
+          "n": "Carpano Bianco",
+          "p": "36,00"
+        },
+        {
+          "id": "campari",
+          "n": "Campari",
+          "p": "40,00"
+        },
+        {
+          "id": "tanqueray",
+          "n": "Tanqueray",
+          "p": "47,00"
+        },
+        {
+          "id": "pisco-capel",
+          "n": "Pisco Capel",
+          "p": "36,00"
+        },
+        {
+          "id": "fernet-branca",
+          "n": "Fernet Branca",
+          "p": "33,00"
+        },
+        {
+          "id": "fernet-branca-menta",
+          "n": "Fernet Branca Menta",
+          "p": "38,00"
+        },
+        {
+          "id": "rum-havana-club-3-anos",
+          "n": "Rum Havana Club 3 anos",
+          "p": "30,00"
+        },
+        {
+          "id": "rum-havana-club-7-anos",
+          "n": "Rum Havana Club 7 anos",
+          "p": "45,00"
+        },
+        {
+          "id": "amaro-lucano",
+          "n": "Amaro Lucano",
+          "p": "38,00"
+        },
+        {
+          "id": "aperitivo-averna",
+          "n": "Aperitivo Averna",
+          "p": "38,00"
+        },
+        {
+          "id": "aperitivo-cynar-70",
+          "n": "Aperitivo Cynar 70",
+          "p": "38,00"
+        },
+        {
+          "id": "punt-mes",
+          "n": "Punt & Mes",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "garrafas",
+      "title": "Garrafas",
+      "kind": "drink",
+      "en": "Bottle Service",
+      "items": [
+        {
+          "id": "johnnie-walker-black-label",
+          "n": "Johnnie Walker Black Label",
+          "p": "370,00"
+        },
+        {
+          "id": "ciroc-vodka",
+          "n": "Cîroc Vodka",
+          "p": "390,00"
+        },
+        {
+          "id": "johnnie-walker-red-label",
+          "n": "Johnnie Walker Red Label",
+          "p": "295,00"
+        },
+        {
+          "id": "absolut-vodka",
+          "n": "Absolut Vodka",
+          "p": "320,00"
+        }
+      ]
+    },
+    {
+      "id": "chopp",
+      "title": "Chopp",
+      "kind": "drink",
+      "en": "Draft Beer",
+      "items": [
+        {
+          "id": "chopp-claro-brahma-300ml",
+          "n": "Chopp Claro Brahma 300ml",
+          "p": "14,50"
+        },
+        {
+          "id": "chopp-brahma-black",
+          "n": "Chopp Brahma Black",
+          "p": "18,50"
+        },
+        {
+          "id": "garotinho-brahma",
+          "n": "Garotinho Brahma",
+          "p": "12,00"
+        },
+        {
+          "id": "chopp-patagonia-ipa",
+          "n": "Chopp Patagônia IPA",
+          "p": "25,00"
+        }
+      ]
+    },
+    {
+      "id": "cervejas",
+      "title": "Cervejas Long Neck",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "heineken-lager",
+          "n": "Heineken Lager",
+          "p": "20,00"
+        },
+        {
+          "id": "heineken-zero",
+          "n": "Heineken Zero",
+          "p": "20,00"
+        },
+        {
+          "id": "corona-extra-355ml",
+          "n": "Corona Extra 355ml",
+          "p": "20,00"
+        },
+        {
+          "id": "corona-zero",
+          "n": "Corona Zero",
+          "p": "20,00"
+        },
+        {
+          "id": "stella-artois-gold",
+          "n": "Stella Artois Gold",
+          "p": "20,00"
+        },
+        {
+          "id": "blue-moon",
+          "n": "Blue Moon",
+          "p": "30,00"
+        },
+        {
+          "id": "goose-island",
+          "n": "Goose Island",
+          "p": "22,00"
+        }
+      ]
+    },
+    {
+      "id": "licores",
+      "title": "Licores & Sakês",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "baileys",
+          "n": "Baileys",
+          "p": "37,00"
+        },
+        {
+          "id": "cointreau",
+          "n": "Cointreau",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43",
+          "n": "Licor 43",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43-creme-brulee",
+          "n": "Licor 43 Crème Brûlée",
+          "p": "35,00"
+        },
+        {
+          "id": "licor-43-chocolate",
+          "n": "Licor 43 Chocolate",
+          "p": "35,00"
+        },
+        {
+          "id": "fireball",
+          "n": "Fireball",
+          "p": "35,00"
+        },
+        {
+          "id": "villa-massa-limoncello",
+          "n": "Villa Massa Limoncello",
+          "p": "30,00"
+        },
+        {
+          "id": "villa-massa-amaretto",
+          "n": "Villa Massa Amaretto",
+          "p": "30,00"
+        },
+        {
+          "id": "peachtree",
+          "n": "Peachtree",
+          "p": "45,00"
+        },
+        {
+          "id": "drambuie",
+          "n": "Drambuie",
+          "p": "30,00"
+        },
+        {
+          "id": "sake-azuma-kirin",
+          "n": "Sake Azuma Kirin",
+          "p": "38,00"
+        },
+        {
+          "id": "sake-gekkeikan",
+          "n": "Sake Gekkeikan",
+          "p": "40,00"
+        }
+      ]
+    },
+    {
+      "id": "sangria",
+      "title": "Sangria & Clericot",
+      "kind": "drink",
+      "items": [
+        {
+          "id": "tinto",
+          "n": "Tinto",
+          "p": "110,00"
+        },
+        {
+          "id": "branco",
+          "n": "Branco",
+          "p": "110,00"
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "title": "Bebidas",
+      "kind": "drink",
+      "en": "Non-Alcoholic",
+      "items": [
+        {
+          "id": "coca-cola",
+          "n": "Coca-Cola",
+          "p": "9,50"
+        },
+        {
+          "id": "coca-cola-zero",
+          "n": "Coca-Cola Zero",
+          "p": "9,50"
+        },
+        {
+          "id": "guarana-antartica",
+          "n": "Guaraná Antartica",
+          "p": "9,00"
+        },
+        {
+          "id": "guarana-zero",
+          "n": "Guaraná Zero",
+          "p": "9,00"
+        },
+        {
+          "id": "fanta-laranja",
+          "n": "Fanta Laranja",
+          "p": "9,50"
+        },
+        {
+          "id": "fanta-laranja-zero",
+          "n": "Fanta Laranja Zero",
+          "p": "9,50"
+        },
+        {
+          "id": "soda-limonada",
+          "n": "Soda Limonada",
+          "p": "9,00"
+        },
+        {
+          "id": "soda-zero",
+          "n": "Soda Zero",
+          "p": "9,00"
+        },
+        {
+          "id": "schweppes-tonica",
+          "n": "Schweppes Tônica",
+          "p": "9,50"
+        },
+        {
+          "id": "sucos-naturais",
+          "n": "Sucos Naturais",
+          "p": "12,00"
+        },
+        {
+          "id": "suco-de-tomate-temperado",
+          "n": "Suco de Tomate Temperado",
+          "p": "17,00"
+        },
+        {
+          "id": "red-bull",
+          "n": "Red Bull",
+          "p": "20,00"
+        },
+        {
+          "id": "agua",
+          "n": "Água",
+          "p": "7,00"
+        },
+        {
+          "id": "agua-com-gas",
+          "n": "Água com Gás",
+          "p": "7,00"
+        },
+        {
+          "id": "rolha",
+          "n": "Rolha",
+          "p": "90,00"
+        }
+      ]
+    }
+  ]
+}
