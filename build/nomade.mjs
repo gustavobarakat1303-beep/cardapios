@@ -24,6 +24,8 @@ const m = JSON.parse(readFileSync(join(ROOT, 'data', 'nomade.json'), 'utf8'));
 const META = m.meta || {};
 const CURRENCY = META.currency || '';
 const FOOTER = META.footer || 'NÔMADE BAR & RESTAURANTE';
+// Logo oficial do Nômade (wordmark branco, extraído do material do cliente).
+const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets/nomade-logo-white.png')).toString('base64');
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- paginação (gulosa, por "linhas" estimadas) ---------------------------
@@ -77,7 +79,7 @@ function renderPage(secs, n, total, scale) {
   const cols = (m.layout?.cols || [])[n - 1] || 2;
   return `  <div class="page" style="--s:${scale}; --cols:${cols}">
     <header class="ph">
-      <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="brand" role="img" aria-label="Nômade Bar & Restaurante"></div>
       <div class="header-range">${label || 'Bar &amp; Restaurante'}</div>
     </header>
     <main class="pc"><div class="flow">
@@ -105,10 +107,7 @@ const CSS = `
 
     .ph { height:15mm; flex:0 0 15mm; padding:0 13mm; background:var(--black); color:#f4ead4;
       display:grid; grid-template-columns:auto 1fr; align-items:center; gap:6mm; border-bottom:.5mm solid var(--gold); }
-    .brand { display:flex; flex-direction:column; justify-content:center; line-height:1; }
-    .wm { font-family:"Poiret One", "Jost", sans-serif; font-size:19pt; font-weight:400; letter-spacing:2px; color:#fbf4e4; }
-    .wm-o { font-size:.5em; vertical-align:.85em; letter-spacing:0; margin:0 .04em; }
-    .wm-sub { margin-top:.6mm; font-size:4.6pt; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--gold2); }
+    .brand { width:42mm; height:11mm; background:url('${LOGO}') left center/contain no-repeat; }
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
@@ -151,7 +150,7 @@ const doc = (body) => `<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8" />
 <title>${esc(META.brand || 'Nômade')} — ${esc(META.subtitle || '')}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>${CSS}</style></head><body>
 ${body}
 </body></html>`;
