@@ -1,0 +1,112 @@
+{
+  "_como_editar": "Atualize saladaSelecionada e principaisSelecionados antes de imprimir. Deve haver exatamente 1 salada e 3 pratos principais. Depois rode: npm run nomade:eventos. O impresso nao usa precos porque o evento e fechado por pacote.",
+  "titulo": "Almoço ou Jantar",
+  "subtitulo": "Eventos Nômade",
+  "periodo": "2026",
+  "rodape": "@NO.MADEBAR",
+  "formato": "A4 horizontal dividido em 3 partes",
+  "entradas": [
+    "Bolinho de risoto de cogumelos recheado com mussarela e mel trufado",
+    "Pastel brasileiro recheado com mussarela, provolone e requeijão"
+  ],
+  "saladasDisponiveis": [
+    {
+      "nome": "Carpaccio Salada",
+      "descricao": "Molho mostarda e alcaparra, parmesão, mix de folhas e focaccia caseira"
+    },
+    {
+      "nome": "Salada da casa",
+      "descricao": "Mix de folhas ao molho citronete, muçarela de búfala, tomate, grão-de-bico e parmesão"
+    }
+  ],
+  "principaisDisponiveis": [
+    {
+      "nome": "Medalhões de filé mignon",
+      "descricao": "Molho glacê com risoto de cogumelos"
+    },
+    {
+      "nome": "Picanha premium na brasa",
+      "descricao": "Sal de parrilla, vinagrete, arroz branco e farofa de torresmo"
+    },
+    {
+      "nome": "Corte especial de picanha",
+      "descricao": "Manteiga de pimenta coreana, batatas à moda francesa e especiarias"
+    },
+    {
+      "nome": "Medalhão de filé mignon",
+      "descricao": "Mil-folhas de batata, molho Dijon e legumes no teppan"
+    },
+    {
+      "nome": "Salmão grelhado",
+      "descricao": "Risoto de limão siciliano, molho de tamarindo e farofa cítrica crocante"
+    },
+    {
+      "nome": "Robalo grelhado",
+      "descricao": "Miso branco, terrine de alho-poró e nori, mini cebola roxa assada e musseline de batata"
+    },
+    {
+      "nome": "Polvo na brasa",
+      "descricao": "Molho hoisin, purê de mandioquinha, brócolis grelhado, aioli e farofa crocante de alho"
+    },
+    {
+      "nome": "Tagliatelle fresco",
+      "descricao": "Camarões salteados, molho pesto de manjericão, bisque e óleo de camarão"
+    }
+  ],
+  "saladaSelecionada": {
+    "nome": "Salada da casa",
+    "descricao": "Mix de folhas ao molho citronete, muçarela de búfala, tomate, grão-de-bico e parmesão"
+  },
+  "principaisSelecionados": [
+    {
+      "nome": "Picanha premium na brasa",
+      "descricao": "Sal de parrilla, vinagrete, arroz branco e farofa de torresmo"
+    },
+    {
+      "nome": "Salmão grelhado",
+      "descricao": "Risoto de limão siciliano, molho de tamarindo e farofa cítrica crocante"
+    },
+    {
+      "nome": "Tagliatelle fresco",
+      "descricao": "Camarões salteados, molho pesto de manjericão, bisque e óleo de camarão"
+    }
+  ],
+  "sobremesas": [
+    "Sorvete de creme e chocolate com caldas",
+    "Brigadeiro de colher",
+    "Frutas da estação"
+  ],
+  "versoes": [
+    {
+      "id": "nao_alcoolicas",
+      "titulo": "Bebidas Não Alcoólicas",
+      "arquivo": "NOMADE_ALMOCO_JANTAR_BEBIDAS_NAO_ALCOOLICAS_A4_3_PARTES",
+      "chamada": "Entradas, 1 salada, 3 pratos principais, sobremesa completa e bebidas não alcoólicas.",
+      "bebidas": [
+        "Água",
+        "Café",
+        "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+        "Suco natural: laranja, melancia e abacaxi"
+      ]
+    },
+    {
+      "id": "alcoolicas",
+      "titulo": "Bebidas Alcoólicas",
+      "arquivo": "NOMADE_ALMOCO_JANTAR_BEBIDAS_ALCOOLICAS_A4_3_PARTES",
+      "chamada": "Entradas, 1 salada, 3 pratos principais, sobremesa completa e bar alcoólico.",
+      "bebidas": [
+        "Água",
+        "Café",
+        "Refrigerantes: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
+        "Suco natural: laranja, melancia e abacaxi",
+        "Chopp Claro Brahma",
+        "Caipirinha: limão, abacaxi e maracujá",
+        "Caipiroska: limão, abacaxi e morango",
+        "Aperol",
+        "Mojito",
+        "Gin tônica",
+        "Moscow Mule"
+      ]
+    }
+  ]
+}

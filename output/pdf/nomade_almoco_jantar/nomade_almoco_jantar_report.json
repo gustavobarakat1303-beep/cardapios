@@ -1,0 +1,152 @@
+{
+  "generatedAt": "2026-06-26T13:01:27.425Z",
+  "combinedHtml": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_OPCOES_A4_3_PARTES.html",
+  "combinedPdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_OPCOES_A4_3_PARTES.pdf",
+  "versions": [
+    {
+      "version": "nao_alcoolicas",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_BEBIDAS_NAO_ALCOOLICAS_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_BEBIDAS_NAO_ALCOOLICAS_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "version": "alcoolicas",
+      "html": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_BEBIDAS_ALCOOLICAS_A4_3_PARTES.html",
+      "pdf": "C:\\Users\\gusta\\OneDrive - Old\\Documents\\Cardapio\\NOMADE_MENU_ALMOCO_JANTAR\\NOMADE_ALMOCO_JANTAR_BEBIDAS_ALCOOLICAS_A4_3_PARTES.pdf",
+      "metrics": [
+        {
+          "page": 1,
+          "sheetHeight": 794,
+          "sheetScrollHeight": 794,
+          "panelOverflows": [
+            {
+              "panel": 1,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            },
+            {
+              "panel": 2,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            },
+            {
+              "panel": 3,
+              "height": 794,
+              "scrollHeight": 794,
+              "bodyHeight": 667,
+              "bodyScrollHeight": 667,
+              "overflow": false
+            }
+          ],
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "combinedMetrics": [
+    {
+      "page": 1,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "page": 2,
+      "sheetHeight": 794,
+      "sheetScrollHeight": 794,
+      "panelOverflows": [
+        {
+          "panel": 1,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        },
+        {
+          "panel": 2,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        },
+        {
+          "panel": 3,
+          "height": 794,
+          "scrollHeight": 794,
+          "bodyHeight": 667,
+          "bodyScrollHeight": 667,
+          "overflow": false
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "pdfInfo": "Title:           Nômade - Almoço ou Jantar A4 3 partes\r\nCreator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36\r\nProducer:        Skia/PDF m149\r\nCreationDate:    Fri Jun 26 10:01:19 2026 Hora oficial do Brasil\r\nModDate:         Fri Jun 26 10:01:19 2026 Hora oficial do Brasil\r\nCustom Metadata: no\r\nMetadata Stream: no\r\nTagged:          no\r\nUserProperties:  no\r\nSuspects:        no\r\nForm:            none\r\nJavaScript:      no\r\nPages:           2\r\nEncrypted:       no\r\nPage size:       841.92 x 594.96 pts (A4)\r\nPage rot:        0\r\nFile size:       280700 bytes\r\nOptimized:       no\r\nPDF version:     1.4\r\n"
+}
