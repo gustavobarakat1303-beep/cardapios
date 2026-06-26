@@ -76,7 +76,7 @@ function renderPage(secs, n, total, scale) {
   const label = n === 1 ? esc(META.subtitle || '') : `${n} / ${total}`;
   return `  <div class="page" style="--s:${scale}">
     <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">${label || 'Bar &amp; Restaurante'}</div>
     </header>
     <main class="pc"><div class="flow">
@@ -105,8 +105,9 @@ const CSS = `
     .ph { height:15mm; flex:0 0 15mm; padding:0 13mm; background:var(--black); color:#f4ead4;
       display:grid; grid-template-columns:auto 1fr; align-items:center; gap:6mm; border-bottom:.5mm solid var(--gold); }
     .brand { display:flex; flex-direction:column; justify-content:center; line-height:1; }
-    .wm { font-size:15.5pt; font-weight:500; letter-spacing:3.2px; color:#fbf4e4; }
-    .wm-sub { margin-top:1mm; font-size:4.4pt; font-weight:600; letter-spacing:3.4px; text-transform:uppercase; color:var(--gold2); }
+    .wm { font-family:"Poiret One", "Jost", sans-serif; font-size:19pt; font-weight:400; letter-spacing:2px; color:#fbf4e4; }
+    .wm-o { font-size:.5em; vertical-align:.85em; letter-spacing:0; margin:0 .04em; }
+    .wm-sub { margin-top:.6mm; font-size:4.6pt; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--gold2); }
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
@@ -149,7 +150,7 @@ const doc = (body) => `<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8" />
 <title>${esc(META.brand || 'Nômade')} — ${esc(META.subtitle || '')}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&family=Poiret+One&display=swap" rel="stylesheet">
 <style>${CSS}</style></head><body>
 ${body}
 </body></html>`;
