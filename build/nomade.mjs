@@ -208,19 +208,32 @@ async function renderAndMeasure() {
   await new Promise((r) => setTimeout(r, 1200));
   return page.$$eval('.page', (els) => els.map((el) => {
     const flow = el.querySelector('.flow');
-    // flow é flex:1 => clientHeight é o espaço disponível (já descontados intro
-    // e nota); scrollHeight é o conteúdo real. >1 => estoura.
-    return flow.scrollHeight / flow.clientHeight;
+    // Altura NATURAL do conteúdo = soma das seções + os espaços-base entre elas
+    // (row-gap). Independe do justify-content: space-between (que apenas
+    // distribui a sobra). Assim detectamos tanto ESTOURO (>1) quanto SOBRA (<1).
+    const gap = parseFloat(getComputedStyle(flow).rowGap) || 0;
+    const kids = Array.from(flow.children);
+    const content = kids.reduce((a, k) => a + k.offsetHeight, 0) + gap * Math.max(0, kids.length - 1);
+    return content / flow.clientHeight;
   }));
 }
 
-// passo 1: mede a escala 1 e ajusta cada página que estoura
+// Auto-escala por PÁGINA até cada uma preencher ~TARGET da altura útil — sobe a
+// escala em páginas com sobra e desce nas que estouram. Com o conteúdo perto de
+// 100%, o space-between distribui apenas uma sobra pequena e uniforme (sem os
+// vãos enormes entre categorias). Itera porque mudar a escala altera quebras de
+// linha e, portanto, a altura medida.
+const TARGET = 0.985, MIN = 0.56, MAX = 1.32;
 let ratios = await renderAndMeasure();
-scales = scales.map((s, i) => (ratios[i] > 1 ? Math.max(0.6, +(s / ratios[i] * 0.985).toFixed(3)) : s));
-// passo 2: confirma/ajusta de novo (margem de segurança)
-ratios = await renderAndMeasure();
-for (let i = 0; i < ratios.length; i++) if (ratios[i] > 1) scales[i] = Math.max(0.55, +(scales[i] / ratios[i] * 0.985).toFixed(3));
-ratios = await renderAndMeasure();
+for (let pass = 0; pass < 5; pass++) {
+  let changed = false;
+  for (let i = 0; i < ratios.length; i++) {
+    const desired = Math.min(MAX, Math.max(MIN, +(scales[i] * TARGET / ratios[i]).toFixed(3)));
+    if (Math.abs(desired - scales[i]) > 0.004) { scales[i] = desired; changed = true; }
+  }
+  if (!changed) break;
+  ratios = await renderAndMeasure();
+}
 
 await page.emulateMediaType('print');
 await page.pdf({ path: join(OUTDIR, `${SLUG}.pdf`), format: 'A4', printBackground: true, preferCSSPageSize: true });
