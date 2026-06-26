@@ -27,8 +27,12 @@
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(5mm * var(--s)); }
-    .flow { display:flex; flex-direction:column; row-gap:calc(5.6mm * var(--s)); }
+    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(6mm * var(--s));
+      display:flex; flex-direction:column; }
+    /* min-height:100% + space-between => categorias se distribuem e preenchem a
+       página (sem sobra embaixo); a auto-escala evita overflow. */
+    .flow { min-height:100%; display:flex; flex-direction:column; justify-content:space-between;
+      row-gap:calc(5mm * var(--s)); }
 
     .pf { height:9mm; flex:0 0 9mm; margin:0 13mm; border-top:.5pt solid var(--rule);
       display:grid; grid-template-columns:24mm 1fr 24mm; align-items:center;
@@ -168,6 +172,15 @@
       </div><div class="item-desc">Grelhado com melaço de cana e raspas de limão-siciliano</div></div>
       </div>
     </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">1 / 6</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">2 / 6</div>
+    </header>
+    <main class="pc"><div class="flow">
       <section class="section">
       <div class="sh"><span class="sh-title">Entradas Frias</span><span class="sh-tag">Cold Starters</span><span class="sh-line"></span></div>
       <div class="g2">
@@ -208,17 +221,8 @@
       </div><div class="item-desc">Mix de folhas, tomate, mussarela de búfala, grão-de-bico e parmesão</div></div>
       </div>
     </section>
-    </div></main>
-    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">1 / 5</span></footer>
-  </div>
-  <div class="page" style="--s:1">
-    <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
-      <div class="header-range">2 / 5</div>
-    </header>
-    <main class="pc"><div class="flow">
       <section class="section">
-      <div class="sh"><span class="sh-title">Pratos Principais · Carnes</span><span class="sh-tag">Main Courses · Meat</span><span class="sh-line"></span></div>
+      <div class="sh"><span class="sh-title">Pratos Principais</span><span class="sh-tag">Main Courses</span><span class="sh-line"></span></div>
       <div class="g2">
         <div class="item"><div class="item-top">
         <span class="item-name">Mignon Glacé</span>
@@ -240,11 +244,6 @@
         <span class="item-dots"></span>
         <span class="item-price">92,00</span>
       </div><div class="item-desc">Com risoto de cebola caramelizada e demi-glace</div></div>
-      </div>
-    </section>
-      <section class="section">
-      <div class="sh"><span class="sh-title">Pratos Principais · Do Mar</span><span class="sh-tag">From the Sea</span><span class="sh-line"></span></div>
-      <div class="g2">
         <div class="item"><div class="item-top">
         <span class="item-name">Salmão Siciliano</span>
         <span class="item-dots"></span>
@@ -265,11 +264,6 @@
         <span class="item-dots"></span>
         <span class="item-price">105,00</span>
       </div><div class="item-desc">Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados</div></div>
-      </div>
-    </section>
-      <section class="section">
-      <div class="sh"><span class="sh-title">Diversos</span><span class="sh-tag">Others</span><span class="sh-line"></span></div>
-      <div class="g2">
         <div class="item"><div class="item-top">
         <span class="item-name">Risoto de Cogumelos</span>
         <span class="item-dots"></span>
@@ -307,6 +301,15 @@
       </div><div class="item-desc">Bolo de chocolate sem glúten; gluten free</div></div>
       </div>
     </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">2 / 6</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">3 / 6</div>
+    </header>
+    <main class="pc"><div class="flow">
       <section class="section">
       <div class="sh"><span class="sh-title">Drinks Autorais</span><span class="sh-tag">Signature Cocktails</span><span class="sh-line"></span></div>
       <div class="g2">
@@ -360,55 +363,6 @@
         <span class="item-dots"></span>
         <span class="item-price">52,00</span>
       </div><div class="item-desc">Vodka Cîroc, licor 43, café espresso e creme de baunilha</div></div>
-      </div>
-    </section>
-    </div></main>
-    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">2 / 5</span></footer>
-  </div>
-  <div class="page" style="--s:1">
-    <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
-      <div class="header-range">3 / 5</div>
-    </header>
-    <main class="pc"><div class="flow">
-      <section class="section">
-      <div class="sh"><span class="sh-title">Moquetel</span><span class="sh-tag">Zero Alcohol Drinks</span><span class="sh-line"></span></div>
-      <div class="g2">
-        <div class="item"><div class="item-top">
-        <span class="item-name">Solar</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Tônica de Maracujá e Mel</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Três Marias</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Refresco Verde Detox</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Orion</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Pink Lemonade Nômade</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Hibisco e Limão</span>
-        <span class="item-dots"></span>
-        <span class="item-price">35,00</span>
-      </div></div>
       </div>
     </section>
       <section class="section">
@@ -562,6 +516,55 @@
       </div>
     </section>
       <section class="section">
+      <div class="sh"><span class="sh-title">Moquetel</span><span class="sh-tag">Zero Alcohol Drinks</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Solar</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tônica de Maracujá e Mel</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Três Marias</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Refresco Verde Detox</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Orion</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Pink Lemonade Nômade</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Hibisco e Limão</span>
+        <span class="item-dots"></span>
+        <span class="item-price">35,00</span>
+      </div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">3 / 6</span></footer>
+  </div>
+  <div class="page" style="--s:0.855">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">4 / 6</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
       <div class="sh"><span class="sh-title">Gin Tônicas</span><span class="sh-tag">Gin &amp; Tonic</span><span class="sh-line"></span></div>
       <div class="g2">
         <div class="item"><div class="item-top">
@@ -651,15 +654,6 @@
       </div></div>
       </div>
     </section>
-    </div></main>
-    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">3 / 5</span></footer>
-  </div>
-  <div class="page" style="--s:1">
-    <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
-      <div class="header-range">4 / 5</div>
-    </header>
-    <main class="pc"><div class="flow">
       <section class="section">
       <div class="sh"><span class="sh-title">Vodkas</span><span class="sh-line"></span></div>
       <div class="g2">
@@ -866,80 +860,6 @@
       </div>
     </section>
       <section class="section">
-      <div class="sh"><span class="sh-title">Chopp</span><span class="sh-tag">Draft Beer</span><span class="sh-line"></span></div>
-      <div class="g2">
-        <div class="item"><div class="item-top">
-        <span class="item-name">Chopp Claro Brahma 300ml</span>
-        <span class="item-dots"></span>
-        <span class="item-price">14,50</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Chopp Brahma Black</span>
-        <span class="item-dots"></span>
-        <span class="item-price">18,50</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Garotinho Brahma</span>
-        <span class="item-dots"></span>
-        <span class="item-price">12,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Chopp Patagônia IPA</span>
-        <span class="item-dots"></span>
-        <span class="item-price">25,00</span>
-      </div></div>
-      </div>
-    </section>
-    </div></main>
-    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">4 / 5</span></footer>
-  </div>
-  <div class="page" style="--s:1">
-    <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
-      <div class="header-range">5 / 5</div>
-    </header>
-    <main class="pc"><div class="flow">
-      <section class="section">
-      <div class="sh"><span class="sh-title">Cervejas Long Neck</span><span class="sh-line"></span></div>
-      <div class="g2">
-        <div class="item"><div class="item-top">
-        <span class="item-name">Heineken Lager</span>
-        <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Heineken Zero</span>
-        <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Corona Extra 355ml</span>
-        <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Corona Zero</span>
-        <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Stella Artois Gold</span>
-        <span class="item-dots"></span>
-        <span class="item-price">20,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Blue Moon</span>
-        <span class="item-dots"></span>
-        <span class="item-price">30,00</span>
-      </div></div>
-        <div class="item"><div class="item-top">
-        <span class="item-name">Goose Island</span>
-        <span class="item-dots"></span>
-        <span class="item-price">22,00</span>
-      </div></div>
-      </div>
-    </section>
-      <section class="section">
       <div class="sh"><span class="sh-title">Licores &amp; Sakês</span><span class="sh-line"></span></div>
       <div class="g2">
         <div class="item"><div class="item-top">
@@ -1004,23 +924,82 @@
       </div></div>
       </div>
     </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">4 / 6</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">5 / 6</div>
+    </header>
+    <main class="pc"><div class="flow">
       <section class="section">
-      <div class="sh"><span class="sh-title">Sangria &amp; Clericot</span><span class="sh-line"></span></div>
+      <div class="sh"><span class="sh-title">Chopp</span><span class="sh-tag">Draft Beer</span><span class="sh-line"></span></div>
       <div class="g2">
         <div class="item"><div class="item-top">
-        <span class="item-name">Tinto</span>
+        <span class="item-name">Chopp Claro Brahma 300ml</span>
         <span class="item-dots"></span>
-        <span class="item-price">110,00</span>
+        <span class="item-price">14,50</span>
       </div></div>
         <div class="item"><div class="item-top">
-        <span class="item-name">Branco</span>
+        <span class="item-name">Chopp Brahma Black</span>
         <span class="item-dots"></span>
-        <span class="item-price">110,00</span>
+        <span class="item-price">18,50</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Garotinho Brahma</span>
+        <span class="item-dots"></span>
+        <span class="item-price">12,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Chopp Patagônia IPA</span>
+        <span class="item-dots"></span>
+        <span class="item-price">25,00</span>
       </div></div>
       </div>
     </section>
       <section class="section">
-      <div class="sh"><span class="sh-title">Bebidas</span><span class="sh-tag">Non-Alcoholic</span><span class="sh-line"></span></div>
+      <div class="sh"><span class="sh-title">Cervejas Long Neck</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Heineken Lager</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Heineken Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Corona Extra 355ml</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Corona Zero</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Stella Artois Gold</span>
+        <span class="item-dots"></span>
+        <span class="item-price">20,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Blue Moon</span>
+        <span class="item-dots"></span>
+        <span class="item-price">30,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Goose Island</span>
+        <span class="item-dots"></span>
+        <span class="item-price">22,00</span>
+      </div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Diversos</span><span class="sh-tag">Non-Alcoholic</span><span class="sh-line"></span></div>
       <div class="g2">
         <div class="item"><div class="item-top">
         <span class="item-name">Coca-Cola</span>
@@ -1099,7 +1078,231 @@
       </div></div>
       </div>
     </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Sangria &amp; Clericot</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Tinto</span>
+        <span class="item-dots"></span>
+        <span class="item-price">110,00</span>
+      </div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Branco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">110,00</span>
+      </div></div>
+      </div>
+    </section>
     </div></main>
-    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">5 / 5</span></footer>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">5 / 6</span></footer>
+  </div>
+  <div class="page" style="--s:1">
+    <header class="ph">
+      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="header-range">6 / 6</div>
+    </header>
+    <main class="pc"><div class="flow">
+      <section class="section">
+      <div class="sh"><span class="sh-title">Vinhos Tintos</span><span class="sh-tag">Red Wines</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Alamos Pinot Noir</span>
+        <span class="item-dots"></span>
+        <span class="item-price">165,00</span>
+      </div><div class="item-desc">Pinot Noir · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Catena Malbec</span>
+        <span class="item-dots"></span>
+        <span class="item-price">279,00</span>
+      </div><div class="item-desc">Malbec · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Alma Negra M Blend</span>
+        <span class="item-dots"></span>
+        <span class="item-price">282,00</span>
+      </div><div class="item-desc">Bonarda e Malbec · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carmen Carménère</span>
+        <span class="item-dots"></span>
+        <span class="item-price">160,00</span>
+      </div><div class="item-desc">Carménère · Viña Carmen, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">DV Catena Cabernet-Malbec</span>
+        <span class="item-dots"></span>
+        <span class="item-price">326,00</span>
+      </div><div class="item-desc">Cabernet Sauvignon e Malbec · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">El Enemigo Bonarda El Barranco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">338,00</span>
+      </div><div class="item-desc">Bonarda · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Montepulciano d'Abruzzo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">160,00</span>
+      </div><div class="item-desc">Montepulciano · Abruzzo, Itália</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Trofeo Cabernet Sauvignon</span>
+        <span class="item-dots"></span>
+        <span class="item-price">122,00</span>
+      </div><div class="item-desc">Cabernet Sauvignon · Valle Central, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Posadas Viejas Tempranillo</span>
+        <span class="item-dots"></span>
+        <span class="item-price">120,00</span>
+      </div><div class="item-desc">Tempranillo · Castilla la Mancha, Espanha</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Miluna Rosso</span>
+        <span class="item-dots"></span>
+        <span class="item-price">145,00</span>
+      </div><div class="item-desc">Malvasia Nera, Negroamaro e Sangiovese · Puglia, Itália</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Lagoalva Tinto</span>
+        <span class="item-dots"></span>
+        <span class="item-price">256,00</span>
+      </div><div class="item-desc">Castelão e Touriga Nacional · Tejo, Portugal</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Robertson Pinotage</span>
+        <span class="item-dots"></span>
+        <span class="item-price">160,00</span>
+      </div><div class="item-desc">Pinotage · Robertson Valley, África do Sul</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Los Vascos Cabernet Sauvignon</span>
+        <span class="item-dots"></span>
+        <span class="item-price">188,00</span>
+      </div><div class="item-desc">Cabernet Sauvignon · Colchagua, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Chevalier Lassalle</span>
+        <span class="item-dots"></span>
+        <span class="item-price">188,00</span>
+      </div><div class="item-desc">Cabernet Sauvignon e Merlot · Bordeaux, França</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">La Vieille Ferme Rouge</span>
+        <span class="item-dots"></span>
+        <span class="item-price">244,00</span>
+      </div><div class="item-desc">Carignan, Cinsault, Grenache e Syrah · Rhône, França</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carmen Premier 1850 Pinot Noir</span>
+        <span class="item-dots"></span>
+        <span class="item-price">220,00</span>
+      </div><div class="item-desc">Pinot Noir · San Antonio, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Padrillos Pinot Noir</span>
+        <span class="item-dots"></span>
+        <span class="item-price">250,00</span>
+      </div><div class="item-desc">Pinot Noir · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Animal Malbec</span>
+        <span class="item-dots"></span>
+        <span class="item-price">280,00</span>
+      </div><div class="item-desc">Malbec · Mendoza, Argentina</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Vinhos Brancos</span><span class="sh-tag">White Wines</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Freixenet Pinot Grigio</span>
+        <span class="item-dots"></span>
+        <span class="item-price">140,00</span>
+      </div><div class="item-desc">Pinot Grigio · Itália</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Catena Chardonnay</span>
+        <span class="item-dots"></span>
+        <span class="item-price">266,00</span>
+      </div><div class="item-desc">Chardonnay · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carmen Insigne Sauvignon Blanc</span>
+        <span class="item-dots"></span>
+        <span class="item-price">210,00</span>
+      </div><div class="item-desc">Sauvignon Blanc · Viña Carmen, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Posadas Viejas Blanco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">120,00</span>
+      </div><div class="item-desc">Viura · Castilla la Mancha, Espanha</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Robertson Chenin Blanc</span>
+        <span class="item-dots"></span>
+        <span class="item-price">145,00</span>
+      </div><div class="item-desc">Chenin Blanc · Robertson Valley, África do Sul</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Miluna Bianco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">145,00</span>
+      </div><div class="item-desc">Blend branco · Puglia, Itália</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Lagoalva Branco</span>
+        <span class="item-dots"></span>
+        <span class="item-price">256,00</span>
+      </div><div class="item-desc">Fernão Pires, Arinto e Sauvignon Blanc · Tejo, Portugal</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">La Vieille Ferme Blanc</span>
+        <span class="item-dots"></span>
+        <span class="item-price">224,00</span>
+      </div><div class="item-desc">Bourboulenc, Grenache Blanc, Ugni Blanc e Vermentino · Rhône, França</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Alamos Chardonnay</span>
+        <span class="item-dots"></span>
+        <span class="item-price">156,00</span>
+      </div><div class="item-desc">Chardonnay · Mendoza, Argentina</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Vinhos Rosés</span><span class="sh-tag">Rosé</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Posadas Viejas Tempranillo Rosé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">140,00</span>
+      </div><div class="item-desc">Tempranillo · Castilla la Mancha, Espanha</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Carmen Insigne Aperitif Rosé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">160,00</span>
+      </div><div class="item-desc">Cabernet Sauvignon e Syrah · Valle Central, Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Freixenet Italian Rosé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">135,00</span>
+      </div><div class="item-desc">Rosé · Itália</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Los Vascos Rosé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">188,00</span>
+      </div><div class="item-desc">Syrah, Grenache e Mourvèdre · Chile</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">La Vieille Ferme Rosé</span>
+        <span class="item-dots"></span>
+        <span class="item-price">224,00</span>
+      </div><div class="item-desc">Cinsault, Grenache e Syrah · Rhône, França</div></div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="sh"><span class="sh-title">Taças &amp; Espumantes</span><span class="sh-tag">By the Glass &amp; Sparkling</span><span class="sh-line"></span></div>
+      <div class="g2">
+        <div class="item"><div class="item-top">
+        <span class="item-name">Alamos Chardonnay</span>
+        <span class="item-dots"></span>
+        <span class="item-price">65,00</span>
+      </div><div class="item-desc">187 ml · Chardonnay · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Alamos Malbec</span>
+        <span class="item-dots"></span>
+        <span class="item-price">65,00</span>
+      </div><div class="item-desc">187 ml · Malbec · Mendoza, Argentina</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Freixenet Cava Cordon Negro Brut</span>
+        <span class="item-dots"></span>
+        <span class="item-price">140,00</span>
+      </div><div class="item-desc">Cava Brut · Espanha</div></div>
+        <div class="item"><div class="item-top">
+        <span class="item-name">Freixenet Cordon Rosado Brut</span>
+        <span class="item-dots"></span>
+        <span class="item-price">140,00</span>
+      </div><div class="item-desc">Espumante Rosé Brut · Espanha</div></div>
+      </div>
+    </section>
+    </div></main>
+    <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">6 / 6</span></footer>
   </div>
 </body></html>
