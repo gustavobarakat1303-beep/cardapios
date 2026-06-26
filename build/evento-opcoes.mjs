@@ -23,7 +23,7 @@ const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24
 
 const SLUG = (process.argv[2] || 'happy-hour').replace(/[^a-z0-9-]/gi, '');
 const data = JSON.parse(readFileSync(join(ROOT, 'data', `${SLUG}.json`), 'utf8'));
-const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets/logo-pedemanga.png')).toString('base64');
+const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets', data.logo || 'logo-pedemanga.png')).toString('base64');
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- validação ------------------------------------------------------------

@@ -21,8 +21,9 @@ const ROOT = join(__dirname, '..');
 const OUTDIR = join(ROOT, 'output');
 const CHROME = process.env.CHROME_PATH || join(ROOT, 'chrome/linux-150.0.7871.24/chrome-linux64/chrome');
 
-const data = JSON.parse(readFileSync(join(ROOT, 'data', 'almoco-jantar.json'), 'utf8'));
-const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets/logo-pedemanga.png')).toString('base64');
+const SLUG = (process.argv[2] || 'almoco-jantar').replace(/[^a-z0-9-]/gi, '');
+const data = JSON.parse(readFileSync(join(ROOT, 'data', `${SLUG}.json`), 'utf8'));
+const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets', data.logo || 'logo-pedemanga.png')).toString('base64');
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- validação ------------------------------------------------------------
@@ -109,8 +110,8 @@ const doc = (sheets) => `<!doctype html><html lang="pt-BR"><head><meta charset="
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>${CSS}</style></head><body>${sheets}</body></html>`;
 
-const versions = data.versoes.map((v) => ({ slug: `almoco-jantar-${v.id}`, html: doc(sheet(v)) }));
-versions.push({ slug: 'almoco-jantar-geral', html: doc(data.versoes.map(sheet).join('')) });
+const versions = data.versoes.map((v) => ({ slug: `${SLUG}-${v.id}`, html: doc(sheet(v)) }));
+versions.push({ slug: `${SLUG}-geral`, html: doc(data.versoes.map(sheet).join('')) });
 
 // ---- render ---------------------------------------------------------------
 mkdirSync(OUTDIR, { recursive: true });

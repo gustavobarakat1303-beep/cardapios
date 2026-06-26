@@ -56,6 +56,13 @@ jobs:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: node build/nomade.mjs
 
+      - name: Gerar eventos Nômade (Happy Hour + Almoço/Jantar)
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
+          node build/evento-opcoes.mjs nomade-happy-hour
+          node build/evento.mjs nomade-almoco-jantar
+
       - name: Commit dos resultados
         run: |
           git config user.name "github-actions[bot]"
