@@ -220,18 +220,30 @@ async function renderAndMeasure() {
 
 // Auto-escala por PÁGINA até cada uma preencher ~TARGET da altura útil — sobe a
 // escala em páginas com sobra e desce nas que estouram. Com o conteúdo perto de
-// 100%, o space-between distribui apenas uma sobra pequena e uniforme (sem os
-// vãos enormes entre categorias). Itera porque mudar a escala altera quebras de
-// linha e, portanto, a altura medida.
-const TARGET = 0.985, MIN = 0.56, MAX = 1.32;
+// (mas abaixo de) 100%, o space-between distribui apenas uma sobra pequena e
+// uniforme (sem os vãos enormes entre categorias). Itera porque mudar a escala
+// altera quebras de linha e, portanto, a altura medida.
+// TARGET deixa uma folga proposital: as fontes reais (CI) medem um pouco
+// diferentes das de fallback (local), então mirar 100% estoura a página.
+const TARGET = 0.95, MIN = 0.56, MAX = 1.32, CEIL = 1.0;
 let ratios = await renderAndMeasure();
-for (let pass = 0; pass < 5; pass++) {
+for (let pass = 0; pass < 6; pass++) {
   let changed = false;
   for (let i = 0; i < ratios.length; i++) {
-    const desired = Math.min(MAX, Math.max(MIN, +(scales[i] * TARGET / ratios[i]).toFixed(3)));
+    // Páginas que estouram descem com folga extra; as com sobra sobem até o alvo.
+    const aim = ratios[i] > CEIL ? CEIL * 0.97 : TARGET;
+    const desired = Math.min(MAX, Math.max(MIN, +(scales[i] * aim / ratios[i]).toFixed(3)));
     if (Math.abs(desired - scales[i]) > 0.004) { scales[i] = desired; changed = true; }
   }
   if (!changed) break;
+  ratios = await renderAndMeasure();
+}
+// Garantia final: nenhuma página pode estourar no PDF. Reduz quem ainda passar
+// de 100% (margem de medição) antes de imprimir.
+for (let guard = 0; guard < 4; guard++) {
+  const over = ratios.map((r, i) => (r > 0.998 ? i : -1)).filter((i) => i >= 0);
+  if (!over.length) break;
+  for (const i of over) scales[i] = Math.max(0.5, +(scales[i] * 0.95 / ratios[i]).toFixed(3));
   ratios = await renderAndMeasure();
 }
 
