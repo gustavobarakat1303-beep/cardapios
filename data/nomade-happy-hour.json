@@ -1,0 +1,112 @@
+{
+  "_como_editar": "Atualize as opcoes, bebidas e cozinha. Depois rode: npm run nomade:eventos. O impresso nao usa precos porque o evento e fechado por pacote.",
+  "titulo": "Happy Hour",
+  "subtitulo": "Eventos Nômade",
+  "periodo": "2026",
+  "rodape": "@NO.MADEBAR",
+  "formato": "A4 horizontal dividido em 3 partes",
+  "opcoes": [
+    {
+      "id": "1",
+      "titulo": "Opção 1",
+      "chamada": "Bar essencial e petiscos da casa",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Chope",
+            "Água",
+            "Refrigerante"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Canapé de carpaccio",
+            "Bruschetta tradicional com parmesão e tomate assados",
+            "Dadinhos de tapioca",
+            "Pastel brasileiro recheado com mussarela, provolone e requeijão",
+            "Batatas ao alecrim com parmesão, azeite de trufas e aioli",
+            "Bolinhos de bacalhau",
+            "Croquete de carne",
+            "Bolinho de mandioquinha com provolone",
+            "Bolinho de mandioquinha com carne seca e requeijão"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "titulo": "Opção 2",
+      "chamada": "Bar ampliado e petiscos da casa",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Chope",
+            "Gin Tonic",
+            "Caipiroska",
+            "Caipirinha",
+            "Moscow Mule",
+            "Aperol",
+            "Mojito",
+            "Água",
+            "Refrigerante"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Canapé de carpaccio",
+            "Bruschetta tradicional com parmesão e tomate assados",
+            "Dadinhos de tapioca",
+            "Pastel brasileiro recheado com mussarela, provolone e requeijão",
+            "Batatas ao alecrim com parmesão, azeite de trufas e aioli",
+            "Bolinhos de bacalhau",
+            "Croquete de carne",
+            "Bolinho de mandioquinha com provolone",
+            "Bolinho de mandioquinha com carne seca e requeijão"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "titulo": "Opção 3",
+      "chamada": "Bar completo e cozinha reforçada",
+      "secoes": [
+        {
+          "titulo": "Bebidas",
+          "itens": [
+            "Chope",
+            "Gin Tonic",
+            "Caipiroska",
+            "Caipirinha",
+            "Moscow Mule",
+            "Aperol",
+            "Mojito",
+            "Água",
+            "Refrigerante"
+          ]
+        },
+        {
+          "titulo": "Cozinha",
+          "itens": [
+            "Canapé de salmão",
+            "Bruschetta tradicional com parmesão e tomate assados",
+            "Dadinhos de tapioca",
+            "Pastel brasileiro recheado com mussarela, provolone e requeijão",
+            "Batatas ao alecrim com parmesão, azeite de trufas e aioli",
+            "Bolinhos de bacalhau",
+            "Croquete de carne",
+            "Bolinho de mandioquinha com provolone",
+            "Bolinho de mandioquinha com carne seca e requeijão",
+            "Risoto de cogumelos com cubinhos de filé mignon ao molho glacê",
+            "Brigadeiro de colher"
+          ]
+        }
+      ]
+    }
+  ],
+  "logo": "nomade_logo_clean.png"
+}
