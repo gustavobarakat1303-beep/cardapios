@@ -24,6 +24,8 @@ const m = JSON.parse(readFileSync(join(ROOT, 'data', 'nomade.json'), 'utf8'));
 const META = m.meta || {};
 const CURRENCY = META.currency || '';
 const FOOTER = META.footer || 'NÔMADE BAR & RESTAURANTE';
+// Logo oficial do Nômade (wordmark branco, extraído do material do cliente).
+const LOGO = 'data:image/png;base64,' + readFileSync(join(ROOT, 'assets/nomade-logo-white.png')).toString('base64');
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---- paginação (gulosa, por "linhas" estimadas) ---------------------------
@@ -74,9 +76,10 @@ function renderSection(sec) {
 }
 function renderPage(secs, n, total, scale) {
   const label = n === 1 ? esc(META.subtitle || '') : `${n} / ${total}`;
-  return `  <div class="page" style="--s:${scale}">
+  const cols = (m.layout?.cols || [])[n - 1] || 2;
+  return `  <div class="page" style="--s:${scale}; --cols:${cols}">
     <header class="ph">
-      <div class="brand"><span class="wm">N&Ocirc;MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
+      <div class="brand" role="img" aria-label="Nômade Bar & Restaurante"></div>
       <div class="header-range">${label || 'Bar &amp; Restaurante'}</div>
     </header>
     <main class="pc"><div class="flow">
@@ -104,9 +107,7 @@ const CSS = `
 
     .ph { height:15mm; flex:0 0 15mm; padding:0 13mm; background:var(--black); color:#f4ead4;
       display:grid; grid-template-columns:auto 1fr; align-items:center; gap:6mm; border-bottom:.5mm solid var(--gold); }
-    .brand { display:flex; flex-direction:column; justify-content:center; line-height:1; }
-    .wm { font-size:15.5pt; font-weight:500; letter-spacing:3.2px; color:#fbf4e4; }
-    .wm-sub { margin-top:1mm; font-size:4.4pt; font-weight:600; letter-spacing:3.4px; text-transform:uppercase; color:var(--gold2); }
+    .brand { width:42mm; height:11mm; background:url('${LOGO}') left center/contain no-repeat; }
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
@@ -133,7 +134,7 @@ const CSS = `
     .sh-line { height:0; flex:1; min-width:8mm; border-top:.5pt solid var(--rule); align-self:center; }
     .sec-note { margin-top:calc(1.4mm * var(--s)); font-size:calc(5.2pt * var(--s)); font-style:italic; color:var(--soft); }
 
-    .g2 { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
+    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
     .item { margin:0 0 calc(3.0mm * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
@@ -178,8 +179,10 @@ async function renderAndMeasure() {
   const html = doc(body);
   writeFileSync(join(OUTDIR, 'nomade.html'), html, 'utf8');
   await page.goto('file://' + join(OUTDIR, 'nomade.html'), { waitUntil: 'networkidle0', timeout: 60000 });
-  try { await page.evaluateHandle('document.fonts.ready'); } catch {}
-  await new Promise((r) => setTimeout(r, 600));
+  // aguarda DE FATO as web fonts (Cormorant/Jost/Poiret One) carregarem antes
+  // de medir e gerar o PDF — senão o PDF sai com fontes de fallback.
+  try { await page.evaluate(() => document.fonts.ready); } catch {}
+  await new Promise((r) => setTimeout(r, 1200));
   return page.$$eval('.page', (els) => els.map((el) => {
     const pc = el.querySelector('.pc'); const flow = el.querySelector('.flow');
     return flow.scrollHeight / pc.clientHeight; // >1 => estoura
