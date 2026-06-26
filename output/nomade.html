@@ -51,7 +51,7 @@
     .sh-line { height:0; flex:1; min-width:8mm; border-top:.5pt solid var(--rule); align-self:center; }
     .sec-note { margin-top:calc(1.4mm * var(--s)); font-size:calc(5.2pt * var(--s)); font-style:italic; color:var(--soft); }
 
-    .g2 { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
+    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
     .item { margin:0 0 calc(3.0mm * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
@@ -62,7 +62,7 @@
       line-height:1.24; font-weight:400; font-style:italic; color:var(--muted); overflow-wrap:anywhere; }
 
     @media screen { body { padding:16px; width:auto; } .page { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); } }</style></head><body>
-  <div class="page" style="--s:1">
+  <div class="page" style="--s:1; --cols:1">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">Bar &amp; Restaurante</div>
@@ -176,7 +176,7 @@
     </div></main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">1 / 6</span></footer>
   </div>
-  <div class="page" style="--s:1">
+  <div class="page" style="--s:1; --cols:1">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">2 / 6</div>
@@ -305,7 +305,7 @@
     </div></main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">2 / 6</span></footer>
   </div>
-  <div class="page" style="--s:1">
+  <div class="page" style="--s:1; --cols:2">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">3 / 6</div>
@@ -559,7 +559,7 @@
     </div></main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">3 / 6</span></footer>
   </div>
-  <div class="page" style="--s:0.857">
+  <div class="page" style="--s:0.857; --cols:2">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">4 / 6</div>
@@ -928,7 +928,7 @@
     </div></main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">4 / 6</span></footer>
   </div>
-  <div class="page" style="--s:1">
+  <div class="page" style="--s:1; --cols:2">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">5 / 6</div>
@@ -1097,7 +1097,7 @@
     </div></main>
     <footer class="pf"><span class="foot-mark"></span><span class="foot-text">NÔMADE BAR &amp; RESTAURANTE · @NO.MADEBAR</span><span class="foot-page">5 / 6</span></footer>
   </div>
-  <div class="page" style="--s:1">
+  <div class="page" style="--s:1; --cols:2">
     <header class="ph">
       <div class="brand"><span class="wm">N<span class="wm-o">o</span>MADE</span><span class="wm-sub">Bar &amp; Restaurante</span></div>
       <div class="header-range">6 / 6</div>
