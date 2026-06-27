@@ -19,15 +19,16 @@
       gap:1.15mm; border-bottom:.45pt solid var(--line); padding-bottom:2.4mm; }
     .panel-head .logo { width:12mm; height:9.2mm; background:var(--logo) center/contain no-repeat; filter:grayscale(1) contrast(1.25); }
     .panel-head div { font-size:4.6pt; line-height:1; font-weight:800; letter-spacing:1.4px; text-align:center; text-transform:uppercase; white-space:nowrap; }
-    .panel-body { flex:1 1 auto; min-height:0; padding-top:4mm; position:relative; z-index:1; }
+    .panel-head.wm .logo { width:42mm; height:13mm; filter:none; }
+    .panel-body { flex:1 1 auto; min-height:0; padding-top:4mm; position:relative; z-index:1; display:flex; flex-direction:column; }
     .kicker { font-size:5pt; line-height:1; font-weight:800; letter-spacing:1.3px; color:var(--muted); text-transform:uppercase; }
     h1 { margin:1.45mm 0 1.8mm; font-family:"Cormorant Garamond",Georgia,serif; font-size:24pt; line-height:.9; font-weight:700; color:var(--ink); }
     .option-row { display:flex; flex-direction:column; align-items:center; gap:1mm; padding:0 0 2mm; }
     .option-row strong { font-size:8.2pt; line-height:1; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; }
     .option-row span { font-size:4.6pt; line-height:1; font-weight:800; color:var(--muted); letter-spacing:1px; white-space:nowrap; }
     .lead { margin:0 0 2.5mm; padding:1.7mm 3mm 0; border-top:.45pt solid var(--line); font-size:5.5pt; line-height:1.18; font-weight:600; color:var(--muted); }
-    .sections { display:flex; flex-direction:column; gap:2.05mm; }
-    .section { padding-top:.4mm; break-inside:avoid; }
+    .sections { flex:1 1 auto; display:flex; flex-direction:column; gap:2.05mm; }
+    .section { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; justify-content:center; padding-top:.4mm; break-inside:avoid; }
     .section + .section { border-top:.35pt solid #d2d2d2; padding-top:1.8mm; }
     .section-title { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.65mm; margin-bottom:1mm; }
     .section-title span { font-family:"Cormorant Garamond",Georgia,serif; font-size:12.9pt; line-height:.92; font-weight:700; color:var(--ink); white-space:nowrap; }

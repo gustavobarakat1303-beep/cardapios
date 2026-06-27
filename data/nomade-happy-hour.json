@@ -108,5 +108,6 @@
       ]
     }
   ],
-  "logo": "nomade_logo_clean.png"
+  "logo": "nomade-logo-dark.png",
+  "wordmark": true
 }

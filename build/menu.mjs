@@ -114,8 +114,8 @@ function rebuild(flags) {
   const gen = generatorFor(slug);
   try {
     if (gen) {
-      console.log(dim(`→ gerando output/${slug}.html + .pdf (build/${gen}.mjs)...`));
-      execFileSync('node', [join(__dirname, `${gen}.mjs`)], { stdio: 'inherit', cwd: ROOT });
+      console.log(dim(`→ gerando output/${slug}.html + .pdf (build/${gen}.mjs ${slug})...`));
+      execFileSync('node', [join(__dirname, `${gen}.mjs`), slug], { stdio: 'inherit', cwd: ROOT });
       return;
     }
     console.log(dim(`→ gerando output/${slug}.html...`));
