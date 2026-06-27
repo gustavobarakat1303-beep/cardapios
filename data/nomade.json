@@ -40,10 +40,10 @@
       [
         "chopp",
         "cervejas",
-        "diversos",
-        "sangria"
+        "diversos"
       ],
       [
+        "sangria",
         "vinhos-tintos",
         "vinhos-brancos",
         "vinhos-rose",
@@ -88,8 +88,16 @@
       1,
       2,
       2,
-      2,
+      1,
       2
+    ],
+    "itemSpacing": [
+      1.55,
+      1.5,
+      1.4,
+      1,
+      1,
+      1
     ]
   },
   "sections": [

@@ -87,13 +87,16 @@ function renderPage(secs, n, total, scale) {
   const headerBits = [META.subtitle, META.period].filter(Boolean).map(esc).join(' · ');
   const label = n === 1 ? headerBits : `${n} / ${total}`;
   const cols = (m.layout?.cols || [])[n - 1] || META.columns || 2;
+  // Multiplicador de espaçamento entre itens por página (1 = padrão). Páginas de
+  // comida (1-3) usam mais respiro entre os itens para preencher melhor a página.
+  const ig = (m.layout?.itemSpacing || [])[n - 1] || 1;
   // Faixa de horário (estilo "menu executivo") só na 1ª página; nota de preços
   // (ex.: sobremesa opcional) só na última. Ambas opcionais (vêm do meta).
   const intro = (n === 1 && META.schedule)
     ? `<div class="intro">${esc(META.schedule)}</div>` : '';
   const note = (n === total && META.note)
     ? `<div class="exec-note">${esc(META.note)}</div>` : '';
-  return `  <div class="page" style="--s:${scale}; --cols:${cols}">
+  return `  <div class="page" style="--s:${scale}; --cols:${cols}; --ig:${ig}">
     <header class="ph">
       <div class="brand" role="img" aria-label="Nômade Bar & Restaurante"></div>
       <div class="header-range">${label || 'Bar &amp; Restaurante'}</div>
@@ -158,7 +161,7 @@ const CSS = `
 
     .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
-    .item { margin:0 0 calc(3.0mm * var(--s)); break-inside:avoid; }
+    .item { margin:0 0 calc(3.0mm * var(--ig, 1) * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
     .item-top.no-price { grid-template-columns:1fr; }
     .item-name { font-size:calc(7.7pt * var(--s)); line-height:1.05; font-weight:600; color:var(--ink); min-width:0; overflow-wrap:anywhere; }
