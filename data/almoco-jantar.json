@@ -71,21 +71,21 @@
     }
   ],
   "saladaSelecionada": {
-    "nome": "Caprese",
-    "descricao": "Mozarela de búfala, tomate fresco, rúcula e pesto de manjericão"
+    "nome": "Caesar Salad",
+    "descricao": "Alface americana, frango desfiado, croutons, parmesão e molho de queijos"
   },
   "principaisSelecionados": [
     {
-      "nome": "Polvo grelhado",
-      "descricao": "Azeite trufado, arroz negro e tomate-cereja"
+      "nome": "Salmão grelhado",
+      "descricao": "Risoto de banana-da-terra e molho agridoce"
+    },
+    {
+      "nome": "Picanha grelhada",
+      "descricao": "Farofa da casa, vinagrete, arroz e fritas"
     },
     {
       "nome": "Medalhão de filet",
-      "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha"
-    },
-    {
-      "nome": "Penne",
-      "descricao": "Tomate seco, mozarela de búfala e manjericão"
+      "descricao": "Molho gorgonzola e risoto de rúcula com tomates secos"
     }
   ],
   "sobremesas": [
