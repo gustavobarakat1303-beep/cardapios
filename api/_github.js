@@ -12,10 +12,12 @@ const fileFor = (slug) => {
   return `data/${slug}.json`;
 };
 
+const FALLBACK_BRANCH = 'main';
+
 export function env() {
   const { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, ADMIN_PASSWORD } = process.env;
   if (!GITHUB_TOKEN || !GITHUB_REPO) throw new Error('configuração ausente: GITHUB_TOKEN / GITHUB_REPO');
-  return { token: GITHUB_TOKEN, repo: GITHUB_REPO, branch: GITHUB_BRANCH || 'main', password: ADMIN_PASSWORD };
+  return { token: GITHUB_TOKEN, repo: GITHUB_REPO, branch: GITHUB_BRANCH || FALLBACK_BRANCH, password: ADMIN_PASSWORD };
 }
 
 function headers(token) {
@@ -27,10 +29,31 @@ function headers(token) {
   };
 }
 
+// Branch EFETIVO (auto-cura): se o GITHUB_BRANCH configurado não tiver mais o
+// registro data/menus.json (ex.: aponta para um branch antigo/removido depois
+// da migração para a main), usa 'main'. Assim o painel não quebra com HTTP 500
+// por causa de uma variável de ambiente desatualizada, e leituras E gravações
+// passam a operar no branch que realmente tem os dados. Resolvido uma vez por
+// instância (cache no módulo).
+let _branchCache;
+async function branchFor({ token, repo, branch }) {
+  if (branch === FALLBACK_BRANCH) return FALLBACK_BRANCH;
+  if (_branchCache && _branchCache.key === `${repo}@${branch}`) return _branchCache.value;
+  let value = FALLBACK_BRANCH;
+  try {
+    const url = `${API}/repos/${repo}/contents/data/menus.json?ref=${encodeURIComponent(branch)}`;
+    const r = await fetch(url, { headers: headers(token) });
+    if (r.ok) value = branch;
+  } catch { /* mantém o fallback 'main' */ }
+  _branchCache = { key: `${repo}@${branch}`, value };
+  return value;
+}
+
 // Lê o arquivo de um cardápio (data/<slug>.json) e devolve { json, sha }.
-export async function getMenu({ token, repo, branch }, slug = 'completo') {
-  const url = `${API}/repos/${repo}/contents/${fileFor(slug)}?ref=${encodeURIComponent(branch)}`;
-  const r = await fetch(url, { headers: headers(token) });
+export async function getMenu(cfg, slug = 'completo') {
+  const branch = await branchFor(cfg);
+  const url = `${API}/repos/${cfg.repo}/contents/${fileFor(slug)}?ref=${encodeURIComponent(branch)}`;
+  const r = await fetch(url, { headers: headers(cfg.token) });
   if (!r.ok) throw new Error(`GitHub GET ${r.status}: ${await r.text()}`);
   const data = await r.json();
   const content = Buffer.from(data.content, 'base64').toString('utf8');
@@ -38,9 +61,10 @@ export async function getMenu({ token, repo, branch }, slug = 'completo') {
 }
 
 // Lê o registro data/menus.json e devolve a lista de cardápios.
-export async function getRegistry({ token, repo, branch }) {
-  const url = `${API}/repos/${repo}/contents/data/menus.json?ref=${encodeURIComponent(branch)}`;
-  const r = await fetch(url, { headers: headers(token) });
+export async function getRegistry(cfg) {
+  const branch = await branchFor(cfg);
+  const url = `${API}/repos/${cfg.repo}/contents/data/menus.json?ref=${encodeURIComponent(branch)}`;
+  const r = await fetch(url, { headers: headers(cfg.token) });
   if (!r.ok) throw new Error(`GitHub GET ${r.status}: ${await r.text()}`);
   const data = await r.json();
   return JSON.parse(Buffer.from(data.content, 'base64').toString('utf8')).menus || [];
@@ -48,17 +72,18 @@ export async function getRegistry({ token, repo, branch }) {
 
 // Grava o cardápio (commit). `baseSha` = sha que o cliente carregou; se for
 // passado e estiver desatualizado, o GitHub rejeita com 409 (trava de concorrência).
-export async function putMenu({ token, repo, branch }, slug, menu, message, baseSha) {
+export async function putMenu(cfg, slug, menu, message, baseSha) {
+  const branch = await branchFor(cfg);
   let sha = baseSha;
-  if (!sha) { sha = (await getMenu({ token, repo, branch }, slug).catch(() => ({ sha: undefined }))).sha; }
+  if (!sha) { sha = (await getMenu(cfg, slug).catch(() => ({ sha: undefined }))).sha; }
   const body = {
     message: message || `painel: atualiza cardápio (${slug})`,
     content: Buffer.from(JSON.stringify(menu, null, 2) + '\n', 'utf8').toString('base64'),
     branch,
     sha,
   };
-  const url = `${API}/repos/${repo}/contents/${fileFor(slug)}`;
-  const r = await fetch(url, { method: 'PUT', headers: headers(token), body: JSON.stringify(body) });
+  const url = `${API}/repos/${cfg.repo}/contents/${fileFor(slug)}`;
+  const r = await fetch(url, { method: 'PUT', headers: headers(cfg.token), body: JSON.stringify(body) });
   if (r.status === 409) { const e = new Error('stale'); e.code = 409; throw e; }
   if (!r.ok) throw new Error(`GitHub PUT ${r.status}: ${await r.text()}`);
   const data = await r.json();
