@@ -76,16 +76,16 @@
   },
   "principaisSelecionados": [
     {
-      "nome": "Robalo com crosta de ervas",
-      "descricao": "Molho de tangerina, risoto de limão siciliano e farofa crocante"
+      "nome": "Salmão grelhado",
+      "descricao": "Risoto de banana-da-terra e molho agridoce"
     },
     {
-      "nome": "Medalhão de filet",
-      "descricao": "Molho de vinho tinto e funghi com purê de mandioquinha"
+      "nome": "Penne",
+      "descricao": "Tomate seco, mozarela de búfala e manjericão"
     },
     {
-      "nome": "Filé mignon ao poivre",
-      "descricao": "Arroz e batata wave"
+      "nome": "Nhoque de mandioquinha",
+      "descricao": "Molho de tomates, shimeji e shitake"
     }
   ],
   "sobremesas": [
