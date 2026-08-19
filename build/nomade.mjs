@@ -130,7 +130,7 @@ const CSS = `
     .header-range { color:var(--gold2); font-size:6.2pt; font-weight:700; letter-spacing:2.6px;
       text-transform:uppercase; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(8mm * var(--s)) 13mm calc(6mm * var(--s));
+    .pc { flex:1 1 auto; min-height:0; overflow:hidden; padding:calc(6mm * var(--s)) 13mm calc(5mm * var(--s));
       display:flex; flex-direction:column; }
     .intro { flex:0 0 auto; margin-bottom:calc(5mm * var(--s)); padding-bottom:calc(3.5mm * var(--s));
       border-bottom:.5pt solid var(--rule); text-align:center; color:var(--gold); font-size:calc(7pt * var(--s));
@@ -141,7 +141,7 @@ const CSS = `
     /* flex:1 + space-between => as categorias se distribuem e preenchem o espaço
        restante (após intro/nota, se houver); a auto-escala evita overflow. */
     .flow { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; justify-content:space-between;
-      row-gap:calc(5mm * var(--s)); }
+      row-gap:calc(3.2mm * var(--s)); }
 
     .pf { height:9mm; flex:0 0 9mm; margin:0 13mm; border-top:.5pt solid var(--rule);
       display:grid; grid-template-columns:24mm 1fr 24mm; align-items:center;
@@ -151,24 +151,24 @@ const CSS = `
     .foot-page { text-align:right; color:var(--gold); letter-spacing:1.5px; }
 
     .section { break-inside:avoid; min-width:0; }
-    .sh { display:flex; align-items:baseline; gap:calc(3mm * var(--s)); margin-bottom:calc(2.6mm * var(--s)); min-width:0; }
-    .sh-title { font-family:"Cormorant Garamond", Georgia, serif; font-size:calc(19pt * var(--s)); line-height:.9;
+    .sh { display:flex; align-items:baseline; gap:calc(2.2mm * var(--s)); margin-bottom:calc(1.6mm * var(--s)); min-width:0; }
+    .sh-title { font-family:"Cormorant Garamond", Georgia, serif; font-size:calc(16.5pt * var(--s)); line-height:.9;
       font-weight:600; color:var(--ink); white-space:nowrap; }
-    .sh-tag { font-size:calc(5.6pt * var(--s)); line-height:1; font-weight:600; color:var(--gold);
+    .sh-tag { font-size:calc(6pt * var(--s)); line-height:1; font-weight:600; color:var(--gold);
       letter-spacing:2.4px; text-transform:uppercase; white-space:nowrap; }
     .sh-line { height:0; flex:1; min-width:8mm; border-top:.5pt solid var(--rule); align-self:center; }
     .sec-note { margin-top:calc(1.4mm * var(--s)); font-size:calc(5.2pt * var(--s)); font-style:italic; color:var(--soft); }
 
-    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(11mm * var(--s)); row-gap:0; }
+    .g2 { display:grid; grid-template-columns:repeat(var(--cols,2), minmax(0,1fr)); column-gap:calc(7mm * var(--s)); row-gap:0; }
     .g2 > * { min-width:0; overflow:hidden; }
-    .item { margin:0 0 calc(3.0mm * var(--ig, 1) * var(--s)); break-inside:avoid; }
+    .item { margin:0 0 calc(2.0mm * var(--ig, 1) * var(--s)); break-inside:avoid; }
     .item-top { display:grid; grid-template-columns:auto minmax(6mm,1fr) auto; align-items:baseline; column-gap:calc(1.6mm * var(--s)); min-width:0; }
     .item-top.no-price { grid-template-columns:1fr; }
-    .item-name { font-size:calc(7.7pt * var(--s)); line-height:1.05; font-weight:600; color:var(--ink); min-width:0; overflow-wrap:anywhere; }
+    .item-name { font-size:calc(9.2pt * var(--s)); line-height:1.03; font-weight:600; color:var(--ink); min-width:0; overflow-wrap:anywhere; }
     .item-dots { border-bottom:.6pt dotted var(--line); transform:translateY(-1.2pt); min-width:3mm; }
-    .item-price { font-size:calc(7.5pt * var(--s)); line-height:1; font-weight:600; color:var(--gold); white-space:nowrap; }
-    .item-desc { margin-top:calc(.5mm * var(--s)); padding-right:calc(3mm * var(--s)); font-size:calc(5.7pt * var(--s));
-      line-height:1.24; font-weight:400; font-style:italic; color:var(--muted); overflow-wrap:anywhere; }
+    .item-price { font-size:calc(9.0pt * var(--s)); line-height:1; font-weight:600; color:var(--gold); white-space:nowrap; }
+    .item-desc { margin-top:calc(.5mm * var(--s)); padding-right:calc(3mm * var(--s)); font-size:calc(6.7pt * var(--s));
+      line-height:1.16; font-weight:400; font-style:italic; color:var(--muted); overflow-wrap:anywhere; }
 
     @media screen { body { padding:16px; width:auto; } .page { margin:0 auto 16px; box-shadow:0 8px 28px rgba(0,0,0,.18); } }`;
 
