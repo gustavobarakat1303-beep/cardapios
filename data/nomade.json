@@ -108,9 +108,21 @@
       "en": "Snacks & Pastries",
       "items": [
         {
+          "id": "coxinha-de-bobo-de-camarao",
+          "n": "Coxinha de Bobó de Camarão",
+          "d": "8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese sriracha",
+          "p": "52,00"
+        },
+        {
+          "id": "croqueta-de-polvo",
+          "n": "Croqueta de Polvo",
+          "d": "Finalizado com aioli de limão-siciliano",
+          "p": "52,00"
+        },
+        {
           "id": "bolinho-de-bacalhau",
           "n": "Bolinho de Bacalhau",
-          "d": "8 un. · Massa de mandioca, acompanha aioli cítrico",
+          "d": "8 un. · Tradicional bolinho de bacalhau",
           "p": "54,00"
         },
         {
@@ -126,12 +138,6 @@
           "p": "52,00"
         },
         {
-          "id": "bolinho-de-feijoada",
-          "n": "Bolinho de Feijoada",
-          "d": "Acompanha pimenta da casa",
-          "p": "50,00"
-        },
-        {
           "id": "croquete-de-mandioca-c-carne-seca",
           "n": "Croquete de Mandioca c/ Carne Seca",
           "d": "8 un. · Recheado com carne seca e requeijão, vinagrete de cheiro-verde",
@@ -144,16 +150,10 @@
           "p": "48,00"
         },
         {
-          "id": "coxinha-de-bobo-de-camarao",
-          "n": "Coxinha de Bobó de Camarão",
-          "d": "8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese sriracha",
-          "p": "52,00"
-        },
-        {
-          "id": "croqueta-de-polvo",
-          "n": "Croqueta de Polvo",
-          "d": "Finalizado com aioli de limão-siciliano",
-          "p": "52,00"
+          "id": "bolinho-de-feijoada",
+          "n": "Pastel de Carne Seca com Requeijão",
+          "d": "8 un. · Recheado com carne seca e requeijão",
+          "p": "50,00"
         },
         {
           "id": "pastel-de-tres-queijos",
@@ -171,7 +171,7 @@
         {
           "id": "bruschetta-de-cogumelos",
           "n": "Bruschetta de Cogumelos",
-          "d": "Focaccia com cogumelos salteados, azeite trufado, ervas frescas e parmesão",
+          "d": "Focaccia com cogumelos salteados, azeite, ervas frescas e parmesão",
           "p": "50,00"
         },
         {
@@ -323,7 +323,7 @@
         {
           "id": "robalo-ao-misso-branco",
           "n": "Robalo ao Missô Branco",
-          "d": "Com glaze de miso branco, terrine de alho-poró e nori, minicebola roxa assada e mousseline de batata",
+          "d": "Grelhado com purê de batata e finalizado com pétalas de cebola roxa, azeite de ervas e molho Beurre blanc.",
           "p": "92,00"
         },
         {
@@ -336,7 +336,7 @@
           "id": "tagliatelle-de-frutos-do-mar",
           "n": "Tagliatelle de Frutos do Mar",
           "d": "Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados",
-          "p": "105,00"
+          "p": "115,00"
         },
         {
           "id": "risoto-de-cogumelos",
@@ -367,6 +367,7 @@
         {
           "id": "choux-com-sorvete-de-creme",
           "n": "Choux com Sorvete de Creme",
+          "d": "Massa choux , recheada com creme de praliné de castanhas e sorvete de creme",
           "p": "45,00"
         },
         {
@@ -378,8 +379,14 @@
         {
           "id": "gateau-de-chocolate",
           "n": "Gateau de Chocolate",
-          "d": "Bolo de chocolate sem glúten; gluten free",
+          "d": "Torta cremosa de chocolate sem farinha, com calda de framboesa. Acompanha sorvete de iogurte.",
           "p": "45,00"
+        },
+        {
+          "id": "choux-com-cafe",
+          "n": "Choux com Café",
+          "d": "Massa choux , recheada com creme de praliné de castanhas e finalizada com toque de café expresso",
+          "p": "25,00"
         }
       ]
     },
@@ -391,62 +398,56 @@
       "items": [
         {
           "id": "nomade",
-          "n": "Nômade",
-          "d": "Gin, Fernet Branca, suco de melancia, limão-siciliano e calda de hibisco",
+          "n": "Nômade Gardem ",
+          "d": "Gin, pepino, kiwi e limão siciliano finalizados com espuma aromática de manjericão. Refrescante, herbal e extremamente equilibrado.",
           "p": "55,00"
         },
         {
           "id": "pink-velvet",
           "n": "Pink Velvet",
-          "d": "Vodka Cîroc Red Berry, Aperol, cordial de lichia, limão e soda de hibisco",
-          "p": "54,00"
-        },
-        {
-          "id": "venus",
-          "n": "Vênus",
-          "d": "Vodka Smirnoff, licor 43, tangerina, purê de abacaxi e limão",
-          "p": "49,00"
+          "d": "Vodka, frutas vermelhas, hibisco e limão siciliano com final cremoso. Frutado, sofisticado e visualmente irresistível.",
+          "p": "52,00"
         },
         {
           "id": "coco-cloud",
           "n": "Coco Cloud",
-          "d": "Cachaça Salinissima, rum Malibu, coco, xarope de amêndoas, baunilha e limão",
-          "p": "49,00"
+          "d": "Vodka Ciroc, água de coco, baunilha e limão siciliano. Um coquetel tropical leve, fresco e surpreendentemente elegante.",
+          "p": "57,00"
         },
         {
           "id": "nomade-garden",
-          "n": "Nomade Garden",
-          "d": "Vodka Smirnoff, aperitivo Lillet, xarope de jasmim, uva Thompson e limão",
-          "p": "52,00"
+          "n": "Jardim de Tulum",
+          "d": "Tequila 1800, abacaxi grelhado, manjericão fresco, limão e gengibre, finalizados com sal de ervas.",
+          "p": "62,00"
         },
         {
           "id": "botanic-tonic",
           "n": "Botanic Tonic",
-          "d": "Gin Tanqueray 10, sabugueiro, hortelã, laranja Bahia, grapefruit, limão e tônica",
-          "p": "52,00"
+          "d": "Gin, cordial artesanal de grapefruit e água tônica premium. Uma releitura sofisticada da clássica gin tônica.",
+          "p": "55,00"
         },
         {
           "id": "lychee-sunset",
           "n": "Lychee Sunset",
-          "d": "Gin Roku, cordial de lichia com gengibre, licor St-Germain, espumante brut e gelo translúcido",
-          "p": "59,00"
+          "d": "Vodka, lichia, cranberry branco e limão, cobertos por uma delicada espuma cítrica. Leve, elegante e sedutor.",
+          "p": "52,00"
         },
         {
           "id": "spyce-tamarindo",
           "n": "Spyce Tamarindo",
-          "d": "Rum Havana Club 3 anos, tamarindo, espumante brut, agave e limão",
-          "p": "49,00"
+          "d": "Tequila Silver, tamarindo, limão tahiti e um toque sutil de especiarias. Tropical, cítrico e levemente picante.",
+          "p": "56,00"
         },
         {
           "id": "tropical-spritz",
           "n": "Tropical Spritz",
-          "d": "Gin, cointreau, aperitivo Lillet Rouge, soda e frutas",
+          "d": "Aperol, espumante brut, maracujá e grapefruit. Um spritz tropical, vibrante e perfeito para qualquer hora do dia.",
           "p": "52,00"
         },
         {
           "id": "espresso-nomade",
           "n": "Espresso Nômade",
-          "d": "Vodka Cîroc, licor 43, café espresso e creme de baunilha",
+          "d": "Vodka, café espresso, licor de café e cacau, finalizados com espuma de baunilha. Intenso, cremoso e perfeito para encerrar a noite.",
           "p": "52,00"
         }
       ]
@@ -615,37 +616,26 @@
       "items": [
         {
           "id": "solar",
-          "n": "Solar",
+          "n": "Golden Ginger",
+          "d": "• Néctar de manga • Extrato de gengibre • Limão Tahiti",
           "p": "35,00"
         },
         {
           "id": "tonica-de-maracuja-e-mel",
-          "n": "Tônica de Maracujá e Mel",
+          "n": "Lemon Mist",
+          "d": "• Limão siciliano • Leite moça • Capim-santo • Espuma de limão • Polpa de maracujá",
           "p": "35,00"
         },
         {
           "id": "tres-marias",
-          "n": "Três Marias",
+          "n": "Berry Blush",
+          "d": "• Polpa de goiaba • Mix frutas vermelhas • Limão siciliano",
           "p": "35,00"
         },
         {
           "id": "refresco-verde-detox",
-          "n": "Refresco Verde Detox",
-          "p": "35,00"
-        },
-        {
-          "id": "orion",
-          "n": "Orion",
-          "p": "35,00"
-        },
-        {
-          "id": "pink-lemonade-nomade",
-          "n": "Pink Lemonade Nômade",
-          "p": "35,00"
-        },
-        {
-          "id": "hibisco-e-limao",
-          "n": "Hibisco e Limão",
+          "n": "Canopy Beach",
+          "d": "• Néctar de banana • Canela • Noz-moscada • Limão Tahiti • Água com gás",
           "p": "35,00"
         }
       ]
@@ -774,26 +764,6 @@
       "title": "Cachaças",
       "kind": "drink",
       "items": [
-        {
-          "id": "soledade-prata",
-          "n": "Soledade Prata",
-          "p": "38,00"
-        },
-        {
-          "id": "soledade-pura",
-          "n": "Soledade Pura",
-          "p": "38,00"
-        },
-        {
-          "id": "soledade-jequitiba",
-          "n": "Soledade Jequitibá",
-          "p": "38,00"
-        },
-        {
-          "id": "soledade-original-carvalho",
-          "n": "Soledade Original Carvalho",
-          "p": "38,00"
-        },
         {
           "id": "espirito-de-minas",
           "n": "Espírito de Minas",
