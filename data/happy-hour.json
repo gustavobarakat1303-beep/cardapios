@@ -14,22 +14,27 @@
         {
           "titulo": "Bebidas",
           "itens": [
-            "Água sem gás e com gás",
-            "Refrigerante: Pepsi, Pepsi Light, Guaraná e Diet Guaraná",
-            "Suco natural: laranja, melancia e abacaxi",
-            "Chopp Claro Brahma",
-            "Caipiroska: limão, abacaxi e morango",
-            "Caipirinha: limão, abacaxi e morango"
+            "Chopp",
+            "Gin Tonic",
+            "Botanic",
+            "Caipiroskas",
+            "Cuervo Paloma",
+            "Cuervo Margarita",
+            "Carajillo",
+            "43 com limão",
+            "Prosecco"
           ]
         },
         {
           "titulo": "Cozinha",
           "itens": [
+            "Canapé de carpaccio",
+            "Bruschetta de Tomates frescos",
             "Pastel de queijo",
-            "Bruschettas pomodoro",
-            "Bolinho de risotto com dois queijos",
-            "Bolinho de mandioca com carne seca",
-            "Canapé de carpaccio"
+            "Pastel de carne seca",
+            "Croquete de carne seca",
+            "Croquete de carne",
+            "Bolinho de bacalhau"
           ]
         }
       ]
