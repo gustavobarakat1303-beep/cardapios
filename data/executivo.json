@@ -51,37 +51,31 @@
         {
           "id": "file-mignon-grelhado",
           "n": "Filé Mignon Grelhado",
-          "d": "Com penne ao molho de queijo",
+          "d": "milanesa com penne a jardineira.",
           "p": "75,90"
         },
         {
           "id": "picanha-grelhada",
           "n": "Picanha Grelhada",
-          "d": "Com risoto de cogumelos",
+          "d": "com chimichurri e risoto de cogumelos",
           "p": "75,90"
         },
         {
           "id": "salmao-grelhado",
           "n": "Salmão Grelhado",
-          "d": "Ao molho tarê, brandade de siri e arroz",
+          "d": "ao molho de moqueca de frutos do mar, farofa de couve flor e arroz",
           "p": "75,90"
         },
         {
-          "id": "strogonoff",
-          "n": "Strogonoff",
-          "d": "Com arroz e batata frita",
-          "p": "59,90"
-        },
-        {
           "id": "polpetone",
-          "n": "Polpetone",
-          "d": "Com espaguete ao molho pomodoro",
+          "n": "Pappardelle com ragu de costela",
+          "d": "Pappardelle com ragu de costela",
           "p": "59,90"
         },
         {
           "id": "saint-peter",
-          "n": "Saint Peter",
-          "d": "Ao molho pesto, arroz e legumes",
+          "n": "Filé de Frango",
+          "d": "Peito de frango à parmegiana",
           "p": "59,90"
         }
       ]
@@ -95,18 +89,18 @@
       "items": [
         {
           "id": "bolo-de-coco",
-          "n": "Bolo de Coco",
+          "n": "Panqueca de frutas vermelhas com sorvete de iogurte",
           "p": "10,00"
         },
         {
           "id": "pudim-de-chocolate",
-          "n": "Pudim de Chocolate",
+          "n": "Brigadeiro de colher",
           "p": "10,00"
         },
         {
           "id": "frutas-da-estacao",
           "n": "Frutas da Estação",
-          "d": "Manga",
+          "d": "Abacaxi",
           "p": "10,00"
         }
       ]
