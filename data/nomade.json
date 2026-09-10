@@ -110,7 +110,7 @@
         {
           "id": "coxinha-de-bobo-de-camarao",
           "n": "Coxinha de Bobó de Camarão",
-          "d": "8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese sriracha",
+          "d": "8 un. · Coxinha de batata recheada com bobó de camarão, acompanha maionese pimenta",
           "p": "52,00"
         },
         {
@@ -140,7 +140,7 @@
         {
           "id": "croquete-de-mandioca-c-carne-seca",
           "n": "Croquete de Mandioca c/ Carne Seca",
-          "d": "8 un. · Recheado com carne seca e requeijão, vinagrete de cheiro-verde",
+          "d": "8 un. · Recheado com carne seca e requeijão e gremolata",
           "p": "49,00"
         },
         {
@@ -151,8 +151,8 @@
         },
         {
           "id": "bolinho-de-feijoada",
-          "n": "Pastel de Carne Seca com Requeijão",
-          "d": "8 un. · Recheado com carne seca e requeijão",
+          "n": "Pastel de Carne com Requeijão",
+          "d": "8 un. · Recheado com carne e requeijão",
           "p": "50,00"
         },
         {
@@ -171,13 +171,13 @@
         {
           "id": "bruschetta-de-cogumelos",
           "n": "Bruschetta de Cogumelos",
-          "d": "Focaccia com cogumelos salteados, azeite, ervas frescas e parmesão",
+          "d": " Focaccia com mix de cogumelos, parmesão finalizado com azeite.",
           "p": "50,00"
         },
         {
           "id": "bruschetta-pomodoro",
           "n": "Bruschetta Pomodoro",
-          "d": "Focaccia com tomates assados, parmesão, ervas e azeite",
+          "d": "Focaccia com tomates confitados, mussarela de búfala finalizado com manjericão",
           "p": "50,00"
         }
       ]
@@ -196,8 +196,8 @@
         },
         {
           "id": "batatas-trufadas",
-          "n": "Batatas Trufadas",
-          "d": "Fritas crocantes com azeite trufado, parmesão ralado e ervas frescas",
+          "n": "Batatas Fritas",
+          "d": "Fritas crocantes, parmesão e ervas finas",
           "p": "48,00"
         },
         {
@@ -209,7 +209,7 @@
         {
           "id": "lula-grelhada",
           "n": "Lula Grelhada",
-          "d": "Salteada no alho, flambada em saquê, com aioli de alho e molho de tinta de lula",
+          "d": "Lula grelhada com bastante alho e finalizada com pesto e gremolata. Acompanha focaccia da casa.",
           "p": "85,00"
         },
         {
@@ -223,12 +223,6 @@
           "n": "Camarões al Ajillo",
           "d": "Com batata, cebola roxa e pesto; acompanha focaccia",
           "p": "95,00"
-        },
-        {
-          "id": "queijo-coalho-na-brasa",
-          "n": "Queijo Coalho na Brasa",
-          "d": "Grelhado com melaço de cana e raspas de limão-siciliano",
-          "p": "69,00"
         }
       ]
     },
@@ -241,25 +235,25 @@
         {
           "id": "burrata",
           "n": "Burrata",
-          "d": "Em cesta crocante com tomates confit, mix de folhas, pesto de manjericão e redução de balsâmico",
+          "d": "Burrata com tomates confitados, mix de folhas e finalizado com redução de balsâmico. Acompanha focaccia da casa.",
           "p": "57,00"
         },
         {
           "id": "ceviche",
           "n": "Ceviche",
-          "d": "Peixe branco em leite de tigre com pimenta dedo-de-moça, cebola roxa e coentro; chips de batata-doce",
+          "d": "Peixe branco em leite de tigre com pimenta dedo-de-moça, cebola roxa e coentro, acompanha focaccia da casa.",
           "p": "55,00"
         },
         {
           "id": "tartare-de-file",
           "n": "Tartare de Filé",
-          "d": "Filé mignon servido em torradas de pão sírio",
+          "d": "Filé mignon servido com focaccia da casa.",
           "p": "65,00"
         },
         {
           "id": "tartare-de-salmao",
           "n": "Tartare de Salmão",
-          "d": "Com cebola roxa, limão, cebolinha e tabasco; torradas sírias e mix de folhas",
+          "d": "Com cebola roxa, limão, cebolinha e tabasco e mix de folhas. Acompanha focaccia da casa.",
           "p": "66,00"
         }
       ]
@@ -273,13 +267,13 @@
         {
           "id": "salada-nomade",
           "n": "Salada Nômade",
-          "d": "Mix de folhas, croutons de parmesão, sementes tostadas, manga verde em conserva e shiitake; molho cítrico de mostarda e mel",
+          "d": "Mix de folhas, croutons de parmesão, sementes tostadas, manga verde em conserva e cogumelos shiitake grelhados. Molho citronette de mostarda e mel.",
           "p": "49,00"
         },
         {
           "id": "salada-da-casa",
           "n": "Salada da Casa",
-          "d": "Mix de folhas, tomate, mussarela de búfala, grão-de-bico e parmesão",
+          "d": "Mix de folhas, tomate confitado e mussarela de búfala no molho citronette",
           "p": "49,00"
         }
       ]
@@ -322,7 +316,7 @@
         },
         {
           "id": "robalo-ao-misso-branco",
-          "n": "Robalo ao Missô Branco",
+          "n": "Robalo ao Beurre Blanc",
           "d": "Grelhado com purê de batata e finalizado com pétalas de cebola roxa, azeite de ervas e molho Beurre blanc.",
           "p": "92,00"
         },
@@ -347,7 +341,7 @@
         {
           "id": "hamburguer-da-casa",
           "n": "Hambúrguer da Casa",
-          "d": "Blend de picanha com alface, cheddar, maionese de bacon e cebola caramelizada",
+          "d": "Blend de picanha com alface, cheddar, maionese verde e cebola caramelizada",
           "p": "56,00"
         }
       ]
@@ -385,7 +379,7 @@
         {
           "id": "choux-com-cafe",
           "n": "Choux com Café",
-          "d": "Massa choux , recheada com creme de praliné de castanhas e finalizada com toque de café expresso",
+          "d": "Massa choux , recheada com creme de praliné de castanhas e acompanha uma xícara de café expresso",
           "p": "25,00"
         }
       ]
@@ -895,11 +889,6 @@
           "p": "38,00"
         },
         {
-          "id": "aperitivo-cynar-70",
-          "n": "Aperitivo Cynar 70",
-          "p": "38,00"
-        },
-        {
           "id": "punt-mes",
           "n": "Punt & Mes",
           "p": "40,00"
@@ -1010,7 +999,7 @@
         {
           "id": "chopp-claro-brahma-300ml",
           "n": "Chopp Claro Brahma 300ml",
-          "p": "14,50"
+          "p": "16,00"
         },
         {
           "id": "chopp-brahma-black",
@@ -1037,37 +1026,32 @@
         {
           "id": "heineken-lager",
           "n": "Heineken Lager",
-          "p": "20,00"
+          "p": "25,00"
         },
         {
           "id": "heineken-zero",
           "n": "Heineken Zero",
-          "p": "20,00"
+          "p": "25,00"
         },
         {
           "id": "corona-extra-355ml",
           "n": "Corona Extra 355ml",
-          "p": "20,00"
+          "p": "25,00"
         },
         {
           "id": "corona-zero",
           "n": "Corona Zero",
-          "p": "20,00"
+          "p": "25,00"
         },
         {
           "id": "stella-artois-gold",
           "n": "Stella Artois Gold",
-          "p": "20,00"
+          "p": "25,00"
         },
         {
           "id": "blue-moon",
           "n": "Blue Moon",
           "p": "30,00"
-        },
-        {
-          "id": "goose-island",
-          "n": "Goose Island",
-          "p": "22,00"
         }
       ]
     },
@@ -1146,11 +1130,6 @@
           "id": "agua-com-gas",
           "n": "Água com Gás",
           "p": "7,00"
-        },
-        {
-          "id": "rolha",
-          "n": "Rolha",
-          "p": "90,00"
         }
       ]
     },
