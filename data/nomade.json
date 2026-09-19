@@ -189,22 +189,28 @@
       "en": "To Share",
       "items": [
         {
-          "id": "flat-iron-na-brasa",
-          "n": "Flat Iron na Brasa",
-          "d": "300g · Na brasa com cebola caramelizada, alho confitado e gremolata; acompanha focaccia artesanal",
-          "p": "98,00"
-        },
-        {
-          "id": "batatas-trufadas",
-          "n": "Batatas Fritas",
-          "d": "Fritas crocantes, parmesão e ervas finas",
-          "p": "48,00"
-        },
-        {
           "id": "picanha-na-brasa",
           "n": "Picanha na Brasa",
           "d": "400g · Servida com cebola caramelizada, alho confitado e gremolata; acompanha focaccia",
-          "p": "98,00"
+          "p": "115,00"
+        },
+        {
+          "id": "flat-iron-na-brasa",
+          "n": "Flat Iron na Brasa",
+          "d": "300g · Na brasa com cebola caramelizada, alho confitado e gremolata; acompanha focaccia artesanal",
+          "p": "110,00"
+        },
+        {
+          "id": "ancho-na-brasa",
+          "n": "Ancho na Brasa",
+          "d": "400g · Grelhado com cebola caramelizada, alho confitado e gremolata; acompanha focaccia",
+          "p": "110,00"
+        },
+        {
+          "id": "camaroes-al-ajillo",
+          "n": "Camarões al Ajillo",
+          "d": "Com batata, cebola roxa e pesto; acompanha focaccia",
+          "p": "95,00"
         },
         {
           "id": "lula-grelhada",
@@ -213,16 +219,10 @@
           "p": "85,00"
         },
         {
-          "id": "ancho-na-brasa",
-          "n": "Ancho na Brasa",
-          "d": "400g · Grelhado com cebola caramelizada, alho confitado e gremolata; acompanha focaccia",
-          "p": "92,00"
-        },
-        {
-          "id": "camaroes-al-ajillo",
-          "n": "Camarões al Ajillo",
-          "d": "Com batata, cebola roxa e pesto; acompanha focaccia",
-          "p": "95,00"
+          "id": "batatas-trufadas",
+          "n": "Batatas Fritas",
+          "d": "Fritas crocantes, parmesão e ervas finas",
+          "p": "48,00"
         }
       ]
     },
@@ -288,7 +288,7 @@
           "id": "mignon-glace",
           "n": "Mignon Glacé",
           "d": "Medalhões ao molho demi-glace com risoto cremoso de shimeji e shiitake",
-          "p": "92,00"
+          "p": "95,00"
         },
         {
           "id": "mignon-a-mostarda",
@@ -300,7 +300,7 @@
           "id": "ancho-al-limone",
           "n": "Ancho al Limone",
           "d": "Bife ancho ao molho de manteiga de limão com tagliarini, anchovas, tomate-cereja e manjericão",
-          "p": "89,00"
+          "p": "92,00"
         },
         {
           "id": "flat-iron-caramelizado",
@@ -312,7 +312,7 @@
           "id": "salmao-siciliano",
           "n": "Salmão Siciliano",
           "d": "Grelhado com risoto cremoso de limão-siciliano e crisp de alho-poró",
-          "p": "89,00"
+          "p": "92,00"
         },
         {
           "id": "robalo-ao-misso-branco",
