@@ -330,7 +330,7 @@
           "id": "tagliatelle-de-frutos-do-mar",
           "n": "Tagliatelle de Frutos do Mar",
           "d": "Massa fresca ao molho bisque com pomodoro da casa, finalizada com frutos do mar grelhados",
-          "p": "115,00"
+          "p": "105,00"
         },
         {
           "id": "risoto-de-cogumelos",
@@ -368,7 +368,7 @@
           "id": "mini-churros-c-doce-de-leite",
           "n": "Mini Churros c/ Doce de Leite",
           "d": "Servidos com doce de leite e brigadeiro",
-          "p": "40,00"
+          "p": "45,00"
         },
         {
           "id": "gateau-de-chocolate",
@@ -455,7 +455,7 @@
         {
           "id": "aperol-spritz",
           "n": "Aperol Spritz",
-          "p": "46,00"
+          "p": "48,00"
         },
         {
           "id": "gin-tonic",
@@ -465,22 +465,22 @@
         {
           "id": "negroni",
           "n": "Negroni",
-          "p": "47,00"
+          "p": "52,00"
         },
         {
           "id": "mojito",
           "n": "Mojito",
-          "p": "43,00"
+          "p": "49,00"
         },
         {
           "id": "boulevardier",
           "n": "Boulevardier",
-          "p": "47,00"
+          "p": "49,00"
         },
         {
           "id": "cuba-libre",
           "n": "Cuba Libre",
-          "p": "43,00"
+          "p": "48,00"
         },
         {
           "id": "old-fashioned",
@@ -490,7 +490,7 @@
         {
           "id": "americano",
           "n": "Americano",
-          "p": "43,00"
+          "p": "46,00"
         },
         {
           "id": "manhattan",
@@ -500,7 +500,7 @@
         {
           "id": "bloody-mary",
           "n": "Bloody Mary",
-          "p": "41,00"
+          "p": "48,00"
         },
         {
           "id": "dry-martini",
@@ -510,32 +510,32 @@
         {
           "id": "carajillo-43",
           "n": "Carajillo 43",
-          "p": "40,00"
+          "p": "48,00"
         },
         {
           "id": "dirty-martini",
           "n": "Dirty Martini",
-          "p": "43,00"
+          "p": "48,00"
         },
         {
           "id": "cuervo-margarita",
           "n": "Cuervo Margarita",
-          "p": "43,00"
+          "p": "48,00"
         },
         {
           "id": "fitzgerald",
           "n": "Fitzgerald",
-          "p": "52,00"
+          "p": "55,00"
         },
         {
           "id": "cuervo-paloma",
           "n": "Cuervo Paloma",
-          "p": "43,00"
+          "p": "46,00"
         },
         {
           "id": "basil-smash",
           "n": "Basil Smash",
-          "p": "47,00"
+          "p": "49,00"
         },
         {
           "id": "daiquiri",
@@ -545,7 +545,7 @@
         {
           "id": "tom-collins",
           "n": "Tom Collins",
-          "p": "44,00"
+          "p": "48,00"
         }
       ]
     },
@@ -558,22 +558,22 @@
         {
           "id": "peachtree-tonic",
           "n": "Peachtree & Tonic",
-          "p": "45,00"
+          "p": "48,00"
         },
         {
           "id": "fernet-branca-cola",
           "n": "Fernet Branca & Cola",
-          "p": "40,00"
+          "p": "45,00"
         },
         {
           "id": "villa-massa-limoncello-spritz",
           "n": "Villa Massa Limoncello Spritz",
-          "p": "45,00"
+          "p": "48,00"
         },
         {
           "id": "licor-43-com-limao",
           "n": "Licor 43 com Limão",
-          "p": "43,00"
+          "p": "48,00"
         },
         {
           "id": "villa-massa-amaretto-sour",
@@ -583,7 +583,7 @@
         {
           "id": "1800-tequila-paloma",
           "n": "1800 Tequila Paloma",
-          "p": "49,00"
+          "p": "54,00"
         },
         {
           "id": "villa-massa-limoncello",
@@ -593,12 +593,12 @@
         {
           "id": "martin-miller-s-dry-martini",
           "n": "Martin Miller's Dry Martini",
-          "p": "48,00"
+          "p": "49,00"
         },
         {
           "id": "carpano-tonic",
           "n": "Carpano Tonic",
-          "p": "40,00"
+          "p": "45,00"
         }
       ]
     },
@@ -643,7 +643,7 @@
         {
           "id": "no-ten-classic-gin-tonic",
           "n": "No. TEN Classic Gin & Tonic",
-          "p": "60,00"
+          "p": "68,00"
         },
         {
           "id": "gin-tanqueray-tonica",
@@ -653,7 +653,7 @@
         {
           "id": "gin-tonica-beefeater-london-dry",
           "n": "Gin Tônica Beefeater London Dry",
-          "p": "43,00"
+          "p": "48,00"
         },
         {
           "id": "gin-hendrick-s-tonica",
@@ -670,22 +670,22 @@
         {
           "id": "caipiroska-ciroc",
           "n": "Caipiroska Cîroc",
-          "p": "59,00"
+          "p": "62,00"
         },
         {
           "id": "caipiroska-absolut",
           "n": "Caipiroska Absolut",
-          "p": "49,00"
+          "p": "52,00"
         },
         {
           "id": "caipiroska-nacional-smirnoff",
           "n": "Caipiroska Nacional (Smirnoff)",
-          "p": "44,00"
+          "p": "47,00"
         },
         {
           "id": "caipisaque-nacional",
           "n": "Caipisaquê Nacional",
-          "p": "45,00"
+          "p": "47,00"
         },
         {
           "id": "caipirinha-espirito-de-minas",
@@ -695,7 +695,7 @@
         {
           "id": "caipirinha-salinissima",
           "n": "Caipirinha Salinissima",
-          "p": "45,00"
+          "p": "49,00"
         }
       ]
     },
@@ -707,22 +707,22 @@
         {
           "id": "black-label",
           "n": "Black Label",
-          "p": "40,00"
+          "p": "45,00"
         },
         {
           "id": "red-label",
           "n": "Red Label",
-          "p": "35,00"
+          "p": "37,00"
         },
         {
           "id": "eagle-rare",
           "n": "Eagle Rare",
-          "p": "90,00"
+          "p": "56,00"
         },
         {
           "id": "1792-small-batch",
           "n": "1792 Small Batch",
-          "p": "90,00"
+          "p": "60,00"
         },
         {
           "id": "buffalo-trace",
@@ -799,7 +799,7 @@
         {
           "id": "jose-cuervo-tradicional",
           "n": "Jose Cuervo Tradicional",
-          "p": "44,00"
+          "p": "48,00"
         },
         {
           "id": "1800-silver",
@@ -836,12 +836,12 @@
         {
           "id": "carpano-rosso",
           "n": "Carpano Rosso",
-          "p": "36,00"
+          "p": "40,00"
         },
         {
           "id": "carpano-bianco",
           "n": "Carpano Bianco",
-          "p": "36,00"
+          "p": "40,00"
         },
         {
           "id": "campari",
@@ -851,22 +851,22 @@
         {
           "id": "tanqueray",
           "n": "Tanqueray",
-          "p": "47,00"
+          "p": "48,00"
         },
         {
           "id": "pisco-capel",
           "n": "Pisco Capel",
-          "p": "36,00"
+          "p": "40,00"
         },
         {
           "id": "fernet-branca",
           "n": "Fernet Branca",
-          "p": "33,00"
+          "p": "42,00"
         },
         {
           "id": "fernet-branca-menta",
           "n": "Fernet Branca Menta",
-          "p": "38,00"
+          "p": "42,00"
         },
         {
           "id": "rum-havana-club-3-anos",
@@ -876,17 +876,17 @@
         {
           "id": "rum-havana-club-7-anos",
           "n": "Rum Havana Club 7 anos",
-          "p": "45,00"
+          "p": "50,00"
         },
         {
           "id": "amaro-lucano",
           "n": "Amaro Lucano",
-          "p": "38,00"
+          "p": "40,00"
         },
         {
           "id": "aperitivo-averna",
           "n": "Aperitivo Averna",
-          "p": "38,00"
+          "p": "40,00"
         },
         {
           "id": "punt-mes",
@@ -931,7 +931,7 @@
         {
           "id": "baileys",
           "n": "Baileys",
-          "p": "37,00"
+          "p": "40,00"
         },
         {
           "id": "cointreau",
@@ -941,27 +941,27 @@
         {
           "id": "licor-43",
           "n": "Licor 43",
-          "p": "35,00"
+          "p": "40,00"
         },
         {
           "id": "licor-43-creme-brulee",
           "n": "Licor 43 Crème Brûlée",
-          "p": "35,00"
+          "p": "40,00"
         },
         {
           "id": "licor-43-chocolate",
           "n": "Licor 43 Chocolate",
-          "p": "35,00"
+          "p": "40,00"
         },
         {
           "id": "fireball",
           "n": "Fireball",
-          "p": "35,00"
+          "p": "40,00"
         },
         {
           "id": "villa-massa-limoncello",
           "n": "Villa Massa Limoncello",
-          "p": "30,00"
+          "p": "40,00"
         },
         {
           "id": "villa-massa-amaretto",
@@ -976,7 +976,7 @@
         {
           "id": "drambuie",
           "n": "Drambuie",
-          "p": "30,00"
+          "p": "40,00"
         },
         {
           "id": "sake-azuma-kirin",
@@ -986,7 +986,7 @@
         {
           "id": "sake-gekkeikan",
           "n": "Sake Gekkeikan",
-          "p": "40,00"
+          "p": "45,00"
         }
       ]
     },
@@ -1074,12 +1074,12 @@
         {
           "id": "guarana-antartica",
           "n": "Guaraná Antartica",
-          "p": "9,00"
+          "p": "9,50"
         },
         {
           "id": "guarana-zero",
           "n": "Guaraná Zero",
-          "p": "9,00"
+          "p": "9,50"
         },
         {
           "id": "fanta-laranja",
@@ -1094,12 +1094,12 @@
         {
           "id": "soda-limonada",
           "n": "Soda Limonada",
-          "p": "9,00"
+          "p": "9,50"
         },
         {
           "id": "soda-zero",
           "n": "Soda Zero",
-          "p": "9,00"
+          "p": "9,50"
         },
         {
           "id": "schweppes-tonica",
@@ -1119,7 +1119,7 @@
         {
           "id": "red-bull",
           "n": "Red Bull",
-          "p": "20,00"
+          "p": "22,00"
         },
         {
           "id": "agua",
@@ -1244,7 +1244,7 @@
           "id": "la-vieille-ferme-rouge",
           "n": "La Vieille Ferme Rouge",
           "d": "Carignan, Cinsault, Grenache e Syrah · Rhône, França",
-          "p": "244,00"
+          "p": "224,00"
         },
         {
           "id": "carmen-premier-1850-pinot-noir",
